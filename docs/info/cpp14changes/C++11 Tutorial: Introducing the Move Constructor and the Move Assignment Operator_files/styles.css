@@ -1,0 +1,6 @@
+/* Effective stylesheet produced by snapshot save */
+.tm-tweet-clear::after { display: block; visibility: hidden; height: 0px; clear: both; content: "."; }
+.tm-click-to-tweet .clearfix::after { display: block; visibility: hidden; height: 0px; clear: both; content: "."; }
+.tm-click-to-tweet .list-float::after { display: block; visibility: hidden; height: 0px; clear: both; content: "."; }
+.tm-click-to-tweet::after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0px; }
+.tm-click-to-tweet::after { display: block; visibility: hidden; height: 0px; clear: both; content: "."; }

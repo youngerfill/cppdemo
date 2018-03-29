@@ -1,0 +1,17 @@
+
+//////////////
+// Writing :
+//////////////
+
+
+//////////////
+// Reading :
+//////////////
+
+- array/map MUST indicate size in head, but taking this into account while reading is not mandatory 
+    -> will depend on container implementation, e.g. : vector pre-allocates space, 
+        while list grows as entries are added.
+
+- While reading: exact name of LH side of assignment to element/key/value must be ignored
+
+

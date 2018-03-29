@@ -1,0 +1,989 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/pinit_main.js" async="" type="text/javascript"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>C++11 Tutorial: Introducing the Move Constructor and the Move Assignment Operator</title><meta name="robots" content="noodp,noydir">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="alternate" type="application/rss+xml" title="Software Quality Matters Blog » Feed" href="http://feeds.feedburner.com/smartbear"><style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+--></style>
+<link rel="alternate" type="application/rss+xml" title="Software Quality Matters Blog » Comments Feed" href="http://blog.smartbear.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Software Quality Matters Blog » C++11 Tutorial: Introducing the Move Constructor and the Move Assignment Operator Comments Feed" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/feed/">
+<link rel="canonical" href="#">
+		<script async="" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/cb=gapi.loaded_1.js"></script><script async="" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/cb=gapi.loaded_0-1.js"></script><script src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/page.js" async="" type="text/javascript"></script><script src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/widgets.js" async="" type="text/javascript"></script><script src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/gtm.js" async=""></script><script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/wp-emoji-release.min.js"></script>
+		<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+--></style>
+<link rel="stylesheet" id="opinionstage-style-css" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="validate-engine-css-css" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/validationEngine.jquery.css" type="text/css" media="all">
+<link rel="stylesheet" id="ppss_style-css" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/ppss_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="bwp-syntax-css" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/bwp-syntax.css" type="text/css" media="all">
+<link rel="stylesheet" id="dynamik_design_stylesheet-css" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/dynamik.css" type="text/css" media="all">
+<link rel="stylesheet" id="dynamik_custom_stylesheet-css" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/dynamik-custom.css" type="text/css" media="all">
+<link rel="stylesheet" id="tm_clicktotweet-css" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="cz_cpg_front_style-css" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/crossword-frontend.css" type="text/css" media="all">
+<link rel="stylesheet" id="genesis-social-profiles-menu-css" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/gspm-styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="simple-social-icons-font-css" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/style-1.css" type="text/css" media="all">
+<link rel="stylesheet" id="wordpress-popular-posts-css" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/wpp.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/jetpack.css" type="text/css" media="all">
+<link rel="stylesheet" id="A2A_SHARE_SAVE-css" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/addtoany.min.css" type="text/css" media="all">
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/jquery.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/q2w3-fixed-widget.min.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/related-posts.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/bwp-syntax.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/crossword-frontend.js"></script>
+<link rel="https://api.w.org/" href="http://blog.smartbear.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.smartbear.com/xmlrpc.php?rsd">
+<link rel="alternate" type="application/json+oembed" href="http://blog.smartbear.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://blog.smartbear.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F&amp;format=xml">
+
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+.enews .screenread { height: 1px; left: -1000em; overflow: hidden; position: absolute; top: -1000em; width: 1px; }
+--></style>
+
+<!-- Facebook Like Thumbnail -->
+<link rel="image_src" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/c--11-tutorial-c-plus-plus-small_.png">
+<!-- End Facebook Like Thumbnail -->
+
+  <meta property="filament:is-404" content="0">
+  <meta property="filament:is-archive" content="0">
+  <meta property="filament:is-attachment" content="0">
+  <meta property="filament:is-author" content="0">
+  <meta property="filament:is-category" content="0">
+  <meta property="filament:is-front-page" content="0">
+  <meta property="filament:is-home" content="0">
+  <meta property="filament:is-page" content="0">
+  <meta property="filament:is-search" content="0">
+  <meta property="filament:is-single" content="1">
+  <meta property="filament:is-singular" content="1">
+  <meta property="filament:is-sticky" content="0">
+  <meta property="filament:is-tag" content="0">
+  <meta property="filament:is-tax" content="0">
+  <meta property="filament:is-preview" content="0">
+  <meta property="filament:post-type" content="post">
+  <meta property="filament:categories" content="c-plus-plus,collaborator,development,programming,programming-languages">
+  <meta property="filament:tags" content="">
+
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<link rel="Shortcut Icon" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/favicon.png" type="image/x-icon">
+<link rel="pingback" href="http://blog.smartbear.com/xmlrpc.php">
+<meta name="google-site-verification" content="VeU3lW9b41cKG2Esj35ts7b9yYnTaugN5Mm5_SRWJ0Y">
+
+<link href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/css.css" rel="stylesheet" type="text/css">
+
+<script data-cfasync="false" type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/3730ea5160c56745ff961d9a77538239.js" async="async"></script><style type="text/css" media="screen"><!--
+/* Effective stylesheet produced by snapshot save */
+.simple-social-icons ul li a, .simple-social-icons ul li a:hover { background-color: rgb(255, 255, 255) ! important; border-radius: 50px; color: rgb(34, 120, 196) ! important; border: 2px solid rgb(34, 120, 196) ! important; font-size: 19px; padding: 10px; }
+.simple-social-icons ul li a:hover { background-color: rgb(34, 120, 196) ! important; border-color: rgb(111, 185, 64) ! important; color: rgb(255, 255, 255) ! important; }
+--></style>				<!-- WordPress Popular Posts v3.3.1 -->
+				<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+				<!-- End WordPress Popular Posts v3.3.1 -->
+				  <script><!--
+/* Script removed by snapshot save */
+--></script>
+  <script src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/loader.js#038;pid=175832&amp;#038;hsutk=" async="" type="text/javascript"></script><script src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/secureAnonymousFramework.js"></script><script src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/button.07a87b943a27e2a4a74c40e24a4a5ccc.js" async="" charset="utf-8" type="text/javascript"></script><link rel="stylesheet" type="text/css" media="screen" href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/flare.css"><style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+.a2a_menu, .a2a_menu * { box-sizing: content-box; float: none; margin: 0px; padding: 0px; position: static; height: auto; width: auto; }
+.a2a_menu { border-radius: 6px; display: none; direction: ltr; background: rgb(255, 255, 255) none repeat scroll 0% 0%; font: 16px/12px sans-serif-light,"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Arial,Helvetica,"Liberation Sans",sans-serif; color: rgb(0, 0, 0); border: 1px solid rgb(204, 204, 204); vertical-align: baseline; outline: 0px none; overflow: hidden; }
+.a2a_mini { min-width: 200px; position: absolute; width: 300px; z-index: 9999997; }
+.a2a_overlay { display: none; background: rgb(204, 204, 204) none repeat scroll 0% 0%; opacity: 0.7; position: fixed; top: 0px; right: 0px; left: 0px; bottom: 0px; z-index: 9999998; transition: opacity 0.14s ease 0s; }
+.a2a_full { background: rgb(255, 255, 255) none repeat scroll 0% 0%; height: calc(320px); top: 15%; left: 50%; margin-left: -320px; position: fixed; text-align: center; width: 640px; z-index: 9999999; transition: transform 0.14s ease 0s, opacity 0.14s ease 0s; }
+.a2a_full_header, .a2a_full_services, .a2a_full_footer { border: 0px none; margin: 0px; padding: 12px; box-sizing: border-box; }
+.a2a_full_header { padding-bottom: 8px; }
+.a2a_full_services { height: 280px; overflow-y: scroll; padding: 0px 12px; }
+.a2a_full_services .a2a_i { display: inline-block; float: none; width: calc(33.334% - 18px); }
+div.a2a_full_footer { font-size: 12px; text-align: center; padding: 8px 14px; }
+div.a2a_full_footer a, div.a2a_full_footer a:visited { display: inline; font-size: 12px; line-height: 14px; padding: 8px 14px; }
+div.a2a_full_footer a:hover, div.a2a_full_footer a:focus { background: transparent none repeat scroll 0% 0%; border: 0px none; color: rgb(1, 102, 255); }
+div.a2a_full_footer a span.a2a_s_a2a, div.a2a_full_footer a span.a2a_w_a2a { background-size: 14px auto; border-radius: 3px; display: inline-block; height: 14px; line-height: 14px; margin: 0px 3px 0px 0px; vertical-align: top; width: 14px; }
+@media print {
+  .a2a_menu, .a2a_overlay { visibility: hidden; }
+}
+@keyframes a2aFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@media (max-width: 639px) {
+  .a2a_full { border-radius: 0px; top: 15%; left: 0px; margin-left: auto; width: 100%; }
+}
+@media (min-width: 318px) and (max-width: 437px) {
+  .a2a_full .a2a_full_services .a2a_i { width: calc(50% - 18px); }
+}
+@media (max-width: 317px) {
+  .a2a_full .a2a_full_services .a2a_i { width: calc(100% - 18px); }
+}
+@media (max-height: 436px) {
+  .a2a_full { bottom: 40px; height: auto; top: 40px; }
+}
+.a2a_menu a { color: rgb(1, 102, 255); text-decoration: none; font: 16px/14px sans-serif-light,"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Arial,Helvetica,"Liberation Sans",sans-serif; height: auto; width: auto; outline: medium none; }
+.a2a_menu a:visited { color: rgb(1, 102, 255); }
+.a2a_menu a:hover, .a2a_menu a:active, .a2a_menu a:focus { color: rgb(42, 42, 42); border-color: rgb(238, 238, 238); border-style: solid; background-color: rgb(238, 238, 238); text-decoration: none; }
+.a2a_menu span.a2a_s_find { background-size: 24px auto; height: 24px; left: 8px; position: absolute; top: 7px; width: 24px; }
+.a2a_menu span.a2a_s_find svg { background-color: rgb(255, 255, 255); }
+.a2a_menu span.a2a_s_find svg path { fill: rgb(204, 204, 204); }
+.a2a_menu_title_container { padding: 6px 8px; }
+.a2a_menu_find_container { border: 1px solid rgb(204, 204, 204); border-radius: 6px; padding: 2px 24px 2px 0px; position: relative; text-align: left; }
+.a2a_cols_container .a2a_col1 { overflow-x: hidden; overflow-y: auto; }
+.a2a_menu input, .a2a_menu input[type="text"] { display: block; background-image: none; box-shadow: none; line-height: 100%; margin: 0px; overflow: hidden; padding: 0px; }
+.a2a_menu_title_container input.a2a_menu_title { background-color: rgb(255, 255, 255); border: 0px none; color: rgb(42, 42, 42); font: inherit; margin: 0px; padding: 0px; width: 99%; }
+.a2a_menu_find_container input.a2a_menu_find { background-color: transparent; border: 0px none; color: rgb(42, 42, 42); font-family: inherit; font-style: inherit; font-weight: inherit; font-size-adjust: inherit; font-stretch: inherit; font-feature-settings: inherit; font-language-override: inherit; font-kerning: inherit; font-synthesis: inherit; font-variant: inherit; font-size: 16px; height: 28px; line-height: 20px; left: 38px; outline: 0px none; padding: 2px 0px; position: relative; width: 99%; }
+.a2a_clear { clear: both; }
+.a2a_img, .a2a_svg { background-repeat: no-repeat; display: block; overflow: hidden; }
+.a2a_svg { height: 32px; line-height: 32px; width: 32px; }
+a.a2a_i, i.a2a_i { display: block; float: left; border: 1px solid rgb(255, 255, 255); line-height: 24px; padding: 6px 8px; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 132px; }
+a.a2a_i span, a.a2a_more span { display: inline-block; overflow: hidden; vertical-align: top; }
+a.a2a_i .a2a_img, a.a2a_i .a2a_svg { margin: 0px 6px 0px 0px; }
+a.a2a_i .a2a_svg, a.a2a_more .a2a_svg { background-size: 24px auto; height: 24px; line-height: 24px; width: 24px; }
+a.a2a_menu_show_more_less { border-bottom: 1px solid rgb(255, 255, 255); border-left: 0px none; border-right: 0px none; line-height: 24px; margin: 6px 0px 0px; padding: 6px; }
+a.a2a_menu_show_more_less span { display: inline-block; height: 24px; margin: 0px 6px 0px 0px; }
+.a2a_default_style .a2a_count, .a2a_default_style .a2a_svg, .a2a_floating_style .a2a_svg, .a2a_vertical_style .a2a_count, .a2a_menu .a2a_svg { border-radius: 4px; }
+.a2a_kit a { cursor: pointer; }
+.a2a_count::before, .a2a_count::after { border-style: solid; border-color: transparent; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-width: 4px 4px 4px 0px; content: ""; height: 0px; left: 0px; line-height: 0; margin: -4px 0px 0px -4px; position: absolute; top: 50%; width: 0px; }
+.a2a_count::before { border-right-color: rgb(204, 204, 204); }
+.a2a_count::after { border-right-color: rgb(255, 255, 255); margin-left: -3px; }
+.a2a_vertical_style .a2a_count::before, .a2a_vertical_style .a2a_count::after { border-style: solid; border-color: transparent; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-width: 0px 4px 4px; content: ""; height: 0px; left: 50%; line-height: 0; margin: -4px 0px 0px -4px; position: absolute; top: 0px; width: 0px; }
+.a2a_vertical_style .a2a_count::before { border-bottom-color: rgb(204, 204, 204); }
+.a2a_vertical_style .a2a_count::after { border-bottom-color: rgb(255, 255, 255); margin-top: -3px; }
+.a2a_wide a { display: block; margin-top: 3px; border-top: 1px solid rgb(238, 238, 238); text-align: center; }
+--></style><style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#li_ui_li_gen_1463917220807_0 { position: relative ! important; overflow: visible ! important; display: block ! important; }
+#li_ui_li_gen_1463917220807_0 span { box-sizing: content-box ! important; }
+#li_ui_li_gen_1463917220807_0 a#li_ui_li_gen_1463917220807_0-link { border: 0px none ! important; height: 20px ! important; text-decoration: none ! important; padding: 0px ! important; margin: 0px ! important; display: inline-block ! important; }
+#li_ui_li_gen_1463917220807_0 a#li_ui_li_gen_1463917220807_0-link:link, #li_ui_li_gen_1463917220807_0 a#li_ui_li_gen_1463917220807_0-link:visited, #li_ui_li_gen_1463917220807_0 a#li_ui_li_gen_1463917220807_0-link:hover, #li_ui_li_gen_1463917220807_0 a#li_ui_li_gen_1463917220807_0-link:active { border: 0px none ! important; text-decoration: none ! important; }
+#li_ui_li_gen_1463917220807_0 a#li_ui_li_gen_1463917220807_0-link::after { content: "." ! important; display: block ! important; clear: both ! important; visibility: hidden ! important; line-height: 0 ! important; height: 0px ! important; }
+#li_ui_li_gen_1463917220807_0 #li_ui_li_gen_1463917220807_0-logo { background-image: url("C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/sprite_connect_v14.png") ! important; background-position: 0px -593px ! important; background-repeat: no-repeat ! important; background-color: rgb(0, 119, 181) ! important; background-size: initial ! important; cursor: pointer ! important; border-width: 0px 1px 0px 0px ! important; border-style: none solid none none ! important; border-color: -moz-use-text-color rgb(6, 96, 148) -moz-use-text-color -moz-use-text-color ! important; -moz-border-top-colors: none ! important; -moz-border-right-colors: none ! important; -moz-border-bottom-colors: none ! important; -moz-border-left-colors: none ! important; border-image: none ! important; text-indent: -9999em ! important; overflow: hidden ! important; padding: 0px ! important; margin: 0px ! important; position: absolute ! important; left: 0px ! important; top: 0px ! important; display: block ! important; width: 20px ! important; height: 20px ! important; float: right ! important; border-radius: 2px ! important; }
+#li_ui_li_gen_1463917220807_0 #li_ui_li_gen_1463917220807_0-title { color: rgb(255, 255, 255) ! important; cursor: pointer ! important; display: block ! important; white-space: nowrap ! important; float: left ! important; margin-left: 1px ! important; vertical-align: top ! important; overflow: hidden ! important; text-align: center ! important; height: 18px ! important; padding: 0px 4px 0px 23px ! important; border: 1px solid rgb(0, 119, 181) ! important; text-shadow: 0px -1px rgb(0, 88, 135) ! important; line-height: 20px ! important; border-radius: 2px ! important; background-color: rgb(0, 119, 181) ! important; background-image: -moz-linear-gradient(center top , rgb(0, 119, 181) 0%, rgb(0, 119, 181) 100%) ! important; }
+#li_ui_li_gen_1463917220807_0 #li_ui_li_gen_1463917220807_0-title-text, #li_ui_li_gen_1463917220807_0 #li_ui_li_gen_1463917220807_0-title-text * { color: rgb(255, 255, 255) ! important; font-size: 11px ! important; font-family: Arial,sans-serif ! important; font-weight: bold ! important; font-style: normal ! important; display: inline-block ! important; background: transparent none repeat scroll 0% 0% ! important; vertical-align: top ! important; height: 18px ! important; line-height: 20px ! important; float: none ! important; }
+#li_ui_li_gen_1463917220807_0 #li_ui_li_gen_1463917220807_0-title #li_ui_li_gen_1463917220807_0-mark { display: inline-block ! important; width: 0px ! important; overflow: hidden ! important; }
+#li_ui_li_gen_1463917220825_1-container.IN-right { display: inline-block ! important; float: left ! important; overflow: visible ! important; position: relative ! important; height: 20px ! important; padding-left: 2px ! important; line-height: 1px ! important; cursor: pointer ! important; }
+#li_ui_li_gen_1463917220825_1.IN-right { display: block ! important; float: left ! important; height: 20px ! important; margin-right: 4px ! important; padding-right: 4px ! important; background-image: url("C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/sprite_connect_v14.png") ! important; background-color: transparent ! important; background-repeat: no-repeat ! important; background-position: right -447px ! important; }
+#li_ui_li_gen_1463917220825_1-inner.IN-right { display: block ! important; float: left ! important; padding-left: 8px ! important; text-align: center ! important; background-image: url("C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/sprite_connect_v14.png") ! important; background-color: transparent ! important; background-repeat: no-repeat ! important; background-position: 0px -426px ! important; }
+#li_ui_li_gen_1463917220825_1-content.IN-right { display: inline ! important; font-size: 11px ! important; color: rgb(78, 78, 78) ! important; font-weight: bold ! important; font-family: Arial,sans-serif ! important; line-height: 20px ! important; padding: 0px 5px ! important; }
+#li_ui_li_gen_1463917220825_1-container.IN-hidden #li_ui_li_gen_1463917220825_1 { display: none ! important; }
+--><!--
+/* Effective stylesheet produced by snapshot save */
+#li_ui_li_gen_1463917220807_0 { position: relative ! important; overflow: visible ! important; display: block ! important; }
+#li_ui_li_gen_1463917220807_0 span { box-sizing: content-box ! important; }
+#li_ui_li_gen_1463917220807_0 a#li_ui_li_gen_1463917220807_0-link { border: 0px none ! important; height: 20px ! important; text-decoration: none ! important; padding: 0px ! important; margin: 0px ! important; display: inline-block ! important; }
+#li_ui_li_gen_1463917220807_0 a#li_ui_li_gen_1463917220807_0-link:link, #li_ui_li_gen_1463917220807_0 a#li_ui_li_gen_1463917220807_0-link:visited, #li_ui_li_gen_1463917220807_0 a#li_ui_li_gen_1463917220807_0-link:hover, #li_ui_li_gen_1463917220807_0 a#li_ui_li_gen_1463917220807_0-link:active { border: 0px none ! important; text-decoration: none ! important; }
+#li_ui_li_gen_1463917220807_0 a#li_ui_li_gen_1463917220807_0-link::after { content: "." ! important; display: block ! important; clear: both ! important; visibility: hidden ! important; line-height: 0 ! important; height: 0px ! important; }
+#li_ui_li_gen_1463917220807_0 #li_ui_li_gen_1463917220807_0-logo { background-image: url("C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/sprite_connect_v14.png") ! important; background-position: 0px -593px ! important; background-repeat: no-repeat ! important; background-color: rgb(0, 119, 181) ! important; background-size: initial ! important; cursor: pointer ! important; border-width: 0px 1px 0px 0px ! important; border-style: none solid none none ! important; border-color: -moz-use-text-color rgb(6, 96, 148) -moz-use-text-color -moz-use-text-color ! important; -moz-border-top-colors: none ! important; -moz-border-right-colors: none ! important; -moz-border-bottom-colors: none ! important; -moz-border-left-colors: none ! important; border-image: none ! important; text-indent: -9999em ! important; overflow: hidden ! important; padding: 0px ! important; margin: 0px ! important; position: absolute ! important; left: 0px ! important; top: 0px ! important; display: block ! important; width: 20px ! important; height: 20px ! important; float: right ! important; border-radius: 2px ! important; }
+#li_ui_li_gen_1463917220807_0 #li_ui_li_gen_1463917220807_0-title { color: rgb(255, 255, 255) ! important; cursor: pointer ! important; display: block ! important; white-space: nowrap ! important; float: left ! important; margin-left: 1px ! important; vertical-align: top ! important; overflow: hidden ! important; text-align: center ! important; height: 18px ! important; padding: 0px 4px 0px 23px ! important; border: 1px solid rgb(0, 119, 181) ! important; text-shadow: 0px -1px rgb(0, 88, 135) ! important; line-height: 20px ! important; border-radius: 2px ! important; background-color: rgb(0, 119, 181) ! important; background-image: -moz-linear-gradient(center top , rgb(0, 119, 181) 0%, rgb(0, 119, 181) 100%) ! important; }
+#li_ui_li_gen_1463917220807_0 #li_ui_li_gen_1463917220807_0-title-text, #li_ui_li_gen_1463917220807_0 #li_ui_li_gen_1463917220807_0-title-text * { color: rgb(255, 255, 255) ! important; font-size: 11px ! important; font-family: Arial,sans-serif ! important; font-weight: bold ! important; font-style: normal ! important; display: inline-block ! important; background: transparent none repeat scroll 0% 0% ! important; vertical-align: top ! important; height: 18px ! important; line-height: 20px ! important; float: none ! important; }
+#li_ui_li_gen_1463917220807_0 #li_ui_li_gen_1463917220807_0-title #li_ui_li_gen_1463917220807_0-mark { display: inline-block ! important; width: 0px ! important; overflow: hidden ! important; }
+#li_ui_li_gen_1463917220825_1-container.IN-right { display: inline-block ! important; float: left ! important; overflow: visible ! important; position: relative ! important; height: 20px ! important; padding-left: 2px ! important; line-height: 1px ! important; cursor: pointer ! important; }
+#li_ui_li_gen_1463917220825_1.IN-right { display: block ! important; float: left ! important; height: 20px ! important; margin-right: 4px ! important; padding-right: 4px ! important; background-image: url("C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/sprite_connect_v14.png") ! important; background-color: transparent ! important; background-repeat: no-repeat ! important; background-position: right -447px ! important; }
+#li_ui_li_gen_1463917220825_1-inner.IN-right { display: block ! important; float: left ! important; padding-left: 8px ! important; text-align: center ! important; background-image: url("C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/sprite_connect_v14.png") ! important; background-color: transparent ! important; background-repeat: no-repeat ! important; background-position: 0px -426px ! important; }
+#li_ui_li_gen_1463917220825_1-content.IN-right { display: inline ! important; font-size: 11px ! important; color: rgb(78, 78, 78) ! important; font-weight: bold ! important; font-family: Arial,sans-serif ! important; line-height: 20px ! important; padding: 0px 5px ! important; }
+#li_ui_li_gen_1463917220825_1-container.IN-hidden #li_ui_li_gen_1463917220825_1 { display: none ! important; }
+--></style><script src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/widgets-1.js" data-requiremodule="//platform.twitter.com/widgets.js" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/in.js" data-requiremodule="//platform.linkedin.com/in.js" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script gapi_processed="true" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/plusone.js" data-requiremodule="https://apis.google.com/js/plusone.js" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/hn-button.js" data-requiremodule="//hn-button.herokuapp.com/hn-button.js" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+.PIN_1463917222062_embed_pin .PIN_1463917222062_bd .PIN_1463917222062_hd .PIN_1463917222062_container .PIN_1463917222062_control.PIN_1463917222062_paused::after, .PIN_1463917222062_embed_pin .PIN_1463917222062_bd .PIN_1463917222062_hd .PIN_1463917222062_container .PIN_1463917222062_control.PIN_1463917222062_playing::after { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; font-size: 10px; line-height: 19px; white-space: pre; font-weight: bold; font-style: normal; text-align: center; }
+.PIN_1463917222062_embed_pin .PIN_1463917222062_bd .PIN_1463917222062_hd .PIN_1463917222062_container .PIN_1463917222062_control.PIN_1463917222062_paused::after { content: "\25B6  GIF"; }
+.PIN_1463917222062_embed_pin .PIN_1463917222062_bd .PIN_1463917222062_hd .PIN_1463917222062_container .PIN_1463917222062_control.PIN_1463917222062_playing::after { content: "\2759  \2759  GIF"; }
+.PIN_1463917222062_embed_pin .PIN_1463917222062_bd .PIN_1463917222062_source .PIN_1463917222062_menu .PIN_1463917222062_dropdown::after { content: ""; position: absolute; top: -6px; right: 1px; border-bottom: 8px solid rgb(255, 255, 255); border-right: 8px solid transparent; border-left: 8px solid transparent; }
+.PIN_1463917222062_embed_pin .PIN_1463917222062_bd .PIN_1463917222062_source .PIN_1463917222062_menu .PIN_1463917222062_dropdown::before { content: ""; position: absolute; top: -7px; right: 2px; border-bottom: 7px solid rgb(226, 226, 226); border-right: 7px solid transparent; border-left: 7px solid transparent; }
+.PIN_1463917222062_embed_pin .PIN_1463917222062_ft::after { content: "\2D\2D -----------------------------------------------------------------------------------"; display: block; height: 1px; line-height: 1px; color: rgb(255, 255, 255); }
+.PIN_1463917222062_button_follow::after { content: ""; position: absolute; height: 14px; width: 14px; top: 3px; left: 3px; background: transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMzBweCIgd2lkdGg9IjMwcHgiIHZpZXdCb3g9IjAgMCAzMCAzMCI+PGc+PHBhdGggZD0iTTI5LjQ0OSwxNC42NjIgQzI5LjQ0OSwyMi43MjIgMjIuODY4LDI5LjI1NiAxNC43NSwyOS4yNTYgQzYuNjMyLDI5LjI1NiAwLjA1MSwyMi43MjIgMC4wNTEsMTQuNjYyIEMwLjA1MSw2LjYwMSA2LjYzMiwwLjA2NyAxNC43NSwwLjA2NyBDMjIuODY4LDAuMDY3IDI5LjQ0OSw2LjYwMSAyOS40NDksMTQuNjYyIiBmaWxsPSIjZmZmIj48L3BhdGg+PHBhdGggZD0iTTE0LjczMywxLjY4NiBDNy41MTYsMS42ODYgMS42NjUsNy40OTUgMS42NjUsMTQuNjYyIEMxLjY2NSwyMC4xNTkgNS4xMDksMjQuODU0IDkuOTcsMjYuNzQ0IEM5Ljg1NiwyNS43MTggOS43NTMsMjQuMTQzIDEwLjAxNiwyMy4wMjIgQzEwLjI1MywyMi4wMSAxMS41NDgsMTYuNTcyIDExLjU0OCwxNi41NzIgQzExLjU0OCwxNi41NzIgMTEuMTU3LDE1Ljc5NSAxMS4xNTcsMTQuNjQ2IEMxMS4xNTcsMTIuODQyIDEyLjIxMSwxMS40OTUgMTMuNTIyLDExLjQ5NSBDMTQuNjM3LDExLjQ5NSAxNS4xNzUsMTIuMzI2IDE1LjE3NSwxMy4zMjMgQzE1LjE3NSwxNC40MzYgMTQuNDYyLDE2LjEgMTQuMDkzLDE3LjY0MyBDMTMuNzg1LDE4LjkzNSAxNC43NDUsMTkuOTg4IDE2LjAyOCwxOS45ODggQzE4LjM1MSwxOS45ODggMjAuMTM2LDE3LjU1NiAyMC4xMzYsMTQuMDQ2IEMyMC4xMzYsMTAuOTM5IDE3Ljg4OCw4Ljc2NyAxNC42NzgsOC43NjcgQzEwLjk1OSw4Ljc2NyA4Ljc3NywxMS41MzYgOC43NzcsMTQuMzk4IEM4Ljc3NywxNS41MTMgOS4yMSwxNi43MDkgOS43NDksMTcuMzU5IEM5Ljg1NiwxNy40ODggOS44NzIsMTcuNiA5Ljg0LDE3LjczMSBDOS43NDEsMTguMTQxIDkuNTIsMTkuMDIzIDkuNDc3LDE5LjIwMyBDOS40MiwxOS40NCA5LjI4OCwxOS40OTEgOS4wNCwxOS4zNzYgQzcuNDA4LDE4LjYyMiA2LjM4NywxNi4yNTIgNi4zODcsMTQuMzQ5IEM2LjM4NywxMC4yNTYgOS4zODMsNi40OTcgMTUuMDIyLDYuNDk3IEMxOS41NTUsNi40OTcgMjMuMDc4LDkuNzA1IDIzLjA3OCwxMy45OTEgQzIzLjA3OCwxOC40NjMgMjAuMjM5LDIyLjA2MiAxNi4yOTcsMjIuMDYyIEMxNC45NzMsMjIuMDYyIDEzLjcyOCwyMS4zNzkgMTMuMzAyLDIwLjU3MiBDMTMuMzAyLDIwLjU3MiAxMi42NDcsMjMuMDUgMTIuNDg4LDIzLjY1NyBDMTIuMTkzLDI0Ljc4NCAxMS4zOTYsMjYuMTk2IDEwLjg2MywyNy4wNTggQzEyLjA4NiwyNy40MzQgMTMuMzg2LDI3LjYzNyAxNC43MzMsMjcuNjM3IEMyMS45NSwyNy42MzcgMjcuODAxLDIxLjgyOCAyNy44MDEsMTQuNjYyIEMyNy44MDEsNy40OTUgMjEuOTUsMS42ODYgMTQuNzMzLDEuNjg2IiBmaWxsPSIjYmQwODFjIj48L3BhdGg+PC9nPjwvc3ZnPg==") no-repeat scroll 0px 0px / 14px 14px; }
+.PIN_1463917222062_button_follow.PIN_1463917222062_tall::after { height: 18px; width: 18px; top: 4px; left: 4px; background-size: 18px 18px; }
+--></style></head>
+<body class="single single-post postid-12242 single-format-standard gspm header-image header-full-width content-sidebar linux ie11 site-fluid override"><div id="wrap"><div id="header"><div class="wrap"><div id="title-area"><p id="title"><a href="http://blog.smartbear.com/">Software Quality Matters Blog</a></p><p id="description">Resources for Mobile, Agile and Cloud</p></div></div></div><div id="nav"><div class="wrap"><ul id="menu-navigation-menu" class="menu genesis-nav-menu menu-primary js-superfish sf-js-enabled sf-arrows"><li id="menu-item-14599" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14599"><a class="sf-with-ul" href="http://blog.smartbear.com/category/software-quality/" itemprop="url">Categories<span class="sf-sub-indicator"> »</span></a>
+<ul style="display: none;" class="sub-menu">
+	<li id="menu-item-14605" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14605"><a href="http://blog.smartbear.com/category/mobile/" itemprop="url">Mobile</a></li>
+	<li id="menu-item-14600" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14600"><a href="http://blog.smartbear.com/category/agile/" itemprop="url">Agile</a></li>
+	<li id="menu-item-14601" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14601"><a href="http://blog.smartbear.com/category/cloud/" itemprop="url">Cloud</a></li>
+	<li id="menu-item-14602" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14602"><a href="http://blog.smartbear.com/category/code-review/" itemprop="url">Code Review</a></li>
+	<li id="menu-item-14603" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14603"><a href="http://blog.smartbear.com/category/performance-testing/" itemprop="url">Performance Testing</a></li>
+	<li id="menu-item-14604" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14604"><a href="http://blog.smartbear.com/category/web-monitoring/" itemprop="url">Web Monitoring</a></li>
+</ul>
+</li>
+<li id="menu-item-14606" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14606"><a class="sf-with-ul" href="http://smartbear.com/products" itemprop="url">Products<span class="sf-sub-indicator"> »</span></a>
+<ul style="display: none;" class="sub-menu">
+	<li id="menu-item-14607" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14607"><a class="sf-with-ul" href="http://blog.smartbear.com/category/development/" itemprop="url">For Development<span class="sf-sub-indicator"> »</span></a>
+	<ul style="display: none;" class="sub-menu">
+		<li id="menu-item-14614" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-14614"><a href="http://blog.smartbear.com/category/collaborator/" itemprop="url">Collaborator</a></li>
+		<li id="menu-item-14613" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14613"><a href="http://blog.smartbear.com/category/codereviewer/" itemprop="url">CodeReviewer</a></li>
+	</ul>
+</li>
+	<li id="menu-item-14609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14609"><a class="sf-with-ul" href="http://blog.smartbear.com/category/testing/" itemprop="url">For Testing &amp; QA<span class="sf-sub-indicator"> »</span></a>
+	<ul style="display: none;" class="sub-menu">
+		<li id="menu-item-14616" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14616"><a href="http://blog.smartbear.com/category/testcomplete/" itemprop="url">TestComplete</a></li>
+		<li id="menu-item-14615" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14615"><a href="http://blog.smartbear.com/category/qacomplete/" itemprop="url">QAComplete</a></li>
+	</ul>
+</li>
+	<li id="menu-item-14610" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14610"><a class="sf-with-ul" href="http://blog.smartbear.com/category/apis/" itemprop="url">For API Testing<span class="sf-sub-indicator"> »</span></a>
+	<ul style="display: none;" class="sub-menu">
+		<li id="menu-item-14617" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14617"><a href="http://blog.smartbear.com/category/soapui/" itemprop="url">SoapUI</a></li>
+		<li id="menu-item-14618" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14618"><a href="http://blog.smartbear.com/category/loadui/" itemprop="url">LoadUI</a></li>
+	</ul>
+</li>
+	<li id="menu-item-14611" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14611"><a class="sf-with-ul" href="http://blog.smartbear.com/category/performance-testing/" itemprop="url">For Performance Testing<span class="sf-sub-indicator"> »</span></a>
+	<ul style="display: none;" class="sub-menu">
+		<li id="menu-item-14621" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14621"><a href="http://blog.smartbear.com/category/loaduiweb/" itemprop="url">LoadUIWeb</a></li>
+		<li id="menu-item-14620" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14620"><a href="http://blog.smartbear.com/category/loadui/" itemprop="url">LoadUI</a></li>
+		<li id="menu-item-14619" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14619"><a href="http://blog.smartbear.com/category/aqtime/" itemprop="url">AQTime</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-14638" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14638"><a class="sf-with-ul" href="http://smartbear.com/news" itemprop="url">News &amp; Events<span class="sf-sub-indicator"> »</span></a>
+<ul style="display: none;" class="sub-menu">
+	<li id="menu-item-14642" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14642"><a href="http://blog.smartbear.com/category/news/" itemprop="url">Tech News</a></li>
+	<li id="menu-item-14643" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14643"><a href="http://smartbear.com/news/events" itemprop="url">Upcoming Events</a></li>
+	<li id="menu-item-14644" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14644"><a href="http://smartbear.com/news/news-releases" itemprop="url">News Releases</a></li>
+</ul>
+</li>
+<li id="menu-item-14639" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14639"><a class="sf-with-ul" href="http://smartbear.com/community-hub/" itemprop="url">Community<span class="sf-sub-indicator"> »</span></a>
+<ul style="display: none;" class="sub-menu">
+	<li id="menu-item-14649" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14649"><a href="http://community.smartbear.com/" itemprop="url">Forums</a></li>
+	<li id="menu-item-14650" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14650"><a href="http://support.smartbear.com/faq/" itemprop="url">FAQs</a></li>
+	<li id="menu-item-14651" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14651"><a href="http://support.smartbear.com/screencasts/" itemprop="url">Screencasts</a></li>
+</ul>
+</li>
+<li id="menu-item-14640" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14640"><a class="sf-with-ul" href="http://smartbear.com/about-us/" itemprop="url">About Us<span class="sf-sub-indicator"> »</span></a>
+<ul style="display: none;" class="sub-menu">
+	<li id="menu-item-14652" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14652"><a href="http://blog.smartbear.com/authors/" itemprop="url">Authors</a></li>
+	<li id="menu-item-14653" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14653"><a href="http://smartbear.com/about-us/our-team" itemprop="url">Our Team</a></li>
+	<li id="menu-item-14654" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14654"><a href="http://smartbear.com/about-us/our-customers" itemprop="url">Our Customers</a></li>
+	<li id="menu-item-14656" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14656"><a href="http://blog.smartbear.com/contact-smartbear/" itemprop="url">Contact SmartBear</a></li>
+</ul>
+</li>
+<li id="menu-item-14641" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14641"><a href="http://smartbear.com/" itemprop="url">SmartBear.com</a></li>
+</ul></div></div><center></center>
+	<div id="inner"><div id="content-sidebar-wrap"><div id="content" class="hfeed"><div class="post-12242 post type-post status-publish format-standard hentry category-c-plus-plus category-collaborator category-development category-programming category-programming-languages entry has-post-thumbnail override"><h1 class="entry-title">C++11 Tutorial: Introducing the Move Constructor and the Move Assignment Operator</h1> 
+<div class="post-info"><span class="date published time" title="2012-08-06T10:10:00+00:00">August 6, 2012</span>  by <a href="http://blog.smartbear.com/author/danny-kalev/" title="Posts by Danny Kalev" class="url fn" rel="author">Danny Kalev</a> <span class="post-comments"><a href="#comments">18 Comments</a></span> </div><div class="entry-content"><p style="text-align: left;"><em>Copy constructors sounds like a topic for an article from 1989. And yet, the changes in the new C++ standard affect the design of a class’ special member functions fundamentally. Find out more about the impact of move semantics on objects’ behavior and learn how to implement the move constructor and the move assignment operator in C++11.</em></p>
+<p><a href="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/c--11-tutorial-c-plus-plus-small_.png"><img class="alignright size-full wp-image-5190" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/c--11-tutorial-c-plus-plus-small_.png" alt="c--11-tutorial-c-plus-plus-small_" height="171" width="256"></a>C++11 is the informal name for ISO/IEC 14882:2011, the new C++ standard that was published in September 2011. It includes the <a href="http://en.wikipedia.org/wiki/C++_Technical_Report_1">TR1 libraries</a> and a large number of new core features (a detailed discussion about these new C++11 features is available <a href="http://www.informit.com/guides/content.aspx?g=cplusplus&amp;seqNum=216">here</a>; also see <a href="http://blog.smartbear.com/software-quality/bid/167271/The-Biggest-Changes-in-C-11-and-Why-You-Should-Care">The Biggest Changes in C++11 (and Why You Should Care)</a>):</p>
+<ul>
+<li>Initializer lists</li>
+<li>Uniform initialization notation</li>
+<li>Lambda functions and expressions</li>
+<li>Strongly-typed enumerations</li>
+<li>Automatic type deduction in declarations</li>
+<li><span style="color: #993300;"><tt>__thread_local</tt></span> storage class</li>
+<li>Control and query of object alignment</li>
+<li>Static assertions</li>
+<li>Type <span style="color: #993300;"><tt>long</tt> <tt>long</tt></span></li>
+<li>Variadic templates</li>
+</ul>
+<p>Important as these features may be, the defining feature of C++11 is <em>rvalue references</em>.</p>
+<h3>The Right Time for Rvalue References</h3>
+<p>Rvalue references are a new category of reference variables that can bind to <em>rvalues</em>.  Rvalues are slippery entities, such as <a href="http://www.informit.com/guides/content.aspx?g=cplusplus&amp;seqNum=198">temporaries</a> and literal values; up until now, you haven’t been able to bind these safely to reference variables.</p>
+<p>Technically, an rvalue is an unnamed value that exists only during the evaluation of an expression. For example, the following expression produces an rvalue:</p>
+<p><span style="font-family: courier; color: brown;">x+(y*z); // A C++ expression that produces a temporary </span></p>
+<p>C++ creates a temporary (an rvalue) that stores the result of <tt style="color: brown;">y*z</tt>, and then adds it to <tt style="color: brown;">x</tt>. Conceptually, this rvalue evaporates by the time you reach the semicolon at the end of the full expression.</p>
+<p>A declaration of an rvalue reference looks like this:</p>
+<p><span style="font-family: courier; color: brown;">std::string&amp;&amp; rrstr; //C++11 rvalue reference variable</span></p>
+<p>The traditional reference variables of C++ e.g.,</p>
+<p><span style="font-family: courier; color: brown;">std::string&amp; ref;</span></p>
+<p>are now called <em>lvalue references</em>.</p>
+<p>Rvalue references occur almost anywhere, even if you don’t use them directly in your code. They affect the semantics and lifetime of objects in C++11. To see how exactly, it’s time to talk about <em>move semantics</em>.</p>
+<h3>Get to Know Move Semantics</h3>
+<p>Hitherto, copying has been the only means for transferring a state from one object to another (an object’s state is the collective set of its non-static data members’ values). Formally, copying causes a target object <tt style="color: brown;">t</tt> to end up with the same state as the source <tt style="color: brown;">s</tt>, without modifying <tt style="color: brown;">s</tt>. For example, when you copy a string <tt style="color: brown;">s1</tt> to <tt style="color: brown;">s2</tt>, the result is two identical strings with the same state as <tt style="color: brown;">s1</tt>.</p>
+<p>And yet, in many real-world scenarios, you don’t copy objects but <em>move</em> them. When my landlord cashes my rent check, he moves money from my account into his. Similarly, removing the SIM card from your mobile phone and installing it in another mobile is a move operation, and so are cutting-and-pasting icons on your desktop, or borrowing a book from a library.</p>
+<p>Notwithstanding the conceptual difference between copying and moving, there’s a practical difference too: Move operations tend to be faster than copying because they transfer an existing resource to a new destination, whereas copying requires the creation of a new resource from scratch. The efficiency of moving can be witnessed among the rest in functions that return objects by value. Consider:</p>
+<p><span style="font-family: courier; color: brown;">string func()<br>
+{<br>
+string s;<br>
+//do something with s<br>
+return s;<br>
+}<br>
+string mystr=func();</span></p>
+<p>When <tt style="color: brown;">func()</tt> returns, C++ constructs a temporary copy of <tt style="color: brown;">s</tt> on the caller’s stack memory. Next, <tt style="color: brown;">s</tt> is destroyed and the temporary is used for copy-constructing <tt style="color: brown;">mystr</tt>. After that, the temporary itself is destroyed. Moving achieves the same effect without so many copies and destructor calls along the way.</p>
+<p class="FT">Moving a string is almost free; it merely assigns the values of the source’s data members to the corresponding data members of the target. In contrast, copying a string requires the allocation of dynamic memory and copying the characters from the source.</p>
+<h3>Move Special Member Functions</h3>
+<p class="FT">C++11 introduces two new special member functions: the <em>move constructor</em> and the <em>move assignment operator</em>. They are an addition to the fabulous four you know so well:</p>
+<ul>
+<li>Default constructor</li>
+<li>Copy constructor</li>
+<li>Copy assignment operator</li>
+<li>Destructor</li>
+</ul>
+<p>If a class doesn’t have any user-declared special member functions (save a default constructor), C++ declares its remaining five (or six) special member functions implicitly, including a move constructor and a move assignment operator. For example, the following class</p>
+<p><span style="font-family: courier; color: brown;">class S{};</span></p>
+<p>doesn’t have any user-declared special member functions. Therefore, C++ declares all of its six special member functions implicitly. Under <a href="http://www.informit.com/guides/content.aspx?g=cplusplus&amp;seqNum=363">certain conditions</a>, implicitly declared special member functions become implicitly defined as well. The implicitly-defined move special member functions move their sub-objects and data members in a member-wise fashion. Thus, a move constructor invokes its sub-objects’ move constructors, recursively. Similarly, a move assignment operator invokes its sub-objects’ move assignment operators, recursively.</p>
+<p>What happens to a moved-from object? The state of a moved-from object is unspecified. Therefore, always assume that a moved-from object no longer owns any resources, and that its state is similar to that of an empty (as if default-constructed) object. For example, if you move a string <tt style="color: brown;">s1</tt> to <tt style="color: brown;">s2</tt>, after the move operation the state of <tt style="color: brown;">s2</tt> is identical to that of <tt style="color: brown;">s1</tt> before the move, whereas <tt style="color: brown;">s1</tt> is now an empty (though valid) string object.</p>
+<h3>Designing a Move Constructor</h3>
+<p>A move constructor looks like this:</p>
+<p><span style="font-family: courier; color: brown;">C::C(C&amp;&amp; other); //C++11 move constructor</span></p>
+<p>It doesn’t allocate new resources. Instead, it <em>pilfers</em> <tt style="color: brown;">other</tt>‘s resources and then sets <tt style="color: brown;">other</tt> to its default-constructed state.</p>
+<p>Let’s look at a concrete example. Suppose you’re designing a <tt style="color: brown;">MemoryPage</tt> class that represents a memory buffer:</p>
+<p><span style="font-family: courier; color: brown;"> class MemoryPage<br>
+{<br>
+size_t size;<br>
+char * buf;<br>
+public:<br>
+explicit MemoryPage(int sz=512):<br>
+size(sz), buf(new char [size]) {}<br>
+~MemoryPage( delete[] buf;}<br>
+//typical C++03 copy ctor and assignment operator<br>
+MemoryPage(const MemoryPage&amp;);<br>
+MemoryPage&amp; operator=(const MemoryPage&amp;);<br>
+};<br>
+</span></p>
+<p>A typical move constructor definition would look like this:</p>
+<p><span style="font-family: courier; color: brown;"> //C++11<br>
+MemoryPage(MemoryPage&amp;&amp; other): size(0), buf(nullptr)<br>
+{<br>
+// pilfer other’s resource<br>
+size=other.size;<br>
+buf=other.buf;<br>
+// reset other<br>
+other.size=0;<br>
+other.buf=nullptr;<br>
+}<br>
+</span></p>
+<p>The move constructor is much faster than a copy constructor because it doesn’t allocate memory nor does it copy memory buffers.</p>
+<h3>Designing a Move Assignment Operator</h3>
+<p>A move assignment operator has the following signature:</p>
+<p><span style="font-family: courier; color: brown;">C&amp; C::operator=(C&amp;&amp; other);//C++11 move assignment operator</span></p>
+<p>A move assignment operator is similar to a copy constructor except that before pilfering the source object, it releases any resources that its object may own. The move assignment operator performs four logical steps:</p>
+<ul>
+<li>Release any resources that <tt style="color: brown;">*this</tt> currently owns.</li>
+<li>Pilfer <tt style="color: brown;">other</tt>‘s resource.</li>
+<li>Set <tt style="color: brown;">other</tt> to a default state.</li>
+<li>Return <tt style="color: brown;">*this</tt>.</li>
+</ul>
+<p>Here’s a definition of <tt style="color: brown;">MemoryPage</tt>‘s move assignment operator:</p>
+<p><span style="font-family: courier; color: brown;"> //C++11<br>
+MemoryPage&amp; MemoryPage::operator=(MemoryPage&amp;&amp; other)<br>
+{<br>
+if (this!=&amp;other)<br>
+{<br>
+// release the current object’s resources<br>
+delete[] buf;<br>
+size=0;<br>
+// pilfer other’s resource<br>
+size=other.size;<br>
+buf=other.buf;<br>
+// reset other<br>
+other.size=0;<br>
+other.buf=nullptr;<br>
+}<br>
+return *this;<br>
+}</span></p>
+<h3>Overloading Functions</h3>
+<p>The overload resolution rules of C++11 were modified to support rvalue references. Standard Library functions such as <tt style="color: brown;">vector::push_back()</tt> now define two overloaded versions: one that takes <tt style="color: brown;">const T&amp;</tt> for lvalue arguments as before, and a new one that takes a parameter of type <tt style="color: brown;">T&amp;&amp;</tt> for rvalue arguments. The following program populates a vector with <tt style="color: brown;">MemoryPage </tt>objects using two <tt style="color: brown;">push_back</tt>() calls:</p>
+<p><span style="font-family: courier; color: brown;"> #include &lt;vector&gt;<br>
+using namespace std;<br>
+int main()<br>
+{<br>
+vector&lt;MemoryPage&gt; vm;<br>
+vm.push_back(MemoryPage(1024));<br>
+vm.push_back(MemoryPage(2048));<br>
+}<br>
+</span></p>
+<p>Both <tt style="color: brown;">push_back()</tt> calls resolve as <tt style="color: brown;">push_back(T&amp;&amp;)</tt> because their arguments are rvalues. <tt style="color: brown;">push_back(T&amp;&amp;)</tt> moves the resources from the argument into <tt style="color: brown;">vector</tt>‘s internal <tt style="color: brown;">MemoryPage</tt> objects using <tt style="color: brown;">MemoryPage</tt>‘s move constructor. In older versions of C++, the same program <em>would</em> generate copies of the argument since the copy constructor of <tt style="color: brown;">MemoryPage</tt> would be called instead.</p>
+<p>As I said earlier, <tt style="color: brown;">push_back(const T&amp;)</tt> is called when the argument is an lvalue:</p>
+<p><span style="font-family: courier; color: brown;"> #include &lt;vector&gt;<br>
+using namespace std;<br>
+int main()<br>
+{<br>
+vector&lt;MemoryPage&gt; vm;<br>
+MemoryPage mp1(1024);//lvalue<br>
+vm.push_back(mp); //push_back(const T&amp;)<br>
+}<br>
+</span></p>
+<p>However, you can enforce the selection of <tt style="color: brown;">push_back(T&amp;&amp;)</tt> even in this case by casting an lvalue to an rvalue reference using <tt style="color: brown;">static_cast</tt>:</p>
+<p><span style="font-family: courier; color: brown;">//calls push_back(T&amp;&amp;)<br>
+</span></p>
+<p>vm.push_back(static_cast&lt;MemoryPage&amp;&amp;&gt;(mp));</p>
+<p>Alternatively, use the new standard function <tt style="color: brown;">std::move()</tt> for the same purpose:</p>
+<p><span style="font-family: courier; color: brown;">vm.push_back(std::move(mp));//calls push_back(T&amp;&amp;)</span></p>
+<p>It may seem as if <tt style="color: brown;">push_back(T&amp;&amp;)</tt> is always the best choice because it eliminates unnecessary copies. However, remember that <tt style="color: brown;">push_back(T&amp;&amp;)</tt> empties its argument. If you want the argument to retain its state after a <tt style="color: brown;">push_back()</tt> call, stick to copy semantics. Generally speaking, don’t rush to throw away the copy constructor and the copy assignment operator. In some cases, the same class could be used in a context that requires pure copy semantics, whereas in other contexts move semantics would be preferable.</p>
+<h3>In Conclusion</h3>
+<p>C++11 is a different and better C++. Its rvalue references and move-oriented Standard Library eliminate many unnecessary copy operations, thereby improving performance significantly, with minimal, if any, code changes. The move constructor and the move assignment operator are the vehicles of move operations. It takes a while to internalize the principles of move semantics – and to design classes accordingly. However, the benefits are substantial. I would dare predicting that other programming languages will soon find ways to usher-in move semantics too.</p>
+<p class="FT"><em><a href="http://twitter.com/#%21/DannyKalev">Danny Kalev</a> is a certified system analyst by the Israeli Chamber of System Analysts and software engineer specializing in C++. Kalev has written several C++ textbooks and contributes C++ content regularly on various software developers’ sites. He was a member of the C++ standards committee and has a master’s degree in general linguistics. </em></p>
+<p class="FT"><b>See also:</b></p>
+<ul>
+<li><a href="http://blog.smartbear.com/software-quality/bid/167271/The-Biggest-Changes-in-C-11-and-Why-You-Should-Care">The Biggest Changes in C++11 (and Why You Should Care)</a></li>
+<li><a href="http://blog.smartbear.com/software-quality/bid/173187/C11-A-New-C-Standard-Aiming-at-Safer-Programming">C11: A New C Standard Aiming at Safer Programming</a></li>
+</ul>
+<p> </p>
+<p style="text-align: center;"><span id="hs-cta-wrapper-8bbb29ef-0116-4121-a5c9-f745d9d30ea7" class="hs-cta-wrapper"><br>
+<span style="visibility: visible;" id="hs-cta-8bbb29ef-0116-4121-a5c9-f745d9d30ea7" class="hs-cta-node hs-cta-8bbb29ef-0116-4121-a5c9-f745d9d30ea7"><a href="http://cta-service-cms2.hubspot.com/ctas/v2/public/cs/c/?cta_guid=4d762ad6-fe83-4575-8c7c-c6b2db170f83&amp;placement_guid=8bbb29ef-0116-4121-a5c9-f745d9d30ea7&amp;portal_id=175832&amp;redirect_url=APefjpHNsthwMMhoXW97eaDVA_6Eupok7Tolw7yV3zVbRoW1wDrcfjAx79EPjq9xgI7rcyVxCKF38MQHWuz7xbWYDuYSRyPL8mOqhHLR3BDNxrjGFqeFlRw1ImvJ3WsxRiqEf6vZa40aWxzvbLeJGiRJoYV8GnOOfba_A5GY0hjFozBgxYVjoP7quUFuLm7kV1zIW31Vqxi6Ser99W49JYtR8DQP9dCinYQmfoc_fha-TWdRroVhkkA&amp;hsutk=&amp;canon=" cta_dest_link="http://www2.smartbear.com/Sutherland_Software_Quality_ondemand.html?src=Webinar-Jeff-Sutherland&amp;srcdet=Blog-CTA-Article" target="_blank"> <img class="hs-cta-img" id="hs-cta-img-8bbb29ef-0116-4121-a5c9-f745d9d30ea7" style="border-width: 0px;width:613;height:185;" mce_noresize="1" alt="Secrets of High Quality Development with Jeff Sutherland" src="urn:download-error:http://cdn2.hubspot.net/hub/175832/cta-jeff-sutherland-webinarod2.jpeg"></a></span><br>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><br>
+</span> <em style="font-size: 1em;"><span id="hs-cta-wrapper-0dd5a219-0e39-448d-8bf0-6faaccf8ea70" class="hs-cta-wrapper"><br>
+<span id="hs-cta-0dd5a219-0e39-448d-8bf0-6faaccf8ea70" class="hs-cta-node hs-cta-0dd5a219-0e39-448d-8bf0-6faaccf8ea70"><br>
+<a href="http://blog.smartbear.com/subscribe"><img id="hs-cta-img-0dd5a219-0e39-448d-8bf0-6faaccf8ea70" class="hs-cta-img" style="border-width: 0px; width: px; height: px;" src="urn:download-error:http://d1n2i0nchws850.cloudfront.net/portals/175832/cb0e7fc6-a8a8-4f99-9663-6983e143294d-1340121066520/subscribe-to-our-blog.png?v=1340121066.8" alt="subscribe-to-our-blog"></a><br>
+</span><br>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><br>
+</span></em></p>
+<div class="bottomcontainerBox" style="background-color:transparent;">
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/like.php.html" scrolling="no" allowtransparency="true" style="border:none; overflow:hidden; width:85px; height:21px;" frameborder="0"></iframe></div>
+			<div style="float:left; width:80px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/fastbutton.html#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I0_1463917219738&amp;parent=http%3A%2F%2Fblog.smartbear.com&amp;pfname=&amp;rpctoken=85036587" name="I0_1463917219738" id="I0_1463917219738" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+			</div>
+			<div style="float:left; width:95px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe data-url="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/tweet_button.6f0f2e104cd4afb16bbad6813f68d.en.html#dnt=true&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F&amp;size=m&amp;text=C%2B%2B11%20Tutorial%3A%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator&amp;time=1463917220945&amp;type=share&amp;url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F" title="Twitter Tweet Button" style="position: static; visibility: visible; width: 63px; height: 20px;" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe>
+			</div><div style="float:left; width:105px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px ! important; margin: 0px ! important; text-indent: 0px ! important; display: inline-block ! important; vertical-align: baseline ! important; font-size: 1px ! important;"><span id="li_ui_li_gen_1463917220807_0"><a id="li_ui_li_gen_1463917220807_0-link" href="javascript:void(0);"><span id="li_ui_li_gen_1463917220807_0-logo">in</span><span id="li_ui_li_gen_1463917220807_0-title"><span id="li_ui_li_gen_1463917220807_0-mark"></span><span id="li_ui_li_gen_1463917220807_0-title-text">Share</span></span></a></span></span><span style="padding: 0px ! important; margin: 0px ! important; text-indent: 0px ! important; display: inline-block ! important; vertical-align: baseline ! important; font-size: 1px ! important;"><span id="li_ui_li_gen_1463917220825_1-container" class="IN-right IN-hidden"><span id="li_ui_li_gen_1463917220825_1" class="IN-right"><span id="li_ui_li_gen_1463917220825_1-inner" class="IN-right"><span id="li_ui_li_gen_1463917220825_1-content" class="IN-right">0</span></span></span></span></span></span><script type="in/share+init" data-url="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/" data-counter="right"></script></div>			
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;"><script src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/hostedbadge.php.js"></script><iframe id="iframe-stmblpn-widget-1" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/1.html" style="overflow: hidden; margin: 0px; padding: 0px; border: 0px none;" allowtransparency="true" scrolling="no" frameborder="0" height="18" width="74"></iframe> <script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script></div>			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div>
+<div style="display: block;" id="jp-relatedposts" class="jp-relatedposts">
+	
+<div class="jp-relatedposts-items jp-relatedposts-items-visual"><div class="jp-relatedposts-post jp-relatedposts-post0 jp-relatedposts-post-thumbs" data-post-id="13234" data-post-format="false"><a data-position="0" data-origin="12242" rel="nofollow" title="The Biggest Changes in C++11 (and Why You Should Care)
+
+It’s been 13 years since the first iteration of the C++ language. Danny Kalev, a former member of the C++ standards committee, explains how the programming language has been improved and how it can help you write better code. Bjarne Stroustrup, the creator of C++, said recently that C++11 &quot;feels…" href="http://blog.smartbear.com/c-plus-plus/the-biggest-changes-in-c11-and-why-you-should-care/" class="jp-relatedposts-post-a"><img class="jp-relatedposts-post-img" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/c-small_.jpg.png" alt="The Biggest Changes in C++11 (and Why You Should Care)" width="350"></a><h4 class="jp-relatedposts-post-title"><a data-position="0" data-origin="12242" rel="nofollow" title="The Biggest Changes in C++11 (and Why You Should Care)
+
+It’s been 13 years since the first iteration of the C++ language. Danny Kalev, a former member of the C++ standards committee, explains how the programming language has been improved and how it can help you write better code. Bjarne Stroustrup, the creator of C++, said recently that C++11 &quot;feels…" href="http://blog.smartbear.com/c-plus-plus/the-biggest-changes-in-c11-and-why-you-should-care/" class="jp-relatedposts-post-a">The Biggest Changes in C++11 (and Why You Should Care)</a></h4><p class="jp-relatedposts-post-excerpt">It’s been 13 years since the first iteration of the C++ language. Danny Kalev, a former member of the C++ standards committee, explains how the programming language has been improved and how it can help you write better code. Bjarne Stroustrup, the creator of C++, said recently that C++11 "feels…</p><p class="jp-relatedposts-post-date">June 20, 2011</p><p class="jp-relatedposts-post-context">In "C++"</p></div><div class="jp-relatedposts-post jp-relatedposts-post1 jp-relatedposts-post-thumbs" data-post-id="12228" data-post-format="false"><a data-position="1" data-origin="12242" rel="nofollow" title="C++11 Tutorial: New Constructor Features that Make Object Initialization Faster and Smoother
+
+Constructors in C++11 still do what they’ve always done: initialize an object. However, two new features, namely delegating constructors and class member initializers, make constructors simpler, easier to maintain, and generally more efficient. Learn how to combine these new features in your C++ classes. C++11 introduced several constructor-related enhancements including:…" href="http://blog.smartbear.com/how-to/c11-tutorial-new-constructor-features-that-make-object-initialization-faster-and-smoother/" class="jp-relatedposts-post-a"><img class="jp-relatedposts-post-img" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/faster-smoother-object-initialization.jpg" alt="C++11 Tutorial: New Constructor Features that Make Object Initialization Faster and Smoother" width="350"></a><h4 class="jp-relatedposts-post-title"><a data-position="1" data-origin="12242" rel="nofollow" title="C++11 Tutorial: New Constructor Features that Make Object Initialization Faster and Smoother
+
+Constructors in C++11 still do what they’ve always done: initialize an object. However, two new features, namely delegating constructors and class member initializers, make constructors simpler, easier to maintain, and generally more efficient. Learn how to combine these new features in your C++ classes. C++11 introduced several constructor-related enhancements including:…" href="http://blog.smartbear.com/how-to/c11-tutorial-new-constructor-features-that-make-object-initialization-faster-and-smoother/" class="jp-relatedposts-post-a">C++11 Tutorial: New Constructor Features that Make Object Initialization Faster and Smoother</a></h4><p class="jp-relatedposts-post-excerpt">Constructors in C++11 still do what they’ve always done: initialize an object. However, two new features, namely delegating constructors and class member initializers, make constructors simpler, easier to maintain, and generally more efficient. Learn how to combine these new features in your C++ classes. C++11 introduced several constructor-related enhancements including:…</p><p class="jp-relatedposts-post-date">August 23, 2012</p><p class="jp-relatedposts-post-context">In "C++"</p></div><div class="jp-relatedposts-post jp-relatedposts-post2 jp-relatedposts-post-thumbs" data-post-id="14023" data-post-format="false"><a data-position="2" data-origin="12242" rel="nofollow" title="A Glimpse into C++14: Combine Flexibility and Performance with Dynamic Arrays and Runtime-Sized Arrays
+
+C99 introduced the notion of variable length arrays: stack allocated built-in arrays whose size is determined at runtime. C++ lacks a similar feature, to the discontent of many a programmer. However, two recent proposals for adding dynamic arrays and runtime-sized arrays to C++14 are closing the gap at last. Learn…" href="http://blog.smartbear.com/development/a-glimpse-into-c14/" class="jp-relatedposts-post-a"><img class="jp-relatedposts-post-img" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/C++14.jpg" alt="A Glimpse into C++14: Combine Flexibility and Performance with Dynamic Arrays and Runtime-Sized Arrays" width="350"></a><h4 class="jp-relatedposts-post-title"><a data-position="2" data-origin="12242" rel="nofollow" title="A Glimpse into C++14: Combine Flexibility and Performance with Dynamic Arrays and Runtime-Sized Arrays
+
+C99 introduced the notion of variable length arrays: stack allocated built-in arrays whose size is determined at runtime. C++ lacks a similar feature, to the discontent of many a programmer. However, two recent proposals for adding dynamic arrays and runtime-sized arrays to C++14 are closing the gap at last. Learn…" href="http://blog.smartbear.com/development/a-glimpse-into-c14/" class="jp-relatedposts-post-a">A Glimpse into C++14: Combine Flexibility and Performance with Dynamic Arrays and Runtime-Sized Arrays</a></h4><p class="jp-relatedposts-post-excerpt">C99 introduced the notion of variable length arrays: stack allocated built-in arrays whose size is determined at runtime. C++ lacks a similar feature, to the discontent of many a programmer. However, two recent proposals for adding dynamic arrays and runtime-sized arrays to C++14 are closing the gap at last. Learn…</p><p class="jp-relatedposts-post-date">August 27, 2013</p><p class="jp-relatedposts-post-context">In "C++"</p></div></div></div><div class="addtoany_share_save_container addtoany_content_bottom"><div class="a2a_kit addtoany_list a2a_target" id=""><a class="a2a_button_reddit" href="http://blog.smartbear.com/#reddit" title="Reddit" rel="nofollow" target="_blank"><img src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/reddit.png" alt="Reddit" height="16" width="16"></a><a class="a2a_button_facebook" href="http://blog.smartbear.com/#facebook" title="Facebook" rel="nofollow" target="_blank"><img src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/facebook.png" alt="Facebook" height="16" width="16"></a><a class="a2a_button_twitter" href="http://blog.smartbear.com/#twitter" title="Twitter" rel="nofollow" target="_blank"><img src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/twitter.png" alt="Twitter" height="16" width="16"></a><a class="a2a_button_google_plus" href="http://blog.smartbear.com/#google_plus" title="Google+" rel="nofollow" target="_blank"><img src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/google_plus.png" alt="Google+" height="16" width="16"></a><a class="a2a_button_hacker_news" href="http://blog.smartbear.com/#hacker_news" title="Hacker News" rel="nofollow" target="_blank"><img src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/y18.png" alt="Hacker News" height="16" width="16"></a><a class="a2a_button_linkedin" href="http://blog.smartbear.com/#linkedin" title="LinkedIn" rel="nofollow" target="_blank"><img src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/linkedin.png" alt="LinkedIn" height="16" width="16"></a><a class="a2a_button_email" href="http://blog.smartbear.com/#email" title="Email" rel="nofollow" target="_blank"><img src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/email.png" alt="Email" height="16" width="16"></a><a class="a2a_button_pinterest" href="http://blog.smartbear.com/#pinterest" title="Pinterest" rel="nofollow" target="_blank"><img src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/pinterest.png" alt="Pinterest" height="16" width="16"></a><a class="a2a_dd addtoany_share_save" href="https://www.addtoany.com/share#url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F&amp;title=C%2B%2B11%20Tutorial%3A%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator&amp;description=" style="background:url(C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/favicon-1.png) no-repeat scroll 4px 0px;padding:0 0 0 25px;display:inline-block;height:16px;vertical-align:middle"><span>Share</span></a>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+</div></div><!--<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/"
+    dc:identifier="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/"
+    dc:title="C++11 Tutorial: Introducing the Move Constructor and the Move Assignment Operator"
+    trackback:ping="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/trackback/" />
+</rdf:RDF>-->
+</div><div class="post-meta"><span class="categories">Filed Under: <a href="http://blog.smartbear.com/category/c-plus-plus/" rel="category tag">C++</a>, <a href="http://blog.smartbear.com/category/collaborator/" rel="category tag">Collaborator</a>, <a href="http://blog.smartbear.com/category/development/" rel="category tag">Development</a>, <a href="http://blog.smartbear.com/category/programming/" rel="category tag">Programming</a>, <a href="http://blog.smartbear.com/category/programming-languages/" rel="category tag">Programming Languages</a></span> </div></div><div id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-395">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">Christoph M.</cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-395">August 7, 2012 at 11:58 AM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>Thank you very much for this excellent article!  <br>I’ve just tested those move semantics in a file parsing algorithm of mine – the performance increased noticeably!</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=395#respond" onclick="" aria-label="Reply to Christoph M.">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-394">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">Danny Kalev </cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-394">August 7, 2012 at 12:11 PM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>Regarding the necessity of the self-moving test in move assignment op, i.e., if (this!=&amp;other). I believe it’s necessary because the next line deletes the object’s memory buffer. Secondly, the test has another crucial purpose: efficiency. It’s more efficient to skip the next section than to perform it vacuously.    </p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=394#respond" onclick="" aria-label="Reply to Danny Kalev ">Reply</a>		</div>
+
+		<ul class="children">
+
+	<li class="comment even depth-2" id="comment-326678">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">ivan100sic</cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-326678">February 2, 2016 at 8:10 PM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>I believe it is not necessary, as *this will always be different from &amp;foo, since only foo is a temporary variable.</p>
+<p><a href="http://ideone.com/o9fqJ6" rel="nofollow">http://ideone.com/o9fqJ6</a></p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=326678#respond" onclick="" aria-label="Reply to ivan100sic">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-2" id="comment-343380">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">Larry</cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-343380">March 8, 2016 at 4:15 PM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>See Howard Hinnant’s assessment of the situation (checking for self-assignment) at <a href="http://stackoverflow.com/a/9322542/698767" rel="nofollow">http://stackoverflow.com/a/9322542/698767</a>. In particular, search his answer for the term “”. Howard was the main force behind move semantics but his “” just goes to show you how tricky all this stuff is. He pioneered move semantics and should therefore know it as well as anyone in theory but still altered his position somewhat (as per the “”).</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=343380#respond" onclick="" aria-label="Reply to Larry">Reply</a>		</div>
+
+		<ul class="children">
+
+	<li class="comment even depth-3" id="comment-343382">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">Larry</cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-343382">March 8, 2016 at 4:19 PM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>After posting the above, I see your site doesn’t handle angled brackets correctly. I’m seeing empty strings where I posted the word “Update” in angled brackets (your site is choking on the brackets).</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=343382#respond" onclick="" aria-label="Reply to Larry">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-393">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">kyle</cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-393">August 9, 2012 at 8:11 AM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>The point is – you dont need to destroy the state. Just swapping with the peer will be both faster and safer without the need for check.</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=393#respond" onclick="" aria-label="Reply to kyle">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-392">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">Raja</cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-392">January 17, 2013 at 1:01 AM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>Excellent article and best among the other five I have read so far. Esp. the simple English and crispness. Thank you.</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=392#respond" onclick="" aria-label="Reply to Raja">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-2763">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">Bart</cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-2763">November 1, 2013 at 8:58 AM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>Very clear explanation. Thanks!</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=2763#respond" onclick="" aria-label="Reply to Bart">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-3502">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">Σουηδός</cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-3502">May 29, 2014 at 9:28 PM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>Great article and very easy to read, thanks!</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=3502#respond" onclick="" aria-label="Reply to Σουηδός">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-197788">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn"><a href="http://www.billigsportschvheonline.com/" rel="external nofollow" class="url">nike billig kaufen</a></cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-197788">April 27, 2015 at 7:25 PM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>nike billig kaufen However, its chromed tail lights are now tweaked in favor<br>
+of more aggressively styled regular tail lights.<br>
+nike runThe first release of Air Jordan shoes (also known as ‘Jordans’)<br>
+were known as the Air Jordan I (1). The styles go numerically from 1 23 or I XXIII and continue with the models 2009 and 2010.<br>
+Micheal Jordan wore the 23 for a good portion of his basketball career,<br>
+which was the reason why the models only go up to 23 and then continue<br>
+in a different format. nike air</p>
+<p>The first release of Air Jordan shoes (also known as ‘Jordans’) were known as the Air Jordan I (1).<br>
+The styles go numerically from 1 23 or I XXIII and continue<br>
+with the models 2009 and 2010. Micheal Jordan wore the 23 for a good portion of<br>
+his basketball career, which was the reason why the<br>
+models only go up to 23 and then continue in a different format.<br>
+Air max schweiz(<a href="http://www.billigsportschvheonline.com/" rel="nofollow">http://www.billigsportschvheonline.com/</a>)</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=197788#respond" onclick="" aria-label="Reply to nike billig kaufen">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-215095">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">JImmy</cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-215095">May 21, 2015 at 10:56 AM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>Typo: </p>
+<p>MemoryPage mp1(1024);//lvalue<br>
+vm.push_back(mp); //push_back(const T&amp;)</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=215095#respond" onclick="" aria-label="Reply to JImmy">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-248499">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">zagman</cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-248499">July 24, 2015 at 11:09 AM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>Typo:</p>
+<p>~MemoryPage() {delete[] buf;}</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=248499#respond" onclick="" aria-label="Reply to zagman">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-259674">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn"><a href="http://healthraport.cz/a,37.htm" rel="external nofollow" class="url">healthraport.cz</a></cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-259674">August 29, 2015 at 4:40 AM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>Díky! Skvělý článek, ne vždy se vydaří podobná perlička.</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=259674#respond" onclick="" aria-label="Reply to healthraport.cz">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-280355">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">Some Dude</cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-280355">October 23, 2015 at 6:25 AM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>Speaking of pilfering, this article is a nice copy of:<br>
+<a href="https://msdn.microsoft.com/en-us/library/dd293665.aspx" rel="nofollow">https://msdn.microsoft.com/en-us/library/dd293665.aspx</a></p>
+<p>Except this dude missed some interesting details present there.</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=280355#respond" onclick="" aria-label="Reply to Some Dude">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-305708">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn"><a href="http://rekforum.forum2x2.ru/" rel="external nofollow" class="url">Анастасия</a></cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-305708">December 25, 2015 at 2:27 AM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>Только у нас совершенно БЕСПЛАТНАЯ и эффективная реклама Вашего бизнеса, услуг и товаров на ресурсе с ТИЦ 50, в Яндекс каталоге! ССЫЛКИ на сайты разрешены! <a href="http://rekforum.forum2x2.ru/" rel="nofollow">http://rekforum.forum2x2.ru</a></p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=305708#respond" onclick="" aria-label="Reply to Анастасия">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-328711">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">Daniel Sandor</cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-328711">February 7, 2016 at 1:18 AM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>I think that</p>
+<p>“other.size=0;<br>
+other.buf=nullptr;”</p>
+<p>in the body of MemoryPage::MemoryPage(MemoryPage&amp;&amp; other) and the self-assignment test in the body of MemoryPage&amp; MemoryPage::operator=(MemoryPage&amp;&amp; other) is not necessary, because the argument has to be an rvalue, so it can’t be referenced by anywhere else, except, if the argument was casted to an rvalue reference to object type, but in that case the client takes the responsibility.</p>
+<p>However this article was very useful introduction for me. Thank you Danny!</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=328711#respond" onclick="" aria-label="Reply to Daniel Sandor">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-332999">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+								<cite class="fn">Олег</cite> <span class="says">says:</span>		 	</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="#comment-332999">February 16, 2016 at 12:17 AM</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>Предлагаем рассылки на русскоязычные форумы и доски объявлений </p>
+<p>Для заказа писать ТОЛЬКО на эту почту: rassilkinadoski(собака)yandex.ru </p>
+<p>Стоимость рассылок: </p>
+<p>1. На более 500 посещаемых досок объявлений – 700 руб. (Срок исполнения 1 день) </p>
+<p>2. На 6000 общих русскоязычных форумов – 2000 руб. (Срок исполнения 1 день) </p>
+<p>3. На 18000 общих русскоязычных форумов – 4500 руб. (Срок исполнения 3 дня, в день по 6000 форумов) </p>
+<p>ВСЮ НАШУ РАБОТУ БУДЕТЕ НАБЛЮДАТЬ ОНЛАЙН! </p>
+<p>Для заказа писать ТОЛЬКО на эту почту: rassilkinadoski(собака)yandex.ru</p>
+		</div>
+
+		<div class="reply">
+			<a rel="nofollow" class="comment-reply-link" href="http://blog.smartbear.com/c-plus-plus/c11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator/?replytocom=332999#respond" onclick="" aria-label="Reply to Олег">Reply</a>		</div>
+
+		</li><!-- #comment-## -->
+</ol></div>				<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Speak Your Mind <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="http://blog.smartbear.com/wp-comments-post.php?wpe-comment-post=smartbear" method="post" id="commentform" class="comment-form" novalidate="">
+					<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" tabindex="4" aria-required="true"></textarea></p><p class="comment-form-author"><input id="author" name="author" size="30" tabindex="1" aria-required="true" type="text"><label for="author">Name</label> <span class="required">*</span></p>
+<p class="comment-form-email"><input id="email" name="email" size="30" tabindex="2" aria-required="true" type="text"><label for="email">Email</label> <span class="required">*</span></p>
+<p class="comment-form-url"><input id="url" name="url" size="30" tabindex="3" type="text"><label for="url">Website</label></p>
+<p class="form-submit"><input name="submit" id="submit" class="submit" value="Post Comment" type="submit"> <input name="comment_post_ID" value="12242" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="8efb0447da" type="hidden"></p><p class="wysija-after-comment"><label for="wysija-box-after-comment"><input id="wysija-box-after-comment" value="1" name="wysija[comment_subscribe]" type="checkbox">Yes, add me to your mailing list.</label></p><p style="display: none;"></p>				<input id="ak_js" name="ak_js" value="1463917219579" type="hidden"></form>
+					</div><!-- #respond -->
+		</div><div style="height: 1487px;" id="sidebar" class="sidebar widget-area"><div id="enews-ext-2" class="widget enews-widget"><div class="widget-wrap"><div class="enews"><h4 class="widget-title widgettitle">Subscribe Today</h4>
+<p>Get Tips, News and Product Info Right To Your Inbox!</p>
+			<form id="subscribeenews-ext-2" action="http://smartbear.us10.list-manage.com/subscribe/post?u=490d0b01ca574bcb8013c5b26&amp;id=57cdf7f2fc" method="post" target="_blank" onsubmit="" name="enews-ext-2">
+												<label for="subbox" class="screenread">E-Mail Address</label><input id="subbox" placeholder="E-Mail Address" name="EMAIL" type="text">
+								<input value="Join Now!" id="subbutton" type="submit">
+			</form>
+		</div></div></div>
+<div id="text-21" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><a style="display:block;" href="https://smartbear.com/resources/ebooks/guide-to-improving-code-quality-and-collaboration/?sr=blog&amp;md=sbcta">
+<img src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/Collab_CodeQualityandCollab_Ebook_250x250.png">
+</a></div>
+		</div></div>
+
+<!-- WordPress Popular Posts Plugin v3.3.1 [W] [monthly] [comments] [regular] -->
+<div id="wpp-3" class="widget popular-posts"><div class="widget-wrap">
+<h4 class="widget-title widgettitle">Popular Posts</h4>
+
+<ul class="wpp-list">
+<li><a href="http://blog.smartbear.com/code-review/reduce-software-defects/" title="How to Actually Reduce Software Defects" class="wpp-post-title" target="_self">How to Actually Reduce Software Defects</a> </li>
+<li><a href="http://blog.smartbear.com/performance/continuous-performance-improvement-in-an-agile-world/" title="Continuous Performance Improvement in an Agile World" class="wpp-post-title" target="_self">Continuous Performance Improvement in an Agile World</a> </li>
+<li><a href="http://blog.smartbear.com/automated-testing/managing-test-flakiness/" title="Managing Test Flakiness: How to Make Tests Stable, Scalable, &amp; Maintainable" class="wpp-post-title" target="_self">Managing Test Flakiness: How to Make Tests Stable, Scalable, &amp; Ma...</a> </li>
+<li><a href="http://blog.smartbear.com/automated-testing-tools/fostering-long-term-test-automation-success/" title="STAREAST Recap: Fostering Long-Term Test Automation Success" class="wpp-post-title" target="_self">STAREAST Recap: Fostering Long-Term Test Automation Success</a> </li>
+<li><a href="http://blog.smartbear.com/automated-testing/stareast-test-automation-patterns-testing-challenges-and-zombie-tests/" title="STAREAST Recap: Dot Graham on Test Automation Patterns, Testing Challenges, and Zombie Tests" class="wpp-post-title" target="_self">STAREAST Recap: Dot Graham on Test Automation Patterns, Testing Challe...</a> </li>
+
+</ul>
+</div></div>
+
+<!-- End WordPress Popular Posts Plugin v3.3.1 -->
+<div id="text-14" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><center></center></div>
+		</div></div>
+		<div style="" id="recent-posts-4" class="widget widget_recent_entries"><div class="widget-wrap">		<h4 class="widget-title widgettitle">Our Latest Posts!</h4>
+		<ul>
+					<li>
+				<a href="http://blog.smartbear.com/api-testing/api-refractoring-for-testers/">6 Tips for Testers to Help an API Refactoring Succeed</a>
+							<span class="post-date">May 18, 2016</span>
+						</li>
+					<li>
+				<a href="http://blog.smartbear.com/code-review/improving-code-quality-and-collaboration/">A Guide to Improving Code Quality and Collaboration on Your Development Team</a>
+							<span class="post-date">May 18, 2016</span>
+						</li>
+					<li>
+				<a href="http://blog.smartbear.com/automated-testing/improve-requirements-traceability/">How Testing Teams Can Achieve End-to-End Traceability</a>
+							<span class="post-date">May 16, 2016</span>
+						</li>
+					<li>
+				<a href="http://blog.smartbear.com/code-review/reduce-software-defects/">How to Actually Reduce Software Defects</a>
+							<span class="post-date">May 12, 2016</span>
+						</li>
+					<li>
+				<a href="http://blog.smartbear.com/automated-testing/stareast-test-automation-patterns-testing-challenges-and-zombie-tests/">STAREAST Recap: Dot Graham on Test Automation Patterns, Testing Challenges, and Zombie Tests</a>
+							<span class="post-date">May 11, 2016</span>
+						</li>
+				</ul>
+		</div></div>
+		<fb:recommendations site="http://smartbear.com" app_id="554678017894079">
+</fb:recommendations>
+</div></div></div>	<div id="ez-fat-footer-container-wrap" class="clearfix">
+	
+		<div id="ez-fat-footer-container" class="clearfix">
+	
+			<div id="ez-fat-footer-1" class="widget-area ez-widget-area one-half first">
+				<div id="text-3" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><a href="http://smartbear.com/">SmartBear.com</a> | <a href="http://smartbear.com/forums/">Forums</a> | <a href="http://support.smartbear.com/">Support</a> | <a href="http://www.soapui.org/">SoapUI.org</a> | <a href="http://www.loadui.org/" id="last">LoadUI.org</a> | <br><a href="http://smartbear.com/partners">Partners</a> | <a href="http://smartbear.com/contact-us">Contact Us</a> | <a href="https://shop.smartbear.com/758/?cookie=true&amp;scope=checkout&amp;continueurl=http://www.smartbear.com/products" id="last">Shopping Cart</a></div>
+		</div></div>
+<div id="text-7" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"> © 2015 SmartBear Software. All rights reserved. <a href="http://smartbear.com/privacy">Privacy</a> | <a href="http://smartbear.com/terms-of-use">Terms of Use</a> | <a href="http://smartbear.com/site-map">Site Map</a></div>
+		</div></div>
+			</div><!-- end #fat-footer-1 -->
+	
+			<div id="ez-fat-footer-2" class="widget-area ez-widget-area one-half">
+				<div id="search-4" class="widget widget_search"><div class="widget-wrap"><form method="get" class="searchform search-form" action="http://blog.smartbear.com/" role="search"><input value="Search this website …" name="s" class="s search-input" onfocus="" onblur="" type="text"><input class="searchsubmit search-submit" value="Search" type="submit"></form></div></div>
+<div id="text-6" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><table><tbody><tr><td width="120"> </td><td><left><b>Contact Information</b><br>
+<b>Email:</b> <a href="mailto:Daniel.Giordano@smartbear.com?Subject=SmartBear%20Blog">Daniel.Giordano@smartbear.com</a>
+</left></td></tr></tbody></table></div>
+		</div></div>
+<div id="simple-social-icons-3" class="widget simple-social-icons"><div class="widget-wrap"><h4 class="widget-title widgettitle">Stay Connected With Us</h4>
+<ul class="aligncenter"><li class="social-facebook"><a href="https://www.facebook.com/smartbear" target="_blank"></a></li><li class="social-gplus"><a href="https://plus.google.com/+Smartbear/posts" target="_blank"></a></li><li class="social-linkedin"><a href="https://www.linkedin.com/company/smartbear-software" target="_blank"></a></li><li class="social-rss"><a href="http://feeds.feedburner.com/smartbear" target="_blank"></a></li><li class="social-twitter"><a href="https://twitter.com/SmartBear" target="_blank"></a></li><li class="social-youtube"><a href="https://www.youtube.com/user/SmartBearSoftware" target="_blank"></a></li></ul></div></div>
+			</div><!-- end #fat-footer-2 -->
+					
+		</div><!-- end #fat-footer-container -->
+		
+	</div><!-- end #fat-footer-container-wrap -->
+<div id="footer" class="footer"><div class="wrap"><div class="gototop"><p><a href="#wrap" rel="nofollow">Return to top of page</a></p></div><div class="creds"><p>Copyright © 2016 · <a href="http://cobaltapps.com/downloads/dynamik-website-builder/">Dynamik Website Builder</a> on <a href="http://www.studiopress.com/">Genesis Framework</a> · <a href="http://wordpress.org/">WordPress</a> · <a href="http://blog.smartbear.com/wp-login.php">Log in</a></p></div></div></div></div>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<!-- Google Tag Manager NoScript -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5CKP47" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager NoScript -->
+    <script src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/89c37c9a309e857519f59f234b162a9694dbcf75.js" type="text/javascript" async="async"></script><script data-cfasync="false" type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/3730ea5160c56745ff961d9a77538239-1.js" async="async"></script>
+<!-- Powered by WPtouch: 3.8.8 --><script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/form.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/widgets-2.js"></script>
+<script gapi_processed="true" type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/plusone-1.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/in-1.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/hoverIntent.min.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/superfish.min.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/superfish.args.min.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/superfish.compat.min.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/dynamik-responsive.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/e-201620.js" async="" defer="defer"></script>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+
+<div data-orientation="landscape" data-zoom-level="10" data-tile-count="6" style="display:none;" class="flare-mobile closed ready threshold-reached" data-enable-total="true" data-enable-counters="false" data-humbleflare="true" data-minimum-count="20" data-enable-branding="false"><div class="flare-mobile-container"><div class="flare-shares-open"><div class="flare-shares-inner"><div class="flare-shares"><span title="73" class="flare-shares-number">73</span><span class="flare-shares-text">Shares</span></div></div></div><div class="flare-filament-branding"><a href="http://filament.io/flare?utm_source=flare_mobile&amp;utm_medium=deployment&amp;utm_campaign=filament" target="_blank">Powered by<div class="flare-lightning-bolt"><div class="svg-container"><svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content service"><path d="M303.8,12.2l-152,278.6l66.4-22.1l-43.1,216.9l172.5-311.2c0,0-15.1,5.1-38.4,13.1c-23.3,8-37.5,12.8-37.5,12.8L303.8,12.2z"></path></svg></div></div></a></div><div style="transform: scale(1); transform-origin: 0% 100% 0px;" class="flare-shares-closed-wrapper"><div class="flare-shares-closed"><div class="flare-shares-inner"><div class="flare-shares"><span title="73" class="flare-shares-number">73</span><span class="flare-shares-text">Shares</span></div></div></div><a class="flare-mobile-show" href="#flare-mobile-show"><span class="flare-mobile-arrow"><div class="svg-container"><svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content service"><path d="M297.6,304.7v118.9l197.1-182.5L297.6,65v105.5C58.2,170.5,3.7,436,3.7,436C71.4,316.2,167.7,304.7,297.6,304.7z"></path></svg></div></span><span class="flare-mobile-close"><div class="svg-container"><svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content service"><path fill-rule="evenodd" clip-rule="evenodd" d="M293.9,250.6l185.2,185.2l-42.7,42.7L251.1,293.4L65.9,478.6l-42.7-42.7l185.2-185.2L23.2,65.4l42.7-42.7l185.2,185.2L436.3,22.7l42.7,42.7L293.9,250.6z"></path></svg></div></span></a></div><div class="flare-grid-wrapper"><div class="flare-grid"><div data-i="0" data-type="reddit" class="flare-tile"><a style="background-color:#8fc5f2;border-radius:0px;-webkit-box-shadow: 0 4px 0 #4AA1EA;box-shadow: 0 4px 0 #4AA1EA;" href="http://www.reddit.com/submit?url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F" target="_blank" class="service"><span title="45" class="flare-mobile-tile-count" data-count="0">45</span>Reddit<div class="svg-container"><svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content service"><path fill="#ffffff" d="M43.1,270.2c0.9,4.3,3.1,9.5,6.5,15.6l3.1,4.1c5.9,7.5,12.6,13.2,20.1,17h1.7c0.2,20.6,6.8,38.3,19.7,53s30.2,27.9,51.7,39.4c15.9,8.2,24,12.5,24.5,12.9c25.2,7.9,51.3,11.9,78.5,11.9c7.7,0,18.3-1,31.6-3.1c13.4-2,23.7-4.2,30.9-6.5c3.4-1.1,9.8-3.7,19-7.8c58.9-24.5,88.4-58.8,88.4-103c10-4.8,17.9-11.6,23.8-20.4s8.8-18.6,8.8-29.2c0-15.6-5.4-28.9-16.3-39.8s-24-16.3-39.4-16.3c-5.7,0-10.5,0.7-14.6,2c-4.1,1.4-7.4,2.8-9.9,4.4c-2.5,1.6-6.6,4.4-12.2,8.5c-0.2,0.2-0.4,0.3-0.7,0.3s-0.4,0.1-0.7,0.3l-1-0.7c-12.2-8.6-27-15.2-44.2-19.7c-17.2-4.5-34-6.8-50.3-6.8l-1.7-1.4v-1c0.4-1.4,2.5-8.6,6.1-21.8c3.6-13.2,7-25.5,10.2-37.1c3.2-11.6,5-17.6,5.4-18h1c3.4,0.7,15.9,2.6,37.4,5.8c21.5,3.2,32.5,4.7,33,4.4c0,12.9,3.4,23.8,10.2,32.6s16.7,13.3,29.6,13.3c11.6-0.2,21-4.2,28.2-11.9c7.2-7.7,11-17.2,11.2-28.6s-3.5-20.6-11.2-27.9c-7.7-7.2-17.1-10.9-28.2-10.9c-10.9,0-20.2,3.6-27.9,10.9c-0.9,0.7-2.5,2.7-4.8,6.1c-2.3,3.4-3.6,5.2-4.1,5.4c0.2,0.2,0.2,0.3,0,0.3c-0.4,0-0.7-0.1-0.7-0.3l-82.3-12.2l-23.8,90.8l-1.7,1.4c-45.6,0-83.5,9.3-113.9,27.9h-1.7c-9.8-8.2-21.7-12.2-35.7-12.2s-26.8,5-38.1,15c-11.3,10-17,22-17,36C41.7,260.2,42.1,265.9,43.1,270.2z M66.2,226.3c8.4-9.1,18.1-13.6,29.2-13.6c10.2,0,19.5,3,27.9,8.8c-13.2,10-24.6,21.4-34.3,34.3S73.8,282,72.6,295.4c-12.9-10.4-19.4-23.1-19.4-38.1C53.5,245.7,57.8,235.4,66.2,226.3z M103.6,258c10.4-14.3,23.9-25.5,40.5-33.7s33.6-14.3,51-18.4c17.4-4.1,34.6-6.1,51.3-6.1c21.8,0,42.3,2.6,61.5,7.8c11.8,2.7,23.1,7,34,12.9c10.9,5.9,21.3,12.8,31.3,20.7c10,7.9,17.9,17.4,23.8,28.6c5.9,11.1,8.8,22.8,8.8,35c0,9.3-1.5,17.4-4.4,24.5c-3,7-7.8,14.9-14.6,23.5h1c-17,19-38,33-62.9,41.8s-51.3,13.3-79.2,13.3c-16.1,0-32.6-1.6-49.6-4.8c-11.8-2-23.7-5.9-35.7-11.6c-12-5.7-23.6-12.5-34.7-20.4s-20.2-17.6-27.2-28.9c-7-11.3-10.5-23.1-10.5-35.4C87.9,288.6,93.2,272.2,103.6,258z M159,302.5c5,5.4,11.7,8.2,20.1,8.2c8.4,0,15.4-2.7,21.1-8.2c5.7-5.4,8.5-12.2,8.5-20.4c0.2-8.8-2.6-15.6-8.5-20.4c-5.9-4.8-12.9-7.2-21.1-7.5c-8.2-0.2-14.9,2.3-20.1,7.5c-5.2,5.2-7.8,12-7.8,20.4C151.4,290.3,154,297.1,159,302.5z M195.4,370.2c15.6,7.9,31.6,11.9,47.9,11.9c16.8,0,32.9-3.8,48.3-11.6s25.9-18.6,31.6-32.6h-13.9c-7.2,10-16.8,17.7-28.6,23.1c-11.8,5.4-24.2,8.2-37.4,8.2c-12.7-0.2-25.3-3-37.7-8.2c-12.5-5.2-21.5-12.9-27.2-23.1h-15C169.1,351.5,179.8,362.3,195.4,370.2z M285.9,302.5c5.2,5.4,12,8.2,20.4,8.2c7.7,0,14.3-2.8,19.7-8.5c5.4-5.7,8.2-12.3,8.2-20.1s-2.7-14.3-8.2-19.7c-5.4-5.4-12-8.2-19.7-8.2c-8.6,0-15.5,2.5-20.7,7.5c-5.2,5-7.8,11.8-7.8,20.4C277.9,290.3,280.6,297.1,285.9,302.5z M373.2,103.2c5.7-5.4,12.3-8.2,20.1-8.2c7.7,0,14.3,2.7,19.7,8.2c5.4,5.4,8.2,12,8.2,19.7c0,7.9-2.6,14.7-7.8,20.4c-5.2,5.7-11.9,8.5-20.1,8.5c-7.9,0-14.7-2.8-20.4-8.5c-5.7-5.7-8.5-12.5-8.5-20.4C364.6,115.2,367.6,108.7,373.2,103.2z M397,209.7c13.2,0,23.7,4.8,31.6,14.3s11.9,20.8,11.9,34c0,12-6.7,22.9-20.1,32.6c-3.6-14.5-10-28.1-19-40.8c-9.1-12.7-19.8-23.1-32.3-31.3C377.6,212.6,386.8,209.7,397,209.7z"></path></svg></div></a></div><div data-i="1" data-type="facebook" class="flare-tile"><a style="background-color:#0b59aa;border-radius:0px;-webkit-box-shadow: 0 4px 0 #094788;box-shadow: 0 4px 0 #094788;" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F" target="_blank" class="service"><span title="15" class="flare-mobile-tile-count" data-count="0">15</span>Facebook<div class="svg-container"><svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content service"><path fill="#ffffff" d="M198.8,265.1v173.3h71.9V265.1h71.9v-71.5h-71.9v-36.7c0-6.2,1.5-11.3,4.5-15.3c3-4,6.4-6,10.1-6h57.3V64.1h-57.3c-23.7,0-44,9.1-61,27.3s-25.4,40.3-25.4,66.2v35.9h-57.6v71.5H198.8z"></path></svg></div></a></div><div data-i="2" data-type="googleplus" class="flare-tile"><a style="background-color:#d84d2f;border-radius:0px;-webkit-box-shadow: 0 4px 0 #B13B21;box-shadow: 0 4px 0 #B13B21;" href="https://plus.google.com/share?url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F" target="_blank" class="service"><span title="13" class="flare-mobile-tile-count" data-count="0">13</span>Google+<div class="svg-container"><svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content service"><path fill="#ffffff" d="M139.4,401.2c19.4,10.5,43.2,15.8,71.3,15.8c29.5,0.2,53-6.7,70.3-20.9c17.3-14.2,26-30.7,26-49.7c0.2-14.3-2.2-26.3-7.3-35.8s-14-18.8-26.9-27.9c-5.7-4.2-11.4-9.4-17.1-15.5c-5.7-6.1-8.6-11.2-8.6-15.2c0-5.3,1.2-9.7,3.5-13.3c2.3-3.6,7.4-8.5,15.2-14.6c18.6-14.6,27.9-31.7,27.9-51.3c0.2-12.9-2.5-24.6-8.2-35.2S271.9,120,262,116.2h31l21.9-15.8h-98.2c-22.2,0-41.9,7.2-59.2,21.5s-26,31.1-26,50.4c0,20,7,37,20.9,50.7c13.9,13.7,31.9,20.6,53.8,20.6c4,0,7.1-0.1,9.2-0.3c-3.4,6.1-5.1,12.3-5.1,18.4c0,9.7,4.4,18.8,13.3,27.2h-17.1c-26.6,0-49.3,7.2-68.1,21.5s-28.2,30.7-28.2,49.1C110.3,376.7,120,390.7,139.4,401.2z M167.3,312.9c14.2-10.1,30.7-15.1,49.7-14.9c8,0,16.2,1.3,24.4,3.8c1.9,1,4.7,2.9,8.2,5.4s6.2,4.4,7.9,5.7c1.7,1.3,3.9,2.9,6.7,4.8c2.8,1.9,4.8,3.6,6,5.1c1.3,1.5,2.8,3.2,4.4,5.1c1.7,1.9,2.9,3.9,3.8,6c0.9,2.1,1.6,4.3,2.2,6.7c0.9,2.8,1.3,6.1,1.3,10.1c0.2,15.4-5.4,27.8-16.8,37.1c-11.4,9.3-29.7,13.9-54.8,13.9c-18.1,0.2-33.5-4.8-45.9-15.2s-18.7-22.8-18.7-37.4C146,335,153.1,323,167.3,312.9z M174.6,130.5c7.2-11.2,17.2-16.6,30.1-16.2c12.9,0.4,24.5,6.4,34.8,18.1s16.6,25.7,18.7,42.4s-0.5,30.7-7.9,42.1c-7.4,11.4-17.3,16.9-29.8,16.5c-12.4-0.2-24-6.3-34.5-18.4c-10.5-12-17-26.4-19.3-43.1C164.7,155.5,167.4,141.7,174.6,130.5z M405.7,179.6v63.7h15.8v-63.7h63.7v-15.8h-63.7v-63.3h-15.8v63.3h-63.3v15.8H405.7L405.7,179.6z"></path></svg></div></a></div><div data-i="3" data-type="pinterest" class="flare-tile"><a style="background-color:#ce1c1e;border-radius:0px;-webkit-box-shadow: 0 4px 0 #A51618;box-shadow: 0 4px 0 #A51618;" href="javascript:void(0);" target="_blank" class="service"><span title="0" class="flare-mobile-tile-count" data-count="0">0</span>Pinterest<div class="svg-container"><svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content service"><path fill="#ffffff" d="M127.3,249.4c6.7,13.7,16.9,23.3,30.6,28.9c2.3,0.7,4.4,0.7,6.3,0c1.8-0.7,3-2.3,3.5-4.9c0.5-1.1,1.1-3.8,2.1-8c0.9-4.2,1.6-6.9,2.1-8c1.1-3.9,0.2-7.7-2.8-11.1c-8.8-10.7-13.2-23.8-13.2-39.3c0.2-26.2,9.4-48.7,27.5-67.5s41.7-28.2,70.9-28.2c26.2-0.2,46.6,6.9,61.2,21.2c14.6,14.4,21.9,32.8,21.9,55.3c0.2,29.2-5.7,54.3-17.7,75.1c-12.1,20.9-27.2,31.3-45.6,31.3c-10.4,0-18.9-3.8-25.4-11.5c-6.5-7.7-8.6-16.7-6.3-27.1c1.1-6.3,3.5-14.5,7-24.7c3.5-10.2,6.2-19.1,8-26.8c1.8-7.7,2.8-14.2,2.8-19.5c0.2-8.8-2.1-16-7-21.6c-4.9-5.6-11.6-8.3-20.2-8.3c-10.4-0.2-19.5,4.6-27.1,14.6s-11.5,22.4-11.5,37.2l0.3,5.2c0,3,0.6,7.2,1.7,12.5c1.1,5.3,2.7,9.8,4.5,13.6c-14.6,61.7-23.2,98-25.7,108.9c-0.9,4.6-1.7,10.2-2.4,16.7c-0.7,6.5-1,12.1-1,16.7s0.1,9.7,0.3,15.3s0.6,10,1,13.2c0.5,3.2,0.8,6.4,1,9.4s0.3,4.6,0.3,4.9c0.2,1.1,0.9,1.8,2.1,2.1c1.1,0.2,2.1-0.1,2.8-1l2.1-2.8c1.1-1.6,2.7-3.5,4.5-5.6s3.8-4.9,5.9-8.3c2.1-3.5,4.3-7,6.6-10.4c2.3-3.5,4.5-7.4,6.6-11.8c2.1-4.4,4.1-8.8,5.9-13.2c1.8-4.4,3.4-8.8,4.5-13.2l13.9-55c3.9,7,10.4,12.9,19.5,17.7c9,4.9,18.8,7.3,29.2,7.3c32-0.2,58-13.2,77.9-39s29.9-58.4,29.9-98.1c0-30.8-11.8-57.6-35.5-80.3c-23.6-22.7-53.9-34.1-90.8-34.1c-22.5,0-43.1,3.8-61.9,11.5s-33.8,17.6-45.2,29.9s-20.2,25.6-26.4,40c-6.3,14.4-9.4,28.9-9.4,43.5C117.1,220,120.6,235.8,127.3,249.4z"></path></svg></div></a></div><div data-i="4" data-type="hackernews" class="flare-tile"><a style="background-color:#ff6600;border-radius:0px;-webkit-box-shadow: 0 4px 0 #CC5200;box-shadow: 0 4px 0 #CC5200;" href="https://news.ycombinator.com/submitlink?u=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F" target="_blank" class="service"><span title="0" class="flare-mobile-tile-count" data-count="0">0</span>Hacker News<div class="svg-container"><svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content service"><path fill="#ffffff" d="M226.5,280.7V426H272V280.7L408.7,83.4H356l-66.5,100.7c-13.9,21-26.4,41.2-37.3,60.6c-12.1-21.7-23.8-41.1-34.9-58.2L149.7,83.4H94.5L226.5,280.7z"></path></svg></div></a></div><div data-i="5" data-type="linkedin" class="flare-tile"><a style="background-color:#0375b3;border-radius:0px;-webkit-box-shadow: 0 4px 0 #025E8F;box-shadow: 0 4px 0 #025E8F;" href="https://www.linkedin.com/cws/share?url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F" target="_blank" class="service"><span title="0" class="flare-mobile-tile-count" data-count="0">0</span>LinkedIn<div class="svg-container"><svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content service"><path fill="#ffffff" d="M81.5,146.6c8,7.8,18.4,11.6,31.4,11.6h0.4c13.4,0,24.2-3.9,32.4-11.6c8-7.5,12-16.9,12-28.2c0-12.4-4.1-22.6-12.3-30.3c-8-7.5-18.4-11.3-31.4-11.3c-13.1-0.2-23.9,3.5-32.1,11.3s-12.3,17.5-12.3,29.3S73.5,138.8,81.5,146.6z M152.3,425.7V190.3H74.1v235.4H152.3z M196.4,260.4c0-39.2-0.2-62.6-0.7-70.1h78.2v33.5l-0.4,0.7h0.4v-0.7c16.9-26.1,40.5-39.1,70.8-39.1c27-0.2,48.7,8.7,65.2,26.8c16.5,18.1,24.7,44.5,24.7,79.3v135h-78.2V299.9c0-35.5-13.1-53.2-39.5-53.2c-9.9-0.2-18.2,2.5-25,8.1c-6.8,5.6-11.9,12.4-15.2,20.4c-1.9,4.5-2.8,10.8-2.8,19v131.5h-78.2C196.1,354.7,196.4,299.6,196.4,260.4z"></path></svg></div></a></div><div data-i="6" data-type="twitter" class="flare-tile"><a style="background-color:#00aaef;border-radius:0px;-webkit-box-shadow: 0 4px 0 #0088BF;box-shadow: 0 4px 0 #0088BF;" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F&amp;text=C%2B%2B11%20Tutorial%3A%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator&amp;via=smartbear" target="_blank" class="service"><span class="flare-mobile-tile-count" data-count="0">0</span>Twitter<div class="svg-container"><svg version="1.1" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" class="svg-content service"><path fill="#ffffff" d="M180,406.7c28.2,0.2,54.4-4.1,78.7-13.1c24.3-8.9,45.1-20.8,62.5-35.8c17.4-14.9,32.4-32,45.1-51.3c12.7-19.3,22-39.4,28-60.3s9-41.9,9-62.8v-10.3c16-11.6,28.9-25.2,38.9-40.7c-14.7,6.4-29.6,10.6-44.8,12.4c17-10.2,28.4-24.7,34.2-43.5c-15.1,9.1-31.7,15.6-49.8,19.3c-15.6-16.6-34.6-24.9-57.2-24.9c-21.8,0-40.3,7.7-55.7,23s-23,33.8-23,55.4c0,5.2,0.7,11.2,2.2,18c-31.9-1.9-62-10-90.2-24.3c-28.2-14.3-52-33.6-71.5-57.8c-7.2,12.2-10.9,25.4-10.9,39.5c0.2,13.3,3.4,25.7,9.6,37.3c6.2,11.6,14.7,20.9,25.5,28c-12.8-0.2-24.8-3.4-35.8-9.6v0.9c0.2,18.7,6.2,35.2,18,49.8s26.8,23.5,45.1,27.1c-6.6,1.9-13.6,2.8-20.8,2.8c-5.6,0-10.5-0.4-14.6-1.2c5,15.8,14.2,28.7,27.7,38.9c13.5,10.2,28.7,15.3,45.7,15.6c-28.6,22.4-61.2,33.6-97.7,33.6c-6.2,0-12.4-0.3-18.7-0.9C96.5,395,136.6,406.7,180,406.7z"></path></svg></div></a></div></div></div></div></div><div style="opacity: 1; margin-top: -170px; top: 50%;" data-align="left" data-position="edge" class="flare countloaded visible threshold-reached" data-flare-skin="modern" data-hide-functionality="true" data-enable-total="true" data-enable-counters="false" data-gradient="none" data-background="transparent" data-orientation="vertical" data-humbleflare="true" data-minimum-count="20" data-enable-branding="false" data-darken-count-area="false"><span class="flare-total first"><strong title="73">73</strong>Shares</span><span class="flare-buttons"><span class="flare-button-wrapper" data-type="reddit" style="z-index:20;margin-bottom:1px;margin-left:1px"><span data-i="6" data-type="reddit" class="flare-button" style="border-radius:0px;background-color:#8fc5f2"><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F" target="_blank" class="flare-button-wrap" style="border-radius:0px;border-color:rgba(0,0,0,0.0)"><span class="flare-button-icon" style="color:#ffffff"><i class="flare-icon-reddit"></i><span class="flare-button-gradient" style="border-radius:0px;"></span></span></a></span><span title="45" class="flare-button-count" style="background-color:#8fc5f2;border-radius:0px;color:#ffffff">45</span><span class="flare-flyout" data-type="reddit"><span class="flare-flyout-inner"><span class="flare-arrow"></span></span><span class="flare-iframe-wrapper" data-snippet="&lt;iframe src=&quot;http://www.reddit.com/static/button/button3.html?width=69&amp;url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F&quot; height=&quot;52&quot; width=&quot;69&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;" data-type="reddit"></span></span></span><span class="flare-button-wrapper" data-type="facebook" style="z-index:60;margin-bottom:1px;margin-left:1px"><span data-i="2" data-type="facebook" class="flare-button" style="border-radius:0px;background-color:#0b59aa"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F" target="_blank" class="flare-button-wrap" style="border-radius:0px;border-color:rgba(0,0,0,0.0)"><span class="flare-button-icon" style="color:#ffffff"><i class="flare-icon-facebook"></i><span class="flare-button-gradient" style="border-radius:0px;"></span></span></a></span><span title="15" class="flare-button-count" style="background-color:#0b59aa;border-radius:0px;color:#ffffff">15</span><span class="flare-flyout" data-type="facebook"><span class="flare-flyout-inner"><span class="flare-arrow"></span></span><span class="flare-iframe-wrapper" data-snippet="&lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F&quot; data-service=&quot;facebook-share&quot;&gt;&lt;span class=&quot;flare-button&quot;&gt;Share&lt;/span&gt;&lt;span class=&quot;flare-button-count&quot;&gt;&lt;span title=&quot;0&quot; class=&quot;flare-share-value&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;pluginCountBoxNub&quot;&gt;&lt;s&gt;&lt;/s&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;" data-type="facebook"></span></span></span><span class="flare-button-wrapper" data-type="googleplus" style="z-index:50;margin-bottom:1px;margin-left:1px"><span data-i="3" data-type="googleplus" class="flare-button" style="border-radius:0px;background-color:#d84d2f"><a href="https://plus.google.com/share?url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F" target="_blank" class="flare-button-wrap" style="border-radius:0px;border-color:rgba(0,0,0,0.0)"><span class="flare-button-icon" style="color:#ffffff"><i class="flare-icon-googleplus"></i><span class="flare-button-gradient" style="border-radius:0px;"></span></span></a></span><span title="13" class="flare-button-count" style="background-color:#d84d2f;border-radius:0px;color:#ffffff">13</span><span class="flare-flyout" data-type="googleplus"><span class="flare-flyout-inner"><span class="flare-arrow"></span></span><span class="flare-iframe-wrapper" data-snippet="&lt;div class=&quot;g-plusone&quot; data-recommendations=&quot;false&quot; data-size=&quot;tall&quot; data-href=&quot;http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F&quot;&gt;&lt;/div&gt;" data-type="googleplus"></span></span></span><span class="flare-button-wrapper" data-type="pinterest" style="z-index:30;margin-bottom:1px;margin-left:1px"><span data-i="5" data-type="pinterest" class="flare-button" style="border-radius:0px;background-color:#ce1c1e"><a href="javascript:void(0);" target="_blank" class="flare-button-wrap" style="border-radius:0px;border-color:rgba(0,0,0,0.0)"><span class="flare-button-icon" style="color:#ffffff"><i class="flare-icon-pinterest"></i><span class="flare-button-gradient" style="border-radius:0px;"></span></span></a></span><span title="0" class="flare-button-count" style="background-color:#ce1c1e;border-radius:0px;color:#ffffff">0</span><span class="flare-flyout" data-type="pinterest"><span class="flare-flyout-inner"><span class="flare-arrow"></span></span><span class="flare-iframe-wrapper" data-snippet="&lt;a href=&quot;//pinterest.com/pin/create/button/?url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F&quot; onclick=&quot;javascript:void(null);&quot; data-pin-do=&quot;buttonPin&quot; data-pin-config=&quot;above&quot;&gt;&lt;img src=&quot;//assets.pinterest.com/images/pidgets/pin_it_button.png&quot; /&gt;&lt;/a&gt;" data-type="pinterest"></span></span></span><span class="flare-button-wrapper" data-type="hackernews" style="z-index:40;margin-bottom:1px;margin-left:1px"><span data-i="4" data-type="hackernews" class="flare-button" style="border-radius:0px;background-color:#ff6600"><a href="https://news.ycombinator.com/submitlink?u=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F" target="_blank" class="flare-button-wrap" style="border-radius:0px;border-color:rgba(0,0,0,0.0)"><span class="flare-button-icon" style="color:#ffffff"><i class="flare-icon-hackernews"></i><span class="flare-button-gradient" style="border-radius:0px;"></span></span></a></span><span title="0" class="flare-button-count" style="background-color:#ff6600;border-radius:0px;color:#ffffff">0</span><span class="flare-flyout" data-type="hackernews"><span class="flare-flyout-inner"><span class="flare-arrow"></span></span><span class="flare-iframe-wrapper" data-snippet="&lt;a href=&quot;https://news.ycombinator.com/submit&quot; class=&quot;hn-button&quot; data-url=&quot;http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F&quot; data-count=&quot;vertical&quot;&gt;Vote on Hacker News&lt;/a&gt;" data-type="hackernews"></span></span></span><span class="flare-button-wrapper" data-type="linkedin" style="z-index:70;margin-bottom:1px;margin-left:1px"><span data-i="1" data-type="linkedin" class="flare-button" style="border-radius:0px;background-color:#0375b3"><a href="https://www.linkedin.com/cws/share?url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F" target="_blank" class="flare-button-wrap" style="border-radius:0px;border-color:rgba(0,0,0,0.0)"><span class="flare-button-icon" style="color:#ffffff"><i class="flare-icon-linkedin"></i><span class="flare-button-gradient" style="border-radius:0px;"></span></span></a></span><span title="0" class="flare-button-count" style="background-color:#0375b3;border-radius:0px;color:#ffffff">0</span><span class="flare-flyout" data-type="linkedin"><span class="flare-flyout-inner"><span class="flare-arrow"></span></span><span class="flare-iframe-wrapper" data-snippet="&lt;script type=&quot;IN/Share&quot; data-counter=&quot;top&quot; data-url=&quot;http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F&quot;&gt;&lt;/script&gt;" data-type="linkedin"></span></span></span><span class="flare-button-wrapper" data-type="twitter" style="z-index:80;margin-bottom:1px;margin-left:1px"><span data-i="0" data-type="twitter" class="flare-button" style="border-radius:0px;background-color:#00aaef"><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F&amp;text=C%2B%2B11%20Tutorial%3A%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator&amp;via=smartbear" target="_blank" class="flare-button-wrap" style="border-radius:0px;border-color:rgba(0,0,0,0.0)"><span class="flare-button-icon" style="color:#ffffff"><i class="flare-icon-twitter"></i><span class="flare-button-gradient" style="border-radius:0px;"></span></span></a></span><span class="flare-button-count" style="background-color:#00aaef;border-radius:0px;color:#ffffff">0</span><span class="flare-flyout" data-type="twitter"><span class="flare-flyout-inner"><span class="flare-arrow"></span></span><span class="flare-iframe-wrapper" data-snippet="&lt;a href=&quot;http://twitter.com/share&quot; class=&quot;twitter-share-button&quot; data-count=&quot;vertical&quot; data-via=&quot;smartbear&quot; data-dnt=&quot;&quot; data-url=&quot;http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F&quot;&gt;Tweet&lt;/a&gt;" data-type="twitter"></span></span></span></span><span class="close"><a href="#close">×</a></span><span class="flare-total last"><strong title="73">73</strong>Shares</span></div><span class="flare-hanging-chad"></span><div style="position: static;"><div class="a2a_overlay" id="a2apage_overlay"></div><div class="a2a_menu a2a_full" id="a2apage_full" role="dialog" tabindex="-1" aria-label="Share"><div class="a2a_full_header"><div id="a2apage_find_container" class="a2a_menu_find_container"><input id="a2apage_find" class="a2a_menu_find" onclick="" onkeyup="" autocomplete="off" title="Find any service" type="text"><span id="a2apage_find_icon" class="a2a_svg a2a_s_find" onclick=""><svg focusable="false" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="24" height="24" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="#CCCCCC" d="M19.7 18.2l-4.5-4.5c0.7-1.1 1.2-2.3 1.2-3.6 0-3.5-2.8-6.3-6.3-6.3 -3.5 0-6.3 2.8-6.3 6.3 0 3.5 2.8 6.3 6.3 6.3 1.4 0 2.6-0.4 3.6-1.2l4.5 4.5c0.6 0.6 1.3 0.7 1.7 0.2C20.4 19.5 20.3 18.8 19.7 18.2zM10.1 14.6c-2.5 0-4.5-2.1-4.5-4.5 0-2.5 2.1-4.5 4.5-4.5 2.5 0 4.5 2.1 4.5 4.5C14.6 12.5 12.6 14.6 10.1 14.6z"></path></svg></span></div></div><div class="a2a_full_services" id="a2apage_full_services" role="presentation"><a target="_blank" href="http://blog.smartbear.com/#facebook" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_facebook"></span>Facebook </a><a target="_blank" href="http://blog.smartbear.com/#twitter" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_twitter"></span>Twitter </a><a target="_blank" href="http://blog.smartbear.com/#google_plus" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_google_plus"></span>Google+ </a><a target="_blank" href="http://blog.smartbear.com/#pinterest" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_pinterest"></span>Pinterest </a><a target="_blank" href="http://blog.smartbear.com/#email" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_email"></span>Email </a><a target="_blank" href="http://blog.smartbear.com/#linkedin" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_linkedin"></span>LinkedIn </a><a target="_blank" href="http://blog.smartbear.com/#reddit" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_reddit"></span>Reddit </a><a target="_blank" href="http://blog.smartbear.com/#tumblr" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_tumblr"></span>Tumblr </a><a target="_blank" href="http://blog.smartbear.com/#wordpress" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_wordpress"></span>WordPress </a><a target="_blank" href="http://blog.smartbear.com/#google_gmail" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_gmail"></span>Google Gmail </a><a target="_blank" href="http://blog.smartbear.com/#whatsapp" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_whatsapp"></span>WhatsApp </a><a target="_blank" href="http://blog.smartbear.com/#stumbleupon" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_stumbleupon"></span>StumbleUpon </a><a target="_blank" href="http://blog.smartbear.com/#aim" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_aim"></span>AIM </a><a target="_blank" href="http://blog.smartbear.com/#amazon_wish_list" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_amazon"></span>Amazon Wish List </a><a target="_blank" href="http://blog.smartbear.com/#aol_mail" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_aol"></span>AOL Mail </a><a target="_blank" href="http://blog.smartbear.com/#app_net" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_app_net"></span>App.net </a><a target="_blank" href="http://blog.smartbear.com/#baidu" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_baidu"></span>Baidu </a><a target="_blank" href="http://blog.smartbear.com/#balatarin" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_balatarin"></span>Balatarin </a><a target="_blank" href="http://blog.smartbear.com/#bibsonomy" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_bibsonomy"></span>BibSonomy </a><a target="_blank" href="http://blog.smartbear.com/#bitty_browser" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_bitty"></span>Bitty Browser </a><a target="_blank" href="http://blog.smartbear.com/#blinklist" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_blinklist"></span>Blinklist </a><a target="_blank" href="http://blog.smartbear.com/#blogger_post" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_blogger"></span>Blogger Post </a><a target="_blank" href="http://blog.smartbear.com/#blogmarks" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_blogmarks"></span>BlogMarks </a><a target="_blank" href="http://blog.smartbear.com/#bookmarks_fr" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_bookmarks_fr"></span>Bookmarks.fr </a><a target="_blank" href="http://blog.smartbear.com/#box_net" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_box"></span>Box.net </a><a target="_blank" href="http://blog.smartbear.com/#buddymarks" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_buddymarks"></span>BuddyMarks </a><a target="_blank" href="http://blog.smartbear.com/#buffer" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_buffer"></span>Buffer </a><a target="_blank" href="http://blog.smartbear.com/#care2_news" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_care2"></span>Care2 News </a><a target="_blank" href="http://blog.smartbear.com/#citeulike" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_citeulike"></span>CiteULike </a><a target="_blank" href="http://blog.smartbear.com/#delicious" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_delicious"></span>Delicious </a><a target="_blank" href="http://blog.smartbear.com/#design_float" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_designfloat"></span>Design Float </a><a target="_blank" href="http://blog.smartbear.com/#diary_ru" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_diary_ru"></span>Diary.Ru </a><a target="_blank" href="http://blog.smartbear.com/#diaspora" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_diaspora"></span>Diaspora </a><a target="_blank" href="http://blog.smartbear.com/#digg" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_digg"></span>Digg </a><a target="_blank" href="http://blog.smartbear.com/#dihitt" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_dihitt"></span>diHITT </a><a target="_blank" href="http://blog.smartbear.com/#diigo" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_diigo"></span>Diigo </a><a target="_blank" href="http://blog.smartbear.com/#dzone" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_dzone"></span>DZone </a><a target="_blank" href="http://blog.smartbear.com/#evernote" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_evernote"></span>Evernote </a><a target="_blank" href="http://blog.smartbear.com/#fark" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_fark"></span>Fark </a><a target="_blank" href="http://blog.smartbear.com/#flipboard" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_flipboard"></span>Flipboard </a><a target="_blank" href="http://blog.smartbear.com/#folkd" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_folkd"></span>Folkd </a><a target="_blank" href="http://blog.smartbear.com/#google_bookmarks" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_google"></span>Google Bookmarks </a><a target="_blank" href="http://blog.smartbear.com/#google_classroom" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_google_classroom"></span>Google Classroom </a><a target="_blank" href="http://blog.smartbear.com/#hacker_news" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_y18"></span>Hacker News </a><a target="_blank" href="http://blog.smartbear.com/#hatena" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_hatena"></span>Hatena </a><a target="_blank" href="http://blog.smartbear.com/#instapaper" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_instapaper"></span>Instapaper </a><a target="_blank" href="http://blog.smartbear.com/#jamespot" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_jamespot"></span>Jamespot </a><a target="_blank" href="http://blog.smartbear.com/#kakao" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_kakao"></span>Kakao </a><a target="_blank" href="http://blog.smartbear.com/#kik" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_kik"></span>Kik </a><a target="_blank" href="http://blog.smartbear.com/#kindle_it" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_kindle"></span>Kindle It </a><a target="_blank" href="http://blog.smartbear.com/#known" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_known"></span>Known </a><a target="_blank" href="http://blog.smartbear.com/#line" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_line"></span>Line </a><a target="_blank" href="http://blog.smartbear.com/#livejournal" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_livejournal"></span>LiveJournal </a><a target="_blank" href="http://blog.smartbear.com/#mail_ru" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_mail_ru"></span>Mail.Ru </a><a target="_blank" href="http://blog.smartbear.com/#mendeley" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_mendeley"></span>Mendeley </a><a target="_blank" href="http://blog.smartbear.com/#meneame" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_meneame"></span>Meneame </a><a target="_blank" href="http://blog.smartbear.com/#mixi" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_mixi"></span>Mixi </a><a target="_blank" href="http://blog.smartbear.com/#myspace" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_myspace"></span>MySpace </a><a target="_blank" href="http://blog.smartbear.com/#netlog" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_netlog"></span>Netlog </a><a target="_blank" href="http://blog.smartbear.com/#netvouz" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_netvouz"></span>Netvouz </a><a target="_blank" href="http://blog.smartbear.com/#newsvine" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_newsvine"></span>NewsVine </a><a target="_blank" href="http://blog.smartbear.com/#nujij" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_nujij"></span>NUjij </a><a target="_blank" href="http://blog.smartbear.com/#odnoklassniki" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_odnoklassniki"></span>Odnoklassniki </a><a target="_blank" href="http://blog.smartbear.com/#oknotizie" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_oknotizie"></span>Oknotizie </a><a target="_blank" href="http://blog.smartbear.com/#outlook_com" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_outlook_com"></span>Outlook.com </a><a target="_blank" href="http://blog.smartbear.com/#pinboard" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_pinboard"></span>Pinboard </a><a target="_blank" href="http://blog.smartbear.com/#plurk" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_plurk"></span>Plurk </a><a target="_blank" href="http://blog.smartbear.com/#pocket" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_pocket"></span>Pocket </a><a target="_blank" href="http://blog.smartbear.com/#print" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_print"></span>Print </a><a target="_blank" href="http://blog.smartbear.com/#printfriendly" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_printfriendly"></span>PrintFriendly </a><a target="_blank" href="http://blog.smartbear.com/#protopage_bookmarks" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_protopage"></span>Protopage Bookmarks </a><a target="_blank" href="http://blog.smartbear.com/#pusha" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_pusha"></span>Pusha </a><a target="_blank" href="http://blog.smartbear.com/#qzone" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_qzone"></span>Qzone </a><a target="_blank" href="http://blog.smartbear.com/#rediff" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_rediff"></span>Rediff MyPage </a><a target="_blank" href="http://blog.smartbear.com/#renren" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_renren"></span>Renren </a><a target="_blank" href="http://blog.smartbear.com/#segnalo" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_segnalo"></span>Segnalo </a><a target="_blank" href="http://blog.smartbear.com/#sina_weibo" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_sina_weibo"></span>Sina Weibo </a><a target="_blank" href="http://blog.smartbear.com/#sitejot" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_sitejot"></span>SiteJot </a><a target="_blank" href="http://blog.smartbear.com/#skype" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_skype"></span>Skype </a><a target="_blank" href="http://blog.smartbear.com/#slashdot" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_slashdot"></span>Slashdot </a><a target="_blank" href="http://blog.smartbear.com/#sms" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_sms"></span>SMS </a><a target="_blank" href="http://blog.smartbear.com/#stumpedia" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_stumpedia"></span>Stumpedia </a><a target="_blank" href="http://blog.smartbear.com/#svejo" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_svejo"></span>Svejo </a><a target="_blank" href="http://blog.smartbear.com/#symbaloo_feeds" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_symbaloo"></span>Symbaloo Feeds </a><a target="_blank" href="http://blog.smartbear.com/#telegram" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_telegram"></span>Telegram </a><a target="_blank" href="http://blog.smartbear.com/#tuenti" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_tuenti"></span>Tuenti </a><a target="_blank" href="http://blog.smartbear.com/#twiddla" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_twiddla"></span>Twiddla </a><a target="_blank" href="http://blog.smartbear.com/#typepad_post" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_typepad"></span>TypePad Post </a><a target="_blank" href="http://blog.smartbear.com/#viadeo" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_viadeo"></span>Viadeo </a><a target="_blank" href="http://blog.smartbear.com/#viber" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_viber"></span>Viber </a><a target="_blank" href="http://blog.smartbear.com/#vk" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_vk"></span>VK </a><a target="_blank" href="http://blog.smartbear.com/#wanelo" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_wanelo"></span>Wanelo </a><a target="_blank" href="http://blog.smartbear.com/#webnews" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_webnews"></span>Webnews </a><a target="_blank" href="http://blog.smartbear.com/#wechat" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_wechat"></span>WeChat </a><a target="_blank" href="http://blog.smartbear.com/#wykop" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_wykop"></span>Wykop </a><a target="_blank" href="http://blog.smartbear.com/#xing" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_xing"></span>XING </a><a target="_blank" href="http://blog.smartbear.com/#yahoo_bookmarks" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_yahoo"></span>Yahoo Bookmarks </a><a target="_blank" href="http://blog.smartbear.com/#yahoo_mail" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_yahoo"></span>Yahoo Mail </a><a target="_blank" href="http://blog.smartbear.com/#yahoo_messenger" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_yim"></span>Yahoo Messenger </a><a target="_blank" href="http://blog.smartbear.com/#yoolink" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_yoolink"></span>Yoolink </a><a target="_blank" href="http://blog.smartbear.com/#youmob" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_youmob"></span>YouMob </a><a target="_blank" href="http://blog.smartbear.com/#yummly" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_yummly"></span>Yummly </a><i class="a2a_i"></i><i class="a2a_i"></i></div><div class="a2a_full_footer"><a href="https://www.addtoany.com/" title="Share Buttons" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_a2a"></span>AddToAny</a></div></div><div id="a2apage_dropdown" class="a2a_menu a2a_mini" onmouseover="" onmouseout="" tabindex="-1" aria-label="Share" style="display:none"><div id="a2apage_title_container" class="a2a_menu_title_container" style="display:none"><input id="a2apage_title" class="a2a_menu_title"></div><div class="a2a_mini_services" id="a2apage_mini_services"><a target="_blank" href="http://blog.smartbear.com/#facebook" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_facebook"></span>Facebook </a><a target="_blank" href="http://blog.smartbear.com/#twitter" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_twitter"></span>Twitter </a><a target="_blank" href="http://blog.smartbear.com/#google_plus" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_google_plus"></span>Google+ </a><a target="_blank" href="http://blog.smartbear.com/#pinterest" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_pinterest"></span>Pinterest </a><a target="_blank" href="http://blog.smartbear.com/#email" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_email"></span>Email </a><a target="_blank" href="http://blog.smartbear.com/#linkedin" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_linkedin"></span>LinkedIn </a><a target="_blank" href="http://blog.smartbear.com/#reddit" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_reddit"></span>Reddit </a><a target="_blank" href="http://blog.smartbear.com/#tumblr" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_tumblr"></span>Tumblr </a></div><div id="a2apage_cols_container" class="a2a_cols_container"><div class="a2a_col1" id="a2apage_col1"></div><div id="a2apage_2_col1" style="display:none"><a target="_blank" href="http://blog.smartbear.com/#google_gmail" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_gmail"></span>Google Gmail </a><a target="_blank" href="http://blog.smartbear.com/#aol_mail" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_aol"></span>AOL Mail </a><a target="_blank" href="http://blog.smartbear.com/#outlook_com" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_outlook_com"></span>Outlook.com </a><a target="_blank" href="http://blog.smartbear.com/#yahoo_mail" class="a2a_i" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_yahoo"></span>Yahoo Mail </a><a id="a2apage_any_email" target="_blank" href="http://blog.smartbear.com/#email_form" class="a2a_i a2a_emailer" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_email"></span>Any email </a><a id="a2apage_email_client" target="" href="http://blog.smartbear.com/#email_form" class="a2a_i a2a_emailer a2a_email_client" rel="nofollow"><span class="a2a_svg a2a_s__default a2a_s_email"></span>Email app</a></div><div class="a2a_clear"></div></div><div class="a2apage_wide a2a_wide"><a href="" id="a2apage_show_more_less" class="a2a_menu_show_more_less a2a_more" title="Show all"><span class="a2a_svg a2a_s__default a2a_s_a2a"></span>More…</a></div></div><div style="height: 1px; width: 1px; position: absolute; z-index: 100000; top: 0px; visibility: hidden;"><iframe src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/sm13.html#type=page&amp;event=load&amp;url=http%3A%2F%2Fblog.smartbear.com%2Fc-plus-plus%2Fc11-tutorial-introducing-the-move-constructor-and-the-move-assignment-operator%2F&amp;referrer=https%3A%2F%2Fwww.google.be" allowtransparency="true" transparency="true" title="AddToAny Utility Frame" style="height: 1px; width: 1px; border: 0px none; left: 0px; top: 0px; position: absolute; z-index: 100000; display: none;" id="a2apage_sm_ifr" frameborder="0" height="1" width="1"></iframe></div></div><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/postmessageRelay.html#rpctoken=838328557&amp;forcesecure=1" id="oauth2relay756954338" name="oauth2relay756954338"></iframe><iframe src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/generated-content.html" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;" allowfullscreen="true" allowtransparency="true" scrolling="no" id="rufous-sandbox" frameborder="0"></iframe><script src="C++11%20Tutorial:%20Introducing%20the%20Move%20Constructor%20and%20the%20Move%20Assignment%20Operator_files/log.pinterest.com.js" charset="utf-8" type="text/javascript" id="PIN_1463917222062.f.callback[0]"></script></body></html>

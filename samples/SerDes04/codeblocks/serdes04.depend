@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1107206778 d:\bert\projects\serdes04\src\serdesplanb.cpp
+	<iostream>
+	"blib/StringTools.hpp"
+	"SerDesPlanB.hpp"
+
+1150892338 d:\bert\projects\blib\blib\stringtools.hpp
+	"definitions.hpp"
+
+1105996986 d:\bert\projects\blib\blib\definitions.hpp
+	<string>
+	<vector>
+	<list>
+	<map>
+
+1107206738 d:\bert\projects\serdes04\src\serdesplanb.hpp
+	"serdes.hpp"
+
+1163111401 d:\bert\projects\serdes04\src\serdes.hpp
+	<iostream>
+	<sstream>
+	<string>
+	<vector>
+	<deque>
+	<list>
+	<set>
+	<map>
+
+1163108679 d:\bert\projects\serdes04\src\main.cpp
+	<iostream>
+	<stdlib.h>
+	"serdesplanb.hpp"
+	"shapes.hpp"
+	"blib/StringTools.hpp"
+	<fstream>
+	<vector>
+
+1103317570 d:\bert\projects\serdes04\src\shapes.hpp
+

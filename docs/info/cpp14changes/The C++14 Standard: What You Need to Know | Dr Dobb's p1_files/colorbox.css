@@ -1,0 +1,29 @@
+/* Effective stylesheet produced by snapshot save */
+#colorbox, #cboxOverlay, #cboxWrapper { position: absolute; top: 0px; left: 0px; z-index: 9999; overflow: hidden; }
+#cboxOverlay { position: fixed; width: 100%; height: 100%; display: none; }
+#cboxMiddleLeft, #cboxBottomLeft { clear: left; }
+#cboxContent { position: relative; }
+#cboxLoadedContent { overflow: auto; }
+#cboxTitle { margin: 0px; }
+#cboxLoadingOverlay, #cboxLoadingGraphic { position: absolute; top: 0px; left: 0px; width: 100%; }
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow { cursor: pointer; }
+#cboxOverlay { background: rgb(0, 0, 0) none repeat scroll 0% 0%; }
+#colorbox {  }
+#cboxTopLeft { width: 14px; height: 14px; background: transparent url("controls.png") no-repeat scroll 0px 0px; }
+#cboxTopCenter { height: 14px; background: transparent url("border.png") repeat-x scroll left top; }
+#cboxTopRight { width: 14px; height: 14px; background: transparent url("controls.png") no-repeat scroll -36px 0px; }
+#cboxBottomLeft { width: 14px; height: 43px; background: transparent url("controls.png") no-repeat scroll 0px -32px; }
+#cboxBottomCenter { height: 43px; background: transparent url("border.png") repeat-x scroll left bottom; }
+#cboxBottomRight { width: 14px; height: 43px; background: transparent url("controls.png") no-repeat scroll -36px -32px; }
+#cboxMiddleLeft { width: 14px; background: transparent url("controls.png") repeat-y scroll -175px 0px; }
+#cboxMiddleRight { width: 14px; background: transparent url("controls.png") repeat-y scroll -211px 0px; }
+#cboxContent { background: rgb(255, 255, 255) none repeat scroll 0% 0%; overflow: visible; }
+#cboxLoadedContent { margin-bottom: 5px; }
+#cboxLoadingOverlay { background: transparent url("loading_background.png") no-repeat scroll center center; }
+#cboxLoadingGraphic { background: transparent url("loading.gif") no-repeat scroll center center; }
+#cboxTitle { position: absolute; bottom: -25px; left: 0px; text-align: center; width: 100%; font-weight: bold; color: rgb(124, 124, 124); }
+#cboxCurrent { position: absolute; bottom: -25px; left: 58px; font-weight: bold; color: rgb(124, 124, 124); }
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow { position: absolute; bottom: -29px; background: transparent url("controls.png") no-repeat scroll 0px 0px; width: 23px; height: 23px; text-indent: -9999px; }
+#cboxPrevious { left: 0px; background-position: -51px -25px; }
+#cboxNext { left: 27px; background-position: -75px -25px; }
+#cboxClose { right: 0px; background-position: -100px -25px; }

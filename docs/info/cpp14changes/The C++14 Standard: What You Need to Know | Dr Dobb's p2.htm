@@ -1,0 +1,1343 @@
+<!DOCTYPE html><html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!--  default/layout/scripts/article -->
+		<meta charset="UTF-8">		
+		<meta http-equiv="X-UA-Compatible" content="IE=EDGE">		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />-->
+	<script async="" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/cb=gapi.loaded_1.js"></script><script src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/all.js#xfbml=1" id="facebook-jssdk"></script><script src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/widgets.js" id="twitter-wjs"></script><script src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/ga.js" async="" type="text/javascript"></script><script async="" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/cb=gapi.loaded_0-1.js"></script><script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/detect.js"></script><style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+:root #leaderboard2, :root #leaderboard1, :root .addthis_toolbox, :root #topAdContainer, :root #header + #content > #left > #rlblock_left, :root #content > #right > .dose > .dosesingle, :root #content > #center > .dose > .dosesingle, :root div[id^="zergnet-widget-"], :root div[id^="mainads"], :root td[valign="top"] > .mainmenu[style="padding:10px 0 0 0 !important;"], :root iframe[src^="http://static.mozo.com.au/strips/"], :root script[src^="http://free-shoutbox.net/app/webroot/shoutbox/sb.php?shoutbox="] + #freeshoutbox_content, :root p[id^="div-gpt-ad-"], :root input[onclick^="window.open(\'http://www.friendlyduck.com/AF_"], :root input[onclick^="window.open(\'http://www.FriendlyDuck.com/AF_"], :root img[alt^="Fuckbook"], :root iframe[src^="http://cdn2.adexprt.com/"], :root iframe[src^="http://cdn1.adexprt.com/"], :root iframe[src^="http://ad.yieldmanager.com/"], :root iframe[id^="google_ads_iframe"], :root iframe[id^="google_ads_frame"], :root div[itemtype="http://www.schema.org/WPAdBlock"], :root div[itemtype="http://schema.org/WPAdBlock"], :root div[id^="proadszone-"], :root div[id^="google_dfp_"], :root div[id^="dmRosAdWrapper"], :root div[id^="div_openx_ad_"], :root div[id^="div_ad_stack_"], :root div[id^="div-gpt-ad"], :root div[id^="div-adtech-ad-"], :root div[id^="dfp-slot-"], :root div[id^="dfp-ad-"], :root div[id^="cns_ads_"], :root div[id^="adrotate_widgets-"], :root div[id^="acm-ad-tag-"], :root div[id^="YFBMSN"], :root div[id^="MarketGid"], :root div[id^="ADV-SLOT-"], :root aside[id^="div-gpt-ad"], :root a[target="_blank"][onmousedown="this.href^=\'http://paid.outbrain.com/network/redir?"], :root a[style="display:block;width:300px;min-height:250px"][href^="http://li.cnet.com/click?"], :root a[onmousedown^="this.href=\'https://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href=\'https://paid.outbrain.com/network/redir?"][target="_blank"], :root a[onmousedown^="this.href=\'http://staffpicks.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href=\'http://staffpicks.outbrain.com/network/redir?"][target="_blank"], :root a[onmousedown^="this.href=\'http://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href=\'http://paid.outbrain.com/network/redir?"][target="_blank"], :root [href^="http://taboola-"][href*="/redirect.php?app.type="], :root [href^="http://games.ucoz.ru/"][target="_blank"], :root [href^="http://amzn.to/"] > img[src^="data"], :root [href^="//t.MtagMonetizationA.com/"], :root [href^="//go.ad2up.com/"], :root [href^="//ads.ad-center.com/"], :root [href^="//adbit.co/?a=Advertise&"], :root [href^=" http://n47adshostnet.com/"], :root [href^=" http://ads.ad-center.com/"], :root a[href*="letsadvertisetogether.com"], :root a[href*="emprestimo.eu"], :root a[href*="/adrotate-out.php?"], :root a[href$="/vghd.shtml"], :root a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"], :root a[data-redirect^="this.href=\'http://paid.outbrain.com/network/redir?"], :root a[data-obtrack^="http://paid.outbrain.com/network/redir?"], :root [onclick^="window.open(\'http://adultfriendfinder.com/search/"], :root [lazy-ad="lefttop_banner"] { display: none ! important; }
+--></style>
+	<link rel="stylesheet" type="text/css" href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/poll.css">
+		
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/jquery.min.js"></script>
+
+<title>The C++14 Standard: What You Need to Know | Dr Dobb's</title><meta name="description" content="New, useful features that make the language safer and more convenient.">
+<meta name="headline" content="The C++14 Standard: What You Need to Know">
+<meta name="news_keywords" content="software development, source code, Architecture &amp; Design, Eclipse &amp; Open Source, Windows/.NET, Database, Testing &amp; Debugging, SOA, Web Services &amp; XML, Mobility">
+<meta name="created" content="September 16, 2014">
+<meta name="google-site-verification" content="HqG7-1r7RoBTg-CKrClDy746Njj0o8y-9CgeYSK4CyM">
+<meta name="original-source" content="http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034">
+<meta property="og:title" content="The C++14 Standard: What You Need to Know">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034">
+<meta property="og:image" content="http://i.cmpnet.com/ddj/digital/ddj.gif">
+<meta property="og:site_name" content="Dr. Dobb's">
+<meta property="og:description" content="New, useful features that make the language safer and more convenient.">
+<meta property="fb:admins" content="550301723,1033888255">
+<meta property="fb:page_id" content="17631669579">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:site" content="@dr_dobbs">
+<meta property="twitter:title" content="The C++14 Standard: What You Need to Know">
+<meta property="twitter:description" content="New, useful features that make the language safer and more convenient.">
+<meta property="twitter:creator" content="@snorkelman">
+<meta property="twitter:url" content="http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034">
+<meta property="twitter:image:src" content="http://i.cmpnet.com/ddj/digital/ddj.gif">
+<meta property="twitter:domain" content="http://www.drdobbs.com"> 
+	<link rel="image_src" href="http://twimgs.com/ddj/v2/images/fb_thumbnail.jpg">
+	<link rel="stylesheet" href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/thickbox.css">
+	<link rel="stylesheet" href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/style.css">
+	<link rel="SHORTCUT ICON" href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/favicon.ico">
+	
+
+<!--	<script language="JavaScript" type="text/javascript" src="http://twimgs.com/nc/mt/js/jquery-1.2.6.min.js"></script>-->
+	<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/jquery-ui-1.8rc3.custom.min.js"></script>
+	
+	<script language="JavaScript" type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/sidebar.js"></script>
+	<script language="JavaScript" type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/thickbox.js"></script>
+	<script language="JavaScript" type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/togglediv.js"></script>
+
+	<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/addthis_widget.js#pub=xa-4af4a81901b903fa"></script>
+	<script language="JavaScript" type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/scripts.js"></script>
+	<script language="JavaScript" type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/popwindow.js"></script>
+
+	
+	
+	<script gapi_processed="true" type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/plusone.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/h-nav.css">     
+	<link rel="stylesheet" href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/devtest_style.css">
+	<style><!--
+/* Effective stylesheet produced by snapshot save */
+@media screen and (max-width: 320px) {
+  #techwebCommentLogin { border-radius: 10px; width: 275px ! important; }
+  .doublepage .dcol2 { width: auto ! important; }
+}
+--></style>
+<link href="http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034" rel="canonical">
+<link href="http://www.drdobbs.com/rss/all" rel="alternate" type="application/rss+xml" title="Dr. Dobb's All Articles">
+<link href="http://www.drdobbs.com/rss/all" rel="alternate" type="application/rss+xml" title="Dr. Dobb's All Articles">
+<link href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/tabs.css" media="screen" rel="stylesheet" type="text/css">
+<link href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/devtest_left-col-slim.css" media="screen" rel="stylesheet" type="text/css">
+<link href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/twlightbox.css" media="screen" rel="stylesheet" type="text/css"><script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/jquery.url.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/md5_hash.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/twlightbox.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/nextgen.js"></script>
+
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/custom_tracking.js"></script>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+	<!-- Start: GPT Sync -->
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><script src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/gpt.js"></script>
+
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>	<meta name="pagecaching" content="576"><meta name="node" content="96">	<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/tabbed-content.jquery.js"></script>
+		<script language="JavaScript" type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/contentgating.js"></script>	<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/j.php.js"></script>
+	
+	<link rel="stylesheet" href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/mobile.css">	
+<script src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/secureAnonymousFramework.js"></script><style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#li_ui_li_gen_1463916502717_0 { position: relative ! important; overflow: visible ! important; display: block ! important; }
+#li_ui_li_gen_1463916502717_0 span { box-sizing: content-box ! important; }
+#li_ui_li_gen_1463916502717_0 a#li_ui_li_gen_1463916502717_0-link { border: 0px none ! important; height: 20px ! important; text-decoration: none ! important; padding: 0px ! important; margin: 0px ! important; display: inline-block ! important; }
+#li_ui_li_gen_1463916502717_0 a#li_ui_li_gen_1463916502717_0-link:link, #li_ui_li_gen_1463916502717_0 a#li_ui_li_gen_1463916502717_0-link:visited, #li_ui_li_gen_1463916502717_0 a#li_ui_li_gen_1463916502717_0-link:hover, #li_ui_li_gen_1463916502717_0 a#li_ui_li_gen_1463916502717_0-link:active { border: 0px none ! important; text-decoration: none ! important; }
+#li_ui_li_gen_1463916502717_0 a#li_ui_li_gen_1463916502717_0-link::after { content: "." ! important; display: block ! important; clear: both ! important; visibility: hidden ! important; line-height: 0 ! important; height: 0px ! important; }
+#li_ui_li_gen_1463916502717_0 #li_ui_li_gen_1463916502717_0-logo { background-image: url("The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20|%20Dr%20Dobb's%20p2_files/sprite_connect_v14.png") ! important; background-position: -56px -423px ! important; background-repeat: no-repeat ! important; background-color: rgb(0, 119, 181) ! important; background-size: 135px auto ! important; cursor: pointer ! important; border-width: 0px 1px 0px 0px ! important; border-style: none solid none none ! important; border-color: -moz-use-text-color rgb(6, 96, 148) -moz-use-text-color -moz-use-text-color ! important; -moz-border-top-colors: none ! important; -moz-border-right-colors: none ! important; -moz-border-bottom-colors: none ! important; -moz-border-left-colors: none ! important; border-image: none ! important; text-indent: -9999em ! important; overflow: hidden ! important; padding: 0px ! important; margin: 0px ! important; position: absolute ! important; left: 0px ! important; top: 0px ! important; display: block ! important; width: 20px ! important; height: 20px ! important; float: right ! important; border-radius: 2px ! important; }
+#li_ui_li_gen_1463916502717_0 #li_ui_li_gen_1463916502717_0-title { color: rgb(255, 255, 255) ! important; cursor: pointer ! important; display: block ! important; white-space: nowrap ! important; float: left ! important; margin-left: 1px ! important; vertical-align: top ! important; overflow: hidden ! important; text-align: center ! important; height: 18px ! important; padding: 0px 4px 0px 23px ! important; border: 1px solid rgb(0, 119, 181) ! important; text-shadow: 0px -1px rgb(0, 88, 135) ! important; line-height: 20px ! important; border-radius: 2px ! important; background-color: rgb(0, 119, 181) ! important; background-image: -moz-linear-gradient(center top , rgb(0, 119, 181) 0%, rgb(0, 119, 181) 100%) ! important; }
+#li_ui_li_gen_1463916502717_0 #li_ui_li_gen_1463916502717_0-title-text, #li_ui_li_gen_1463916502717_0 #li_ui_li_gen_1463916502717_0-title-text * { color: rgb(255, 255, 255) ! important; font-size: 11px ! important; font-family: Arial,sans-serif ! important; font-weight: bold ! important; font-style: normal ! important; display: inline-block ! important; background: transparent none repeat scroll 0% 0% ! important; vertical-align: top ! important; height: 18px ! important; line-height: 20px ! important; float: none ! important; }
+#li_ui_li_gen_1463916502717_0 #li_ui_li_gen_1463916502717_0-title #li_ui_li_gen_1463916502717_0-mark { display: inline-block ! important; width: 0px ! important; overflow: hidden ! important; }
+--></style><link media="screen" href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/disqusLoggedOff.css" rel="stylesheet" type="text/css"><script src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/count.js" type="text/javascript" async=""></script><script src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/count-data.js"></script><script src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/button.07a87b943a27e2a4a74c40e24a4a5ccc.js" async="" charset="utf-8" type="text/javascript"></script><style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+.fb_reset { background: transparent none repeat scroll 0% 0%; border: 0px none; border-spacing: 0px; color: rgb(0, 0, 0); cursor: auto; direction: ltr; font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 1; margin: 0px; overflow: visible; padding: 0px; text-align: left; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; visibility: visible; white-space: normal; word-spacing: normal; }
+.fb_reset > div { overflow: hidden; }
+@keyframes fb_transform {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes rotateSpinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.fb_iframe_widget { display: inline-block; position: relative; }
+.fb_iframe_widget span { display: inline-block; position: relative; text-align: justify; }
+.fb_iframe_widget iframe { position: absolute; }
+--></style><script src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/roundtrip.js" type="text/javascript" async="true"></script></head>
+<body><div style="display: none;" id="cboxOverlay"></div><div class="" style="padding-bottom: 57px; padding-right: 28px; display: none;" id="colorbox"><div style="" id="cboxWrapper"><div style="" id="false"><div style="float: left;" id="cboxTopLeft"></div><div style="float: left;" id="cboxTopCenter"></div><div style="float: left;" id="cboxTopRight"></div></div><div style="clear: left;" id="false"><div style="float: left;" id="cboxMiddleLeft"></div><div style="float: left;" id="cboxContent"><div class="" style="width: 0px; height: 0px; overflow: hidden;" id="cboxLoadedContent"></div><div class="" style="" id="cboxLoadingOverlay"></div><div class="" style="" id="cboxLoadingGraphic"></div><div class="" style="" id="cboxTitle"></div><div class="" style="" id="cboxCurrent"></div><div class="" style="" id="cboxNext"></div><div class="" style="" id="cboxPrevious"></div><div class="" style="" id="cboxSlideshow"></div><div class="" style="" id="cboxClose"></div></div><div style="float: left;" id="cboxMiddleRight"></div></div><div style="clear: left;" id="false"><div style="float: left;" id="cboxBottomLeft"></div><div style="float: left;" id="cboxBottomCenter"></div><div style="float: left;" id="cboxBottomRight"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;" id="false"></div></div>
+			<div style="display: none ! important;" id="div-gpt-ad-942957474691236830-1">
+			<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		</div>
+				<div style="display: none ! important;" id="div-gpt-ad-942957474691236830-30">
+			<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		</div>
+	<div style="display: none ! important;" id="topAdContainer">
+			<div style="display: none ! important;" id="div-gpt-ad-942957474691236830-2">
+			<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		</div>
+	</div>
+<div id="container">
+	<style><!--
+/* Effective stylesheet produced by snapshot save */
+#login, #login a, #login strong { color: white; font-weight: bold; font-size: 12px; }
+--></style>
+
+
+<div id="login" class="welcome" style="padding-left: 12px;"><strong>Welcome Guest</strong> |
+                        <a class="first" rel="nofollow" onclick="" href="javascript:void(0);">Log In</a> |
+                        <a rel="nofollow" class="last" onclick="" href="javascript:void(0);">Register</a> |
+                        <a onclick="" href="javascript:void(0);">Benefits</a>
+                        <link rel="stylesheet" href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/disqusLoggedOff-1.css" type="text/css"></div>	<div id="header">	   
+	   <!-- h-nav -->
+	  <header>  <div id="h-nav">
+	  <nav>
+	    	<ul>
+			<li><a href="http://www.drdobbs.com/subscribe/">Subscribe</a></li>
+		    <li><a href="http://www.drdobbs.com/newsletters/">Newsletters</a></li>
+			<li><a href="http://www.informationweek.com/whitepaper/topic/developer">Digital Library</a></li>
+			<li><a href="http://www.drdobbs.com/rss/">RSS</a></li>
+			</ul>	
+		</nav>					
+		</div>
+    	<!-- / h-nav -->
+		
+	<div id="search">
+		<script language="JavaScript" type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+<form method="get" action="http://www.drdobbs.com/sitesearch">
+	<input name="sort" value="publishDate desc" type="hidden">
+	<ul>
+		<li><input size="40" id="queryText" name="queryText" maxlength="100" class="text" type="text"></li>
+		<li><input value=" " class="search" type="submit"></li>
+	</ul>
+	Search: 
+	<input name="type" value="site" checked="checked" type="radio"> Site
+	<input name="type" value="sourcecode" type="radio"> Source Code
+</form>	</div>
+	<br><br>
+
+		<div id="h-nav_main">
+ 	
+<div id="h-nav_mainSection">
+<!-- main section indicator -->
+<nav>
+<ul class="navigation">
+  <li class="h-58"><a name="ddj-header-navbar-home" href="http://www.drdobbs.com/" class="h-58" style="float:left">Home</a></li><li class="h-68"><a name="ddj-header-navbar-articles" href="http://www.drdobbs.com/articles" class="h-68" style="float:left">Articles</a></li><li class="h-58"><a name="ddj-header-navbar-news" href="http://www.drdobbs.com/news" class="h-58" style="float:left">News</a></li><li class="h-58"><a name="ddj-header-navbar-blogs" href="http://www.drdobbs.com/blogs" class="h-58" style="float:left">Blogs</a></li><li class="h-108"><a name="ddj-header-navbar-sourcecode" href="http://www.drdobbs.com/sourcecode" class="h-108" style="float:left">Source Code</a></li><li class="h-88"><a name="ddj-header-navbar-tv" href="http://www.drdobbs.com/tv" class="h-88" style="float:left">Dobb's TV</a></li><li class="h-148"><a name="ddj-header-navbar-webinars" href="http://www.informationweek.com/events/d/d-id/898857" class="h-148" style="float:left">Webinars &amp; Events</a></li> 
+</ul>
+</nav>
+</div><div id="clearLeft"></div>
+<!-- / main section indicator -->
+<!-- header social icons -->
+  <div id="h-nav_social">	 	
+  	<ul>
+	<li><a href="http://www.facebook.com/pages/Dr-Dobbs/17631669579" style="float:left"><img src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/h-facebook_sm.png" alt="Facebook" border="0"></a></li>
+	<li><a href="http://twitter.com/dr_dobbs" style="float:left"><img src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/h-twitter_sm.png" alt="Twitter" border="0"></a></li>
+  	</ul>
+  </div>		
+<!-- / header social icons -->
+
+
+ <!-- go parallel indicator -->
+ <!-- <div id="h-nav_goParallel">	 	
+	<ul>  
+	 <li class="h-88">
+	<a title="Go Parallel" class="gp" href="/go-parallel/" name="ddj-header-navbar-goparallel" style="float:right">Go Parallel</a>
+	</li>
+	</ul>
+  </div>  -->
+ <!-- / go parallel indicator -->
+
+<div id="h-nav_mainSection-mobile" class="mobile-unit">	
+	        <a>Sections<i> ▼</i></a>
+				<ul class="unstyled">				
+				     <li class="h-58"><a name="ddj-header-navbar-home" href="http://www.drdobbs.com/" class="h-58">Home</a></li><li class="h-68"><a name="ddj-header-navbar-articles" href="http://www.drdobbs.com/articles" class="h-68">Articles</a></li><li class="h-58"><a name="ddj-header-navbar-news" href="http://www.drdobbs.com/news" class="h-58">News</a></li><li class="h-58"><a name="ddj-header-navbar-blogs" href="http://www.drdobbs.com/blogs" class="h-58">Blogs</a></li><li class="h-108"><a name="ddj-header-navbar-sourcecode" href="http://www.drdobbs.com/sourcecode" class="h-108">Source Code</a></li><li class="h-88"><a name="ddj-header-navbar-tv" href="http://www.drdobbs.com/tv" class="h-88">Dobb's TV</a></li><li class="h-148"><a name="ddj-header-navbar-webinars" href="http://www.informationweek.com/events/d/d-id/898857" class="h-148">Webinars &amp; Events</a></li> 			    
+                </ul>	
+</div>  
+  
+  
+</div><!-- / h-nav_main -->
+<script type="application/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+		<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><script language="javascript1.1" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/bind.js"></script>
+
+
+</header>
+<br>
+</div>
+	<div id="subnav">
+	<div id="nav2">
+	<nav>
+		<ul class="navigation">
+		
+		 <li><a href="http://www.drdobbs.com/cloud" style="float:left;" name="ddj-channel-navbar-cloud">Cloud</a></li><li><a href="http://www.drdobbs.com/mobile" style="float:left;" name="ddj-channel-navbar-mobile">Mobile</a></li><li><a href="http://www.drdobbs.com/parallel" style="float:left;" name="ddj-channel-navbar-parallel">Parallel</a></li><li><a href="http://www.drdobbs.com/windows" style="float:left;" name="ddj-channel-navbar-windows">.NET</a></li><li><a href="http://www.drdobbs.com/jvm" style="float:left;" name="ddj-channel-navbar-jvm">JVM Languages</a></li><li><a href="http://www.drdobbs.com/cpp" style="float:left;" class="channelActive" name="ddj-channel-navbar-cpp">C/C++</a></li><li><a href="http://www.drdobbs.com/tools" style="float:left;" name="ddj-channel-navbar-tools">Tools</a></li><li><a href="http://www.drdobbs.com/architecture-and-design" style="float:left;" name="ddj-channel-navbar-architecture-and-design">Design</a></li><li><a href="http://www.drdobbs.com/testing" style="float:left;" name="ddj-channel-navbar-testing">Testing</a></li><li><a href="http://www.drdobbs.com/web-development" style="float:left;" name="ddj-channel-navbar-web-development">Web Dev</a></li><li class="lastitem"><a href="http://www.drdobbs.com/joltawards" style="float:left;" name="ddj-channel-navbar-joltawards">Jolt Awards</a></li> 
+</ul>
+</nav>
+</div>	 <!-- End: nav2 --> 
+</div><!-- End: subnav -->	
+<div id="h-nav2_mainSection-mobile" class="mobile-unit">	
+	        <a>Channels<i> ▼</i></a>
+				<ul class="unstyled">				
+				      <li><a href="http://www.drdobbs.com/cloud" name="ddj-channel-navbar-cloud">Cloud</a></li><li><a href="http://www.drdobbs.com/mobile" name="ddj-channel-navbar-mobile">Mobile</a></li><li><a href="http://www.drdobbs.com/parallel" name="ddj-channel-navbar-parallel">Parallel</a></li><li><a href="http://www.drdobbs.com/windows" name="ddj-channel-navbar-windows">.NET</a></li><li><a href="http://www.drdobbs.com/jvm" name="ddj-channel-navbar-jvm">JVM Languages</a></li><li><a href="http://www.drdobbs.com/cpp" class="channelActive" name="ddj-channel-navbar-cpp">C/C++</a></li><li><a href="http://www.drdobbs.com/tools" name="ddj-channel-navbar-tools">Tools</a></li><li><a href="http://www.drdobbs.com/architecture-and-design" name="ddj-channel-navbar-architecture-and-design">Design</a></li><li><a href="http://www.drdobbs.com/testing" name="ddj-channel-navbar-testing">Testing</a></li><li><a href="http://www.drdobbs.com/web-development" name="ddj-channel-navbar-web-development">Web Dev</a></li><li class="lastitem"><a href="http://www.drdobbs.com/joltawards" name="ddj-channel-navbar-joltawards">Jolt Awards</a></li> 				    
+				    
+				    
+                </ul>	
+</div>  	
+<script type="application/javascript"><!--
+/* Script removed by snapshot save */
+--></script>	
+	<div style="display: none ! important;" id="leaderboard2">
+		<div style="margin: 0 auto 0 auto; width: 728px;">			<div style="display: none ! important;" id="div-gpt-ad-942957474691236830-3">
+			<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		</div>
+	</div>
+	</div>
+	
+	<div id="columns">
+		
+		<div id="content">
+			<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shLegacy.js"></script>
+<!--<script type="text/javascript" src="http://i.cmpnet.com/ddj/v2/syntaxhighlighter/scripts/shCore.js"></script> -->
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shCore_new.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushXml.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushVb.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushSql.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushScala.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushSass.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushRuby.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushPython.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushPlain.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushPhp.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushPerl.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushJScript.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushJavaFX.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushJava.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushGroovy.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushErlang.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushDiff.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushDelphi.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushCss.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushCSharp.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushCpp.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushColdFusion.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushBash.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushAS3.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shBrushAppleScript.js"></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shAutoloader.js"></script>
+
+
+
+<link href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shThemeDefault.css" rel="stylesheet" type="text/css">
+<link href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shCoreDefault.css" rel="stylesheet" type="text/css">
+<link href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/shCore.css" rel="stylesheet" type="text/css">
+<script><!--
+/* Script removed by snapshot save */
+--></script>
+<style><!--
+/* Effective stylesheet produced by snapshot save */
+--></style>
+<div class="articles no-border">
+ 	<span id="rss" style="float: right; margin-bottom: 3px;">
+        <a href="http://www.drdobbs.com/rss/cpp"><img alt="RSS" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/rss.gif"></a>
+
+    </span>
+
+				<h2>C/C++</h2>
+		<div class="sharing-tools">	 
+	<div class="share-index"> 
+				<div style="float: left; margin-right: 40px;" class="share-tweet">
+		    <!-- BEGIN TWEET BUTTON --><iframe data-url="http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/tweet_button.6f0f2e104cd4afb16bbad6813f68d.en.html#dnt=true&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fwww.drdobbs.com%2Fcpp%2Fthe-c14-standard-what-you-need-to-know%2F240169034%3Fpgno%3D2&amp;related=dr_dobbs%2Csnorkelman&amp;size=m&amp;text=The%20C%2B%2B14%20Standard%3A%20What%20You%20Need%20to%20Know&amp;time=1463916504022&amp;type=share&amp;url=http%3A%2F%2Fwww.drdobbs.com%2Fcpp%2Fthe-c14-standard-what-you-need-to-know%2F240169034&amp;via=dr_dobbs" title="Twitter Tweet Button" style="position: static; visibility: visible; width: 63px; height: 20px;" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe><script type="text/javascript" charset="utf-8"><!--
+/* Script removed by snapshot save */
+--></script><!-- END TWEET BUTTON -->
+	
+        </div>						 
+        					 
+		<!-- BEGIN FB LIKE  -->
+				<div style="float: left; margin-right: 5px;" class="share-facebook-likes">    	 
+			
+		<script><!--
+/* Script removed by snapshot save */
+--></script>
+        <fb:like fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=0&amp;href=http%3A%2F%2Fwww.drdobbs.com%2Fcpp%2Fthe-c14-standard-what-you-need-to-know%2F240169034&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=true&amp;width=450" fb-xfbml-state="rendered" class=" fb_iframe_widget" send="false" action="like" layout="button_count" href="http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034" width="450" show_faces="true"><span style="vertical-align: bottom; width: 82px; height: 20px;"><iframe class="" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/like.php.html" style="border: medium none; visibility: visible; width: 82px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowfullscreen="true" allowtransparency="true" name="f197ebf624ce22a" frameborder="0" height="1000px" width="450px"></iframe></span></fb:like>
+			
+		</div>
+		        <!-- END FB LIKE  --> 
+        		<!-- Linked In Button -->
+		<div class="share-tweet" style="float: left; margin-right: 6px;">
+		<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/in.js"></script>
+		<span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px ! important; margin: 0px ! important; text-indent: 0px ! important; display: inline-block ! important; vertical-align: baseline ! important; font-size: 1px ! important;"><span id="li_ui_li_gen_1463916502717_0"><a id="li_ui_li_gen_1463916502717_0-link" href="javascript:void(0);"><span id="li_ui_li_gen_1463916502717_0-logo">in</span><span id="li_ui_li_gen_1463916502717_0-title"><span id="li_ui_li_gen_1463916502717_0-mark"></span><span id="li_ui_li_gen_1463916502717_0-title-text">Share</span></span></a></span></span></span><script type="in/share+init" data-url="http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034"></script>
+		</div>
+		<!-- Linked In Button -->
+		<!-- Google +1 Button -->
+		<div style="float: left; margin-right: 2px;">
+		<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 24px; height: 15px;"><iframe title="+1" data-gapiattached="true" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/fastbutton.html#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I0_1463916503860&amp;parent=http%3A%2F%2Fwww.drdobbs.com&amp;pfname=&amp;rpctoken=44829521" name="I0_1463916503860" id="I0_1463916503860" vspace="0" tabindex="0" style="position: static; top: 0px; width: 24px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 15px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+		</div>
+		<!-- Google +1 Button -->		
+				
+		<div style="display: none ! important;" class="addthis_toolbox addthis_pill_combo_style" addthis:url="http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034">
+						<a style="cursor: pointer;" class="addthis_button_stumbleupon at300b" href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=Dr.Dobbs&amp;source=tbx-250&amp;lng=en-US&amp;s=stumbleupon&amp;url=http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034&amp;title=The%20C++14%20Standard:%20What%20You%20Need%20to%20Know&amp;ate=AT-Dr.Dobbs/-/fs-0/4d4fc3809f4d8545/1&amp;sms_ss=1&amp;at_xt=1&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.drdobbs.com%2F&amp;tt=0" target="_blank" title="Send to StumbleUpon"> <span class="at300bs at15t_stumbleupon"></span></a>
+			<a class="addthis_button_reddit" style="cursor:pointer"></a>			
+						
+			<a title="Send As Email" href="javascript:void(0);" class="addthis_default_style"><img src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/share_email_icon.gif" border="0" hspace="0"></a> 
+			<a href="http://www.drdobbs.com/article/print?articleId=240169034&amp;siteSectionName=cpp" class="addthis_default_style"><img src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/share_print_icon.gif" border="0" hspace="4"></a>
+			<a href="http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034#" class="addthis_permalink">Permalink</a>
+			<div class="atclear"></div>
+		</div>
+		<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		<script src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/addthis_widget-1.js#pub=xa-4af4a81901b903fa" type="text/javascript"></script>
+		<!-- AddThis Button END -->		
+	</div>
+	<div style="clear: both;"></div>			
+</div>
+
+<script><!--
+/* Script removed by snapshot save */
+--></script>	
+
+<div id="article-header">
+<h1 class="story-title">The C++14 Standard: What You Need to Know</h1>
+<p class="byline">
+By 					         <a href="http://www.drdobbs.com/authors/Mark-Nelson"><strong>Mark Nelson</strong></a>, September 16, 2014</p>
+<p class="byline-comments"><span>
+<a href="http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034#disqus_thread" class="commentLink" data-disqus-identifier="article_240169034"><span class="bubble">3</span> Comments</a>
+ 
+</span></p>
+
+	
+<font class="story-teaser">New, useful features that make the language safer and more convenient.</font><br>
+
+</div>
+<div class="story">
+<article>
+	
+<p>In the earlier example on deduced return types, I had a lambda definition that captured a single variable, <code>name</code>, used as the source of a search string in a predicate:</p>
+<p></p><div><div id="highlighter_894879" class="syntaxhighlighter  cpp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">auto match_name = [&amp;name](</code><code class="cpp keyword bold">const</code> <code class="cpp plain">record&amp; r) -&gt; </code><code class="cpp color1 bold">bool</code> <code class="cpp plain">{</code></div><div class="line number2 index1 alt1"><code class="cpp spaces">  </code><code class="cpp keyword bold">return</code> <code class="cpp plain">r.name == name;</code></div><div class="line number3 index2 alt2"><code class="cpp plain">};</code></div><div class="line number4 index3 alt1"><code class="cpp plain">auto ii = find_if(people.begin(), people.end(), match_name );</code></div></div></td></tr></tbody></table></div></div><p></p>
+<p>
+</p><p>This particular capture gives the lambda access to the variable by reference. Captures can also be performed by value, and in both cases, the use of the variable behaves in a way that fits with C++ intuition. Capture by value means the lambda operates on a local copy of a variable; capture by reference means the lambda operates on the actual instance of the variable from the outer scope.</p>
+<p>
+</p><p>All this is fine, but it comes with some limitations. I think the one that the committee felt it needed to address was the inability to initialize captured variables using move-only semantics.</p>
+<p>
+</p><p>What does this mean? If we expect that lambda is going to be a <i>sink</i> for a parameter, we would like to capture the outer variable using move semantics. As an example, consider how you would get a lambda to sink a 
+<code>unique_ptr</code>, which is a move-only object. A first attempt to capture by value fails:</p>
+<p></p><div><div id="highlighter_723850" class="syntaxhighlighter  cpp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">std::unique_ptr&lt;</code><code class="cpp color1 bold">int</code><code class="cpp plain">&gt; p(</code><code class="cpp keyword bold">new</code> <code class="cpp color1 bold">int</code><code class="cpp plain">);</code></div><div class="line number2 index1 alt1"><code class="cpp plain">*p = 11;</code></div><div class="line number3 index2 alt2"><code class="cpp plain">auto y = [p]() { std::cout &lt;&lt; </code><code class="cpp string">"inside: "</code> <code class="cpp plain">&lt;&lt; *p &lt;&lt; </code><code class="cpp string">"\n"</code><code class="cpp plain">;};</code></div></div></td></tr></tbody></table></div></div><p></p>
+<p>
+</p><p>This code generates a compiler error because <code>unique_ptr</code> does not generate a copy constructor — it specifically wants to ban making copies.</p>
+<p>
+</p><p>Changing this so that <code>p</code> is captured by reference compiles fine, but it doesn't have the desired effect of sinking the value by moving the value into the local copy. Eventually, you could accomplish this by creating a local variable and calling <code>std::move()</code> on your captured reference, but this is a bit inefficient.</p>
+<p>
+</p><p>The fix for this is a modification of the capture clause syntax. Now, instead of just declaring a capture variable, you can do an initialization. The simple case that is used as an example in the standard looks like this:
+</p>
+<p></p><div><div id="highlighter_665438" class="syntaxhighlighter  cpp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">auto y = [&amp;r = x, x = x+1]()-&gt;</code><code class="cpp color1 bold">int</code> <code class="cpp plain">{...}</code></div></div></td></tr></tbody></table></div></div><p></p>
+<p>
+</p><p>This captures a copy of <code>x</code> and increments the value simultaneously. The example is easy to understand, but I'm not sure it captures the value of this new syntax for sinking move-only variables. A use case that takes advantage of this shown here:</p>
+<p></p><div><div id="highlighter_34101" class="syntaxhighlighter  cpp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp preprocessor">#include &lt;memory&gt;</code></div><div class="line number2 index1 alt1"><code class="cpp preprocessor">#include &lt;iostream&gt;</code></div><div class="line number3 index2 alt2"> </div><div class="line number4 index3 alt1"><code class="cpp color1 bold">int</code> <code class="cpp plain">main()</code></div><div class="line number5 index4 alt2"><code class="cpp plain">{</code></div><div class="line number6 index5 alt1"><code class="cpp spaces">  </code><code class="cpp plain">std::unique_ptr&lt;</code><code class="cpp color1 bold">int</code><code class="cpp plain">&gt; p(</code><code class="cpp keyword bold">new</code> <code class="cpp color1 bold">int</code><code class="cpp plain">);</code></div><div class="line number7 index6 alt2"><code class="cpp spaces">  </code><code class="cpp color1 bold">int</code> <code class="cpp plain">x = 5;</code></div><div class="line number8 index7 alt1"><code class="cpp spaces">  </code><code class="cpp plain">*p = 11;</code></div><div class="line number9 index8 alt2"><code class="cpp spaces">  </code><code class="cpp plain">auto y = [p=std::move(p)]() { std::cout &lt;&lt; </code><code class="cpp string">"inside: "</code> <code class="cpp plain">&lt;&lt; *p &lt;&lt; </code><code class="cpp string">"\n"</code><code class="cpp plain">;};</code></div><div class="line number10 index9 alt1"><code class="cpp spaces">  </code><code class="cpp plain">y();</code></div><div class="line number11 index10 alt2"><code class="cpp spaces">  </code><code class="cpp plain">std::cout &lt;&lt; </code><code class="cpp string">"outside: "</code> <code class="cpp plain">&lt;&lt; *p &lt;&lt; </code><code class="cpp string">"\n"</code><code class="cpp plain">;</code></div><div class="line number12 index11 alt1"><code class="cpp spaces">  </code><code class="cpp keyword bold">return</code> <code class="cpp plain">0;</code></div><div class="line number13 index12 alt2"><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div><p></p>
+<p>In this case, the captured value <code>p</code> is initialized using move semantics, effectively sinking the pointer without the need to declare a local variable:</p>
+<p></p><pre>inside: 11
+Segmentation fault (core dumped)</pre><p></p>
+<p>That annoying result is what you expect — the code attempts to dereference <code>p</code> after it was captured and moved into the lambda.</p>
+<p>
+</p><h4>The <code>[[deprecated]]</code> Attribute</h4>
+<p>The first time I saw the use of the deprecated attribute in Java, I admit to a bit of language envy. Code rot is a huge problem for most programmers. (Ever been praised for deleting code? Me neither.) This new attribute provides a systematic way to attack it.</p>
+<p>
+</p><p>Its use is convenient and simple — just place the <code>[[deprecated]]</code> tag in front of a declaration — which can be a class, variable, function, or a few other things. The result looks like this:</p>
+<p></p><div><div id="highlighter_210446" class="syntaxhighlighter  cpp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp keyword bold">class</code></div><div class="line number2 index1 alt1"><code class="cpp plain">[[</code><code class="cpp keyword bold">deprecated</code><code class="cpp plain">]] flaky {</code></div><div class="line number3 index2 alt2"><code class="cpp plain">};</code></div></div></td></tr></tbody></table></div></div><p></p>
+<p>
+</p><p>When your program uses a deprecated entity, the compiler's reaction is left up to the implementer. Clearly, most people are going to want to see some sort of warning, and also to be able to turn that warning off at will. As an example, clang 3.4 gave this warning when instantiating a deprecated class:</p>
+<p>
+</p><p></p><div><div id="highlighter_527610" class="syntaxhighlighter  cpp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp plain">dep.cpp:14:3: warning: </code><code class="cpp string">'flaky'</code> <code class="cpp plain">is </code><code class="cpp keyword bold">deprecated</code> <code class="cpp plain">[-Wdeprecated-declarations]</code></div><div class="line number2 index1 alt1"><code class="cpp spaces">  </code><code class="cpp plain">flaky f;</code></div><div class="line number3 index2 alt2"><code class="cpp spaces">  </code><code class="cpp plain">^</code></div><div class="line number4 index3 alt1"><code class="cpp plain">dep.cpp:3:1: note: </code><code class="cpp string">'flaky'</code> <code class="cpp plain">declared here</code></div><div class="line number5 index4 alt2"><code class="cpp plain">flaky {</code></div><div class="line number6 index5 alt1"><code class="cpp plain">^</code></div></div></td></tr></tbody></table></div></div><p></p>
+<p>Note that the syntax of C++ <i>attribute-tokens</i> might seem a bit unfamiliar. The list of attributes, including <code>[[deprecated]]</code>, comes after keywords like <code>class</code> or <code>enum</code>, and before the entity name.</p>
+<p>
+</p><p>This tag has an alternate form that includes a message parameter. Again, it is up to the implementer to decide what to do with this message. clang 3.4 apparently ignores the message. The output from this fragment:</p>
+<p></p><div><div id="highlighter_282190" class="syntaxhighlighter  cpp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp keyword bold">class</code></div><div class="line number2 index1 alt1"><code class="cpp plain">[[</code><code class="cpp keyword bold">deprecated</code><code class="cpp plain">]] flaky {</code></div><div class="line number3 index2 alt2"><code class="cpp plain">};</code></div><div class="line number4 index3 alt1"> </div><div class="line number5 index4 alt2"><code class="cpp plain">[[</code><code class="cpp keyword bold">deprecated</code><code class="cpp plain">(</code><code class="cpp string">"Consider using something other than cranky"</code><code class="cpp plain">)]]</code></div><div class="line number6 index5 alt1"><code class="cpp color1 bold">int</code> <code class="cpp plain">cranky()</code></div><div class="line number7 index6 alt2"><code class="cpp plain">{</code></div><div class="line number8 index7 alt1"><code class="cpp spaces">   </code><code class="cpp keyword bold">return</code> <code class="cpp plain">0;</code></div><div class="line number9 index8 alt2"><code class="cpp plain">}</code></div><div class="line number10 index9 alt1"> </div><div class="line number11 index10 alt2"><code class="cpp color1 bold">int</code> <code class="cpp plain">main()</code></div><div class="line number12 index11 alt1"><code class="cpp plain">{</code></div><div class="line number13 index12 alt2"><code class="cpp spaces">  </code><code class="cpp plain">flaky f;</code></div><div class="line number14 index13 alt1"><code class="cpp spaces">  </code><code class="cpp keyword bold">return</code> <code class="cpp plain">cranky();</code></div><div class="line number15 index14 alt2"><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div><p></p> 
+<p>
+</p><p>does not contain the error message:</p>
+<p></p><pre>dep.cpp:14:10: warning: 'cranky' is deprecated [-Wdeprecated-declarations]
+  return cranky();
+         ^
+dep.cpp:6:5: note: 'cranky' declared here
+int cranky()
+    ^
+</pre><p></p>
+<p>
+</p><h4>Binary Literals and Digit Separators</h4>
+<p>These two new features aren't earth-shaking, but they do represent nice syntactic improvements. Small changes like these give us some incremental improvements in the language that improve readability, and hence, reduce bug counts.</p>
+<p>
+</p><p>C++ programmers can now create binary literals, adding to the existing canon of decimal, hex, and the rarely used octal radices. Binary literals start with the prefix <code>0b</code> and are followed by binary digits.</p>
+<p>
+</p><p>In the U.S. and UK, we are accustomed to using commas as digit separators in written numbers, as in: $1,000,000. These digit separators are there purely for the convenience of readers, providing syntactic cues that make it easier for our brains to process long strings of numbers.</p>
+<p>
+</p><p>The committee added digit separators to C++ for exactly the same reasons. They won't affect the evaluation of a number, they are simply present to make it easier to read and write numbers through <a href="http://en.wikipedia.org/wiki/Chunking_%28psychology%29">chunking</a>. </p><p>What character to use for a digit separator? Virtually every punctuation character already has an idiosyncratic use in the language, so there are no obvious choices. The final election was to use the single quote character, making the million dollar value render in C++ as: <code>1'000'000.00</code>. Remember that the separators don't have any effect on the evaluation of the constant, so this value would be identical to <code>1'0'00'0'00.00</code>.</p><p>An example combining the use of both new features:</p>
+<p></p><div><div id="highlighter_146854" class="syntaxhighlighter  cpp"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp preprocessor">#include &lt;iostream&gt;</code></div><div class="line number2 index1 alt1"> </div><div class="line number3 index2 alt2"><code class="cpp color1 bold">int</code> <code class="cpp plain">main()</code></div><div class="line number4 index3 alt1"><code class="cpp plain">{</code></div><div class="line number5 index4 alt2"><code class="cpp spaces">  </code><code class="cpp color1 bold">int</code> <code class="cpp plain">val = 0b11110000;</code></div><div class="line number6 index5 alt1"><code class="cpp spaces">  </code><code class="cpp plain">std::cout &lt;&lt; </code><code class="cpp string">"Output mask: "</code></div><div class="line number7 index6 alt2"><code class="cpp spaces">            </code><code class="cpp plain">&lt;&lt; 0b1000</code><code class="cpp string">'0001'</code><code class="cpp plain">1000'0000</code></div><div class="line number8 index7 alt1"><code class="cpp spaces">            </code><code class="cpp plain">&lt;&lt; </code><code class="cpp string">"\n"</code><code class="cpp plain">;</code></div><div class="line number9 index8 alt2"><code class="cpp spaces">  </code><code class="cpp plain">std::cout &lt;&lt; </code><code class="cpp string">"Proposed salary: $"</code></div><div class="line number10 index9 alt1"><code class="cpp spaces">            </code><code class="cpp plain">&lt;&lt; 300'000.00</code></div><div class="line number11 index10 alt2"><code class="cpp spaces">            </code><code class="cpp plain">&lt;&lt; </code><code class="cpp string">"\n"</code><code class="cpp plain">;</code></div><div class="line number12 index11 alt1"><code class="cpp spaces">  </code><code class="cpp keyword bold">return</code> <code class="cpp plain">0;</code></div><div class="line number13 index12 alt2"><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div><p></p>
+<p>This program gives the unsurprising output:</p>
+<p></p><pre>Output mask: 33152
+Proposed salary: $300000</pre><p></p>
+<p>
+</p><h4>The remainder</h4>
+<p>Some additional features in the C++14 specification don't require quite as much exposition.</p>
+<p>
+</p><p>Variable templates are an extension of templates to variables. The example used everywhere is an implementation of variable <code>pi&lt;T&gt;</code>. When implemented as a double, the variable will return 3.14, when implemented as an int, it might return 3, and "3.14" or perhaps "pi" as an <code>std::string</code>. This would have been a great feature to have when <code>&lt;limits&gt;</code> was being written.</p>
+<p>
+</p><p>The syntax and semantics of variable templates are nearly identical to those for class templates — you should have no trouble using them without any special study.</p><p>The restrictions on <code>constexpr</code> functions have been relaxed, allowing, for example, multiple returns, internal <code>case</code> and <code>if</code> statements, loops, and more. This expands the scope of things that are done at compile time, a trend that really took wing when templates were introduced.</p>
+<p>
+</p><p>Additional minor features include sized deallocations and some syntax tidying.</p>
+<p>
+</p><h3>What Next?</h3>
+<p>
+</p><p>The C++ committee clearly feels pressure to keep the language current through improvements, and it is already working on at least one more standard in this decade, C++17.</p><p>Possibly more interesting is the creation of several spin-off groups that can create <a href="https://isocpp.org/std/iso-iec-jtc1-procedures">technical specifications</a>, documents that won't rise to the level of a standard but will be published and endorsed by the ISO committee. Presumably these can be issued at a more rapid clip. The eight areas <a href="https://isocpp.org/std/status">currently being worked</a> include:</p>
+<p>
+</p><ul><li>File system</li><li>Concurrency</li><li>Parallelism</li><li>Networking</li><li>Concepts, the AI of C++ — always one round of specification away</li></ul><p>Success of these technical specifications will have to be judged by adoption and use. If we find that all the implementers line up behind them, then this new track for standardization will be a success.
+</p><p>
+</p><p>C/C++ has held up well over the years. Modern C++, which we might mark as starting with C++11, has taken dramatic strides in making the language easier to use and safer without making concessions in the areas of performance. For certain types of work it is hard to think of any reasonable alternative to C or C++. The C++ 14 standard doesn't make any jumps as large as that in the C++11 release, but it keeps the language on a good path. If the committee can keep its current level of productivity for the rest of the decade, C++ should continue to be the language of choice when performance is the defining goal.
+</p>
+<hr>
+<p><em><a href="https://plus.google.com/100863323248965714968/?rel=author">Mark Nelson</a> is a frequent contributor to </em>Dr. Dobb's<em> and lead author of the</em> <a href="http://www.amazon.com/Data-Compression-Book-Mark-Nelson/dp/1558514341/?tag=drdos-20">Data Compression Book</a>.</p>	<!-- send Article author Details-->
+		</article>
+</div>
+
+<!-- test -->
+<br>
+		<div class="nav1">
+<center>
+	<br><a href="http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034?pgno=1" class="contentgating_article">Previous</a> <a href="http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034?pgno=1" class="contentgating_article">1</a> <b>2</b> </center>
+</div>
+
+<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+.nav1 { clear: both; text-align: center; }
+--></style>
+
+</div>
+<!--  Related Reading Box -->
+		
+		<!-- Mobile IMU Script Here -->
+		<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		<!-- End: Mobile IMU Script Here -->
+	<style><!--
+/* Effective stylesheet produced by snapshot save */
+--></style>             
+     
+      
+    <h3 class="resources">Related Reading</h3>
+    <div class="related-resources first tabs" style="margin-bottom:10px;"><div id="t0" class="tabbed">
+        <ul class="toc clearfix">
+            <li class="first current"><a href="#toc-news" title="News">News</a></li>
+            <li><a href="#toc-commentary" title="Commentary">Commentary</a></li>
+        </ul>
+        <div style="display: block;" class="tab-content clearfix">
+            <h3 style="display: none;" class="tab"><a name="toc-news">News</a></h3>
+			<!--not from cache.cache key-->    <ul class="events">
+<li><a class="contentgating_article" href="http://www.drdobbs.com/tools/application-intelligence-for-advanced-du/240169443?cid=SBX_ddj_related_news__Other_cpp&amp;itc=SBX_ddj_related_news__Other_cpp" title="Application Intelligence For Advanced Dummies">Application Intelligence For Advanced Dummies</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/web-development/restlet-completes-complete-api-platform/240169395?cid=SBX_ddj_related_news__Other_cpp&amp;itc=SBX_ddj_related_news__Other_cpp" title="Restlet Completes " complete"="" api="" platform"="">Restlet Completes "Complete" API Platform</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/tools/xmind-6-public-beta-now-available/240169385?cid=SBX_ddj_related_news__Other_cpp&amp;itc=SBX_ddj_related_news__Other_cpp" title="XMind 6 Public Beta Now Available">XMind 6 Public Beta Now Available</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/open-source/docker-clocks-in-on-azure/240169384?cid=SBX_ddj_related_news__Other_cpp&amp;itc=SBX_ddj_related_news__Other_cpp" title="Docker Clocks In On Azure">Docker Clocks In On Azure</a></li><a class="continue" href="http://www.drdobbs.com/news?cid=SBX_ddj_related_news__Other_cpp&amp;itc=SBX_ddj_related_news__Other_cpp" title="More News">More News<span>»</span></a>                        
+    </ul>                    
+        </div>
+        <div style="display: none;" class="tab-content clearfix">
+            <h3 style="display: none;" class="tab"><a name="toc-commentary">Commentary</a></h3>
+			<!--not from cache.cache key-->    <ul class="events">
+<li><a class="contentgating_article" href="http://www.drdobbs.com/architecture-and-design/dr-dobbs-archive/240169474?cid=SBX_ddj_related_commentary__Other_cpp&amp;itc=SBX_ddj_related_commentary__Other_cpp" title="Dr. Dobb's Archive">Dr. Dobb's Archive</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/mobile/appgyver-apparchitect-20-appears/240169436?cid=SBX_ddj_related_commentary__Other_cpp&amp;itc=SBX_ddj_related_commentary__Other_cpp" title="AppGyver AppArchitect 2.0 Appears">AppGyver AppArchitect 2.0 Appears</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/testing/20x-faster-test-scripting-seriously/240169432?cid=SBX_ddj_related_commentary__Other_cpp&amp;itc=SBX_ddj_related_commentary__Other_cpp" title="20x Faster Test Scripting, Seriously">20x Faster Test Scripting, Seriously</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/joltawards/jolt-awards-2015-coding-tools/240169420?cid=SBX_ddj_related_commentary__Other_cpp&amp;itc=SBX_ddj_related_commentary__Other_cpp" title="Jolt Awards 2015: Coding Tools">Jolt Awards 2015: Coding Tools</a></li><a class="continue" href="http://www.drdobbs.com/articles?cid=SBX_ddj_related_commentary__Other_cpp&amp;itc=SBX_ddj_related_commentary__Other_cpp" title="More Commentary">More Commentary<span>»</span></a>                        
+    </ul>        </div>
+    </div></div>     
+      
+    <div class="related-resources tabs" style="margin-bottom:10px;"><div id="t1" class="tabbed">
+        <ul class="toc clearfix">
+            <li class="first current"><a href="#toc-slideshow" title="Slideshow">Slideshow</a></li>
+            <li><a href="#toc-video" title="Video">Video</a></li>
+        </ul>
+        <div style="display: block;" class="tab-content clearfix">
+            <h3 style="display: none;" class="tab"><a name="toc-slideshow">Slideshow</a></h3>
+			<!--not from cache.cache key-->    <ul class="events">
+<li><a class="contentgating_article" href="http://www.drdobbs.com/architecture-and-design/developer-reading-list/240168591?cid=SBX_ddj_related_slideshow__Other_cpp&amp;itc=SBX_ddj_related_slideshow__Other_cpp" title="Developer Reading List">Developer Reading List</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/cpp/the-most-underused-compiler-switches-in/240166599?cid=SBX_ddj_related_slideshow__Other_cpp&amp;itc=SBX_ddj_related_slideshow__Other_cpp" title="The Most Underused Compiler Switches in Visual C++">The Most Underused Compiler Switches in Visual C++</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/tools/developer-reading-list-the-must-have-boo/240148421?cid=SBX_ddj_related_slideshow__Other_cpp&amp;itc=SBX_ddj_related_slideshow__Other_cpp" title="Developer Reading List: The Must-Have Books for JavaScript">Developer Reading List: The Must-Have Books for JavaScript</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/joltawards/2012-jolt-awards-mobile-tools/240012517?cid=SBX_ddj_related_slideshow__Other_cpp&amp;itc=SBX_ddj_related_slideshow__Other_cpp" title="2012 Jolt Awards: Mobile Tools">2012 Jolt Awards: Mobile Tools</a></li><a class="continue" href="http://www.drdobbs.com/slideshows?cid=SBX_ddj_related_slideshow__Other_cpp&amp;itc=SBX_ddj_related_slideshow__Other_cpp" title="More Slideshows">More Slideshows<span>»</span></a>                        
+    </ul>        </div>        
+        <div style="display: none;" class="tab-content clearfix">
+            <h3 style="display: none;" class="tab"><a name="toc-video">Video</a></h3>
+			<!--not from cache.cache key-->    <ul class="events">
+<li><a class="contentgating_article" href="http://www.drdobbs.com/jvm/first-class-functions-in-java-8/240166766?cid=SBX_ddj_related_video__Other_cpp&amp;itc=SBX_ddj_related_video__Other_cpp" title="First-Class Functions in Java 8">First-Class Functions in Java 8</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/architecture-and-design/dr-dobbs-readers-invited-to-judge-at-ise/240166485?cid=SBX_ddj_related_video__Other_cpp&amp;itc=SBX_ddj_related_video__Other_cpp" title="Dr. Dobb's Readers Invited to Judge at ISEF 2014">Dr. Dobb's Readers Invited to Judge at ISEF 2014</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/tools/perceptual-computing/240152397?cid=SBX_ddj_related_video__Other_cpp&amp;itc=SBX_ddj_related_video__Other_cpp" title="Perceptual Computing">Perceptual Computing</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/cloud/open-source-for-private-clouds/240150937?cid=SBX_ddj_related_video__Other_cpp&amp;itc=SBX_ddj_related_video__Other_cpp" title="Open Source for Private Clouds">Open Source for Private Clouds</a></li><a class="continue" href="http://www.drdobbs.com/video/archives?cid=SBX_ddj_related_video__Other_cpp&amp;itc=SBX_ddj_related_video__Other_cpp" title="More Videos">More Videos<span>»</span></a>                        
+    </ul>        </div>
+    </div></div> 
+    
+    <div class="related-resources tabs" style="margin-bottom:10px;"><div id="t2" class="tabbed">
+        <ul class="toc clearfix">
+            <li class="first current"><a href="#toc-most-popular" title="Most Popular">Most Popular</a></li>
+        </ul>
+        <div style="display: block;" class="tab-content clearfix">
+            <h3 style="display: none;" class="tab"><a name="toc-most-popular">Most Popular</a></h3>
+			<!--not from cache.cache key-->    <ul class="events">
+<li><a class="contentgating_article" href="http://www.drdobbs.com/tools/developer-reading-list-the-must-have-boo/240148421?cid=SBX_ddj_related_mostpopular__Other_cpp&amp;itc=SBX_ddj_related_mostpopular__Other_cpp" title="Developer Reading List: The Must-Have Books for JavaScript">Developer Reading List: The Must-Have Books for JavaScript</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/architecture-and-design/so-you-want-to-write-your-own-language/240165488?cid=SBX_ddj_related_mostpopular__Other_cpp&amp;itc=SBX_ddj_related_mostpopular__Other_cpp" title="So You Want To Write Your Own Language?">So You Want To Write Your Own Language?</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/parallel/writing-lock-free-code-a-corrected-queue/210604448?cid=SBX_ddj_related_mostpopular__Other_cpp&amp;itc=SBX_ddj_related_mostpopular__Other_cpp" title="Writing Lock-Free Code: A Corrected Queue">Writing Lock-Free Code: A Corrected Queue</a></li><li><a class="contentgating_article" href="http://www.drdobbs.com/open-source/building-restful-apis-with-tornado/240160382?cid=SBX_ddj_related_mostpopular__Other_cpp&amp;itc=SBX_ddj_related_mostpopular__Other_cpp" title="Building RESTful APIs with Tornado">Building RESTful APIs with Tornado</a></li><a class="continue" href="http://www.drdobbs.com/?cid=SBX_ddj_related_mostpopular__Other_cpp&amp;itc=SBX_ddj_related_mostpopular__Other_cpp" title="More Popular">More Popular<span>»</span></a>                        
+    </ul>        </div>        
+    </div></div>  
+    <hr style="margin-bottom:10px;">
+    
+        <h3 class="resources">More Insights</h3>
+    
+    <div class="related-resources first" style="margin-bottom:10px;">
+    <!-- Taxonomy ID:6500 --><!--not from cache.cache key--><h3>White Papers</h3>		 
+     <!-- Taxonomy ID:6500 -->  
+<ul class="archive">
+				
+				<li><!--Rule 9 -->		
+					<a href="http://www.informationweek.com/infrastructure/wan/the-role-of-the-wan-in-your-hybrid-cloud/357383?cid=SBX_ddj_well_wp__Other_cpp&amp;itc=SBX_ddj_well_wp__Other_cpp" name="SBX_ddj_well_wp__Other_cpp">
+				The Role of the WAN in Your Hybrid Cloud				</a>
+								</li>
+				
+				<li><!--Rule 10 -->		
+					<a href="http://www.informationweek.com/whitepaper/big-data/big-data-analytics/coding-to-standards-and-quality:-supply-chain-application-development/359593?cid=SBX_ddj_well_wp__Other_cpp&amp;itc=SBX_ddj_well_wp__Other_cpp" name="SBX_ddj_well_wp__Other_cpp">
+				Coding to standards and quality: supply-chain application development				</a>
+								</li>
+						
+</ul>
+<a title="More White Papers" href="http://www.drdobbs.com/whitepaper/cpp/more.html?cid=SBX_ddj_well_wp__Other_cpp&amp;itc=SBX_ddj_well_wp__Other_cpp" class="continue">More <span>&gt;&gt;</span></a>    </div>
+    <div class="related-resources" style="margin-bottom:10px;">
+    <!-- Taxonomy ID:6500 --><!--not from cache.cache key--><h3>Reports</h3>		 
+     <!-- Taxonomy ID:6500 -->  
+<ul class="archive">
+				
+				<li><!--Rule 10 -->		
+					<a href="http://www.informationweek.com/gogreen/031313mr?cid=SBX_ddj_well_Analytics__Other_cpp&amp;itc=SBX_ddj_well_Analytics__Other_cpp" name="SBX_ddj_well_Analytics__Other_cpp">
+				Cloud Collaboration Tools: Big Hopes, Big Needs				</a>
+								</li>
+				
+				<li><!--Rule 10 -->		
+					<a href="http://analytics.informationweek.com/abstract/13/6134/Outsourcing-Services/research-federal-government-cloud-computing-survey.html?cid=SBX_ddj_well_Analytics__Other_cpp&amp;itc=SBX_ddj_well_Analytics__Other_cpp" name="SBX_ddj_well_Analytics__Other_cpp">
+				Research: Federal Government Cloud Computing Survey				</a>
+								</li>
+						
+</ul>
+<a title="More Reports" href="http://www.drdobbs.com/analytics/cpp/more.html?cid=SBX_ddj_well_Analytics__Other_cpp&amp;itc=SBX_ddj_well_Analytics__Other_cpp" class="continue">More <span>&gt;&gt;</span></a>    </div>
+    <div class="related-resources" style="margin-bottom:10px;">
+    <!-- Taxonomy ID:6500 --><!--not from cache.cache key--><h3>Webcasts</h3>		 
+     <!-- Taxonomy ID:6500 -->  
+<ul class="archive">
+				
+				<li><!--Rule 10 -->		
+					<a href="https://webinar.informationweek.com/16930?keycode=SBX&amp;cid=SBX_ddj_well_Webcast__Other_cpp&amp;itc=SBX_ddj_well_Webcast__Other_cpp&amp;K=SBX_DDJ_WL" name="SBX_ddj_well_Webcast__Other_cpp">
+				Intrusion Prevention Systems: What to Look for in a Solution				</a>
+								</li>
+				
+				<li><!--Rule 10 -->		
+					<a href="https://webinar.banktech.com/16833?keycode=SBX&amp;cid=SBX_ddj_well_Webcast__Other_cpp&amp;itc=SBX_ddj_well_Webcast__Other_cpp&amp;K=SBX_DDJ_WL" name="SBX_ddj_well_Webcast__Other_cpp">
+				How to Create an End-to-End Enterprise Payments Hub				</a>
+								</li>
+						
+</ul>
+<a title="More Webcast" href="http://www.drdobbs.com/webcast/cpp/more.html?cid=SBX_ddj_well_Webcast__Other_cpp&amp;itc=SBX_ddj_well_Webcast__Other_cpp" class="continue">More <span>&gt;&gt;</span></a>    </div>
+<hr><!-- /  Related Reading Box -->
+<div class="dcolmask doublepage">
+<div class="dcolleft">
+			<div class="dcol1">
+			<!-- Column 1 start -->
+ 			<div id="left-col" style="width:160px;">
+				<div class="infolink">
+					<span style="font-size: 0.7em; font-weight: bold;">INFO-LINK</span>
+<ul style="color: rgb(33, 82, 190); font-size: 0.7em; list-style: none outside none; margin-top: 0px; padding: 8px 0px 0px;">
+<li style="padding-left: 15px; background: url(&quot;The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20|%20Dr%20Dobb's%20p2_files/bg_left-nav.png&quot;) no-repeat scroll 5px 7px transparent; color: rgb(0, 59, 176); margin: 0px 0pt;">
+				<div style="display: none ! important;" id="div-gpt-ad-942957474691236830-24">
+			<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		</div>
+	</li>
+<li style="padding-left: 15px; background: url(&quot;The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20|%20Dr%20Dobb's%20p2_files/bg_left-nav.png&quot;) no-repeat scroll 5px 7px transparent; color: rgb(0, 59, 176); margin: 0px 0pt;">
+				<div style="display: none ! important;" id="div-gpt-ad-942957474691236830-25">
+			<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		</div>
+	</li>
+<li style="padding-left: 15px; background: url(&quot;The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20|%20Dr%20Dobb's%20p2_files/bg_left-nav.png&quot;) no-repeat scroll 5px 7px transparent; color: rgb(0, 59, 176); margin: 0px 0pt;">
+				<div style="display: none ! important;" id="div-gpt-ad-942957474691236830-26">
+			<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		</div>
+	</li>
+<li style="padding-left: 15px; background: url(&quot;The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20|%20Dr%20Dobb's%20p2_files/bg_left-nav.png&quot;) no-repeat scroll 5px 7px transparent; color: rgb(0, 59, 176); margin: 0px 0pt;">
+				<div style="display: none ! important;" id="div-gpt-ad-942957474691236830-27">
+			<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		</div>
+	</li>
+</ul>
+
+
+
+
+				</div>
+				<br>
+				<br>
+				
+							<div style="display: none ! important;" id="div-gpt-ad-942957474691236830-28">
+			<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		</div>
+					 	
+ 			</div>
+ 		</div>
+ 		<div class="dcol2" style="left:71%;width:70%;float:left;">
+		<!--  Commenting -->
+		<div id="dobbs_disqus">
+		<div style="display: none;" id="disqus-hints-box">
+  <script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/jquery.colorbox-min.js"></script>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/disqusHints.js"></script>
+<!-- This section is for calling the commenting policy pop-up -->
+<script><!--
+/* Script removed by snapshot save */
+--></script>
+<link rel="stylesheet" href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/colorbox.css" type="text/css">
+<link rel="stylesheet" href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/disqusHints.css" type="text/css">
+
+<div style="display:none">
+	<div id="inlineModal" style="padding:10px;">
+    	<div class="newsletterHeader">
+    		<img src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/dobbs_disqus_logo.gif">
+    	</div>
+    	<br><br> 
+    	<div class="markdown">
+      		<h3>Currently we allow the following HTML tags in comments:</h3>
+			<h3>Single tags</h3>
+			<p><i>These tags can be used alone and don't need an ending tag. </i></p>
+			<p><code>&lt;br&gt;</code> Defines a single line break <br><br> 
+			<code>&lt;hr&gt;</code> Defines a horizontal line</p>
+
+			<h3>Matching tags</h3>
+			<p><i>These require an ending tag - e.g. <code>&lt;i&gt;italic text&lt;/i&gt;</code> </i></p>
+			<p><code>&lt;a&gt;</code> Defines an anchor<br><br>
+			<code>&lt;b&gt;</code> Defines bold text<br><br>
+			<code>&lt;big&gt;</code> Defines big text<br><br>
+
+			<code>&lt;blockquote&gt;</code> Defines a long quotation<br><br>
+			<code>&lt;caption&gt;</code> Defines a table caption<br><br>
+			<code>&lt;cite&gt;</code> Defines a citation<br><br>
+			<code>&lt;code&gt;</code> Defines computer code text<br><br>
+			<code>&lt;em&gt;</code> Defines emphasized text<br><br>
+
+			<code>&lt;fieldset&gt;</code> Defines a border around elements in a form<br><br>
+			<code>&lt;h1&gt;</code> This is heading 1<br><br>
+			<code>&lt;h2&gt;</code> This is heading 2<br><br>
+			<code>&lt;h3&gt;</code> This is heading 3<br><br>
+			<code>&lt;h4&gt;</code> This is heading 4<br><br>
+			
+			<code>&lt;h5&gt;</code> This is heading 5<br><br>
+			<code>&lt;h6&gt;</code> This is heading 6<br><br>
+			<code>&lt;i&gt;</code> Defines italic text<br><br>
+			<code>&lt;p&gt;</code> Defines a paragraph<br><br>
+			<code>&lt;pre&gt;</code> Defines preformatted text<br><br>
+			
+			<code>&lt;q&gt;</code> Defines a short quotation<br><br>
+			<code>&lt;samp&gt;</code> Defines sample computer code text<br><br>
+			<code>&lt;small&gt;</code> Defines small text<br><br>
+			<code>&lt;span&gt;</code> Defines a section in a document<br><br>
+			<code>&lt;s&gt;</code> Defines strikethrough text<br><br>
+			
+			<code>&lt;strike&gt;</code> Defines strikethrough text <br><br>
+			<code>&lt;strong&gt;</code> Defines strong text <br><br>
+			<code>&lt;sub&gt;</code> Defines subscripted text <br><br>
+			<code>&lt;sup&gt;</code> Defines superscripted text <br><br>
+			<code>&lt;u&gt;</code> Defines underlined text<br><br></p>
+    	</div>  
+	</div><!-- /end  inline_mailinglist-->
+
+	<div id="inlineCommenting" style="padding:10px;" class="markdown">
+		  <p><i>Dr. Dobb's</i> encourages readers to engage in spirited, healthy debate, including taking us to task.  
+		  However, <i>Dr. Dobb's</i> moderates all comments posted to our site, and reserves the right to modify or remove any content that it determines to be derogatory, offensive, inflammatory, vulgar, irrelevant/off-topic, racist or obvious marketing or spam. <i>Dr. Dobb's</i> further reserves the right to disable the profile of any commenter participating in said activities.</p>
+	</div>	
+</div>
+<table bgcolor="#f3f3f3" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+    	<td colspan="2"> </td>  
+	</tr>
+	<tr>
+   	 	<td width="34"><img src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/hintbox_info.jpg" alt="Disqus Tips" border="0" align="left" height="34"></td> 
+		<td><font style="font-family: Arial, Helvetica, Geneva, SunSans-Regular, sans-serif; color: #000000; font-size: 11px;">
+			<strong>To upload an avatar photo,</strong> first <a href="http://disqus.com/dashboard/" style="font-family: Arial,Helvetica,Geneva,SunSans-Regular,sans-serif; color: #003bb0; font-size: 11px;" target="_blank">complete your Disqus profile.</a> | <a href="#" class="htmlTags cboxElement" style="font-family: Arial,Helvetica,Geneva,SunSans-Regular,sans-serif; color: #003bb0; font-size: 11px;">View the list</a> of <strong>supported HTML tags</strong> you can use to style comments. | Please read our <a href="#" class="commentingPolicy cboxElement" style="font-family: Arial,Helvetica,Geneva,SunSans-Regular,sans-serif; color: #003bb0; font-size: 11px;"><strong>commenting policy.</strong></a>
+			</font>
+		</td>
+	</tr>
+	<tr>
+       <td colspan="2"> </td>  
+	</tr>
+</tbody></table>  
+
+</div>
+<div id="mythread"><style><!--
+/* Effective stylesheet produced by snapshot save */
+#mythread { border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin: 5px 0px; }
+#techwebCommentLogin { background-attachment: scroll; background-image: url("The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20|%20Dr%20Dobb's%20p2_files/btn_login_bg.gif"); background-position: center center; background-repeat: no-repeat; display: block; font-size: 16px; font-weight: bold; height: 27px; margin: auto auto 20px; padding-top: 6px; text-align: center; width: 370px; }
+#techwebCommentLogin a { color: rgb(255, 255, 255); }
+--></style>
+<div id="techwebCommentLogin">
+		<a href="javascript:void(0);" onclick="">Login or Register to Comment</a>
+	 
+</div>
+</div>
+
+<script language="JavaScript" type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+--></style>
+
+<a name="comments"></a>
+<div id="disqus_thread">
+		
+</div>
+
+
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		</div> 
+		<!-- /  Commenting -->
+			</div>
+</div>
+</div>
+
+<!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>	
+		</div>
+		<script><!--
+/* Script removed by snapshot save */
+--></script>
+		<div id="right-col">
+			<!-- div class="subsection " -->
+ <!-- /div -->						
+		<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><div style="display: none ! important;" id="div-gpt-ad-942957474691236830-4"></div> 
+		<!--
+			<br/><br/>
+			
+			<div class="subsection sponsored-content"> -->
+				<!-- ?php echo $this->render('/shared/right/articlepremiumcontent.phtml')? -->
+			<!-- </div> -->
+			<div class="recent-articles non-mobile-unit">
+				
+	<h2>C/C++ Recent Articles</h2>
+	<ul>	
+				<li><a href="http://www.drdobbs.com/cpp/headline/240169374" class="contentgating_article">Headline</a></li>
+				<li><a href="http://www.drdobbs.com/cpp/dr-dobbs-archive/240169474" class="contentgating_article">Dr. Dobb's Archive</a></li>
+				<li><a href="http://www.drdobbs.com/cpp/jolt-awards-2015-coding-tools/240169420" class="contentgating_article">Jolt Awards 2015: Coding Tools</a></li>
+				<li><a href="http://www.drdobbs.com/cpp/building-nodejs-projects-in-visual-studi/240169356" class="contentgating_article">Building Node.js Projects in Visual Studio</a></li>
+				<li><a href="http://www.drdobbs.com/cpp/building-portable-games-in-c/240169334" class="contentgating_article">Building Portable Games in C++</a></li>
+				<li><a href="http://www.drdobbs.com/cpp/" class="contentgating_article"></a></li>
+				<li><a href="http://www.drdobbs.com/cpp/" class="contentgating_article"></a></li>
+			</ul>			</div>
+			 
+			<span class="non-mobile-unit">
+						
+			<div class="subsection mostpopular">
+				<h2>Most Popular</h2>
+
+<div class="tab_controls">
+	<a id="articles" class="current" href="#">Stories</a>
+	<a id="blogs" href="#">Blogs</a>
+</div>
+<div id="mostpopular" class="box_wrap">
+	<ul>
+				<li>
+					<a name="dobbs-callout-mostpop" href="http://www.drdobbs.com/cpp/state-machine-design-in-c/184401236" class="contentgating_article">State Machine Design in C++</a>
+					</li>
+				<li>
+					<a name="dobbs-callout-mostpop" href="http://www.drdobbs.com/cpp/the-c14-standard-what-you-need-to-know/240169034" class="contentgating_article">The C++14 Standard: What You Need to Know</a>
+					</li>
+				<li>
+					<a name="dobbs-callout-mostpop" href="http://www.drdobbs.com/cpp/mongodb-with-c-deep-dive/240152181" class="contentgating_article">MongoDB with C#: Deep Dive</a>
+					</li>
+				<li>
+					<a name="dobbs-callout-mostpop" href="http://www.drdobbs.com/cpp/jolt-awards-2015-coding-tools/240169420" class="contentgating_article">Jolt Awards 2015: Coding Tools</a>
+					</li>
+				<li>
+					<a name="dobbs-callout-mostpop" href="http://www.drdobbs.com/cpp/a-simple-and-efficient-fft-implementatio/199500857" class="contentgating_article">A Simple and Efficient FFT Implementation in C++:<br> Part I</a>
+					</li>
+				<li>
+					<a name="dobbs-callout-mostpop" href="http://www.drdobbs.com/cpp/" class="contentgating_article"></a>
+					</li>
+				<li>
+					<a name="dobbs-callout-mostpop" href="http://www.drdobbs.com/cpp/" class="contentgating_article"></a>
+					</li>
+		</ul></div>
+
+<div id="mostpopular" class="box_wrap" style="display: none;">
+	<ul>
+				<li>
+					<a name="dobbs-callout-mostpop-blog" href="http://www.drdobbs.com/cpp/c11-uniqueptr/240002708" class="contentgating_article">C++11: unique_ptr</a>
+					</li>
+				<li>
+					<a name="dobbs-callout-mostpop-blog" href="http://www.drdobbs.com/cpp/auto-types-and-range-based-for-statement/232900460" class="contentgating_article">Auto Types and Range-Based For Statements in C++11</a>
+					</li>
+				<li>
+					<a name="dobbs-callout-mostpop-blog" href="http://www.drdobbs.com/cpp/its-hard-to-compare-floating-point-numbe/240149806" class="contentgating_article">It's Hard To Compare Floating-Point Numbers</a>
+					</li>
+				<li>
+					<a name="dobbs-callout-mostpop-blog" href="http://www.drdobbs.com/cpp/c11s-async-template/240001196" class="contentgating_article">C++11's async Template</a>
+					</li>
+				<li>
+					<a name="dobbs-callout-mostpop-blog" href="http://www.drdobbs.com/cpp/unsigned-arithmetic-useful-but-tricky/240001198" class="contentgating_article">Unsigned Arithmetic: Useful but Tricky</a>
+					</li>
+				<li>
+					<a name="dobbs-callout-mostpop-blog" href="http://www.drdobbs.com/cpp/" class="contentgating_article"></a>
+					</li>
+				<li>
+					<a name="dobbs-callout-mostpop-blog" href="http://www.drdobbs.com/cpp/" class="contentgating_article"></a>
+					</li>
+		</ul></div>
+			</div>
+			
+			<div class="box video">
+				<h3 class="video"><span>Video</span></h3><div class="box_wrap"><a href="http://www.adobe.com/go/getflash/" target="_blank"><img src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/upgrade_flash_player2.gif" alt="Get Flash Player" border="0" height="200" width="314"></a></div>
+	
+	<div class="slide_controls"> 
+				<a href="http://www.drdobbs.com/tv"><strong>View All Videos</strong></a>
+			</div>
+	
+			</div>
+			
+			<div class="subsection sponsored-content">
+				<style><!--
+/* Effective stylesheet produced by snapshot save */
+#right-col .subsection .sponsored { font-size: 0.7em ! important; }
+--></style>
+
+	<h2>This month's Dr. Dobb's Journal</h2>
+	<div class="sponsored">
+		<div class="whitepaper">
+			<div align="center">
+				<a href="http://www.drdobbs.com/digital/20141022?k=ddjtm&amp;cid=onedit_ds_ddjtm">
+					<img alt="Dr. Dobb's Digital Digest - October 2014" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/DrDobbs_10_22_Cover.jpg" border="0" height="115" width="190">
+				</a>
+			</div>
+			<p>
+				<a href="http://www.drdobbs.com/digital/20141022?k=ddjtm&amp;cid=onedit_ds_ddjtm"><b>This month</b></a>, 
+Dr. Dobb's Journal is devoted to mobile programming. We introduce you to Apple's new Swift programming language, discuss the perils of being the third-most-popular mobile platform, revisit SQLite on Android		
+				, <b><a href="http://www.drdobbs.com/digital/20141022?k=ddjtm&amp;cid=onedit_ds_ddjtm">and much more!</a></b><br><br>
+				<a href="http://www.drdobbs.com/digital/20141022?k=ddjtm&amp;cid=onedit_ds_ddjtm">Download the latest issue today. &gt;&gt;</a> 
+			</p>
+		</div>	
+	</div>				 
+			</div>
+			
+			<div style="display: none ! important;" id="div-gpt-ad-942957474691236830-5">
+			<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		</div>
+		</span>
+			<!-- Upcoming Events -->
+<style><!--
+/* Effective stylesheet produced by snapshot save */
+#upcoming_tabs .tab-content { border-width: medium 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(95, 149, 60) rgb(95, 149, 60); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; margin-top: -10px; width: 323px; font-size: 12px; padding: 20px 5px 10px; }
+#upcoming_tabs .tab-content li { margin: 0px 15px; list-style: outside none none; }
+#upcoming_tabs .tab-content a { font-size: 12px; font-weight: normal; }
+--></style>
+
+
+   
+<div class="subsection">
+
+    <h2>Upcoming Events</h2>
+    
+    <div id="upcoming_tabs">
+    
+       <div class="tab_controls">
+         <a class="current" title="Live Events" href="#tab_live-events">Live Events</a>
+         <a title="WebCasts" href="#tab_webcasts">WebCasts</a>
+                 
+       </div>
+              
+       <div class="tab-content" style="" id="tab_live-events">
+           <!-- Taxonomy ID:6500 --><!--not from cache.cache key-->		 
+     	  <ul class="events">
+
+                
+
+                     <li><a href="http://www.enterpriseconnect.com/summit/?_mc=we_x_ectr_le_tsnr_ectr_x_x-smartboxCHI&amp;cid=SBX_ddj_fture_LiveEvent__Other_cpp&amp;itc=SBX_ddj_fture_LiveEvent__Other_cpp" target="_blank">Free 1-Day Event - Advancing Your Skype for Business Strategy<span class="eventName"> - Enterprise Connect Summit Series</span></a>
+	                 </li>     
+
+                           
+
+                     <li><a href="http://www.enterpriseconnect.com/summit/?_mc=we_x_ectr_le_tsnr_ectr_x_x-smartbox&amp;cid=SBX_ddj_fture_LiveEvent__Other_cpp&amp;itc=SBX_ddj_fture_LiveEvent__Other_cpp" target="_blank">Advancing Your Skype for Business Strategy<span class="eventName"> - Enterprise Connect Summit Series</span></a>
+	                 </li>     
+
+                           
+
+                     <li><a href="http://www.gtec.ca/ottawa/leadership-program/?_mc=sbx_x_iw_le_tsnr_gtec_x_x-promo&amp;cid=SBX_ddj_fture_LiveEvent__Other_cpp&amp;itc=SBX_ddj_fture_LiveEvent__Other_cpp" target="_blank">Gain Valuable Knowledge to Advance Your Career at GTEC<span class="eventName"> - GTEC 2016</span></a>
+	                 </li>     
+
+                           
+
+                     <li><a href="http://www.gtec.ca/ottawa/cyber-security-program/?_mc=sbx_x_iw_le_tsnr_gtec_x_x-promo&amp;cid=SBX_ddj_fture_LiveEvent__Other_cpp&amp;itc=SBX_ddj_fture_LiveEvent__Other_cpp" target="_blank">Get Prepared for Big Data Breaches at GTEC<span class="eventName"> - GTEC 2016</span></a>
+	                 </li>     
+
+                           
+
+                     <li><a href="http://www.gtec.ca/ottawa/?_mc=sbx_x_iw_le_tsnr_gtec_x_x-promo&amp;cid=SBX_ddj_fture_LiveEvent__Other_cpp&amp;itc=SBX_ddj_fture_LiveEvent__Other_cpp" target="_blank">Attend GTEC Conference &amp; Exhibition in Ottawa, Nov 1-3, 2016<span class="eventName"> - GTEC 2016</span></a>
+	                 </li>     
+
+           <br>
+	<div class="sbarchive_bottomleft"><a href="http://www.drdobbs.com/live-event/cpp/more.html?cid=SBX_ddj_fture_LiveEvent__Other_cpp?itc=SBX_ddj_fture_LiveEvent__Other_cpp" class="continue">More Live Events<span>&gt;&gt;</span></a></div>
+</ul>
+  
+ 
+   
+			
+       </div>
+      
+       <div class="tab-content" style="display: none;" id="tab_webcasts">                 
+         <!-- Taxonomy ID:6500 --><!--not from cache.cache key-->		 
+     <!-- Taxonomy ID:6500 --> 
+                        	<li><!--Rule 10 --><a target="_new" href="https://webinar.informationweek.com/16930?keycode=SBX&amp;cid=SBX_ddj_fture_Webcast__Other_cpp&amp;itc=SBX_ddj_fture_Webcast__Other_cpp&amp;K=SBX_DDJ_FT">Intrusion Prevention Systems: What to Look for in a Solution</a>                        	
+                            </li>
+                                                	<li><!--Rule 10 --><a target="_new" href="https://webinar.banktech.com/17019?keycode=SBX&amp;cid=SBX_ddj_fture_Webcast__Other_cpp&amp;itc=SBX_ddj_fture_Webcast__Other_cpp&amp;K=SBX_DDJ_FT">How to Mitigate Fraud &amp; Cyber Threats with Big Data and Analytics</a>                        	
+                            </li>
+                                                	<li><!--Rule 10 --><a target="_new" href="https://webinar.drdobbs.com/17025?keycode=SBX&amp;cid=SBX_ddj_fture_Webcast__Other_cpp&amp;itc=SBX_ddj_fture_Webcast__Other_cpp&amp;K=SBX_DDJ_FT">Catch the Security Breach Before It’s Out of Reach</a>                        	
+                            </li>
+                                                	<li><!--Rule 10 --><a target="_new" href="https://webinar.banktech.com/14895?keycode=SBX&amp;cid=SBX_ddj_fture_Webcast__Other_cpp&amp;itc=SBX_ddj_fture_Webcast__Other_cpp&amp;K=SBX_DDJ_FT">New Technologies to Optimize Mobile Financial Services</a>                        	
+                            </li>
+                                                	<li><!--Rule 10 --><a target="_new" href="https://webinar.informationweek.com/16811?keycode=SBX&amp;cid=SBX_ddj_fture_Webcast__Other_cpp&amp;itc=SBX_ddj_fture_Webcast__Other_cpp&amp;K=SBX_DDJ_FT">IT and LOB Win When Your Business Adopts Flexible Social Cloud Collaboration Tools</a>                        	
+                            </li>
+                          <br>	   
+		   <br>
+           		 <div class="sbarchive_bottomleft"><a href="http://www.drdobbs.com/webcast/cpp/more.html?cid=SBX_ddj_fture_Webcast__Other_cpp?itc=SBX_ddj_fture_Webcast__Other_cpp" class="continue">More Webcasts<span>&gt;&gt;</span></a></div>
+     	   
+ <!-- Render Assets of CurationType 'Webcast' -->       
+		       
+       </div>       
+                
+    
+    </div><!--/upcoming_border-->
+</div><!--/upcoming-->
+
+
+
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<div class="recent-articles">
+<div id="smartbox">
+	<h2>Featured Reports</h2>
+	<div class="bar" style="padding-top:8px;padding-bottom:8px;"> 
+			<div class="left"> </div>
+			<div class="right"><a title="UBM Smart boxes auto deliver premium content that is contextually relevant to the article or site section where it is located" href="#">What's this?</a></div>
+		</div>
+	<div class="resources clearfix">
+		<!-- Taxonomy ID:6500 --><!--not from cache.cache key-->		 
+     <!-- Taxonomy ID:6500 -->  
+<ul class="archive">
+				
+				<li><!--Rule 10 -->		
+					<a href="http://www.informationweek.com/gogreen/031313mr?cid=SBX_ddj_fture_Analytics__Other_cpp&amp;itc=SBX_ddj_fture_Analytics__Other_cpp" name="SBX_ddj_fture_Analytics__Other_cpp">
+				Cloud Collaboration Tools: Big Hopes, Big Needs				</a>
+								</li>
+				
+				<li><!--Rule 10 -->		
+					<a href="http://analytics.informationweek.com/abstract/1/7955/Application-Performance-Optimization/return-of-the-silos.html?cid=SBX_ddj_fture_Analytics__Other_cpp&amp;itc=SBX_ddj_fture_Analytics__Other_cpp" name="SBX_ddj_fture_Analytics__Other_cpp">
+				Return of the Silos				</a>
+								</li>
+				
+				<li><!--Rule 10 -->		
+					<a href="http://analytics.informationweek.com/abstract/5/5638/Cloud-Computing/strategy-saas-and-e-discovery.html?cid=SBX_ddj_fture_Analytics__Other_cpp&amp;itc=SBX_ddj_fture_Analytics__Other_cpp" name="SBX_ddj_fture_Analytics__Other_cpp">
+				SaaS and E-Discovery: Navigating Complex Waters				</a>
+								</li>
+				
+				<li><!--Rule 10 -->		
+					<a href="http://analytics.informationweek.com/abstract/13/6134/Outsourcing-Services/research-federal-government-cloud-computing-survey.html?cid=SBX_ddj_fture_Analytics__Other_cpp&amp;itc=SBX_ddj_fture_Analytics__Other_cpp" name="SBX_ddj_fture_Analytics__Other_cpp">
+				Research: Federal Government Cloud Computing Survey				</a>
+								</li>
+				
+				<li><!--Rule 10 -->		
+					<a href="http://analytics.informationweek.com/abstract/5/5674/Cloud-Computing/research-saas-2011.html?cid=SBX_ddj_fture_Analytics__Other_cpp&amp;itc=SBX_ddj_fture_Analytics__Other_cpp" name="SBX_ddj_fture_Analytics__Other_cpp">
+				SaaS 2011: Adoption Soars, Yet Deployment Concerns Linger				</a>
+								</li>
+						
+</ul>
+		<div class="left" style="margin-left: 28px !important;font-family: verdana;font-size: 10px;"><a href="http://www.drdobbs.com/analytics/cpp/more.html?cid=SBX_ddj_fture_Analytics__Other_cpp?itc=SBX_ddj_fture_Analytics__Other_cpp">More &gt;&gt;</a></div>
+		<div class="right"><img src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/smartbox.png"></div>	
+	</div>
+</div>
+<br>
+<div id="smartbox">
+	<h2>Featured Whitepapers</h2>
+	<div class="bar" style="padding-top:8px;padding-bottom:8px;"> 
+			<div class="left"> </div>
+			<div class="right"><a title="UBM Smart boxes auto deliver premium content that is contextually relevant to the article or site section where it is located" href="#">What's this?</a></div>
+		</div>
+	<div class="resources clearfix">
+		<!-- Taxonomy ID:6500 --><!--not from cache.cache key-->		 
+     <!-- Taxonomy ID:6500 -->  
+<ul class="archive">
+				
+				<li><!--Rule 9 -->		
+					<a href="http://www.informationweek.com/infrastructure/wan/the-role-of-the-wan-in-your-hybrid-cloud/357383?cid=SBX_ddj_fture_wp__Other_cpp&amp;itc=SBX_ddj_fture_wp__Other_cpp" name="SBX_ddj_fture_wp__Other_cpp">
+				The Role of the WAN in Your Hybrid Cloud				</a>
+								</li>
+				
+				<li><!--Rule 10 -->		
+					<a href="http://www.informationweek.com/whitepaper/security-monitoring/risk-management-security/stop-malware,-stop-breaches/360613?cid=SBX_ddj_fture_wp__Other_cpp&amp;itc=SBX_ddj_fture_wp__Other_cpp" name="SBX_ddj_fture_wp__Other_cpp">
+				Stop Malware, Stop Breaches? How to Add Values Through Malware Analysis				</a>
+								</li>
+				
+				<li><!--Rule 10 -->		
+					<a href="http://www.informationweek.com/whitepaper/platform-as-a-service/cloud-services/overview:-cloud-operations-platfom-for-aws/360053?cid=SBX_ddj_fture_wp__Other_cpp&amp;itc=SBX_ddj_fture_wp__Other_cpp" name="SBX_ddj_fture_wp__Other_cpp">
+				Overview: Cloud Operations Platfom for AWS				</a>
+								</li>
+				
+				<li><!--Rule 10 -->		
+					<a href="http://www.informationweek.com/whitepaper/cloud/cloud-services/state-of-private-cloud-report:-lessons-from-early-adopters/359753?cid=SBX_ddj_fture_wp__Other_cpp&amp;itc=SBX_ddj_fture_wp__Other_cpp" name="SBX_ddj_fture_wp__Other_cpp">
+				State of Private Cloud Report: Lessons from Early Adopters				</a>
+								</li>
+				
+				<li><!--Rule 10 -->		
+					<a href="http://www.informationweek.com/whitepaper/big-data-analytics/analytics/challenging-some-of-the-myths-about-static-code-analysis/161493?cid=SBX_ddj_fture_wp__Other_cpp&amp;itc=SBX_ddj_fture_wp__Other_cpp" name="SBX_ddj_fture_wp__Other_cpp">
+				Challenging Some of the Myths About Static Code Analysis				</a>
+								</li>
+						
+</ul>
+		<div class="left" style="margin-left: 28px !important;font-family: verdana;font-size: 10px;"><a href="http://www.drdobbs.com/whitepaper/cpp/more.html?cid=SBX_ddj_fture_wp__Other_cpp?itc=SBX_ddj_fture_wp__Other_cpp">More &gt;&gt;</a></div>
+		<div class="right"><img src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/smartbox.png"></div>	
+	</div>
+</div>
+<br>
+</div>
+ 
+			<div class="subsection mostrecent non-mobile-unit">
+				<h2>Most Recent Premium Content</h2>
+<div class="tab_controls">
+	<a class="current" href="http://www.drdobbs.com/digitaledition/">Digital Issues</a>
+</div>	
+<div class="box_wrap">
+<ul>
+
+<b>2014</b><br>
+<b>Dr. Dobb's Journal</b>
+<li><a href="http://www.drdobbs.com/digital/20141022">November - <strong>Mobile Development</strong></a></li>
+<li><a href="http://dc.ubm-us.com/i/350594">August - <strong>Web Development</strong></a></li>
+<li><a href="http://dc.ubm-us.com/i/300036/">May - <strong>Testing</strong></a></li>
+<li><a href="http://dc.ubm-us.com/i/245989">February - <strong>Languages</strong></a></li>
+<br>
+
+<b>Dr. Dobb's Tech Digest</b><br>
+<li><a href="http://www.drdobbs.com/digital/20140813">DevOps</a></li>
+<li><a href="http://www.drdobbs.com/digital/20140626">Open Source</a></li>
+<li><a href="http://www.drdobbs.com/digital/20140514/">Windows and .NET programming</a></li>
+<li><a href="http://www.drdobbs.com/digital/012914/">The Design of Messaging Middleware and 10 Tips from Tech Writers</a></li>
+<li><a href="http://www.drdobbs.com/digital/022614">Parallel Array Operations in Java 8 and Android on x86: Java Native Interface and the Android Native Development Kit</a></li>
+<br>
+
+<b>2013</b>
+<li><a href="http://www.drdobbs.com/digital/121712/?cid=ddj_premium_January2013">January - <strong>Mobile Development</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/012213/?cid=ddj_premium_February2013">February - <strong>Parallel Programming</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/022513/?cid=ddj_premium_March2013">March - <strong>Windows Programming</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/032513/?cid=ddj_premium_April2013">April - <strong>Programming Languages</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/042213/?cid=ddj_premium_May2013">May - <strong>Web Development</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/052013/?cid=ddj_premium_June2013">June - <strong>Database Development</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/062413/?cid=ddj_premium_July2013">July - <strong>Testing</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/072213/?cid=ddj_premium_August2013">August - <strong>Debugging and Defect Management</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/082613">September - <strong>Version Control</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/092313/">October - <strong>DevOps</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/102113">November- <strong>Really Big Data</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/111113?k=ddjtm&amp;cid=onedit_ds_ddjtm">December - <strong>Design</strong></a></li>
+<br>
+
+<b>2012</b>
+<li><a href="http://www.drdobbs.com/digital/121911/?cid=ddj_premium_January2012">January - <strong>C &amp; C++</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/011912/?cid=ddj_premium_February2012">February - <strong>Parallel Programming</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/021912/?cid=ddj_premium_March2012">March - <strong>Microsoft Technologies</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/031912/?cid=ddj_premium_April2012">April - <strong>Mobile Development</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/042312/?cid=ddj_premium_May2012">May - <strong>Database Programming</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/052112/?cid=ddj_premium_June2012">June - <strong>Web Development</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/061812/?cid=ddj_premium_July2012">July - <strong>Security</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/072312/?cid=ddj_premium_August2012">August - <strong>ALM &amp; Development Tools</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/082012/?cid=ddj_premium_September2012">September - <strong>Cloud &amp; Web Development</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/092412/?cid=ddj_premium_October2012">October - <strong>JVM Languages</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/102212/?cid=ddj_premium_November2012">November - <strong>Testing</strong></a></li>
+<li><a href="http://www.drdobbs.com/digital/111912/?cid=ddj_premium_December2012">December - <strong>DevOps</strong></a></li>
+<br>	
+	
+<a href="http://www.drdobbs.com/digitaledition/"><strong>2011</strong></a>
+</ul>
+</div>			</div>
+			
+		</div>
+		
+		<script src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/nodetag.js"></script>
+		<div id="bottom" style="clear: both;" align="center">
+
+   			<div style="display: none ! important;" id="div-gpt-ad-942957474691236830-29">
+			<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+		</div>
+	
+			<footer>
+<br><br>
+
+<!-- BEGIN GREY FOOTER -->
+<link rel="stylesheet" type="text/css" href="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/style-ddj.css">
+<div align="center">
+  <div id="footergrey">
+    <div id="top">
+    <!--GREY FOOTER LEFT SIDE -->
+    <div id="left">
+    <a href="http://www.ubmtechweb.com/" target="_blank"><img src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/grey-footer-logo.png" alt="UBM Tech" border="0" height="111" width="88"></a>
+    </div><!-- / GREY FOOTER LEFT SIDE -->
+    <!-- GREY FOOTER rightlinks SIDE -->
+    <div id="rightlinks">
+      <div class="list-div" id="tech-brands">
+        <ul class="first-list">
+          <li class="footer_title">TECHNOLOGY PORTFOLIO</li> 
+          <li><a href="http://www.blackhat.com/us-14/" target="_blank">Black Hat</a></li>
+          <li><a href="http://www.cloudconnectevent.com/" target="_blank">Cloud Connect</a></li>
+          <li><a href="http://www.darkreading.com/" target="_blank">Dark Reading</a></li> 
+          <li><a href="http://www.enterpriseconnect.com/" target="_blank">Enterprise Connect</a></li>
+        </ul>
+        <ul>
+          
+          <li><a href="http://www.servicemanagementfusion.com/" target="_blank">Fusion</a></li>
+           <li><a href="http://www.gdconf.com/" target="_blank">GDC</a></li>
+           <li><a href="http://www.gtec.ca/" target="_blank">GTEC</a></li>
+           <li><a href="http://www.gamasutra.com/" target="_blank">Gamasutra</a></li>
+        </ul>
+        <ul>
+          
+          
+          <li><a href="http://www.thinkhdi.com/" target="_blank">HDI</a></li>
+          <li><a href="http://www.icmi.com/" target="_blank">ICMI</a></li>
+          <li><a href="http://www.informationweek.com/" target="_blank">InformationWeek</a></li>
+           <li><a href="http://www.interop.com/" target="_blank">Interop</a></li>
+        </ul>
+        <ul class="last-list">
+         
+          <li><a href="http://www.networkcomputing.com/" target="_blank">Network Computing</a></li>
+          <li><a href="http://www.nojitter.com/" target="_blank">No Jitter</a></li>
+          <li><a href="http://www.towersummit.com/" target="_blank">Tower &amp; Small Cell Summit</a></li>
+        </ul>
+      </div>
+      <div class="list-div" id="communities-served">
+        <ul class="first-list">
+          <li class="footer_title">COMMUNITIES SERVED</li>
+          <li><a href="http://tech.ubm.com/community-brands/enterprise-it/" target="_blank">Enterprise IT</a></li>
+          <li><a href="http://tech.ubm.com/community-brands/enterprise-communications/" target="_blank">Enterprise Communications</a></li>
+          <li><a href="http://tech.ubm.com/community-brands/game-and-app-developers/" target="_blank">Game Developers</a></li>
+          <li><a href="http://tech.ubm.com/community-brands/information-security/" target="_blank">Information Security</a></li>
+          <li><a href="http://tech.ubm.com/community-brands/technical-service-and-support/" target="_blank">IT Services &amp; Support</a></li>
+        </ul>
+      </div>
+      <div class="list-div" id="working-with-us">
+        <ul class="first-list">
+          <li class="footer_title">WORKING WITH US</li>
+          <li><a href="http://createyournextcustomer.techweb.com/contact-us/" target="_blank">Advertising Contacts</a></li>
+          <li><a href="http://events.ubm.com/?company=10" target="_blank">Event Calendar</a></li>
+          <li><a href="http://createyournextcustomer.techweb.com/" target="_blank">Tech Marketing</a></li>
+          <li><a href="http://createyournextcustomer.techweb.com/" target="_blank">Solutions</a></li>
+          <li><a href="http://tech.ubm.com/contact-us/" target="_blank">Contact Us</a></li>
+          <li><a href="https://wrightsmedia.com/sites/ubm/index.cfm" target="_blank">Licensing</a></li>
+        </ul>
+      </div>
+    </div><!-- / GREY FOOTER rightlinks -->
+  </div><!--end top-->
+    <div style="clear:both;"></div><!-- // to clear the right and left evenly // -->
+  <div id="bottom">
+    <ul class="blue">
+      <li><a href="http://legal.us.ubm.com/terms-of-service/" target="_blank" class="blue">Terms of Service</a></li>
+      <li><a href="http://legal.us.ubm.com/privacy-policy/" target="_blank" class="blue">Privacy Statement</a></li>
+      <li>Copyright © 2016 UBM, All rights reserved</li>
+    </ul>
+  </div>
+  </div><!-- / END footergrey -->
+</div><!-- / END align="center" -->
+<!-- / END GREY FOOTER -->
+
+<style><!--
+/* Effective stylesheet produced by snapshot save */
+#footer { clear: both; font-family: arial,helvetica,sans-serif; color: rgb(255, 255, 255); border-top: 4px solid rgb(254, 188, 0); font-size: 0.9em; text-align: center; }
+#footer a, #footer a:visited { color: rgb(255, 255, 255); text-decoration: none; }
+#footer #footer2 ul { margin: 0px; padding: 5px 0px; list-style: outside none none; line-height: 1.4em; text-align: center; width: 999px; }
+#footer #footer2 li { font-weight: normal; padding: 0px 0px 0px 15px; display: inline; text-indent: 0px; text-decoration: none; }
+#footer-a { background-color: rgb(54, 159, 43); text-align: center; }
+#footer-b { background-color: rgb(22, 83, 15); text-align: center; }
+#footer #footer2 #footer-a li a, #footer #footer2 #footer-c li a { background: transparent url("The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20|%20Dr%20Dobb's%20p2_files/footer_vertline.gif") no-repeat scroll 1px 0.15em; padding-left: 20px; margin-top: 10px; text-indent: 0px; }
+#footer #footer2 #footer-b li a { background: transparent url("The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20|%20Dr%20Dobb's%20p2_files/footer_vertline.gif") no-repeat scroll 1px 0.15em; padding-left: 20px; margin-top: 10px; text-indent: 0px; }
+#footer #footer2 #footer-a .first, #footer #footer2 #footer-b .first, #footer #footer2 #footer-c .first { background: transparent none repeat scroll 0% 0%; padding-left: 0px; text-indent: 0px; }
+#footer #footer2 li { background: transparent none repeat scroll 0% 0%; }
+--></style>
+
+<div id="footer">
+
+<div id="footer2">
+      
+	<div id="footer-a">
+	  <center>
+      <ul>  
+        
+<li><a href="http://www.drdobbs.com/" class="first">Dr. Dobb's Home</a></li><li><a href="http://www.drdobbs.com/articles">Articles</a></li><li><a href="http://www.drdobbs.com/news">News</a></li><li><a href="http://www.drdobbs.com/blogs">Blogs</a></li><li><a href="http://www.drdobbs.com/sourcecode">Source Code</a></li><li><a href="http://www.drdobbs.com/tv">Dobb's TV</a></li><li><a href="http://www.informationweek.com/events/d/d-id/898857">Webinars &amp; Events</a></li>      </ul>
+	  </center>
+	</div>
+	  
+	<div id="footer-b">
+	  <center>
+      <ul> 
+        <li><a href="http://www.drdobbs.com/aboutus" class="first">About Us</a></li>
+        <li><a href="http://www.drdobbs.com/contactus">Contact Us</a></li>
+        <li><a href="http://www.drdobbs.com/sitemap">Site Map</a></li>
+        <li><a href="http://www.drdobbs.com/edcal">Editorial Calendar</a></li>
+     </ul>
+	  </center>
+	</div>
+  
+</div>
+<!-- END: Footer2 -->
+</div> 
+<!-- END: Footer -->
+
+</footer></div>
+</div>
+<br>
+
+
+<script type="text/javascript" language="JavaScript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/elqCfg.js"></script>
+<script type="text/javascript" language="JavaScript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/elqImg.js"></script>
+
+
+
+<!-- Ad Roll Retargeting Cookie added as per Loria 3/25/12 -->
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<!-- /Ad Roll Retargeting Cookie -->
+
+		</div><div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/xd_arbiter.php.html#channel=f9ed072a782a66&amp;origin=http%3A%2F%2Fwww.drdobbs.com" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/xd_arbiter.php-1.html#channel=f9ed072a782a66&amp;origin=http%3A%2F%2Fwww.drdobbs.com" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+		
+	
+
+
+<!-- Default Insight Tag -->
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><script src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/convert_data.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/beacon-min.js"></script>
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+ <script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<!-- SiteCatalyst code version: H.16.
+Copyright 1997-2008 Omniture, Inc. More info available at
+http://www.omniture.com -->
+<script type="text/javascript" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/h_s_code_remote.js"></script>
+
+<script language="JavaScript" type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+<script language="JavaScript" type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+<noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+src="http://cmpglobalvista.112.2O7.net/b/ss/cmpglobalvista/1/H.16--NS/0"
+height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->
+
+<script language="JavaScript" type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+<!-- End SiteCatalyst code version: H.16  -->
+
+<div style="background: rgb(0, 0, 0) none repeat scroll 0px 0px; opacity: 0.9; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 1000; display: none;" id="TWLightBoxOverlay"></div><div style="width: 780px; margin-left: -404.5px; margin-top: -250px; position: fixed; display: none; top: 50%; left: 50%; z-index: 6000000;" id="TWLightBoxPanel" class="drdobbs"><div id="topLoginHeader"><div class="nextGenContainer_title">Techweb</div><div class="nextGenContainer_closeButton"><div id="nextGenContainer_closeButton_inner" onclick=""></div></div></div><div id="nextGenLoginContainer" class=""><div id="nextGenContainer" class=""></div></div><div class="emptyFix" id="nextGenFooterContainer"></div></div><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/postmessageRelay.html#rpctoken=762692097&amp;forcesecure=1" id="oauth2relay1547557747" name="oauth2relay1547557747"></iframe><iframe src="The%20C++14%20Standard:%20What%20You%20Need%20to%20Know%20%7C%20Dr%20Dobb%27s%20p2_files/generated-content.html" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;" allowfullscreen="true" allowtransparency="true" scrolling="no" id="rufous-sandbox" frameborder="0"></iframe></body></html>

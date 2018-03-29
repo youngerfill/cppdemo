@@ -1,0 +1,54 @@
+/* Effective stylesheet produced by snapshot save */
+body { font-family: Verdana,Geneva,sans-serif; font-size: 10pt; color: rgb(130, 130, 130); }
+td { font-family: Verdana,Geneva,sans-serif; font-size: 10pt; color: rgb(130, 130, 130); }
+input { font-family: monospace; font-size: 10pt; color: rgb(0, 0, 0); }
+textarea { font-family: monospace; font-size: 10pt; color: rgb(0, 0, 0); }
+a:link { color: rgb(0, 0, 0); text-decoration: none; }
+a:visited { color: rgb(130, 130, 130); text-decoration: none; }
+.default { font-family: Verdana,Geneva,sans-serif; font-size: 10pt; color: rgb(130, 130, 130); }
+.title { font-family: Verdana,Geneva,sans-serif; font-size: 10pt; color: rgb(130, 130, 130); }
+.subtext { font-family: Verdana,Geneva,sans-serif; font-size: 7pt; color: rgb(130, 130, 130); }
+.yclinks { font-family: Verdana,Geneva,sans-serif; font-size: 8pt; color: rgb(130, 130, 130); }
+.pagetop { font-family: Verdana,Geneva,sans-serif; font-size: 10pt; color: rgb(34, 34, 34); }
+.comhead { font-family: Verdana,Geneva,sans-serif; font-size: 8pt; color: rgb(130, 130, 130); }
+.comment { font-family: Verdana,Geneva,sans-serif; font-size: 9pt; }
+.brandname { margin-right: 5px; }
+.comment a:link, .comment a:visited { text-decoration: underline; }
+.c00, .c00 a:link { color: rgb(0, 0, 0); }
+.c5a, .c5a a:link, .c5a a:visited { color: rgb(90, 90, 90); }
+.c9c, .c9c a:link, .c9c a:visited { color: rgb(156, 156, 156); }
+.pagetop a:visited { color: rgb(0, 0, 0); }
+.subtext a:link, .subtext a:visited { color: rgb(130, 130, 130); }
+.subtext a:hover { text-decoration: underline; }
+.comhead a:link, .subtext a:visited { color: rgb(130, 130, 130); }
+.comhead a:hover { text-decoration: underline; }
+.default p { margin-top: 8px; margin-bottom: 0px; }
+pre { overflow: auto; padding: 2px; max-width: 600px; }
+pre:hover { overflow: auto; }
+.votearrow { width: 10px; height: 10px; border: 0px none; margin: 3px 2px 6px; background: transparent url("grayarrow.gif") no-repeat scroll 0% 0%; }
+@media not all, not all {
+  .votearrow { background-size: 10px auto; background-image: url("urn:not-loaded:https://news.ycombinator.com/grayarrow2x.gif"); }
+}
+@media only screen and (min-width: 300px) and (max-width: 750px) {
+  #hnmain { width: 100%; }
+  body { padding: 0px; margin: 0px; width: 100%; }
+  td { height: inherit ! important; }
+  .title, .comment { font-size: inherit; }
+  span.pagetop { display: block; margin: 3px 5px; font-size: 12px; }
+  span.pagetop b { display: block; font-size: 15px; }
+  table.comment-tree pre, table.comment-tree code { max-width: 300px; overflow: auto; }
+  table.comment-tree span.comment a { display: inline-block; max-width: 200px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; vertical-align: top; }
+  img[src="s.gif"][width="40"] { width: 12px; }
+  img[src="s.gif"][width="80"] { width: 24px; }
+  img[src="s.gif"][width="120"] { width: 36px; }
+  img[src="s.gif"][width="160"] { width: 48px; }
+  img[src="s.gif"][width="200"] { width: 60px; }
+  img[src="s.gif"][width="240"] { width: 72px; }
+  img[src="s.gif"][width="280"] { width: 84px; }
+  .title { font-size: 11pt; line-height: 14pt; }
+  .subtext { font-size: 9pt; }
+  .votearrow { transform: scale(1.3, 1.3); margin-right: 6px; }
+  .votelinks { min-width: 18px; }
+  .votelinks a { display: block; margin-bottom: 9px; }
+  input[type="text"], input[type="number"], textarea { font-size: 16px; width: 90%; }
+}

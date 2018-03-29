@@ -1,0 +1,72 @@
+# depslib dependency file v1.0
+1150753733 d:\bert\projects\blib\src\stringtools.cpp
+	<ctype.h>
+	<iostream>
+	<sstream>
+	"StringTools.hpp"
+
+1150895938 d:\bert\projects\blib\blib\stringtools.hpp
+	"definitions.hpp"
+
+1106000586 d:\bert\projects\blib\blib\definitions.hpp
+	<string>
+	<vector>
+	<list>
+	<map>
+
+1106000586 d:\bert\projects\blib\src\error.cpp
+	<windows.h>
+	<errno.h>
+	<algorithm>
+	<sstream>
+	"definitions.hpp"
+	"error.hpp"
+
+1106000586 d:\bert\projects\blib\blib\error.hpp
+	"definitions.hpp"
+
+1106086152 d:\bert\projects\blib\src\make.cpp
+	<iostream>
+	"FileTools.hpp"
+	"make.hpp"
+
+1106000586 d:\bert\projects\blib\blib\filetools.hpp
+	"error.hpp"
+
+1106000586 d:\bert\projects\blib\blib\make.hpp
+	<list>
+	<ctime>
+
+1106000586 d:\bert\projects\blib\src\socket.cpp
+	<winsock2.h>
+	<ws2tcpip.h>
+	<cstdio>
+	<signal.h>
+	<unistd.h>
+	<sys/socket.h>
+	<arpa/inet.h>
+	<sstream>
+	<string>
+	"error.hpp"
+	"socket.hpp"
+
+1106000586 d:\bert\projects\blib\blib\socket.hpp
+	<string>
+	"definitions.hpp"
+
+1106000586 d:\bert\projects\blib\src\filetools.cpp
+	<sys/types.h>
+	<sys/stat.h>
+	<cstdio>
+	<sstream>
+	<process.h>
+	<io.h>
+	<windows.h>
+	<direct.h>
+	<unistd.h>
+	<sys/vfs.h>
+	<stdint.h>
+	<dirent.h>
+	"StringTools.hpp"
+	"FileTools.hpp"
+

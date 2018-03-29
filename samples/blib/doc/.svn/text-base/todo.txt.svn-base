@@ -1,0 +1,16 @@
+socket:
+
+- test SocketBase::isBlocking==false
+- UDP support, broadcasting, ...
+
+
+fileTools : 
+
+- add &&, ||, ! -operators for Spec classes
+- add file path to error messages
+- switch implementation to boost.file
+
+stringTools:
+
+- write test app
+

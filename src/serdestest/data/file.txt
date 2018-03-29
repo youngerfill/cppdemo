@@ -1,0 +1,4 @@
+Inty = 5
+Floaty = 3.14
+TheValue = hmmm
+Value = haha

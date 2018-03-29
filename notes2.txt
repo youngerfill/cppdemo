@@ -1,0 +1,33 @@
+- when changing clapi.c, performing 'make' on clapitest rebuilds libclapi, but doesn't relink the clapitest executable
+    . only when SHOW_INFO is non-empty
+
+- babs: make showgoal
+    . shows full path to goal
+    . does this exist already in some form?
+    . '$(make showgoal) arg1 arg2 ...' tests the program
+
+- create repo on github from command line:
+    http://stackoverflow.com/questions/2423777/is-it-possible-to-create-a-remote-repo-on-github-from-the-cli-without-ssh
+
+    curl -u 'USER' https://api.github.com/user/repos -d '{"name":"REPO", "private":"true"}'
+
+    . make variant of gtinit (gthinit ?)
+        . same as gtinit, but no folder as a remote
+        . instead, creates a gh repo from command line
+            - will ask pw interactively
+            - gh username in gtvars
+        . the latter gh repo will be the remote
+        . just use gtcommit as before
+
+- 'run' target: perform run command defined in module.mk (complete with cl args)
+
+curl -u bergoid https://api.github.com/user/repos -d "{\"name\": \"mytest\", \"description\": \"Description goes here\", \"private\": false, \"has_issues\": true, \"has_downloads\": true, \"has_wiki\": false}"
+
+mkcd mytest
+git init
+git remote add origin https://github.com/bergoid/mytest.git
+
+echo "a test" > test.txt
+
+gtcommit
+

@@ -1,0 +1,116 @@
+
+#if !defined STRINGTOOLS_H
+#define STRINGTOOLS_H
+
+#ifdef WIN32
+#pragma warning(disable:4786)
+#endif
+
+#include "definitions.hpp"
+
+namespace blib {
+
+//! Determines if a given character is a whitespace
+inline bool IsWhiteSpace(char ch);
+
+//! Trims leading & trailing whitespace characters from a string
+std::string TrimWhiteSpaces(const std::string& argString);
+
+//! Searches for the first occurrence of a string within a stream starting from the current stream pointer
+/** \param inputStream the stream to be searched
+** \param theString the string to be found
+** \param begin the position in the stream of the first character of the found string
+** \param caseSensitive true if the match has to be case sensitive, false otherwise
+** \returns true if the string was found, false otherwise
+** If the string is found, the stream pointer will point just past the found string
+** upon return of the function.
+*/
+bool FindString(std::istream& inputStream, const std::string& theString, std::streampos& begin, bool caseSensitive=true);
+
+//! Searches for the first occurrence of a string within a stream starting from the current stream pointer
+/** \param inputStream the stream to be searched
+** \param theString the string to be found
+** \param caseSensitive true if the match has to be case sensitive, false otherwise
+** \returns true if the string was found, false otherwise
+** If the string is found, the stream pointer will point just past the found string
+** upon return of the function.
+*/
+bool FindString(std::istream& inputStream, const std::string& theString, bool caseSensitive=true);
+
+
+//! Advances the read pointer of an input stream until the beginning of the next line
+bool SkipToNextLine(std::istream& inputStream);
+
+//! Advances the read pointer of an input stream until the first occurence of a string
+bool SkipPast(std::istream& inputStream, const std::string& theString, bool caseSensitive=true);
+
+//! Advances the read pointer of an input stream until the first occurence of a character
+bool SkipPast(std::istream& inputStream, char theChar, bool caseSensitive=true);
+
+//! Advances the read pointer of an input stream until the first non-whitespace character
+bool SkipWhiteSpace(std::istream& inputStream);
+
+//! Reads a stream from the current stream point up until the first occurrence of a string
+/** \param inputStream the stream to be searched
+** \param stringToFind the string at which reading stops
+** \param readString If stringToFind was found, will contain the stream contents between the stream pointer before
+** \param caseSensitive true if the match has to be case sensitive, false otherwise
+**   the function call and the first occurence stringToFind. Will remain unchanged if stringToFind was not found.
+*/
+bool ReadUpTo(std::istream& inputStream, const std::string& stringToFind, std::string& readString, bool caseSensitive=true);
+
+//! Reads a stream from the current stream point up until the first occurrence of a character
+/** \param inputStream the stream to be searched
+** \param charToFind the character at which reading stops
+** \param readString If charToFind was found, will contain the stream contents between the stream pointer before
+**   the function call and the first occurence charToFind. Will remain unchanged if charToFind was not found.
+*/
+bool ReadUpTo(std::istream& inputStream, char charToFind, std::string& readString, bool caseSensitive=true);
+
+//! Reads a stream from the current stream point up until the end of the line
+/** \param inputStream the stream to be searched
+** \param readString if a newline character was found, will contain the contents of the line up to, but not including the newline character
+** if the end of the stream was reached, wil contain the rest of the stream
+** \returns true if a newline character was found, false otherwise
+*/
+bool ReadLine(std::istream& inputStream, std::string& readString, bool caseSensitive=true);
+
+///////// TODO : comments ////////
+bool ReadValueString(std::istream& inputStream, const std::string& name, std::string& valueString);
+
+//! Determines if a given string matches a given wildcard specification
+/** \param aString the given string
+** \param format a string containing the wildcard specification. Valid wildcards are '*' ( <=> a sequence of characters) and '?' ( <=> one character)
+** \param caseSensitive a flag indicating if he match has to be case sensitive.
+**        MatchesWildcard("Name", "n*", false) will return true, while MatchesWildcard("Name", "n*", true) will return false.
+** \returns true if the string matches the spec, false otherwise
+*/
+bool MatchesWildcard(const std::string& aString, const std::string& format, bool caseSensitive=true);
+
+
+//! Splits a string into tokens
+/** \param aStringList the string to be splitted
+** \param stringList the container to which the found tokens will be added
+** \param delimiters a string specifying the delimiting characters, cfr. the strtok() function from <cstring>
+*/
+void SplitString(const std::string& aString, const std::string& delimiters, StringList& stringList);
+
+
+//! Concatenates the string in a list into one string
+/** \param stringList the list containing the string to be concatenated
+** \param delimiter specifies a series of characters that has to be put between the strings
+** \returns the concatenated string
+*/
+std::string ConcatString(const StringList& stringList, const std::string& delimiter);
+
+//! Converts all characters to lower case
+std::string GetLowerCase(const std::string& aString);
+
+//! Converts all characters to upper case
+std::string GetUpperCase(const std::string& aString);
+
+
+} /* namespace blib */
+
+#endif /* STRINGTOOLS_H */
+

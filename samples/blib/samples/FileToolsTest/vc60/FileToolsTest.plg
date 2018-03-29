@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: blib - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP6.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "../include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /FR"Debug/" /Fp"Debug/blib.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\BERT\Projects\blib\src\error.cpp"
+"D:\BERT\Projects\blib\src\FileTools.cpp"
+"D:\BERT\Projects\blib\src\make.cpp"
+"D:\BERT\Projects\blib\src\socket.cpp"
+"D:\BERT\Projects\blib\src\StringTools.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP6.tmp" 
+Creating command line "link.exe -lib /nologo /out:"../lib/blibd.lib"  .\Debug\error.obj .\Debug\FileTools.obj .\Debug\make.obj .\Debug\socket.obj .\Debug\StringTools.obj "
+<h3>Output Window</h3>
+Compiling...
+error.cpp
+cl.exe terminated at user request.
+
+</pre>
+</body>
+</html>

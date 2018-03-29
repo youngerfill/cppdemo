@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2005-01-17T21:19:53.390625Z"
+   url="file:///D:/BERT/SVNRepo/blib/trunk/samples/FileToolsTest/source"
+   last-author="Administrator"
+   kind="dir"
+   uuid="336b900d-4625-6145-bf10-bda8553a0865"
+   revision="4"/>
+<entry
+   committed-rev="2"
+   name="FTTApp.cpp"
+   text-time="2005-01-17T21:22:32.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="174d97fb0b5fe246f90f80fe1f07e884"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:32.000000Z"/>
+<entry
+   committed-rev="2"
+   name="FTTApp.hpp"
+   text-time="2005-01-17T21:22:32.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="9eec231c804d6256ca47b1163df9f8f0"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:32.000000Z"/>
+</wc-entries>

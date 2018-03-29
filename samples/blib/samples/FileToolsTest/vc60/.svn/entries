@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2005-01-17T21:19:53.390625Z"
+   url="file:///D:/BERT/SVNRepo/blib/trunk/samples/FileToolsTest/vc60"
+   last-author="Administrator"
+   kind="dir"
+   uuid="336b900d-4625-6145-bf10-bda8553a0865"
+   revision="4"/>
+<entry
+   name="Release"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="FileToolsTest.dsp"
+   text-time="2005-01-17T21:22:42.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="eba72b6bce966fb74a47d6e2821a2654"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:42.000000Z"/>
+<entry
+   name="Debug"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="FileToolsTest.dsw"
+   text-time="2005-01-17T21:22:42.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="6f38f4c9466516bf1cd722da1f62314e"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:42.000000Z"/>
+</wc-entries>

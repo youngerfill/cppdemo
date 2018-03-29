@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2005-01-17T21:19:53.390625Z"
+   url="file:///D:/BERT/SVNRepo/blib/trunk/src"
+   last-author="Administrator"
+   kind="dir"
+   uuid="336b900d-4625-6145-bf10-bda8553a0865"
+   revision="4"/>
+<entry
+   committed-rev="2"
+   name="FileTools.cpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="ce23ec7da1a1faf6ae17e828930b5fe7"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="StringTools.cpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="7ea3950730601ab8f29905371a1f5aed"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="socket.cpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="6f0cdb8bd4938d42af950d1e4d481970"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="error.cpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="a3799459d5dbc1158b40fce327242855"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="make.cpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="5680b80d1cbf35ec1f636a38112f0632"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+</wc-entries>

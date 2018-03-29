@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2005-01-17T21:19:53.390625Z"
+   url="file:///D:/BERT/SVNRepo/blib/trunk/samples/SerDesTest/src"
+   last-author="Administrator"
+   kind="dir"
+   uuid="336b900d-4625-6145-bf10-bda8553a0865"
+   revision="4"/>
+<entry
+   committed-rev="2"
+   name="serdesplanb.cpp"
+   text-time="2005-01-17T21:22:54.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="0154e31948b914e8869a1543cc6a31cb"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:54.000000Z"/>
+<entry
+   committed-rev="2"
+   name="main.cpp"
+   text-time="2005-01-17T21:22:54.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="c5868a121689a4316cf781e03444e5f4"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:54.000000Z"/>
+<entry
+   committed-rev="2"
+   name="serdesplanb.hpp"
+   text-time="2005-01-17T21:22:54.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="d376d3d489f0aeebd614e2f0d78a461b"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:54.000000Z"/>
+<entry
+   committed-rev="2"
+   name="shapes.h"
+   text-time="2005-01-17T21:22:54.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="600a9b220b78b882b92c8ab55f626115"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:54.000000Z"/>
+<entry
+   committed-rev="2"
+   name="shapes.hpp"
+   text-time="2005-01-17T21:22:54.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="9f87a3bed830a0d47dbf2c9604036e79"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:54.000000Z"/>
+<entry
+   committed-rev="2"
+   name="serdes.hpp"
+   text-time="2005-01-17T21:22:54.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="c74f907e11988697a17086be7c4c7370"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:54.000000Z"/>
+</wc-entries>

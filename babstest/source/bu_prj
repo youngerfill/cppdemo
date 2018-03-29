@@ -1,0 +1,26 @@
+#!/bin/bash
+
+. ~/tools/common.sh
+if [ "$?" -ne "0" ]; then
+  exit 1
+fi
+
+checkPrereq ~/tools/bu_folder
+
+pushd $(dirname $(readlink -f $0))>/dev/null
+checkError
+
+cd ..
+checkError
+
+#rm -rf build/
+#checkError
+
+cd ..
+checkError
+
+bu_folder babstest . babstest_
+checkError
+
+popd>/dev/null
+

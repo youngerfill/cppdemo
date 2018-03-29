@@ -1,0 +1,12 @@
+#!/bin/bash
+
+PROJECT_ROOT=/home/bert/prj/babstest
+
+SOURCE_DIR=$PROJECT_ROOT/source
+export SOURCE_DIR
+
+BABS_DIR=$PROJECT_ROOT/babs
+export BABS_DIR
+
+BUILD_DIR=~/build/babstest
+export BUILD_DIR

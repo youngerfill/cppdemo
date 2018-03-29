@@ -1,0 +1,3 @@
+smallPrj built with g++ : 7357 bytes
+smallPrj built with gcc : 7228 bytes
+

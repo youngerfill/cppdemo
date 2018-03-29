@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE CodeBlocks_layout_file>
+<CodeBlocks_layout_file>
+	<File name="clock.cpp" open="1" top="0">
+		<Cursor position="311" topLine="5"/>
+	</File>
+	<File name="clock.hpp" open="1" top="0">
+		<Cursor position="266" topLine="0"/>
+	</File>
+	<File name="display.cpp" open="1" top="0">
+		<Cursor position="100" topLine="0"/>
+	</File>
+	<File name="display.hpp" open="1" top="0">
+		<Cursor position="0" topLine="0"/>
+	</File>
+	<File name="event.hpp" open="1" top="0">
+		<Cursor position="571" topLine="0"/>
+	</File>
+	<File name="main.cpp" open="1" top="0">
+		<Cursor position="404" topLine="0"/>
+	</File>
+	<File name="timeevents.hpp" open="1" top="1">
+		<Cursor position="53" topLine="0"/>
+	</File>
+	<Expand folder="/Sources"/>
+	<Expand folder="/Headers"/>
+</CodeBlocks_layout_file>

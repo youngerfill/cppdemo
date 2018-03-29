@@ -1,0 +1,2354 @@
+<!DOCTYPE html><html style="height: 100%;"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Ten C++11 Features Every C++ Developer Should Use - CodeProject</title> 
+	<link type="text/css" rel="stylesheet" href="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/Main.min.css"><style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+--></style>
+<link type="text/css" rel="stylesheet" href="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/no-media-query.min.css">
+
+	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Description" content="This article discusses a series of features new to C++11 that all developers should learn and use.; Author: Marius Bancila; Updated: 3 Apr 2013; Section: C / C++ Language; Chapter: Languages; Updated: 3 Apr 2013">
+<meta name="Keywords" content="C++, Dev, Beginner, Intermediate, Advanced,C / C++ Language,Languages,Free source code, tutorials">
+<meta name="Author" content="Marius Bancila">
+<meta name="Rating" content="General">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+<meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">
+
+<link rel="dns-prefetch" href="http://ajax.googleapis.com/"> 
+
+
+
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All Topics" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=1">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Android" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=22">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - iOS" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=25">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C++" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=2">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C#" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=3">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Web" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=23">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="http://www.codeproject.com/webservices/LoungeRSS.aspx">
+<meta name="robots" content="index, follow">
+<link rel="search" type="application/opensearchdescription+xml" title="CodeProject" href="http://www.codeproject.com/info/OpenSearch.xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<base href="" target="_top">
+	<link rel="icon" href="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/favicon.ico" type="image/ico">
+<link rel="shortcut icon" href="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/favicon.ico" type="image/ico">
+<link rel="apple-touch-icon" href="urn:not-loaded:http://www.codeproject.com/images/FavIcon-Apple.png" type="image/png">
+<script type="text/javascript" language="Javascript"><!--
+/* Script removed by snapshot save */
+--></script><script src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/a.min.js" async="" type="text/javascript"></script>
+
+	
+
+
+
+
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><script src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/ga.js" async="" type="text/javascript"></script>
+
+
+<link href="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/translateelement.css" charset="UTF-8" rel="stylesheet" type="text/css"><script src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/main.js" charset="UTF-8" type="text/javascript"></script><script src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/element_main.js" charset="UTF-8" type="text/javascript"></script></head>	
+
+<body style="position: relative; min-height: 100%; top: 0px;" class="firefox firefox0">
+
+<a class="access-link" href="#Main"><img alt="Click here to Skip to main content" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t.gif"></a>
+
+
+
+
+
+<div class="page-background">
+
+	
+	
+
+	
+
+	
+    <div id="ctl00_STM" class="site-top-menu fixed">
+        <div class="main-content">
+            
+
+<div class="container memberbar clearfix">
+
+	<div id="ctl00_MemberMenu_GenInfo" class="float-left">12,285,578 members (61,662 online)</div>
+
+	<div class="float-left">
+		
+	</div>
+
+	<div class="float-right">
+
+		
+
+		
+
+		
+
+			<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+			<a name="SignUp"></a>
+			<span class="member-signin tooltip">
+				<span><a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f570638%2fTen-Cplusplus11-Features-Every-Cplusplus-Developer">Sign in</a></span>
+
+				<div class="tooltip-flyout">
+					<form name="subForm" id="subForm" action="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f570638%2fTen-Cplusplus11-Features-Every-Cplusplus-Developer" method="post" class="tight">
+
+						
+						<input id="FormName" name="FormName" value="MenuBarForm" type="hidden">
+
+						<div>Email</div>
+						<div><input class="small-text" name="Email" id="Email" type="email"></div>
+						<div>Password</div>
+						<div><input class="small-text" name="Password" id="Password" type="password"></div>
+						<div class="action">
+							
+<script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><input class="create" onclick="" value="Join" <input="" name="fld_quicksign" type="button">
+							<input value="Sign in" class="signin" onclick="" type="submit">
+						</div>
+
+						<div class="container">
+							
+							 
+							<a id="ctl00_MemberMenu_SendPassword" class="forgot float-right" href="http://www.codeproject.com/script/Membership/SendPassword.aspx?rp=%2fArticles%2f570638%2fTen-Cplusplus11-Features-Every-Cplusplus-Developer">Forgot your password?</a>
+						</div>
+					</form>
+
+					<hr class="divider-dark">
+
+					Sign in using <a class="oauth" title="Sign in using Facebook" href="http://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Facebook"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/facebook.png" style="vertical-align:middle;padding-right:3px;border:0;"></a>
+<a class="oauth" title="Sign in using Google" href="http://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Google"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/google-plus.png" style="vertical-align:middle;padding-right:3px;border:0;"></a>
+<a class="oauth" title="Sign in using Linkedin" href="http://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=LinkedIn"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/linkedin.png" style="vertical-align:middle;padding-right:3px;border:0;"></a>
+<a class="oauth" title="Sign in using Microsoft" href="http://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Microsoft"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/microsoft.png" style="vertical-align:middle;padding-right:3px;border:0;"></a>
+
+				</div>
+            </span>
+		
+	</div>
+</div>
+        </div>
+    </div>
+
+	
+    <div id="ctl00_SH" class="site-header fixed">
+        <div class="main-content">
+            <div class="logo"><a href="http://www.codeproject.com/"><img id="ctl00_Logo" tabindex="1" title="CodeProject" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/logo250x135.gif" alt="Home" style="height:135px;width:250px;border-width:0px;"></a></div>
+            <div class="promo"><div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Languages/C-Cplusplus-Language/General" data-tags="C++, Dev, Beginner, Intermediate, Advanced,rating4.5"><noscript><a href="http://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Languages/C-Cplusplus-Language/General&sz=728x90&c=426145"><img src="http://pubads.g.doubleclick.net/gampad/ad?iu=/6839/lqm.codeproject.site/Languages/C-Cplusplus-Language/General&sz=728x90&c=426145"  width="728px" height="90px" target="_blank"/></a></noscript></div></div>
+        </div>
+    </div>
+
+	<a href="#Main"><img alt="Click here to Skip to main content" class="access-link" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t.gif"></a>
+
+	
+	<div id="ctl00_TPR" class="sub-headerbar clearfix fixed">
+    <div class="float-right">
+		
+
+<div class="searchbar">
+
+<form method="get" action="http://www.codeproject.com/search.aspx?sbo=kw" name="Search" class="tight">
+
+
+<table class="search" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><input tabindex="2" class="search  subdue" id="sb_tb" value="Search for articles, questions, tips" name="q"></td><td><input src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/search.gif" type="image"></td></tr></tbody></table>
+
+<div class="hover-container">
+	<div style="display: none;" id="SearchFilter" class="search-advanced small-text align-left">
+	<b>Search within:<br></b>
+		
+		<input id="sb_kw" name="sbo" value="kw" checked="checked" type="radio"><label for="sb_kw">Articles</label><br>
+<input id="sb_qa" name="sbo" value="qa" type="radio"><label for="sb_qa">Quick Answers</label><br>
+<input id="sb_fm" name="sbo" value="fm" type="radio"><label for="sb_fm">Messages</label><br>
+
+
+		
+		
+
+		
+		
+	</div>
+</div>
+</form>
+
+</div>
+    </div>
+    <div class="float-left">
+		
+
+<div class="navbar clearfix">
+<ul class="navmenu openable">
+
+<li class="desktop-only"><a id="ctl00_TopNavBar_Home" href="http://www.codeproject.com/">home</a>
+
+
+</li><li class=""><a id="ctl00_TopNavBar_Art" class="down selected" href="http://www.codeproject.com/script/Articles/Latest.aspx">articles</a>
+
+	<ul>
+		<li class=""><a id="ctl00_TopNavBar_ArtTopicList" class="fly" onmouseover="" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Chapters and Sections<span class="has-submenu">&gt;</span></a><ul id="ctl00_TopNavBar_MapFlyout">
+			<li>
+				<div id="siteMap">
+					<img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/animated.gif" alt="loading" style="margin:150px;width:100px;height:100px;">
+				</div>
+			</li>
+			</ul>
+		</li>
+		<li><a id="ctl00_TopNavBar_ArtSearch" class="fly break" href="http://www.codeproject.com/search.aspx?sbo=kw">Search</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestArts" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=1,3,7">Latest Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestTips" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=6">Latest Tips/Tricks</a></li>
+		<li><a id="ctl00_TopNavBar_ArtTop" class="fly" href="http://www.codeproject.com/script/Articles/TopArticles.aspx?ta_so=5">Top Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtBeginner" class="fly" href="http://www.codeproject.com/search.aspx?sbo=kw?aidlst=152&amp;sa_us=True">Beginner Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtBlogArticles" class="fly break" href="http://www.codeproject.com/script/Articles/BlogArticleList.aspx">Technical Blogs</a></li>
+		<li><a id="ctl00_TopNavBar_ArtGuide" class="fly" href="http://www.codeproject.com/info/Submit.aspx">Posting/Update Guidelines</a></li>
+		<li><a id="ctl00_TopNavBar_ArtHelpForum" class="fly" href="http://www.codeproject.com/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_TopNavBar_ArtCompetition" class="fly break" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1">Article Competition</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostArticle" class="fly highlight1" href="http://www.codeproject.com/script/Articles/Submit.aspx">
+			<img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/write13.png" height="13px" width="13px"> Submit an article or tip
+			</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostBlog" class="fly highlight2" href="http://www.codeproject.com/script/Articles/BlogFeed.aspx">
+			<img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/write13.png" height="13px" width="13px"> Post your Blog
+			</a></li>		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class="">
+<a id="ctl00_TopNavBar_Answers" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">
+    <span class="desktop-only tablet-only">quick answers</span><span class="mobile-only">Q&amp;A</span>
+</a>
+	<ul>
+		<li id="ctl00_TopNavBar_AQL"><a id="ctl00_TopNavBar_ArticleQuestion" class="fly highlight1" href="#_comments">
+			<img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/write13.png" height="13px" width="13px"> Ask a Question about this 
+			article</a>
+		</li>
+
+		<li><a id="ctl00_TopNavBar_QAAsk" class="fly highlight2" href="http://www.codeproject.com/Questions/ask.aspx"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/write13.png" height="13px" width="13px"> Ask a Question</a></li>
+
+		
+		<li><a id="ctl00_TopNavBar_QAUnanswered" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=unanswered">View Unanswered Questions</a></li>
+		<li><a id="ctl00_TopNavBar_QALatest" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">View All Questions...</a></li>
+		
+				<li><a id="ctl00_TopNavBar_QATR_ctl00_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=81" style="padding-left:30px">C# questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl01_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=85" style="padding-left:30px">ASP.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl02_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=93" style="padding-left:30px">SQL questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl03_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=842" style="padding-left:30px">VB.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl04_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=87" style="padding-left:30px">Javascript questions</a></li>
+			
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class=""><a id="ctl00_TopNavBar_Forums" href="http://www.codeproject.com/script/Forums/List.aspx">
+        <span class="desktop-only tablet-only">discussions</span><span class="mobile-only">forums</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_MessageBoardsAll" class="fly" href="http://www.codeproject.com/script/Forums/List.aspx">All Message Boards...</a></li>
+		<li class=""><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1580997/Application-Lifecycle.aspx">Application Lifecycle<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/1533717/Running-a-Business.aspx">Running a Business</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1533716/Sales-Marketing.aspx">Sales / Marketing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1651/Collaboration-Beta-Testing.aspx">Collaboration / Beta Testing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3304/Work-Issues.aspx">Work  Issues</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/369270/Design-and-Architecture.aspx">Design and Architecture</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/12076/ASP-NET.aspx">ASP.NET</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1580226/JavaScript.aspx">JavaScript</a>
+</li>
+<li class=""><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1647/C-Cplusplus-MFC.aspx">C / C++ / MFC<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/4486/ATL-WTL-STL.aspx">ATL /  WTL / STL</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3785/Managed-Cplusplus-CLI.aspx">Managed C++/CLI</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1649/Csharp.aspx">C#</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1627782/Free-Tools.aspx">Free Tools</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1827460/Objective-C-and-Swift.aspx">Objective-C and Swift</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1725/Database.aspx">Database</a>
+</li>
+<li class=""><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/186301/Hardware-Devices.aspx">Hardware &amp; Devices<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/1644/System-Admin.aspx">System Admin</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1606152/Hosting-and-Servers.aspx">Hosting and Servers</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1643/Java.aspx">Java</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1650/NET-Framework.aspx">.NET Framework</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1848626/Android.aspx">Android</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1876716/iOS.aspx">iOS</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/13695/Mobile.aspx">Mobile</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1540733/SharePoint.aspx">SharePoint</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1004257/Silverlight-WPF.aspx">Silverlight / WPF</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1646/Visual-Basic.aspx">Visual Basic</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1640/Web-Development.aspx">Web Development</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/suggestions.aspx">Site Bugs / Suggestions</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1652005/Spam-and-Abuse-Watch.aspx">Spam and Abuse Watch</a>
+</li>
+
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+<li class="desktop-only"><a id="ctl00_TopNavBar_Features" href="http://www.codeproject.com/Feature/">features</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_Comps" class="fly" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1&amp;awsac=true">Competitions</a></li>
+		<li><a id="ctl00_TopNavBar_News" class="fly" href="http://www.codeproject.com/script/News/List.aspx">News</a></li>
+		<li><a id="ctl00_TopNavBar_Insider" class="fly" href="http://www.codeproject.com/Feature/Insider/">The Insider Newsletter</a></li>
+    	<li><a id="ctl00_TopNavBar_DailyBuild" class="fly" href="http://www.codeproject.com/Feature/DailyBuild">The Daily Build Newsletter</a></li>
+		<li><a id="ctl00_TopNavBar_Newsletters" class="fly" href="http://www.codeproject.com/script/Mailouts/Archive.aspx?mtpid=1">Newsletter archive</a></li>
+		<li><a id="ctl00_TopNavBar_Surveys" class="fly" href="http://www.codeproject.com/script/Surveys/List.aspx">Surveys</a></li>
+		<li><a id="ctl00_TopNavBar_Showcase" class="fly" href="http://www.codeproject.com/KB/showcase/">Product Showcase</a></li>
+		<li><a id="ctl00_TopNavBar_Research" class="fly" href="http://www.codeproject.com/script/ResearchLibrary/Index.aspx">Research Library</a></li>
+
+		<li><a id="ctl00_TopNavBar_Stuff" class="fly" href="http://www.codeproject.com/Info/Stuff.aspx">CodeProject Stuff</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+<li class=""><a id="ctl00_TopNavBar_Lounge" href="http://www.codeproject.com/Lounge.aspx">
+            <span class="desktop-only tablet-only">community</span><span class="mobile-only">lounge</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_WhosWho" class="fly" href="http://www.codeproject.com/script/Membership/Profiles.aspx">Who's Who</a></li>
+		<li><a id="ctl00_TopNavBar_MVPs" class="fly break" href="http://www.codeproject.com/script/Awards/MVPWinners.aspx">Most Valuable Professionals</a></li>
+		
+
+		<li><a id="ctl00_TopNavBar_LoungeLnk" class="fly highlight2" href="http://www.codeproject.com/Lounge.aspx">The Lounge  </a></li>
+		<li><a id="ctl00_TopNavBar_InsiderLnk" class="fly" href="http://www.codeproject.com/Insider.aspx">The Insider News</a></li>
+		<li><a id="ctl00_TopNavBar_WeirdWonderful" class="fly" href="http://www.codeproject.com/Feature/WeirdAndWonderful.aspx">The Weird &amp; The Wonderful</a></li>
+		<li><a id="ctl00_TopNavBar_SoapBoxLnk" class="fly" href="http://www.codeproject.com/Forums/1536756/The-Soapbox.aspx">The Soapbox</a></li>
+		<li><a id="ctl00_TopNavBar_PRLnk" class="fly break" href="http://www.codeproject.com/Forums/1738007/Press-Releases.aspx">Press Releases</a></li>
+
+		
+		<li class=""><a class="fly" href="http://www.codeproject.com/Forums/1580229/Hindi.aspx">Non-English Language
+			<span class="has-submenu">&gt;</span></a>
+		<ul>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580229/Hindi.aspx">General Indian Topics</a></li>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580230/Chinese.aspx">General Chinese Topics</a></li>
+		</ul>
+		</li><li class="last"></li>
+		
+	</ul>
+
+</li>
+
+
+<li class="desktop-only tablet-only" style="margin-left:20px"><a id="ctl00_TopNavBar_Help" href="http://www.codeproject.com/KB/FAQs/">help</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_HelpWhatIs" class="fly" href="http://www.codeproject.com/info/guide.aspx">What is 'CodeProject'?</a></li>
+		<li><a id="ctl00_TopNavBar_HelpGeneral" class="fly break" href="http://www.codeproject.com/KB/FAQs/">General FAQ</a></li>
+		<li><a id="ctl00_TopNavBar_HelpPostQuestion" class="fly break highlight2" href="http://www.codeproject.com/Questions/ask.aspx">Ask a Question</a></li>
+		<li><a id="ctl00_TopNavBar_HelpBugs" class="fly" href="http://www.codeproject.com/suggestions.aspx">Bugs and Suggestions</a></li>
+		<li><a id="ctl00_TopNavBar_HelpArticles" class="fly" href="http://www.codeproject.com/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_TopNavBar_HelpSiteMap" class="fly" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Site Map</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAdvertise" class="fly" href="http://developermedia.com/">Advertise with us</a></li>
+		<li><a id="ctl00_TopNavBar_HelpJobs" class="fly" href="http://www.codeproject.com/info/Jobs/">Employment Opportunities</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAboutUs" class="fly" href="http://www.codeproject.com/info/about.aspx">About Us</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+</ul>
+
+</div>
+    </div>
+	<div class="sub-headerbar-divider"></div>
+	</div>		
+	
+
+	<div id="A" class="container-content-wrap fixed"> 
+
+	<div itemscope="" itemtype="http://schema.org/Article" class="container-content"> 
+
+
+		<div class="clearfix">
+			<div class="container-breadcrumb float-left ">
+				<div><a href="http://www.codeproject.com/script/Content/SiteMap.aspx">Articles</a> » <a href="http://www.codeproject.com/Chapters/5/Languages.aspx">Languages</a> » <a href="http://www.codeproject.com/KB/cpp/"><span itemprop="articleSection">C / C++ Language</span></a> » <a href="http://www.codeproject.com/KB/cpp/#General">General</a></div>
+			</div>
+
+			<div class="float-left">
+				
+			</div>
+
+			<div class="edit-links float-right">
+				
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+			<div class="article-nav float-right">
+					
+		        
+		        
+					
+
+                
+				
+
+<a id="ctl00_ActionLinks_BookmarkMd_ImgBt" title="Bookmark" alternatetext="Bookmark" name="bm_570638_2" onclick="" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=570638&amp;obtid=2&amp;action=AddBookmark&amp;bio=true&amp;bis=medium" style="display:inline-block;height:24px;width:24px;"><img title="Bookmark" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/bookmark24.png" alt="" style="border-width:0px;"></a>
+
+
+<span id="ctl00_ActionLinks_BookmarkMd_StatusMsg" class="tiny-text" style="display:none" name="bm_570638_2"></span>
+<a id="ctl00_ActionLinks_PrintMd" href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer?display=Print">
+	<img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/print24.png" title="Print" style="border:0" height="24px" width="24px">
+</a>
+			</div>
+		</div>
+
+		<table class="extended container-article-parts" cellpadding="0" cellspacing="0">
+        <tbody><tr valign="top">
+		<td class="article-wing-left" width="117px">
+
+			<div style="position: fixed; top: 10px; left: 313px;" id="ctl00_Nav" class="container-article-tabs stuck">
+    			
+
+<div class="tabs">
+	<div class="selected">Article</div><div class="unselected"><a href="http://www.codeproject.com/script/Articles/ViewDownloads.aspx?aid=570638">Browse Code</a></div><div class="unselected"><a href="http://www.codeproject.com/script/Articles/Statistics.aspx?aid=570638">Stats</a></div><div class="unselected"><a href="http://www.codeproject.com/script/Articles/ListVersions.aspx?aid=570638">Revisions (11)</a></div><div class="unselected"><a href="http://www.codeproject.com/script/Articles/ListAlternatives.aspx?aid=570638">Alternatives</a></div>
+
+	<div class="unselected"><a href="http://www.codeproject.com/Articles/570638/WebControls/#_comments" id="ctl00_ArticleTabs_CommentLink" class="anchorLink">Comments 
+        <span id="ctl00_ArticleTabs_CmtCnt">(75)</span></a>
+	</div>
+</div>	
+
+
+				<a id="ctl00_AddAlternative" title="Write a related article about upgrades or translate this into a different language." class="add-item" href="http://www.codeproject.com/script/Articles/SubmissionWizard.aspx?at=1&amp;apid=570638">Add your own<br>alternative version</a>
+
+			    <div class="tags"> 
+                    <h4>Tagged as</h4>
+                    
+                    <div class="tags">
+<span class="t"><a href="http://www.codeproject.com/search.aspx?sbo=kw&amp;aidlst=78">C++</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?sbo=kw&amp;aidlst=118">Dev</a></span></div>
+			    </div>
+                
+
+                <div class="stats">
+                <h4>Stats</h4>
+                <div id="ctl00_ArtStats"><div class="stats"><div>501.8K views</div><div>268 bookmarked</div></div></div>
+                </div>
+
+                <div class="subdue padded-top" title="Date First posted">Posted 
+                    <span itemprop="datePublished" content="2013-04-01">31 Mar 2013</span></div>
+
+                
+			</div>
+
+		</td>
+		<td>
+			
+			<div id="AT" class="container-article  fixed"> 
+
+				<div class="article">
+
+					<form name="aspnetForm" method="post" action="#" id="aspnetForm" style="margin:0;padding:0">
+<div>
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="trr3UhbhK0byANWh0GneuavL5RV+g8T0+ohJ8/dlUSloRNdvAteoGufrUxwxm1HDai+XL0Ga9Um41d7l5ImMklYeaXNpfKHjTRfWFs/n/4EFwvw17+pGzMdz476SEyspQBGlnAZzYcMS4HT19xmulyovrJuW1WSFCYhpgVlbNPVrAZmPVbyUzszU5MjsbOjgnvYjTV5nMbDzC6xSrQsonMGl11PiJD+CFZiA2KzDFdgC5tXH1eLDPV8j9vuUKSBm9o/gXBwa84+loaK1qPLKIzTqmVn7A7yi3HYiuOHEDRuhygEaY+n/kz8mDIHs27ZseRZu5O0yxc1xCrHnJwdOG2DbGaTvgIwEBvD1CfLP7roopJI+7uljMxZPCCV2R9qKyY8fzkBnx7uJdTpKbqJPPWUq9/ytC46S3oNlq8YjpSqAIzxU3fkJ70vYpPwlDQxk1O5KubABdNQUBs3yu03UZXcN319sHsSKBQxezFK6zECt+IM1EK2553MBFCir/OGqzJUiUhB2iVZwPxGDnwBZTVMydJj92FCCqvBD/EBCPhYTTWzejCB7egt60IuojHiAi9luYEptsoA0s3I46wZx+Av1Dd246LtrG9e9KRLuPqmOpbhd8Pbfl6ah66UsXX17p+Nr/F5/RqWqJGJBb/oBQ9gU7ZGrlGMiZyuGXIdxEuSu5lbFY+0zpq36rLEt61baSrRtNTtqzTlKZ96CTYySzPiqEZRkbXXNgIHLh8LHvJwSbpWn+qv6sQ8Y5A4kjtGjpKtW8w+PbJKOypYAXXu8RxrfsljoJAG0FbSgXOEAxQYWIb3HiNBh6tmR0jdcnPgy1FX3UYw6CpPM+gr27mYwLjF/R24wZdraazh7PA8NVlPsUaD+OXq4RdYBFAiHm6MD8DC3kTXrw2/hDaYSsDbwTXNrNM9lYQus4b7p3ledO1/dVDlFp5O4eDbZl2nQgdh61dHAcBKDrlq2o3AwsratYyxf+4jABYqYlNiVedMT8zSluEHP6dOp5S3ZJSrRrrbetrHR7uvMB0y+sJikl7E+w+VYdJGkP8u/VhZan6gEcu9Y75F1uok0RtbLcqZmQpd3tW1qIPMqvNXE+jpXdnG/0jHHtfGr3XTV++nB5vxd4SbngbDPAF3SWbSWTisRbY51YutB4ZIrAbes4hN6IHOGJEtiZCHmuxit3tEeXGNhJzgjL7XATwazdYMC6vGi6GIr+dJ9AY6Kw8ZkUVbM2IRFG2arNV8D2ioMuWCe3RU7a+IYCZq36GbMOn4mmI3WCr/ClZl78O8H+UyCvtmR85s7SnnkC0VbQM5Z9F6nnGOWNKg7CcLQbuipWvbsESBj8UiiZOOk+yDC1ZdyMHZbs/iIkY/hYFtPbUPws+qEngF2XwKmimqajUZmKiQ0YrJZWRjFLWHYILvHprpI9VgBdf4PaZCxb4Z9/zfLx/QWWx7MVnbkVSUbqcH9mADI5P2P/SpmgnQAFwWp3G9wJSWvfn15EpjFuR6Z/6f3JrT+tO3HrWf53mDDQ+xANrVqaBSR67byONDfWLkv3Wq9BnduCCIPzbkIfAiRR15tTFhZahbYsYSzQV3Xlre/FULbloRTWpG232LShYnynCoUaA5tawt/Rb53dio0LLTtuIRJ2WpZYKcAtHY7tH62+khyCSq533D+DnZaydkBtRr48HJ86XkFDnEKRl+SprtLbc858yTZUo6XVT6GTqy3Bx1Dr2WFjvNMb2Y0IlFM5LICaxnO5++CcztWFkXZuEuL6bAFyvV6e03hurjH0M6tWSenTMiij92WJENBtk1usKu0iaSJA1TY7I+ha+RFksK6VQ/6AnmHUBe0ApaUwTQiOe+C7LCtjK2t88nl3HiguGQ5qRzoYb1VHHFORr2qHGbL25uwm/4k0ENIXQPInIaPSnMD8GxOeyiX7EbmApKUtPa046ox78LrtpRBVPORrikGjfsZoGDn6gaOgf7LcnkX/uWQ0m5TAk90RbDcAOhMSyrsO5evk8Qi2lMeb99C0qWl4bwXFeZStNYAYtg2QvoTzMzXeqal2nYnsuWXcM8IcvlXK4Ta6OWUm8cfjuKo0NRFTnhhuqfn9sToLCFwXVenqigCeOmG7T+8mgtU2SRnPFXT6X7YeHJrYiOdxSPDgoFZh3Bv5b1wJY2bvAIV2tvgSe9ay07UOWYcxnMR2q2pk6fK1orvi8LeTWVwSBmGKL+KETPXryCiQ+7KLwWbKsv7sca7/aUXRx9j+3n7Pi7gEEW8pMDRU0yjnCQXKYMtFK++wOXCVTWWQQ8+xJRypBGiLb9Ao2b4XMUfdO/YDLwSVHRa0dh11RnVE42Moe+upyKKdXip29owlmCY7ZJvbWXhElsgPT9CKsduRvpb0M2ciRbWqfkMbL9jMjbbxfKfWAP/L97YVyLgFzcUs+14wjljcLu2cFEmsMFUX4GYL2QI+K8ZzbnxEXzPKKbCoea6rbgFENCEFLOuQB793xD/TB4bJdYUKFWxor4df/OY8q8iwHnDkul2L/ktj8mjSyXgL1Egxkcc15IBgSbCvD7ajFYs5jLapIHv3kVmQ7Uklgw/DFc5KmGwrOjGYYTSQ23bi8+vcybepwtocqPvvwD94qkksNSmiKT+gVLHdDZim7rQKCrbLQXnCpdyje9qpsoV3KF2mLClZmsbron15EmYCWfyEvE19+GJPtIU7W25l4836NQbTKuH9Z/Tv6xaqrRyeUR9LrRhmQmT1UJmCi5QimrwDgKy8MSvS+GP198m104nbZ9nkCP75RUDrK3drXrdOc6sNljbjKlzl83sQxwP" type="hidden">
+</div>
+
+<div>
+
+	<input name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="10C1FD69" type="hidden">
+</div>
+
+					
+					 
+					<div class="header">
+					    <a name="Main"></a>
+
+					    
+					    <a name="_articleTop" id="_articleTop"></a>
+					    <div class="title">
+					        
+					        <h1 id="ctl00_ArticleTitle" itemprop="name">Ten C++11 Features Every C++ Developer Should Use</h1> 
+					    </div>
+
+                        <div style="height:34px">
+					        
+					        <div class="entry float-left">
+                                <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/%7B6bb45dcc-2ea4-45ac-b027-56553b1fbced%7D.jpg" id="ctl00_avatar" class="float-left avatar">
+                                <div class="float-left">
+
+						            <span class="author"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=562357" rel="author"><span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name">Marius Bancila</span></span></a></span>, 
+						            <span class="date" itemprop="dateModified" title="Date last updated" content="2013-04-03 05:03:00">
+							            2 Apr 2013</span>
+			
+                                    <a id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)" class="license" href="http://www.codeproject.com/info/cpol10.aspx">CPOL</a><div id="ctl00_CurRat" class="tooltip anchorLink" style="cursor:pointer;margin-top: 5px" name="CurRat_570638">
+				
+							            
+
+<table class="small-text" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating" cellpadding="0" cellspacing="0"> 
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		
+			<meta itemprop="bestRating" content="5"> 
+			<meta itemprop="worstRating" content="1">
+		
+
+		<span id="ctl00_ArticleRating_VI">
+		<div class="nowrap rating-stars-medium" style="height:18px;width:80px;position:relative;">
+	<div class="clipped align-left float-left" style="height:16px;width:79px;">
+		<img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/stars-fill-md.png" style="border-width:0px;">
+	</div><div class="clipped" style="height:16px;width:1px;position:relative;">
+		<img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/stars-empty-md.png" style="border-width:0px;position:absolute;top:0;right:0;">
+	</div>
+</div>
+		</span>
+
+		
+	</td>
+	
+	<td id="ctl00_ArticleRating_VR" class="nowrap">
+		 
+		<span id="ctl00_ArticleRating_VotesR"> <span itemprop="ratingValue" class="rating">4.94</span> (<span itemprop="ratingCount" class="count">141</span> votes)</span>
+		
+	</td>
+
+</tr>
+
+</tbody></table>
+
+
+							            <div id="ctl00_RB" class="speech-bubble-container-up">
+								            <div class="speech-bubble-up" style="width:150px !important">
+									                        
+<div>
+<table class="feature" title="Voting Distribution. Recent data only" cellpadding="0" cellspacing="0" height="50px" width="100%"><tbody><tr class="chart-row"><td class="chart-column"><div class="rating-ignore-vote" title="Votes not included in score."><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/pollcol.gif" alt="1 vote, 0.7%" title="1 vote, 0.7%" border="0px" height="1px" width="20pxpx"></div><span title="0 votes">1</span></td>
+<td class="chart-column"><div class="rating-ignore-vote" title="Votes not included in score."><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/pollcol.gif" alt="1 vote, 0.7%" title="1 vote, 0.7%" border="0px" height="1px" width="20pxpx"></div><span title="0 votes">2</span></td>
+<td class="chart-column"><div class="rating-ignore-vote" title="Votes not included in score."><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/pollcol.gif" alt="1 vote, 0.7%" title="1 vote, 0.7%" border="0px" height="1px" width="20pxpx"></div><span title="0 votes">3</span></td>
+<td class="chart-column"><div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/pollcol.gif" alt="10 votes, 7.2%" title="10 votes, 7.2%" border="0px" height="3px" width="20pxpx"></div><span title="10 votes">4</span></td>
+<td class="chart-column"><div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/pollcol.gif" alt="128 votes, 92.8%" title="128 votes, 92.8%" border="0px" height="50px" width="20pxpx"></div><span title="128 votes">5</span></td>
+</tr></tbody></table><div class="small-text align-center">4.94/5 - 141 votes</div><div class="small-text align-center subdue">3 removed</div><div class="small-text align-center subdue">μ 4.91, σ<sub>a</sub> 1.01 [<a href="http://www.codeproject.com/KB/FAQs/RatingReputationFAQ.aspx#noisefilter">?</a>]</div>
+</div>
+								            </div>
+								            <div class="speech-bubble-pointer-up">
+									            <div class="speech-bubble-pointer-up-inner"></div>
+								            </div>
+							            </div>
+						            </div>
+                                </div>
+					        </div>
+
+                            
+						    <div id="ctl00_RateArticleRow" class="float-right align-right voting-bar">
+						        <div id="ctl00_RateArticle_RateItemWrapper" class="small-text" name="RateItem_570638">
+
+	<table class="small-text" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td id="ctl00_RateArticle_VoteResultDiv" class="rating-result align-right">
+			<span class="align-right"></span>
+			<img class="loaderImg" alt="loading..." src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/animated_loading_blue.gif" style="display:none;" height="16px" width="16px"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space:nowrap" align="right">
+			<table class="small-text">
+			<tbody><tr>
+				<td id="ctl00_RateArticle_RateText" class="rating-prompt">
+					Rate this:
+				</td>
+
+				
+				<td id="ctl00_RateArticle_VoteFormDiv" class="nowrap rating-stars-voter-large">
+					
+
+					<span id="ctl00_RateArticle_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_RateArticle_VoteRBL"><input style="display: none;" id="ctl00_RateArticle_VoteRBL_0" name="ctl00$RateArticle$VoteRBL" value="1" type="radio"><input style="display: none;" id="ctl00_RateArticle_VoteRBL_1" name="ctl00$RateArticle$VoteRBL" value="2" type="radio"><input style="display: none;" id="ctl00_RateArticle_VoteRBL_2" name="ctl00$RateArticle$VoteRBL" value="3" type="radio"><input style="display: none;" id="ctl00_RateArticle_VoteRBL_3" name="ctl00$RateArticle$VoteRBL" value="4" type="radio"><input style="display: none;" id="ctl00_RateArticle_VoteRBL_4" name="ctl00$RateArticle$VoteRBL" value="5" type="radio"></span> 
+
+						
+					<div class="rating-star-block"><a title="vote 1" class="star outline" rating="1" href="#">vote 1</a><a title="vote 2" class="star outline" rating="2" href="#">vote 2</a><a title="vote 3" class="star outline" rating="3" href="#">vote 3</a><a title="vote 4" class="star outline" rating="4" href="#">vote 4</a><a title="vote 5" class="star outline" rating="5" href="#">vote 5</a></div></span>
+
+				</td>
+
+				
+				<td style="padding-left:5px">	
+					<input style="display: none;" name="ctl00$RateArticle$SubmitRateBtn" value="Vote!" id="ctl00_RateArticle_SubmitRateBtn" class="button" type="submit">
+				</td>
+			</tr>
+			</tbody></table>
+			
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		
+        <div id="ctl00_RateArticle_RSU" class="rating-comment align-left float-right">
+            <div class="padded">
+            Please <a id="ctl00_RateArticle_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f570638%2fTen-Cplusplus11-Features-Every-Cplusplus-Developer">Sign up or sign in</a> to vote.
+            </div>
+        </div>
+	</div>
+</div>
+						    </div>
+						    	
+                        </div>
+
+   					    
+                        <div id="ctl00_description" class="summary" itemprop="headline">This article discusses a series of features new to C++11 that all developers should learn and use.</div><span id="ctl00_thumbnailUrl" class="date" itemprop="image" content="http://www.codeproject.com/script/Articles/Images/article100x80.png"></span>			
+
+                    </div>
+                    
+					
+					
+
+					
+
+					
+					
+					
+
+						
+					
+
+					
+
+						
+						<div id="contentdiv" class="text" itemprop="articleBody">
+						
+
+
+
+<p>This article discusses a series of features new to C++11 that all developers should learn and use. There are lots of new additions to the language and the standard library, and this article barely scratches the surface. However, I believe some of these new features should become routine for all C++ developers. You could probably find many similar articles evangelizing different C++11 features. This is my attempt to assemble a list of C++ features that should be a norm nowadays. </p>
+<p>Table of contents:  </p>
+<ul>
+  <li><a href="#auto">auto</a></li>
+  <li><a href="#nullptr">nullptr</a></li>
+  <li><a href="#foreach">Range-based for loops</a></li>
+  <li><a href="#overrideandfinal">Override and final</a></li>
+  <li><a href="#stronglytypedenums">Strongly-typed enums</a></li>
+  <li><a href="#smartpointers">Smart pointers</a> </li>
+  <li><a href="#lambdas">Lambdas</a></li>
+  <li><a href="#beginend">non-member begin() and end()</a></li>
+  <li><a href="#staticassert">static_assert and type traits</a></li>
+  <li><a href="#movesemantics">Move semantics</a></li>
+</ul>
+
+<h2><a name="auto">auto</a> </h2>
+<p>Before C++11 the auto keyword was used for storage duration specification. In the new standard its purpose was changed towards type inference. <code>auto</code> is now a sort of placeholder for a type, telling the compiler it has to deduce the actual type of a variable that is being declared from its initializer. It can be used when declaring variables in different scopes such as namespaces, blocks or initialization statement of for loops.</p>
+<div class="pre-action-link" id="premain656645" style="width:100%;display:block;"><span id="prehide656645" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre656645">auto i = <span class="code-digit">42</span>;        <span class="code-comment">//</span><span class="code-comment"> i is an int
+</span>auto l = 42LL;      <span class="code-comment">//</span><span class="code-comment"> l is an long long
+</span>auto p = <span class="code-keyword">new</span> foo(); <span class="code-comment">//</span><span class="code-comment"> p is a foo*
+</span></pre>
+
+<p>Using <code>auto</code> usually means less code (unless your type is int which is one letter shorter). Think of iterators in STL that you always had to write while iterating over containers. It makes obsolete creating typedefs just for the sake of simplicity.</p>
+<div class="pre-action-link" id="premain605789" style="width:100%;display:block;"><span id="prehide605789" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre605789">std::map&lt;std::string, std::vector&lt;int&gt;&gt; map;
+<span class="code-keyword">for</span>(<span class="code-keyword">auto</span> it = begin(map); it != end(map); ++it) 
+{
+}
+</pre>
+
+<p>You should note that auto cannot be used as the return type of a function. However, you can use auto in place of the return type of function, but in this case the function must have a trailing return type. In this case auto does not tell the compiler it has to infer the type, it only instructs it to look for the return type at the end of the function. In the example below the return type of function compose is the return type of operator+ that sums values of types T1 and T2.</p>
+<div class="pre-action-link" id="premain95999" style="width:100%;display:block;"><span id="prehide95999" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre95999">template &lt;typename T1, typename T2&gt;
+auto compose(T1 t1, T2 t2) -&gt; decltype(t1 + t2)
+{
+   <span class="code-keyword">return</span> t1+t2;
+}
+auto v = compose(<span class="code-digit">2</span>, <span class="code-digit">3</span>.<span class="code-digit">14</span>); <span class="code-comment">//</span><span class="code-comment"> v's type is double
+</span></pre>
+
+<h2><a name="nullptr">nullptr</a> </h2>
+<p>Zero used to be the value of null pointers, and that has drawbacks due to the implicit conversion to integral types. The keyword <code>nullptr</code> denotes a value of type <code>std::nullptr_t</code> that represents the null pointer literal. Implicit conversions exists from nullptr to null pointer value of any pointer type and any pointer-to-member types, but also to bool (as false). But no implicit conversion to integral types exist. </p>
+<div class="pre-action-link" id="premain856414" style="width:100%;display:block;"><span id="prehide856414" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre856414"><span class="code-keyword">void</span> foo(<span class="code-keyword">int</span>* p) {}
+
+<span class="code-keyword">void</span> bar(std::shared_ptr&lt;int&gt; p) {}
+
+<span class="code-keyword">int</span>* p1 = NULL;
+<span class="code-keyword">int</span>* p2 = <span class="code-keyword">nullptr</span>;   
+<span class="code-keyword">if</span>(p1 == p2)
+{
+}
+
+foo(<span class="code-keyword">nullptr</span>);
+bar(<span class="code-keyword">nullptr</span>);
+
+<span class="code-keyword">bool</span> f = <span class="code-keyword">nullptr</span>;
+<span class="code-keyword">int</span> i = <span class="code-keyword">nullptr</span>; <span class="code-comment">//</span><span class="code-comment"> error: A native nullptr can only be converted to bool or, using reinterpret_cast, to an integral type
+</span></pre>
+<p>For backward compatibility 0 is still a valid null pointer value.</p>
+
+
+<h2><a name="foreach">Range-based for loops</a></h2>
+<p>C++11 augmented the for statement to support the "foreach" paradigm of iterating over collections. In the new form, it is possible to iterate over C-like arrays, initializer lists and anything for which the non-member <code>begin()</code> and <code>end()</code> functions are overloaded.</p>
+<p>This for each for is useful when you just want to get and do something with the elements of a collection/array and don't care about indexes, iterators or number of elements.</p>
+<div class="pre-action-link" id="premain858638" style="width:100%;display:block;"><span id="prehide858638" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre858638">std::map&lt;std::string, std::vector&lt;int&gt;&gt; map;
+std::vector&lt;int&gt; v;
+v.push_back(<span class="code-digit">1</span>);
+v.push_back(<span class="code-digit">2</span>);
+v.push_back(<span class="code-digit">3</span>);
+map[<span class="code-string">"</span><span class="code-string">one"</span>] = v;
+
+<span class="code-keyword">for</span>(<span class="code-keyword">const</span> auto&amp; kvp : map) 
+{
+  std::cout &lt;&lt; kvp.first &lt;&lt; std::endl;
+
+  <span class="code-keyword">for</span>(<span class="code-keyword">auto</span> v : kvp.second)
+  {
+     std::cout &lt;&lt; v &lt;&lt; std::endl;
+  }
+}
+
+<span class="code-keyword">int</span> arr[] = {<span class="code-digit">1</span>,<span class="code-digit">2</span>,<span class="code-digit">3</span>,<span class="code-digit">4</span>,<span class="code-digit">5</span>};
+<span class="code-keyword">for</span>(int&amp; e : arr) 
+{
+  e = e*e;
+}
+</pre>
+
+<h2><a name="overrideandfinal">Override and final</a></h2>
+<p>I always founded the virtual methods badly designed in C++ because there wasn't (and still isn't) a mandatory mechanism to mark virtual methods as overridden in derived classes. The virtual keyword is optional and that makes reading code a bit harder, because you may have to look through the top of the hierarchy to check if the method is virtual. 
+I have always used, and encouraged people to use the virtual keyword on derived classes also, to make the code easier to read. However, there are subtle errors that can still arise. Take for instance the following example:</p>
+<div class="pre-action-link" id="premain340238" style="width:100%;display:block;"><span id="prehide340238" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre340238"><span class="code-keyword">class</span> B 
+{
+<span class="code-keyword">public</span>:
+   <span class="code-keyword">virtual</span> <span class="code-keyword">void</span> f(<span class="code-keyword">short</span>) {std::cout &lt;&lt; <span class="code-string">"</span><span class="code-string">B::f"</span> &lt;&lt; std::endl;}
+};
+
+<span class="code-keyword">class</span> D : <span class="code-keyword">public</span> B
+{
+<span class="code-keyword">public</span>:
+   <span class="code-keyword">virtual</span> <span class="code-keyword">void</span> f(<span class="code-keyword">int</span>) {std::cout &lt;&lt; <span class="code-string">"</span><span class="code-string">D::f"</span> &lt;&lt; std::endl;}
+};
+</pre>
+<p><code>D::f</code> is supposed to override <code>B::f</code>. However, the signature differ, one takes a <code>short</code>, one takes an <code>int</code>, therefor <code>B::f</code> is just another method with the same name (and overload) and not an override. You may call <code>f()</code> through a pointer to <code>B</code> and expect to print <code>D::f</code>, but it's printing <code>B::f</code>. </p>
+<p>Here is another subtle error: the parameters are the same, but the method in the base class is marked const, while me method in the derived is not.</p>
+<div class="pre-action-link" id="premain992694" style="width:100%;display:block;"><span id="prehide992694" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre992694"><span class="code-keyword">class</span> B 
+{
+<span class="code-keyword">public</span>:
+   <span class="code-keyword">virtual</span> <span class="code-keyword">void</span> f(<span class="code-keyword">int</span>) <span class="code-keyword">const</span> {std::cout &lt;&lt; <span class="code-string">"</span><span class="code-string">B::f "</span> &lt;&lt; std::endl;}
+};
+
+<span class="code-keyword">class</span> D : <span class="code-keyword">public</span> B
+{
+<span class="code-keyword">public</span>:
+   <span class="code-keyword">virtual</span> <span class="code-keyword">void</span> f(<span class="code-keyword">int</span>) {std::cout &lt;&lt; <span class="code-string">"</span><span class="code-string">D::f"</span> &lt;&lt; std::endl;}
+};
+</pre>
+<p>Again, these two are overloads and not overrides, so if you call <code>f()</code> through a pointer to <code>B</code> it will print <code>B::f</code> and not <code>D::f</code>. </p>
+<p>Fortunately there is now a way to describe your intentions. Two new special identifiers (not keywords) have been added: <code>override</code>, to indicate that a method is supposed to be an override of a virtual method in a base class, and <code>final</code>, to indicate that a derived class shall not override a virtual method. 
+The first example would become:</p>
+<div class="pre-action-link" id="premain268022" style="width:100%;display:block;"><span id="prehide268022" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre268022"><span class="code-keyword">class</span> B 
+{
+<span class="code-keyword">public</span>:
+   <span class="code-keyword">virtual</span> <span class="code-keyword">void</span> f(<span class="code-keyword">short</span>) {std::cout &lt;&lt; <span class="code-string">"</span><span class="code-string">B::f"</span> &lt;&lt; std::endl;}
+};
+
+<span class="code-keyword">class</span> D : <span class="code-keyword">public</span> B
+{
+<span class="code-keyword">public</span>:
+   <span class="code-keyword">virtual</span> <span class="code-keyword">void</span> f(<span class="code-keyword">int</span>) <span class="code-keyword">override</span> {std::cout &lt;&lt; <span class="code-string">"</span><span class="code-string">D::f"</span> &lt;&lt; std::endl;}
+};
+</pre>
+<p>This now triggers a compiler error (the same error you'd get for the second example too, if using the <code>override</code> specifier):</p>
+<blockquote>'D::f' : method with override specifier 'override' did not override any base class methods</blockquote>
+<p>On the other hand if you intend to make a method impossible to override any more (down the hierarchy) mark it as <code>final</code>. That can be in the base class, or any derived class. If it's in a derived classes you can use both the <code>override</code> and <code>final</code> specifiers. </p>
+<div class="pre-action-link" id="premain658689" style="width:100%;display:block;"><span id="prehide658689" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre658689"><span class="code-keyword">class</span> B 
+{
+<span class="code-keyword">public</span>:
+   <span class="code-keyword">virtual</span> <span class="code-keyword">void</span> f(<span class="code-keyword">int</span>) {std::cout &lt;&lt; <span class="code-string">"</span><span class="code-string">B::f"</span> &lt;&lt; std::endl;}
+};
+
+<span class="code-keyword">class</span> D : <span class="code-keyword">public</span> B
+{
+<span class="code-keyword">public</span>:
+   <span class="code-keyword">virtual</span> <span class="code-keyword">void</span> f(<span class="code-keyword">int</span>) <span class="code-keyword">override</span> final {std::cout &lt;&lt; <span class="code-string">"</span><span class="code-string">D::f"</span> &lt;&lt; std::endl;}
+};
+
+<span class="code-keyword">class</span> F : <span class="code-keyword">public</span> D
+{
+<span class="code-keyword">public</span>:
+   <span class="code-keyword">virtual</span> <span class="code-keyword">void</span> f(<span class="code-keyword">int</span>) <span class="code-keyword">override</span> {std::cout &lt;&lt; <span class="code-string">"</span><span class="code-string">F::f"</span> &lt;&lt; std::endl;}
+};
+</pre>
+<blockquote>function declared as 'final' cannot be overridden by 'F::f'</blockquote>
+
+<h2><a name="stronglytypedenums">Strongly-typed enums</a></h2>
+<p>"Traditional" enums in C++ have some drawbacks: they export their enumerators in the surrounding scope (which can lead to name collisions, if two different enums in the same have scope define enumerators with the same name), they are implicitly converted to integral types and cannot have a user-specified underlying type.</p>
+<p>These issues have been fixed in C++ 11 with the introduction of a new category of enums, called strongly-typed enums. They are specified with the <code>enum class</code> keywords. They no longer export their enumerators in the surrounding scope, are no longer implicitly converted to integral types and can have a user-specified underlying type (a feature also added for traditional enums).</p>
+<div class="pre-action-link" id="premain307329" style="width:100%;display:block;"><span id="prehide307329" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre307329"><span class="code-keyword">enum</span> <span class="code-keyword">class</span> Options {None, One, All};
+Options o = Options::All;
+</pre>
+
+<h2><a name="smartpointers">Smart pointers</a></h2>
+<p>There have been tons of articles written on this subject, therefore I just want to mention the smart pointers with reference counting and auto releasing of owned memory that are available:</p>
+<ul>
+  <li><a href="http://en.cppreference.com/w/cpp/memory/unique_ptr">unique_ptr</a>: should be used when ownership of a memory resource does not have to be shared (it doesn't have a copy constructor), but it can be transferred to another unique_ptr (move constructor exists).</li>
+  <li><a href="http://en.cppreference.com/w/cpp/memory/shared_ptr">shared_ptr</a>: should be used when ownership of a memory resource should be shared (hence the name).</li>
+  <li><a href="http://en.cppreference.com/w/cpp/memory/weak_ptr">weak_ptr</a>: holds a reference to an object managed by a shared_ptr, but does not contribute to the reference count; it is used to break dependency cycles (think of a tree where the parent holds an owning reference (<code>shared_ptr</code>) to its children, but the children also must hold a reference to the parent; if this second reference was also an owning one, a cycle would be created and no object would ever be released).</li>
+</ul>
+<p>On the other hand the auto_ptr is obsolete and should no longer be used.</p>
+<p>When you should unique_ptr and when you should use shared_ptr depends on the ownership requirements and I recommend reading this <a href="http://stackoverflow.com/questions/15648844/using-smart-pointers-for-class-members">discussion</a>.</p>
+<p>
+The first example below shows <code>unique_ptr</code>. If you want to transfer ownership of an object to another <code>unique_ptr</code> use <code>std::move</code> (I'll discuss this function in the last paragraph). After the ownership transfer, the smart pointer that ceded the ownership becomes null and <code>get()</code> returns <code>nullptr</code>.</p><div class="pre-action-link" id="premain54906" style="width:100%;display:block;"><span id="prehide54906" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre54906"><span class="code-keyword">void</span> foo(<span class="code-keyword">int</span>* p)
+{
+   std::cout &lt;&lt; *p &lt;&lt; std::endl;
+}
+std::unique_ptr&lt;int&gt; p1(<span class="code-keyword">new</span> <span class="code-keyword">int</span>(<span class="code-digit">42</span>));
+std::unique_ptr&lt;int&gt; p2 = std::move(p1); <span class="code-comment">//</span><span class="code-comment"> transfer ownership
+</span>
+<span class="code-keyword">if</span>(p1)
+  foo(p1.get());
+
+(*p2)++;
+
+<span class="code-keyword">if</span>(p2)
+  foo(p2.get());
+</pre>
+<p>The second example shows <code>shared_ptr</code>. Usage is similar, though the semantics are different since ownership is shared.</p>
+<div class="pre-action-link" id="premain539582" style="width:100%;display:block;"><span id="prehide539582" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre539582"><span class="code-keyword">void</span> foo(<span class="code-keyword">int</span>* p)
+{
+}
+<span class="code-keyword">void</span> bar(std::shared_ptr&lt;int&gt; p)
+{
+   ++(*p);
+}
+std::shared_ptr&lt;int&gt; p1(<span class="code-keyword">new</span> <span class="code-keyword">int</span>(<span class="code-digit">42</span>));
+std::shared_ptr&lt;int&gt; p2 = p1;
+   
+bar(p1);   
+foo(p2.get());
+</pre>
+<p>The first declaration is equivalent to this one</p>
+<div class="pre-action-link" id="premain546028" style="width:100%;display:block;"><span id="prehide546028" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre546028"><span class="code-keyword">auto</span> p3 = std::make_shared&lt;int&gt;(<span class="code-digit">42</span>);
+</pre>
+<a href="http://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared">make_shared&lt;T&gt;</a> is a non-member function and has the advantage of allocating memory for the shared object and the smart pointer with a single allocation, as opposed to the explicit construction of a shared_ptr via the contructor, that requires at least two allocations. In addition to possible overhead, there can be situations where memory leaks can occur because of that. In the next example memory leaks could occur if seed() throws an error.
+<div class="pre-action-link" id="premain968371" style="width:100%;display:block;"><span id="prehide968371" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre968371"><span class="code-keyword">void</span> foo(std::shared_ptr&lt;int&gt; p, <span class="code-keyword">int</span> init)
+{
+   *p = init;
+}
+foo(std::shared_ptr&lt;int&gt;(<span class="code-keyword">new</span> <span class="code-keyword">int</span>(<span class="code-digit">42</span>)), seed());
+</pre>
+No such problem exists if using make_shared. 
+The third sample shows usage of <code>weak_ptr</code>. Notice that you always must get a shared_ptr to the referred object by calling lock(), in order to access the object.
+<div class="pre-action-link" id="premain642797" style="width:100%;display:block;"><span id="prehide642797" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre642797"><span class="code-keyword">auto</span> p = std::make_shared&lt;int&gt;(<span class="code-digit">42</span>);
+std::weak_ptr&lt;int&gt; wp = p;
+
+{
+  <span class="code-keyword">auto</span> sp = wp.lock();
+  std::cout &lt;&lt; *sp &lt;&lt; std::endl;
+}
+
+p.reset();
+
+<span class="code-keyword">if</span>(wp.expired())
+  std::cout &lt;&lt; <span class="code-string">"</span><span class="code-string">expired"</span> &lt;&lt; std::endl;
+</pre>
+If you try to lock on an expired <code>weak_ptr</code> (the object is weakly reference has been released) you get an empty shared_ptr.
+
+<h2><a name="lambdas">Lambdas</a></h2>
+<p>Anonymous functions, called lambda, have been added to C++ and quickly rose to prominence. It is a powerful feature borrowed from functional programming, that in turned enabled other features or powered libraries. 
+You can use lambdas wherever a function object or a functor or a <code>std::function</code> is expected. 
+You can read about the syntax <a href="http://msdn.microsoft.com/en-us/library/dd293603.aspx">here</a>.</p>
+<div class="pre-action-link" id="premain367034" style="width:100%;display:block;"><span id="prehide367034" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre367034">std::vector&lt;int&gt; v;
+v.push_back(<span class="code-digit">1</span>);
+v.push_back(<span class="code-digit">2</span>);
+v.push_back(<span class="code-digit">3</span>);
+
+std::for_each(std::begin(v), std::end(v), [](<span class="code-keyword">int</span> n) {std::cout &lt;&lt; n &lt;&lt; std::endl;});
+
+<span class="code-keyword">auto</span> is_odd = [](<span class="code-keyword">int</span> n) {<span class="code-keyword">return</span> n%2==<span class="code-digit">1</span>;};
+<span class="code-keyword">auto</span> pos = std::find_if(std::begin(v), std::end(v), is_odd);
+<span class="code-keyword">if</span>(pos != std::end(v))
+  std::cout &lt;&lt; *pos &lt;&lt; std::endl;
+</pre>
+<p>A bit trickier are recursive lambdas. Imagine a lambda that represents a Fibonacci function. If you attempt to write it using auto you get compilation error:</p>
+<div class="pre-action-link" id="premain452392" style="width:100%;display:block;"><span id="prehide452392" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre452392"><span class="code-keyword">auto</span> fib = [&amp;fib](<span class="code-keyword">int</span> n) {<span class="code-keyword">return</span> n &lt; <span class="code-digit">2</span> ? <span class="code-digit">1</span> : fib(n-<span class="code-digit">1</span>) + fib(n-<span class="code-digit">2</span>);};
+</pre>
+<div class="pre-action-link" id="premain414594" style="width:100%;display:block;"><span id="prehide414594" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre414594">error C3533: <span class="code-string">'</span><span class="code-string">auto &amp;'</span>: a parameter cannot have a type that contains <span class="code-string">'</span><span class="code-string">auto'</span>
+error C3531: <span class="code-string">'</span><span class="code-string">fib'</span>: a symbol whose type contains <span class="code-string">'</span><span class="code-string">auto'</span> must have an initializer
+error C3536: <span class="code-string">'</span><span class="code-string">fib'</span>: cannot be used before it <span class="code-keyword">is</span> initialized
+error C2064: term does not evaluate to a function taking <span class="code-digit">1</span> arguments
+</pre>
+<p>The problem is auto means the type of the object is inferred from its initializer, yet the initializer contains a reference to it, therefore needs to know its type. This is a cyclic problem. The key is to break this dependency cycle and explicitly specify the function's type using <code>std::function</code>.</p>
+<div class="pre-action-link" id="premain915478" style="width:100%;display:block;"><span id="prehide915478" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre915478">std::function&lt;int(<span class="code-keyword">int</span>)&gt; lfib = [&amp;lfib](<span class="code-keyword">int</span> n) {<span class="code-keyword">return</span> n &lt; <span class="code-digit">2</span> ? <span class="code-digit">1</span> : lfib(n-1) + lfib(n-2);};
+</pre>
+
+<h2><a name="beginend">non-member begin() and end()</a></h2>
+<p>You probably noticed I have used in the samples above non-member <code>begin()</code> and <code>end()</code> functions. These are a new addition to the standard library, promoting uniformity, consistency and enabling more generic programming. They work with all STL containers, but more than that they are overloadable, so they can be extended to work with any type. Overloads for C-like arrays are also provided.</p>
+<p>Let's take for instance the previous example where I was printing a vector and then looking for its first odd element. If the std::vector was instead a C-like array, the code might have looked like this:</p>
+<div class="pre-action-link" id="premain787633" style="width:100%;display:block;"><span id="prehide787633" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre787633"><span class="code-keyword">int</span> arr[] = {<span class="code-digit">1</span>,<span class="code-digit">2</span>,<span class="code-digit">3</span>};
+std::for_each(&amp;arr[<span class="code-digit">0</span>], &amp;arr[<span class="code-digit">0</span>]+sizeof(arr)/sizeof(arr[<span class="code-digit">0</span>]), [](<span class="code-keyword">int</span> n) {std::cout &lt;&lt; n &lt;&lt; std::endl;});
+
+auto is_odd = [](<span class="code-keyword">int</span> n) {<span class="code-keyword">return</span> n%2==<span class="code-digit">1</span>;};
+auto begin = &amp;arr[<span class="code-digit">0</span>];
+auto end = &amp;arr[<span class="code-digit">0</span>]+sizeof(arr)/sizeof(arr[<span class="code-digit">0</span>]);
+auto pos = std::find_if(begin, end, is_odd);
+<span class="code-keyword">if</span>(pos != end)
+  std::cout &lt;&lt; *pos &lt;&lt; std::endl;
+</pre>
+
+<p>With non-member <code>begin()</code> and <code>end()</code> it could be put as this:</p>
+<div class="pre-action-link" id="premain422204" style="width:100%;display:block;"><span id="prehide422204" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre422204"><span class="code-keyword">int</span> arr[] = {<span class="code-digit">1</span>,<span class="code-digit">2</span>,<span class="code-digit">3</span>};
+std::for_each(std::begin(arr), std::end(arr), [](<span class="code-keyword">int</span> n) {std::cout &lt;&lt; n &lt;&lt; std::endl;});
+
+auto is_odd = [](<span class="code-keyword">int</span> n) {<span class="code-keyword">return</span> n%2==<span class="code-digit">1</span>;};
+auto pos = std::find_if(std::begin(arr), std::end(arr), is_odd);
+<span class="code-keyword">if</span>(pos != std::end(arr))
+  std::cout &lt;&lt; *pos &lt;&lt; std::endl;
+</pre>
+This is basically identical code to the <code>std::vector</code> version. That means we can write a single generic method for all types supported by <code>begin()</code> and <code>end()</code>.
+<div class="pre-action-link" id="premain389606" style="width:100%;display:block;"><span id="prehide389606" onclick="">Hide</span>    <span id="preShrink389606" onclick="">Shrink</span> <img id="preimg389606" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/arrow-up-16.png" style="height:16px;width:16px" onclick="">    <span onclick="">Copy Code</span></div><pre processed="true" style="margin-top: 0px;" id="pre389606"><span class="code-keyword">template</span> &lt;typename Iterator&gt;
+<span class="code-keyword">void</span> bar(Iterator begin, Iterator end) 
+{
+   std::for_each(begin, end, [](<span class="code-keyword">int</span> n) {std::cout &lt;&lt; n &lt;&lt; std::endl;});
+
+   <span class="code-keyword">auto</span> is_odd = [](<span class="code-keyword">int</span> n) {<span class="code-keyword">return</span> n%2==<span class="code-digit">1</span>;};
+   <span class="code-keyword">auto</span> pos = std::find_if(begin, end, is_odd);
+   <span class="code-keyword">if</span>(pos != end)
+      std::cout &lt;&lt; *pos &lt;&lt; std::endl;
+}
+
+<span class="code-keyword">template</span> &lt;typename C&gt;
+<span class="code-keyword">void</span> foo(C c)
+{
+   bar(std::begin(c), std::end(c));
+}
+
+<span class="code-keyword">template</span> &lt;typename T, <span class="code-sdkkeyword">size_t</span> N&gt;
+<span class="code-keyword">void</span> foo(T(&amp;arr)[N])
+{
+   bar(std::begin(arr), std::end(arr));
+}
+
+<span class="code-keyword">int</span> arr[] = {<span class="code-digit">1</span>,<span class="code-digit">2</span>,<span class="code-digit">3</span>};
+foo(arr);
+
+std::vector&lt;int&gt; v;
+v.push_back(<span class="code-digit">1</span>);
+v.push_back(<span class="code-digit">2</span>);
+v.push_back(<span class="code-digit">3</span>);
+foo(v);
+</pre>
+
+<h2><a name="staticassert">static_assert and type traits</a></h2>
+<p><code>static_assert</code> performs an assertion check at compile-time. If the assertion is true, nothing happens. If the assertion is false, the compiler displays the specified error message.</p>
+<div class="pre-action-link" id="premain364436" style="width:100%;display:block;"><span id="prehide364436" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre364436"><span class="code-keyword">template</span> &lt;typename T, <span class="code-sdkkeyword">size_t</span> Size&gt;
+<span class="code-keyword">class</span> Vector
+{
+   <span class="code-keyword">static_assert</span>(Size &lt; <span class="code-digit">3</span>, <span class="code-string">"</span><span class="code-string">Size is too small"</span>);
+   T _points[Size];
+};
+
+<span class="code-keyword">int</span> main()
+{
+   Vector&lt;int, 16&gt; a1;
+   Vector&lt;double, 2&gt; a2;
+   <span class="code-keyword">return</span> <span class="code-digit">0</span>;
+}
+</pre>
+<div class="pre-action-link" id="premain866579" style="width:100%;display:block;"><span id="prehide866579" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre866579">error C2338: Size <span class="code-keyword">is</span> too small
+see reference to <span class="code-keyword">class</span> template instantiation <span class="code-string">'</span><span class="code-string">Vector&lt;T,Size&gt;'</span> being compiled
+   with
+   [
+      T=<span class="code-keyword">double</span>,
+      Size=<span class="code-digit">2</span>
+   ]
+</pre>
+<p>static_assert becomes more useful when used together with type traits. These are a series of classes that provide information about types at compile time. They are available in the <a href="http://www.cplusplus.com/reference/type_traits/">&lt;type_traits&gt;</a> header. There are several categories of classes in this header: helper classes, for creating compile-time constants, type traits classes, to get type information at compile time, and type transformation classes, for getting new types by applying transformation on existing types.</p>
+
+<p>In the following example function add is supposed to work only with integral types. </p>
+<div class="pre-action-link" id="premain132183" style="width:100%;display:block;"><span id="prehide132183" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre132183"><span class="code-keyword">template</span> &lt;typename T1, <span class="code-keyword">typename</span> T2&gt;
+<span class="code-keyword">auto</span> add(T1 t1, T2 t2) -&gt; <span class="code-keyword">decltype</span>(t1 + t2)
+{
+   <span class="code-keyword">return</span> t1 + t2;
+}
+</pre>
+<p>However, there are no compiler errors if one writes</p>
+<div class="pre-action-link" id="premain634423" style="width:100%;display:block;"><span id="prehide634423" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre634423">std::cout &lt;&lt; <span class="code-keyword">add</span>(<span class="code-digit">1</span>, <span class="code-digit">3</span>.<span class="code-digit">14</span>) &lt;&lt; std::endl;
+std::cout &lt;&lt; <span class="code-keyword">add</span>(<span class="code-string">"</span><span class="code-string">one"</span>, <span class="code-digit">2</span>) &lt;&lt; std::endl;
+</pre>
+<p>The program actually prints 4.14 and "e". But if we add some compile-time asserts, both these lines would generate compiler errors.</p>
+<div class="pre-action-link" id="premain973230" style="width:100%;display:block;"><span id="prehide973230" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre973230"><span class="code-keyword">template</span> &lt;typename T1, <span class="code-keyword">typename</span> T2&gt;
+<span class="code-keyword">auto</span> add(T1 t1, T2 t2) -&gt; <span class="code-keyword">decltype</span>(t1 + t2)
+{
+   <span class="code-keyword">static_assert</span>(std::is_integral&lt;T1&gt;::<span class="code-keyword">value</span>, <span class="code-string">"</span><span class="code-string">Type T1 must be integral"</span>);
+   <span class="code-keyword">static_assert</span>(std::is_integral&lt;T2&gt;::<span class="code-keyword">value</span>, <span class="code-string">"</span><span class="code-string">Type T2 must be integral"</span>);
+
+   <span class="code-keyword">return</span> t1 + t2;
+}
+</pre>
+<div class="pre-action-link" id="premain668690" style="width:100%;display:block;"><span id="prehide668690" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre668690">error C2338: Type T2 must be integral
+see reference to function template instantiation <span class="code-string">'</span><span class="code-string">T2 add&lt;int,double&gt;(T1,T2)'</span> being compiled
+   with
+   [
+      T2=<span class="code-keyword">double</span>,
+      T1=<span class="code-keyword">int</span>
+   ]
+error C2338: Type T1 must be integral
+see reference to function template instantiation <span class="code-string">'</span><span class="code-string">T1 add&lt;const char*,int&gt;(T1,T2)'</span> being compiled
+   with
+   [
+      T1=<span class="code-keyword">const</span> <span class="code-keyword">char</span> *,
+      T2=<span class="code-keyword">int</span>
+   ]
+</pre>
+
+<h2><a name="movesemantics">Move semantics</a></h2>
+<p>This is yet another important and well covered topic from C++11, that one could write a series of articles, not just a paragraph. Therefore I will not get into too many details, but encourage you to find additional readings, if you're not already familiar with the topic.</p>
+<p>C++11 has introduced the concept of rvalue references (specified with &amp;&amp;) to differentiate a reference to an lvalue or an rvalue. An lvalue is an object that has a name, while an rvalue is an object that does not have a name (a temporary object). The move semantics allow modifying rvalues (previously considered immutable and indistinguishable from const T&amp; types).</p>
+<p>A C++ class/struct used to have some implicit member functions: default constructor (only if another constructor is not explicitly defined) and copy constructor, a destructor and a copy assignment operator. The copy constructor and the copy assignment operator perform a bit-wise (or shallow) copy, i.e. copying the variables bitwise. That means if you have a class that contains pointers to some objects, they just copy the value of the pointers and not the objects they point to. This might be OK in some cases, but for many cases you actually want a deep-copy, meaning that you want to copy the objects pointers refer to, and not the values of the pointers. In this case you have to explicitly write copy constructor and copy assignment operator to perform a deep-copy.</p>
+<p>What if the object you initialize or copy from is an rvalue (a temporary). You still have to copy its value, but soon after the rvalue goes away. That means an overhead of operations, including allocations and memory copying that after all, should not be necessary. </p>
+<p>Enter the move constructor and move assignment operator. These two special functions take a T&amp;&amp; argument, which is an rvalue. Knowing that fact, they can modify the object, such as "stealing" the objects their pointers refer to. For instance, a container implementation (such as a vector or a queue) may have a pointer to an array of elements. When an object is instantiating from a temporary, instead of allocating another array, copying the values from the temporary, and then deleting the memory from the temporary when that is destroyed, we just copy the value of the pointer that refers to the allocated array, thus saving an allocation, copying a sequence of elements, and a later de-allocation.</p>
+<p>The following example shows a dummy buffer implementation. The buffer is identified by a name (just for the sake of showing a point revealed below), has a pointer (wrapper in an <code>std::unique_ptr</code>) to an array of elements of type T and variable that tells the size of the array.</p>
+<div class="pre-action-link" id="premain906228" style="width:100%;display:block;"><span id="prehide906228" onclick="">Hide</span>    <span id="preShrink906228" onclick="">Shrink</span> <img id="preimg906228" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/arrow-up-16.png" style="height:16px;width:16px" onclick="">    <span onclick="">Copy Code</span></div><pre processed="true" style="margin-top: 0px;" id="pre906228"><span class="code-keyword">template</span> &lt;typename T&gt;
+<span class="code-keyword">class</span> Buffer 
+{
+   std::string          _name;
+   <span class="code-sdkkeyword">size_t</span>               _size;
+   std::unique_ptr&lt;T[]&gt; _buffer;
+
+<span class="code-keyword">public</span>:
+   <span class="code-comment">//</span><span class="code-comment"> default constructor
+</span>   Buffer():
+      _size(<span class="code-digit">16</span>),
+      _buffer(<span class="code-keyword">new</span> T[<span class="code-digit">16</span>])
+   {}
+
+   <span class="code-comment">//</span><span class="code-comment"> constructor
+</span>   Buffer(<span class="code-keyword">const</span> std::string&amp; name, <span class="code-sdkkeyword">size_t</span> size):
+      _name(name),
+      _size(size),
+      _buffer(<span class="code-keyword">new</span> T[size])
+   {}
+
+   <span class="code-comment">//</span><span class="code-comment"> copy constructor
+</span>   Buffer(<span class="code-keyword">const</span> Buffer&amp; copy):
+      _name(copy._name),
+      _size(copy._size),
+      _buffer(<span class="code-keyword">new</span> T[copy._size])
+   {
+      T* source = copy._buffer.get();
+      T* dest = _buffer.get();
+      std::copy(source, source + copy._size, dest);
+   }
+
+   <span class="code-comment">//</span><span class="code-comment"> copy assignment operator
+</span>   Buffer&amp; <span class="code-keyword">operator</span>=(<span class="code-keyword">const</span> Buffer&amp; copy)
+   {
+      <span class="code-keyword">if</span>(<span class="code-keyword">this</span> != &amp;copy)
+      {
+         _name = copy._name;
+
+         <span class="code-keyword">if</span>(_size != copy._size)
+         {
+            _buffer = <span class="code-keyword">nullptr</span>;
+            _size = copy._size;
+            _buffer = _size &gt; <span class="code-digit">0</span> &gt; <span class="code-keyword">new</span> T[_size] : <span class="code-keyword">nullptr</span>;
+         }
+
+         T* source = copy._buffer.get();
+         T* dest = _buffer.get();
+         std::copy(source, source + copy._size, dest);
+      }
+
+      <span class="code-keyword">return</span> *<span class="code-keyword">this</span>;
+   }
+
+   <span class="code-comment">//</span><span class="code-comment"> move constructor
+</span>   Buffer(Buffer&amp;&amp; temp):
+      _name(std::move(temp._name)),
+      _size(temp._size),
+      _buffer(std::move(temp._buffer))
+   {
+      temp._buffer = <span class="code-keyword">nullptr</span>;
+      temp._size = <span class="code-digit">0</span>;
+   }
+
+   <span class="code-comment">//</span><span class="code-comment"> move assignment operator
+</span>   Buffer&amp; <span class="code-keyword">operator</span>=(Buffer&amp;&amp; temp)
+   {
+      assert(<span class="code-keyword">this</span> != &amp;temp); <span class="code-comment">//</span><span class="code-comment"> assert if this is not a temporary
+</span>
+      _buffer = <span class="code-keyword">nullptr</span>;
+      _size = temp._size;
+      _buffer = std::move(temp._buffer);
+
+      _name = std::move(temp._name);
+
+      temp._buffer = <span class="code-keyword">nullptr</span>;
+      temp._size = <span class="code-digit">0</span>;
+      
+      <span class="code-keyword">return</span> *<span class="code-keyword">this</span>;
+   }
+};
+
+<span class="code-keyword">template</span> &lt;typename T&gt;
+Buffer&lt;T&gt; getBuffer(<span class="code-keyword">const</span> std::string&amp; name) 
+{
+   Buffer&lt;T&gt; b(name, <span class="code-digit">128</span>);
+   <span class="code-keyword">return</span> b;
+}
+<span class="code-keyword">int</span> main()
+{
+   Buffer&lt;int&gt; b1;
+   Buffer&lt;int&gt; b2(<span class="code-string">"</span><span class="code-string">buf2"</span>, <span class="code-digit">64</span>);
+   Buffer&lt;int&gt; b3 = b2;
+   Buffer&lt;int&gt; b4 = getBuffer&lt;int&gt;(<span class="code-string">"</span><span class="code-string">buf4"</span>);
+   b1 = getBuffer&lt;int&gt;(<span class="code-string">"</span><span class="code-string">buf5"</span>);
+   <span class="code-keyword">return</span> <span class="code-digit">0</span>;
+}
+</pre>
+<p>The default copy constructor and copy assignment operator should look familiar. What's new to C++11 is the move constructor and move assignment operator, implemented in the spirit of the aforementioned move semantics. If you run this code you'll see that when b4 is constructed, the move constructor is called. Also, when b1 is assigned a value, the move assignment operator is called. The reason is the value returned by <code>getBuffer()</code> is a temporary, i.e. an rvalue.   </p>
+<p>You probably noticed the use of <a href="http://en.cppreference.com/w/cpp/utility/move">std::move</a> in the move constructor, when initializing the name variable and the pointer to the buffer. The name is actually a string, and <code>std::string</code> also implements move semantics. Same for the <code>std::unique_ptr</code>. However, if we just said <code>_name(temp._name)</code> the copy constructor would have been called. For _buffer that would not have been even possible because <code>std::unique_ptr</code> does not have a copy constructor. But why wasn't the move constructor for <code>std::string</code> called in this case? Because even if the object the move constructor for <code>Buffer</code> is called with is an rvalue, inside the constructor it is actually an lvalue. Why? Because it has a name, "<code>temp</code>" and a named object is an lvalue. To make it again an rvalue (and be able to invoke the appropriate move constructor) one must use <code>std::move</code>. This function just turns an lvalue reference into an rvalue reference.</p><p>UPDATE: Though the purpose of this example was to show how move constructor and move assignment operator should be implemented, the exact details of an implementation may vary. An alternative implementation was provided by <a href="http://www.codeproject.com/script/Membership/View.aspx?mid=7805758">Member 7805758</a> in the comments. To be easier to see it I will show it here:</p>
+<div class="pre-action-link" id="premain489363" style="width:100%;display:block;"><span id="prehide489363" onclick="">Hide</span>    <span id="preShrink489363" onclick="">Shrink</span> <img id="preimg489363" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/arrow-up-16.png" style="height:16px;width:16px" onclick="">    <span onclick="">Copy Code</span></div><pre processed="true" style="margin-top: 0px;" id="pre489363"><span class="code-keyword">template</span> &lt;typename T&gt;
+<span class="code-keyword">class</span> Buffer
+{
+   std::string          _name;
+   <span class="code-sdkkeyword">size_t</span>               _size;
+   std::unique_ptr&lt;T[]&gt; _buffer;
+ 
+<span class="code-keyword">public</span>:
+   <span class="code-comment">//</span><span class="code-comment"> constructor
+</span>   Buffer(<span class="code-keyword">const</span> std::string&amp; name = <span class="code-string">"</span><span class="code-string">"</span>, <span class="code-sdkkeyword">size_t</span> size = <span class="code-digit">16</span>):
+      _name(name),
+      _size(size),
+      _buffer(size? <span class="code-keyword">new</span> T[size] : <span class="code-keyword">nullptr</span>)
+   {}
+ 
+   <span class="code-comment">//</span><span class="code-comment"> copy constructor
+</span>   Buffer(<span class="code-keyword">const</span> Buffer&amp; copy):
+      _name(copy._name),
+      _size(copy._size),
+      _buffer(copy._size? <span class="code-keyword">new</span> T[copy._size] : <span class="code-keyword">nullptr</span>)
+   {
+      T* source = copy._buffer.get();
+      T* dest = _buffer.get();
+      std::copy(source, source + copy._size, dest);
+   }
+ 
+   <span class="code-comment">//</span><span class="code-comment"> copy assignment operator
+</span>   Buffer&amp; <span class="code-keyword">operator</span>=(Buffer copy)
+   {
+       swap(*<span class="code-keyword">this</span>, copy);
+       <span class="code-keyword">return</span> *<span class="code-keyword">this</span>;
+   }
+ 
+   <span class="code-comment">//</span><span class="code-comment"> move constructor
+</span>   Buffer(Buffer&amp;&amp; temp):Buffer()
+   {
+      swap(*<span class="code-keyword">this</span>, temp);
+   }
+ 
+   <span class="code-keyword">friend</span> <span class="code-keyword">void</span> swap(Buffer&amp; first, Buffer&amp; second) <span class="code-keyword">noexcept</span>
+   {
+       <span class="code-keyword">using</span> std::swap;
+       swap(first._name  , second._name);
+       swap(first._size  , second._size);
+       swap(first._buffer, second._buffer);
+   }
+};
+</pre>
+
+<h2>Conclusions</h2>
+<p>There are many more things to say about C++11; this was just one of many possible beginnings. This article presented a series of core language and standard library features that every C++ developer should use. However, I recommend you additional readings, at least for some of these features.   </p>
+
+
+						</div>
+						
+
+						<div class="float-right" style="margin:20px 0 0 10px;border:1px solid #ccc">
+						<div class="msg-300x250" data-format="300x250" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Languages/C-Cplusplus-Language/General" data-loadonview="true" data-tags="C++, Dev, Beginner, Intermediate, Advanced,rating4.5"><noscript><a href="http://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Languages/C-Cplusplus-Language/General&sz=300x250&c=426145"><img src="http://pubads.g.doubleclick.net/gampad/ad?iu=/6839/lqm.codeproject.site/Languages/C-Cplusplus-Language/General&sz=300x250&c=426145"  width="300px" height="250px" target="_blank"/></a></noscript></div>
+						</div>
+                        
+                        
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+                        
+						<h2>Share</h2>
+				        <div class="share-list">
+					        
+
+
+
+<!-- Buttons start here. Copy this ul to your document. -->
+<ul class="rrssb-buttons clearfix rrssb-1">
+    <li data-size="39" data-initwidth="16.666666666666668" style="width: calc(100% - 210px);" class="email">
+
+        <a href="mailto:?subject=Ten%20C%2b%2b11%20Features%20Every%20C%2b%2b%20Developer%20Should%20Use%20-%20CodeProject&amp;body=Here%27s%20an%20interesting%20article%20on%20for%20you%20on%20codeproject.com%0a%0ahttp%3a%2f%2fwww.codeproject.com%2fArticles%2f570638%2fTen-Cplusplus11-Features-Every-Cplusplus-Developer%0a">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g>
+                        <path d="M20.111 26.147c-2.336 1.051-4.361 1.401-7.125 1.401c-6.462 0-12.146-4.633-12.146-12.265 
+                            c0-7.94 5.762-14.833 14.561-14.833c6.853 0 11.8 4.7 11.8 11.252c0 5.684-3.194 9.265-7.399 
+                            9.3 c-1.829 0-3.153-0.934-3.347-2.997h-0.077c-1.208 1.986-2.96 2.997-5.023 2.997c-2.532 
+                            0-4.361-1.868-4.361-5.062 c0-4.749 3.504-9.071 9.111-9.071c1.713 0 3.7 0.4 4.6 0.973l-1.169 
+                            7.203c-0.388 2.298-0.116 3.3 1 3.4 c1.673 0 3.773-2.102 3.773-6.58c0-5.061-3.27-8.994-9.303-8.994c-5.957 
+                            0-11.175 4.673-11.175 12.1 c0 6.5 4.2 10.2 10 10.201c1.986 0 4.089-0.43 5.646-1.245L20.111 
+                            26.147z M16.646 10.1 c-0.311-0.078-0.701-0.155-1.207-0.155c-2.571 0-4.595 2.53-4.595 5.529c0 
+                            1.5 0.7 2.4 1.9 2.4 c1.441 0 2.959-1.828 3.311-4.087L16.646 10.068z"></path></g>
+                </svg>
+            </span>
+            <span class="text">email</span>
+        </a>
+    </li>
+    <li data-size="56" data-initwidth="16.666666666666668" style="width: 42px;" class="twitter small">
+        <!-- Replace href with your Meta and URL information  -->
+        <a href="http://twitter.com/home?status=Ten+C%2b%2b11+Features+Every+C%2b%2b+Developer+Should+Use+-+CodeProject+-+http%3a%2f%2fwww.codeproject.com%2fArticles%2f570638%2fTen-Cplusplus11-Features-Every-Cplusplus-Developer" class="popup">
+            <span class="icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32
+                    c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155
+                    C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965
+                    C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683
+                    c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851
+                    C26.275,7.229,25.39,8.196,24.253,8.756z"></path>
+                </svg>
+            </span>
+            <span class="text">twitter</span>
+        </a>
+    </li>
+
+    <li data-size="67" data-initwidth="16.666666666666668" style="width: 42px;" class="facebook small">
+        <!-- Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header: 
+        https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/ -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.codeproject.com%2fArticles%2f570638%2fTen-Cplusplus11-Features-Every-Cplusplus-Developer" class="popup">
+            <span class="icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                    <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434
+                        c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726
+                        c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"></path>
+                </svg>
+            </span>
+            <span class="text">facebook</span>
+        </a>
+    </li>
+    
+    <li data-size="59" data-initwidth="16.666666666666668" style="width: 42px;" class="linkedin small">
+        <!-- Replace href with your meta and URL information -->
+        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.codeproject.com%2fArticles%2f570638%2fTen-Cplusplus11-Features-Every-Cplusplus-Developer&amp;title=Ten+C%2b%2b11+Features+Every+C%2b%2b+Developer+Should+Use+-+CodeProject&amp;summary=&amp;source=codeproject.com" class="popup">
+            <span class="icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                    <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803
+                        c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048
+                        h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501
+                        c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546
+                        C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"></path>
+                </svg>
+            </span>
+            <span class="text">linkedin</span>
+        </a>
+    </li>
+    <li data-size="46" data-initwidth="16.666666666666668" style="width: 42px;" class="reddit small">
+        <a href="http://www.reddit.com/submit?url=http%3a%2f%2fwww.codeproject.com%2fArticles%2f570638%2fTen-Cplusplus11-Features-Every-Cplusplus-Developer&amp;title=Ten+C%2b%2b11+Features+Every+C%2b%2b+Developer+Should+Use+-+CodeProject">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g>
+                <path d="M11.794 15.316c0-1.029-0.835-1.895-1.866-1.895c-1.03 0-1.893 0.865-1.893 1.895s0.863 1.9 1.9 1.9 C10.958 17.2 11.8 16.3 11.8 15.316z"></path>
+                <path d="M18.1 13.422c-1.029 0-1.895 0.864-1.895 1.895c0 1 0.9 1.9 1.9 1.865c1.031 0 1.869-0.836 1.869-1.865 C19.969 14.3 19.1 13.4 18.1 13.422z"></path>
+                <path d="M17.527 19.791c-0.678 0.678-1.826 1.006-3.514 1.006c-0.004 0-0.009 0-0.014 0c-0.004 0-0.01 0-0.015 0 
+                c-1.686 0-2.834-0.328-3.51-1.005c-0.264-0.265-0.693-0.265-0.958 0c-0.264 0.265-0.264 0.7 0 1 c0.943 0.9 2.4 1.4 
+                4.5 1.402c0.005 0 0 0 0 0c0.005 0 0 0 0 0c2.066 0 3.527-0.459 4.47-1.402 c0.265-0.264 0.265-0.693 0.002-0.958C18.221 
+                19.5 17.8 19.5 17.5 19.791z"></path><path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237c-0.793 0-1.518 0.287-2.082 
+                0.761c-2.039-1.295-4.646-2.069-7.438-2.219 l1.483-4.691l4.062 0.956c0.071 1.4 1.3 2.6 2.7 2.555c1.488 0 2.695-1.208 
+                2.695-2.695C25.881 3.2 24.7 2 23.2 2 c-1.059 0-1.979 0.616-2.42 1.508l-4.633-1.091c-0.344-0.081-0.693 0.118-0.803 
+                0.455l-1.793 5.7 C10.548 8.6 7.7 9.4 5.6 10.75C5.006 10.3 4.3 10 3.5 10.029c-1.785 0-3.237 1.452-3.237 3.2 c0 1.1 0.6 
+                2.1 1.4 2.69c-0.04 0.272-0.061 0.551-0.061 0.831c0 2.3 1.3 4.4 3.7 5.9 c2.299 1.5 5.3 2.3 8.6 2.325c3.228 0 6.271-0.825 
+                8.571-2.325c2.387-1.56 3.7-3.66 3.7-5.917 c0-0.26-0.016-0.514-0.051-0.768C27.088 15.5 27.7 14.4 27.7 13.267z M23.186 
+                3.355c0.74 0 1.3 0.6 1.3 1.3 c0 0.738-0.6 1.34-1.34 1.34s-1.342-0.602-1.342-1.34C21.844 4 22.4 3.4 23.2 3.355z M1.648 
+                13.3 c0-1.038 0.844-1.882 1.882-1.882c0.31 0 0.6 0.1 0.9 0.209c-1.049 0.868-1.813 1.861-2.26 2.9 C1.832 14.2 1.6 13.8 1.6 
+                13.267z M21.773 21.57c-2.082 1.357-4.863 2.105-7.831 2.105c-2.967 0-5.747-0.748-7.828-2.105 
+                c-1.991-1.301-3.088-3-3.088-4.782c0-1.784 1.097-3.484 3.088-4.784c2.081-1.358 4.861-2.106 7.828-2.106 c2.967 0 5.7 
+                0.7 7.8 2.106c1.99 1.3 3.1 3 3.1 4.784C24.859 18.6 23.8 20.3 21.8 21.57z M25.787 14.6 
+                c-0.432-1.084-1.191-2.095-2.244-2.977c0.273-0.156 0.59-0.245 0.928-0.245c1.035 0 1.9 0.8 1.9 1.9 
+                C26.354 13.8 26.1 14.3 25.8 14.605z"></path></g></svg>
+            </span>
+            <span class="text">reddit</span>
+        </a>
+    </li>
+    <li data-size="60" data-initwidth="16.666666666666668" style="width: 42px;" class="googleplus small">
+        <!-- Replace href with your meta and URL information.  -->
+        <a href="https://plus.google.com/share?url=http%3a%2f%2fwww.codeproject.com%2fArticles%2f570638%2fTen-Cplusplus11-Features-Every-Cplusplus-Developer" class="popup">
+            <span class="icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path d="M14.703,15.854l-1.219-0.948c-0.372-0.308-0.88-0.715-0.88-1.459c0-0.748,0.508-1.223,0.95-1.663
+                                c1.42-1.119,2.839-2.309,2.839-4.817c0-2.58-1.621-3.937-2.399-4.581h2.097l2.202-1.383h-6.67c-1.83,0-4.467,0.433-6.398,2.027
+                                C3.768,4.287,3.059,6.018,3.059,7.576c0,2.634,2.022,5.328,5.604,5.328c0.339,0,0.71-0.033,1.083-0.068
+                                c-0.167,0.408-0.336,0.748-0.336,1.324c0,1.04,0.551,1.685,1.011,2.297c-1.524,0.104-4.37,0.273-6.467,1.562
+                                c-1.998,1.188-2.605,2.916-2.605,4.137c0,2.512,2.358,4.84,7.289,4.84c5.822,0,8.904-3.223,8.904-6.41
+                                c0.008-2.327-1.359-3.489-2.829-4.731H14.703z M10.269,11.951c-2.912,0-4.231-3.765-4.231-6.037c0-0.884,0.168-1.797,0.744-2.511
+                                c0.543-0.679,1.489-1.12,2.372-1.12c2.807,0,4.256,3.798,4.256,6.242c0,0.612-0.067,1.694-0.845,2.478
+                                c-0.537,0.55-1.438,0.948-2.295,0.951V11.951z M10.302,25.609c-3.621,0-5.957-1.732-5.957-4.142c0-2.408,2.165-3.223,2.911-3.492
+                                c1.421-0.479,3.25-0.545,3.555-0.545c0.338,0,0.52,0,0.766,0.034c2.574,1.838,3.706,2.757,3.706,4.479
+                                c-0.002,2.073-1.736,3.665-4.982,3.649L10.302,25.609z"></path>
+                            <polygon points="23.254,11.89 23.254,8.521 21.569,8.521 21.569,11.89 18.202,11.89 18.202,13.604 21.569,13.604 21.569,17.004
+                                23.254,17.004 23.254,13.604 26.653,13.604 26.653,11.89      "></polygon>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+            <span class="text">google+</span>
+        </a>
+    </li>
+    
+</ul>
+<!-- Buttons end here -->
+
+				        </div> 
+    			        
+
+
+						
+						<h2 id="ctl00_AboutHeading">About the Author</h2>
+						    
+
+
+<div class="author-wrapper">
+
+    <div class="pic-wrapper"> 
+        <img id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhoto" class="profile-pic" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/%7B6bb45dcc-2ea4-45ac-b027-56553b1fbced%7D.jpg" style="border-width:0px;transform:rotate(-2deg);">
+
+    </div>
+
+    <div class="container-member">  
+        <b><a id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink" class="author" href="http://www.codeproject.com/Members/MariusBancila">Marius Bancila</a></b>
+
+        <table class="extended">
+        <tbody><tr>
+            <td rowspan="2" valign="middle" nowrap="nowrap">
+            <div id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_FollowOn" class="follow">
+	            <a href="http://www.twitter.com/mariusbancila"><img style="vertical-align:middle;border:0;height:24px;width:24px" alt="Twitter" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/twitter32.png"></a> 
+	            
+	            
+            </div>
+            </td>
+            <td width="100%">
+                <div class="company">
+                    <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberJobTitle">Architect</span>
+	                <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberCompany">Visma Software</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation">Romania <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/RO.gif" alt="Romania" height="11px" width="16px"></span>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+    <div class="description">
+        Marius Bancila is a Microsoft MVP for VC++. He works as a system architect for Visma, a Norwegian-based company. He is mainly focused on building desktop applications with VC++ and VC#. He keeps a blog at http://www.mariusbancila.ro/blog, focused on Windows programming. He is the co-founder of codexpert.ro, a community for Romanian C++ programmers.
+
+        
+    </div>
+
+</div><br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						<div style="padding-top:8px">
+							
+						</div>
+
+					
+
+				    
+					</form>
+
+				</div>
+
+				
+				<div class="bottom-promo"> 
+				    <div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Languages/C-Cplusplus-Language/General" data-loadonview="true" data-tags="C++, Dev, Beginner, Intermediate, Advanced,rating4.5,pos_bottom"><noscript><a href="http://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Languages/C-Cplusplus-Language/General&sz=728x90&c=426145"><img src="http://pubads.g.doubleclick.net/gampad/ad?iu=/6839/lqm.codeproject.site/Languages/C-Cplusplus-Language/General&sz=728x90&c=426145"  width="728px" height="90px" target="_blank"/></a></noscript></div>
+				</div>
+				
+
+                
+        <h2 id="ctl00_AlsoRead_RelatedResults_ctl00_Header" class="also-read">You may also be interested in...</h2>
+        <table class="spaced content-list also-read">
+    
+	    <tbody><tr>
+        <td class="content-list-item" valign="top" width="50%">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl01_Thumbnail" href="http://www.codeproject.com/Articles/3022/Ten-things-to-do-with-IIS"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/article100x80.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl01_Link" href="http://www.codeproject.com/Articles/3022/Ten-things-to-do-with-IIS">Ten things to do with IIS</a></div>
+                
+            </div>
+        </td>
+	
+        <td class="content-list-item" valign="top" width="50%">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl02_Thumbnail" href="http://www.codeproject.com/ResearchLibrary/212/Microsoft-Guide-to-Modern-Dev-Test"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/LibraryItemThumbnail_212_100x130.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl02_Link" href="http://www.codeproject.com/ResearchLibrary/212/Microsoft-Guide-to-Modern-Dev-Test">Microsoft Guide to Modern Dev/Test</a></div>
+                
+            </div>
+        </td>
+	    </tr>
+	
+	    <tr>
+        <td class="content-list-item" valign="top" width="50%">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl03_Thumbnail" href="http://www.codeproject.com/Articles/3981/The-Ten-Commandments-for-CPians"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/article100x80.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl03_Link" href="http://www.codeproject.com/Articles/3981/The-Ten-Commandments-for-CPians">The Ten Commandments for CPians</a></div>
+                
+            </div>
+        </td>
+	
+        <td class="content-list-item" valign="top" width="50%">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl04_Thumbnail" href="http://www.codeproject.com/Articles/1101369/Ways-to-Boost-COBOL-Application-Development"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/Thumb-1101369.jpg" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl04_Link" href="http://www.codeproject.com/Articles/1101369/Ways-to-Boost-COBOL-Application-Development">10 Ways to Boost COBOL Application Development</a></div>
+                
+            </div>
+        </td>
+	    </tr>
+	
+	    <tr>
+        <td class="content-list-item" valign="top" width="50%">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl05_Thumbnail" href="http://www.codeproject.com/Articles/162620/An-Introduction-to-Sql-Code-Name-Denali-Part-II"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/Thumb-162620.jpg" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl05_Link" href="http://www.codeproject.com/Articles/162620/An-Introduction-to-Sql-Code-Name-Denali-Part-II">An Introduction to Sql 11 (Code Name Denali) –Part II (T-Sql Features in CTP 1)</a></div>
+                
+            </div>
+        </td>
+	
+        <td class="content-list-item" valign="top" width="50%">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl06_Thumbnail" href="http://www.codeproject.com/Articles/1100506/Getting-Started-with-React"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/Thumb-1100506.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl06_Link" href="http://www.codeproject.com/Articles/1100506/Getting-Started-with-React">Getting Started with React</a></div>
+                
+            </div>
+        </td>
+	    </tr>
+	
+		</tbody></table>
+	
+
+
+
+				
+				
+
+					<h2>Comments and Discussions</h2>
+					<a class="float-left" name="_comments" id="_comments"> </a><div id="_MessageBoardctl00_MessageBoard" onclick="">
+<table id="ForumTable" class="forum relaxed" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="header1 callout"><b>You must <a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f570638%2fTen-Cplusplus11-Features-Every-Cplusplus-Developer%3ffid%3d1829555%26df%3d90%26mpp%3d25%26prof%3dFalse%26sort%3dPosition%26view%3dExpanded%26spc%3dRelaxed">Sign In</a> to use this message board.</b></td>
+</tr><tr>
+<td><table border="0" cellpadding="3px" cellspacing="0" width="100%">
+<tbody><tr class="header1">
+<td colspan="2" style="white-space:nowrap;"><div class="container">
+<div class="float-right">
+<form action="http://www.codeproject.com/Search.aspx?sbo=fm" method="get" class="searchbar">
+<input name="fid" value="1829555" type="hidden"><input name="sbo" value="fm" type="hidden"><b>Search Comments </b><input class="search" name="qf" type="search"> <input value="Go" class="button" type="submit">
+</form>
+</div>
+</div></td>
+</tr><tr class="header2">
+<td></td><td style="width:100%;"><div style="text-align:right;">
+<form action="http://www.codeproject.com/script/Forums/SetOptions.aspx?floc=%2fArticles%2f570638%2fTen-Cplusplus11-Features-Every-Cplusplus-Developer&amp;fid=1829555&amp;df=90&amp;mpp=25&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed" method="get" style="margin:0;padding:0;">
+<input name="fid" value="1829555" type="hidden"><input name="currentQS" value="?floc=%2fArticles%2f570638%2fTen-Cplusplus11-Features-Every-Cplusplus-Developer&amp;fid=1829555&amp;df=90&amp;mpp=25&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed" type="hidden"><input name="floc" value="/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer" type="hidden"><input name="prof" id="prof" style="vertical-align:middle;" type="checkbox"><label for="prof">Profile popups</label>    Spacing<select size="1" class="dropdown" name="spc">
+<option selected="selected" value="Relaxed">Relaxed</option><option value="Compact">Compact</option><option value="Tight">Tight</option>
+</select>  Layout<select size="1" class="dropdown" name="view">
+<option value="Normal">Normal</option><option value="Topic">Open Topics</option><option selected="selected" value="Expanded">Open All</option><option value="Thread">Thread View</option>
+</select>  Per page<select size="1" class="dropdown" name="mpp">
+<option value="10">10</option><option selected="selected" value="25">25</option><option value="50">50</option>
+</select>   <input value="Update" name="SetOpt" class="button" type="submit">
+</form>
+</div></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><a name="xx0xx"></a><table border="0" cellpadding="2px" cellspacing="0" width="100%">
+<tbody><tr class="navbar">
+<td></td><td style="text-align:right;width:50%;"></td><td style="text-align:right;white-space:nowrap;"><span class="nav-link disabled">First</span> <span class="nav-link disabled">Prev</span><a class="nav-link" name="Frm_HoverNL" href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed&amp;fr=26#xx0xx">Next</a></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><table class="fixed-layout blank-background" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" border="0" height="5px" width="1px"></td>
+</tr><tr id="F5137181_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx5137181xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="subject hover-container">My vote of 5<div class="mobile-only">
+	<span class="author">Mohammad Shuvo</span><span class="date">2-Oct-15  6:06</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=9344542">Mohammad Shuvo</a></span></td><td class="date"><span>2-Oct-15  6:06 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="9344542" msgid="5137181" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Very useful for me <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/smiley_smile.gif" alt="Smile | :)" align="top"> <br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=5137181" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/5137181/My-vote-of.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF5137181" data-ref="3_5137181" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F5041875_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx5041875xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="subject hover-container">Another 5 for ya!<div class="mobile-only">
+	<span class="author">Stephen Hewitt</span><span class="date">15-Apr-15  8:03</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1892756">Stephen Hewitt</a></span></td><td class="date"><span>15-Apr-15  8:03 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="1892756" msgid="5041875" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Have another 5. Nice.<br>
+ 
+<div class="signature">Steve</div>
+<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=5041875" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/5041875/Another-for-ya.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF5041875" data-ref="3_5041875" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F5000043_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx5000043xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_idea.gif" alt="Suggestion" align="top" height="16px" width="16px"></td><td class="subject hover-container">Great Article!<div class="mobile-only">
+	<span class="author">Axter</span><span class="date">11-Feb-15  19:29</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-pro-16.png" title="professional" alt="professional" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=48856">Axter</a></span></td><td class="date"><span>11-Feb-15  19:29 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="48856" msgid="5000043" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Great article.  It gave me some WOW moments!<img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/thumbs_up.gif" alt="Thumbs Up | :thumbsup:" align="top"> <br>
+<br>
+Note:  <br>
+I think the last sentence in your conclusion is grammatically incorrect.<br>
+<br>
+<b>I recommend you additional readings, at least for some of these features.</b><br>
+<br>
+<br>
+I think you meant to say "read" instead of "reading".<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=5000043" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/5000043/Great-Article.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF5000043" data-ref="3_5000043" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4972332_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4972332xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="subject hover-container">Range-Based For Loop<div class="mobile-only">
+	<span class="author">histogenetics</span><span class="date">2-Jan-15  15:17</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=9652548">histogenetics</a></span></td><td class="date"><span>2-Jan-15  15:17 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="9652548" msgid="4972332" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Great article and examples. For more examples I found a resource on Google <a href="https://www.tutorialcup.com/cplusplus/for-loop.htm">For Loop in C++</a><br>
+I have one question, can we use multiple variables in Range-Based for loop?<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4972332" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4972332/Range-Based-For-Loop.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4972332" data-ref="3_4972332" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4920379_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4920379xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="subject hover-container">Thanks, This is the simplest and the best explanation on move semantics. You nailed it... ;)<div class="mobile-only">
+	<span class="author">Vineel Kumar Reddy Kovvuri</span><span class="date">10-Oct-14  2:19</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=3066386">Vineel Kumar Reddy Kovvuri</a></span></td><td class="date"><span>10-Oct-14  2:19 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="3066386" msgid="4920379" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Thanks, This is the simplest and the best explanation on move semantics. You nailed it... <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/smiley_wink.gif" alt="Wink | ;)" align="top"> <br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4920379" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4920379/Thanks-This-is-the-simplest-and-the-best-explanati.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4920379" data-ref="3_4920379" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4920377_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4920377xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="subject hover-container">My vote of 5<div class="mobile-only">
+	<span class="author">Vineel Kumar Reddy Kovvuri</span><span class="date">10-Oct-14  2:17</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=3066386">Vineel Kumar Reddy Kovvuri</a></span></td><td class="date"><span>10-Oct-14  2:17 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="3066386" msgid="4920377" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Thanks. This is the simplest and the best explanation of move semantics <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/smiley_smile.gif" alt="Smile | :)" align="top">  u nailed it.<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4920377" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4920377/My-vote-of.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4920377" data-ref="3_4920377" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4901501_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4901501xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="subject hover-container">C++ 11 and the Standard Library<div class="mobile-only">
+	<span class="author">john morrison leon</span><span class="date">11-Sep-14  13:21</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=4875381">john morrison leon</a></span></td><td class="date"><span>11-Sep-14  13:21 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="4875381" msgid="4901501" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">I haven't had my hands on C++ 11 yet. It looks good but I worry about how it is presented as if the Standard Library is part of the language. I don't think the language should be bowing to the library.<br>
+<br>
+<code>Auto</code> could be very useful but it is sad to see that its most frequently quoted use is to covering up the horrible mess that is a Standard Library iterator type.<br>
+<br>
+R value references look great but is it really necessary to go to the Standard Library for <code>std::move</code>? Shouldn't such a fundamental operation be part of the language?<br>
+<br>
+The worst thing is the increasing ability and encouragement to lever the standard library plus <code>for each</code> and lambdas to encrypt complex operations into a single line of code. It reminds me of the the old days of 'C' programming when its ability to be terse in expressing operations was pushed to the limit. <br>
+<br>
+C++ is a great language that keeps itself simple and general. The Standard Library is useful for some things. It containers are a particular choice of design that suits some situations but not all. The language should not assume its use. It never has before.<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4901501" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4901501/Cplusplus-and-the-Standard-Library.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4901501" data-ref="3_4901501" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4895598_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4895598xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="subject hover-container">C11 on simple words<div class="mobile-only">
+	<span class="author">Rabelo</span><span class="date">3-Sep-14  12:00</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=909352">Rabelo</a></span></td><td class="date"><span>3-Sep-14  12:00 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="909352" msgid="4895598" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Deserve 10 on 5<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4895598" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4895598/C-on-simple-words.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4895598" data-ref="3_4895598" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4837458_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4837458xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="subject hover-container">My vote of 5<div class="mobile-only">
+	<span class="author">Manikandan10</span><span class="date">7-Jun-14  20:23</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-pro-16.png" title="professional" alt="professional" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=9385583">Manikandan10</a></span></td><td class="date"><span>7-Jun-14  20:23 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="9385583" msgid="4837458" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Nice and well written article. <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/thumbs_up.gif" alt="Thumbs Up | :thumbsup:" align="top"> <br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4837458" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4837458/My-vote-of.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4837458" data-ref="3_4837458" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4818078_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4818078xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="subject hover-container">My vote of 5<div class="mobile-only">
+	<span class="author">achainard</span><span class="date">10-May-14  22:46</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=189262">achainard</a></span></td><td class="date"><span>10-May-14  22:46 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="189262" msgid="4818078" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Hard update !<br>
+<div class="signature">...</div><br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4818078" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4818078/My-vote-of.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4818078" data-ref="3_4818078" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4808109_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4808109xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="subject hover-container">Prepended underscore in variable names???<div class="mobile-only">
+	<span class="author">David O'Neil</span><span class="date">25-Apr-14  19:07</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1921380">David O'Neil</a></span></td><td class="date"><span>25-Apr-14  19:07 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="1921380" msgid="4808109" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">I've always seen to not use prepended underscores in variable names - something about possible clashes with global namespace or something.  Has that changed or was the info always wrong?<br>
+<div class="pre-action-link" id="premain41381" style="width:100%;display:block;"><span id="prehide41381" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre41381">std::<span class="code-keyword">string</span>          _name;
+...</pre>
+<div class="signature"><span style="font-size:80%"><a href="http://www.randommonkeyworks.com/">My website</a>  ::  <a href="http://www.laughingatthedevil.com/">My book revealing the forgotten astronomy of our ancestors</a>.<br>
+</span></div><br><br><div class="modified">modified  26-Apr-14 1:24am.</div><br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4808109" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4808109/Prepended-underscore-in-variable-names.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4808109" data-ref="3_4808109" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4851074_h0" class="header hover-row">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="38px"><a name="xx4851074xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_answer.gif" alt="Answer" align="top" height="16px" width="16px"></td><td class="subject hover-container"><a class="message-link" name="4851074" parent="4808109" thread="4808109" href="http://www.codeproject.com/Messages/4851074/Re-Prepended-underscore-in-variable-names.aspx">Re: Prepended underscore in variable names???</a><div class="mobile-only">
+	<span class="author">Cem Kalyoncu</span><span class="date">29-Jun-14  1:12</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=16958">Cem Kalyoncu</a></span></td><td class="date"><span>29-Jun-14  1:12 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:38px;"><div class="voteform vertical" ownerid="16958" msgid="4851074" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="38px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="" href="http://www.codeproject.com/Messages/4808109/Prepended-underscore-in-variable-names.aspx"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/arrow-up24.png" title="Go to Parent" style="width:16px;height:16px;border:0"></a></div>Using double underscore or underscore + uppercase letter is reserved. Nothing wrong about a single underscore followed by lowercase letter.<br>
+<div class="signature">May the bug killer be with you...<br>
+Cem Kalyoncu<br>
+</div><br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4808109" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4851074/Re-Prepended-underscore-in-variable-names.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4851074" data-ref="3_4851074" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4695650_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4695650xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="subject hover-container">Good points<div class="mobile-only">
+	<span class="author">sisingh</span><span class="date">6-Nov-13  4:56</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=34780">sisingh</a></span></td><td class="date"><span>6-Nov-13  4:56 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="34780" msgid="4695650" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">These are good points and for more reading follow Danny Kalev's articles on InformIT.<br>
+He covers almost all the c++11 features.<br>
+<br>
+-Siddhartha<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4695650" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4695650/Good-points.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4695650" data-ref="3_4695650" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4629743_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4629743xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="subject hover-container">why can an exception in seed cause a memory leak?<div class="mobile-only">
+	<span class="author">tudors</span><span class="date">5-Aug-13  23:53</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=602929">tudors</a></span></td><td class="date"><span>5-Aug-13  23:53 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="602929" msgid="4629743" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Hi Marius, great article - I just have a question: in your share pointer example:<br>
+<code>foo(std::shared_ptr<int>(new int(42)), seed());</int></code><br>
+can you explain a bit how/why can an exception in seed cause a memory leak?<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4629743" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4629743/why-can-an-exception-in-seed-cause-a-memory-leak.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4629743" data-ref="3_4629743" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4630789_h0" class="header hover-row">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="38px"><a name="xx4630789xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_answer.gif" alt="Answer" align="top" height="16px" width="16px"></td><td class="subject hover-container"><a class="message-link" name="4630789" parent="4629743" thread="4629743" href="http://www.codeproject.com/Messages/4630789/Re-why-can-an-exception-in-seed-cause-a-memory-lea.aspx">Re: why can an exception in seed cause a memory leak?</a><div class="mobile-only">
+	<span class="author">Marius Bancila</span><span class="date">7-Aug-13  1:19</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=562357">Marius Bancila</a></span></td><td class="date"><span>7-Aug-13  1:19 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:38px;"><div class="voteform vertical" ownerid="562357" msgid="4630789" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="38px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="" href="http://www.codeproject.com/Messages/4629743/why-can-an-exception-in-seed-cause-a-memory-leak.aspx"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/arrow-up24.png" title="Go to Parent" style="width:16px;height:16px;border:0"></a></div>I think Herb Sutter explained this best in his <a href="http://herbsutter.com/gotw/_102/">GOTW#12</a>[<a href="http://herbsutter.com/gotw/_102/" target="_blank" title="New Window">^</a>].<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4629743" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4630789/Re-why-can-an-exception-in-seed-cause-a-memory-lea.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4630789" data-ref="3_4630789" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4602621_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4602621xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="subject hover-container">Function Type Deduction<div class="mobile-only">
+	<span class="author">Joshua Filstrup</span><span class="date">2-Jul-13  14:22</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=10137347">Joshua Filstrup</a></span></td><td class="date"><span>2-Jul-13  14:22 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="10137347" msgid="4602621" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">It may be worth updating to note in the article that in C++14<br>
+there will be automatic function type deduction. While some may think<br>
+this is frivolous and even ambiguous, I think it could be very useful.<br>
+Often when I am developing a function may start out as void, then<br>
+I decide I want it to be bool, then I decide I want it to return and int<br>
+status code; using auto all the way around ensures that<br>
+everything just works.<br>
+<br>
+Example from wikipedia:<br>
+<div class="pre-action-link" id="premain993463" style="width:100%;display:block;"><span id="prehide993463" onclick="">Hide</span>    <span onclick="">Copy Code</span></div><pre style="margin-top: 0px;" id="pre993463" lang="vb">auto Correct(int i) {
+  <span class="code-keyword">if</span> (i == <span class="code-digit">1</span>)
+    <span class="code-keyword">return</span> i;               // <span class="code-keyword">return</span> type deduced <span class="code-keyword">as</span> int
+  <span class="code-keyword">else</span>
+    <span class="code-keyword">return</span> Correct(i-1)+i;  // ok <span class="code-keyword">to</span> <span class="code-keyword">call</span> it now
+}
+ 
+auto Wrong(int i)
+{
+  <span class="code-keyword">if</span>(i != <span class="code-digit">1</span>)
+    <span class="code-keyword">return</span> Wrong(i-1)+i;  // Too soon <span class="code-keyword">to</span> <span class="code-keyword">call</span> this. No prior <span class="code-keyword">return</span> statement.
+  <span class="code-keyword">else</span>
+    <span class="code-keyword">return</span> i;             // <span class="code-keyword">return</span> type deduced <span class="code-keyword">as</span> int
+}</pre>
+<br>
+source: <a href="http://en.wikipedia.org/wiki/C%2B%2B14#Function_return_type_deduction">http://en.wikipedia.org/wiki/C%2B%2B14#Function_return_type_deduction</a>[<a href="http://en.wikipedia.org/wiki/C%2B%2B14#Function_return_type_deduction" target="_blank" title="New Window">^</a>]<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4602621" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4602621/Function-Type-Deduction.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4602621" data-ref="3_4602621" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4588270_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4588270xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="subject hover-container">My vote of 5<div class="mobile-only">
+	<span class="author">Khan Ji</span><span class="date">13-Jun-13  22:31</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=9883830">Khan Ji</a></span></td><td class="date"><span>13-Jun-13  22:31 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="9883830" msgid="4588270" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">My vote of 5<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4588270" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4588270/My-vote-of.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4588270" data-ref="3_4588270" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4588269_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4588269xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="subject hover-container">Nice<div class="mobile-only">
+	<span class="author">Khan Ji</span><span class="date">13-Jun-13  22:31</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=9883830">Khan Ji</a></span></td><td class="date"><span>13-Jun-13  22:31 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="9883830" msgid="4588269" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Nice article..<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4588269" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4588269/Nice.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4588269" data-ref="3_4588269" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4574474_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4574474xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="subject hover-container">move semantics issue<div class="mobile-only">
+	<span class="author"><b>G</b>alatei</span><span class="date">28-May-13  10:19</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=739025"><b>G</b>alatei</a></span></td><td class="date"><span>28-May-13  10:19 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="739025" msgid="4574474" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Thanks to excellent copy elision functionality in compilers, what you described is not exactly like that.<br>
+<br>
+When b1 is created, only standard ctor is called.<br>
+When b2 is created, only constructor with params is called.<br>
+When b3 is assigned, only copy constructor is called.<br>
+When b4 is assigned, only constructor with params is called, same as for b2, as copy elision will optimize the call, and create object in the target memory space. <br>
+When b1 is assigned from b4, then the move assignment operator is called.<br>
+<br>
+This behavior may be badly implemented in some compilers (i.e. VC??), and that's why you thought that b4 assignment will call move constructor. This would be totally unnecessary, as it would involve two operations, ctor for the original temporary object and move assignment(or constructor), where in reality, same object can be created in the target object space.<br>
+<br>
+Cheers.<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4574474" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4574474/move-semantics-issue.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4574474" data-ref="3_4574474" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4574050_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4574050xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="subject hover-container">My vote of 5<div class="mobile-only">
+	<span class="author">Gorpik</span><span class="date">28-May-13  1:22</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=5565429">Gorpik</a></span></td><td class="date"><span>28-May-13  1:22 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="5565429" msgid="4574050" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Very good selection of features and very clear explanation.<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4574050" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4574050/My-vote-of.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4574050" data-ref="3_4574050" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4574017_h0" class="header hover-row root">
+<td class="subject-line expanded vote-hi" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4574017xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_question.gif" alt="Question" align="top" height="16px" width="16px"></td><td class="subject hover-container">confusing<div class="mobile-only">
+	<span class="author">Member 9872418</span><span class="date">28-May-13  0:23</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=9872418">Member 9872418</a></span></td><td class="date"><span>28-May-13  0:23 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="9872418" msgid="4574017" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">i think this will make c++ code even more unreadable than it is now! do you really need this stuff?<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4574017" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4574017/confusing.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4574017" data-ref="3_4574017" class="rating-label" style="white-space:nowrap;"><span>5.00/5 (1 vote)</span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4651583_h0" class="header hover-row">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="38px"><a name="xx4651583xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_answer.gif" alt="Answer" align="top" height="16px" width="16px"></td><td class="subject hover-container"><a class="message-link" name="4651583" parent="4574017" thread="4574017" href="http://www.codeproject.com/Messages/4651583/Re-confusing.aspx">Re: confusing</a><div class="mobile-only">
+	<span class="author">sam195</span><span class="date">3-Sep-13  6:01</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=4876662">sam195</a></span></td><td class="date"><span>3-Sep-13  6:01 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:38px;"><div class="voteform vertical" ownerid="4876662" msgid="4651583" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="38px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="" href="http://www.codeproject.com/Messages/4574017/confusing.aspx"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/arrow-up24.png" title="Go to Parent" style="width:16px;height:16px;border:0"></a></div>Agree. For instance, here is one nice contradiction: making enums strongly typed while at the same time allowing 'auto' variable defeats that purpose of strongly-typed variables.<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4574017" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4651583/Re-confusing.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4651583" data-ref="3_4651583" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4651709_h0" class="header hover-row">
+<td class="subject-line expanded vote-hi" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="56px"><a name="xx4651709xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="subject hover-container"><a class="message-link" name="4651709" parent="4651583" thread="4574017" href="http://www.codeproject.com/Messages/4651709/Re-confusing.aspx">Re: confusing</a><div class="mobile-only">
+	<span class="author">Marius Bancila</span><span class="date">3-Sep-13  10:03</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=562357">Marius Bancila</a></span></td><td class="date"><span>3-Sep-13  10:03 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:56px;"><div class="voteform vertical" ownerid="562357" msgid="4651709" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="56px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="" href="http://www.codeproject.com/Messages/4651583/Re-confusing.aspx"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/arrow-up24.png" title="Go to Parent" style="width:16px;height:16px;border:0"></a></div>I don't see why <code>auto</code> defeats strongly-typeness. <code>auto</code> doesn't mean "any type", it just means that the type is inferred by the compiler.<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4574017" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4651709/Re-confusing.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4651709" data-ref="3_4651709" class="rating-label" style="white-space:nowrap;"><span>5.00/5 (1 vote)</span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F5082597_h0" class="header hover-row">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="74px"><a name="xx5082597xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="subject hover-container"><a class="message-link" name="5082597" parent="4651709" thread="4574017" href="http://www.codeproject.com/Messages/5082597/Re-confusing.aspx">Re: confusing</a><div class="mobile-only">
+	<span class="author">sam195</span><span class="date">27-Jun-15  14:34</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=4876662">sam195</a></span></td><td class="date"><span>27-Jun-15  14:34 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:74px;"><div class="voteform vertical" ownerid="4876662" msgid="5082597" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="74px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="" href="http://www.codeproject.com/Messages/4651709/Re-confusing.aspx"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/arrow-up24.png" title="Go to Parent" style="width:16px;height:16px;border:0"></a></div>I meant that it affects readability. What's so special about this feature?<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4574017" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/5082597/Re-confusing.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF5082597" data-ref="3_5082597" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4573941_h0" class="header hover-row root">
+<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="indent" width="20px"><a name="xx4573941xx"></a><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="subject hover-container">My vote of 5<div class="mobile-only">
+	<span class="author">doudou75011</span><span class="date">27-May-13  21:57</span>
+</div></td><td class="icon"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=3480778">doudou75011</a></span></td><td class="date"><span>27-May-13  21:57 </span></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="content root">
+<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="3480778" msgid="4573941" votingtype="GoodOrBad">
+
+</div><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" height="1px" width="20px"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Thanks for the snippets !<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer">Sign In</a>·<wbr><a href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4573941" title="View Thread">View Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4573941/My-vote-of.aspx" title="Get permanent link">Permalink</a></td><td style="text-align:right;"><span id="MVF4573941" data-ref="3_4573941" class="rating-label" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/t-1.gif" alt="" border="0" height="5px" width="1px"></td>
+</tr><tr>
+<td><table cellpadding="2px" cellspacing="0" width="100%">
+<tbody><tr class="footer">
+<td><span class="last-visit desktop-only tablet-only">Last Visit: 31-Dec-99  18:00     Last Update: 21-May-16  21:31</span></td><td><a rel="nofollow" href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed">Refresh</a></td><td style="text-align:right;white-space:nowrap;"><input id="_mbnUrl" value="/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed&amp;fr=26" type="hidden"><span class="nav-link selected">1</span><a class="nav-link" name="Frm_HoverNL" href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed&amp;fr=26#xx0xx">2</a><a class="nav-link" name="Frm_HoverNL" href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed&amp;fr=51#xx0xx">3</a> <a class="nav-link" name="Frm_HoverNL" href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?fid=1829555&amp;df=90&amp;mpp=25&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed&amp;fr=26#xx0xx">Next »</a></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+</div><p class="small-text"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_general.gif" alt="General" align="top" height="16px" width="16px"> General    <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_news.gif" alt="News" align="top" height="16px" width="16px"> News    <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_idea.gif" alt="Suggestion" align="top" height="16px" width="16px"> Suggestion    <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_question.gif" alt="Question" align="top" height="16px" width="16px"> Question    <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_bug.gif" alt="Bug" align="top" height="16px" width="16px"> Bug    <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_answer.gif" alt="Answer" align="top" height="16px" width="16px"> Answer    <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_joke.gif" alt="Joke" align="top" height="16px" width="16px"> Joke    <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_kudos.gif" alt="Praise" align="top" height="16px" width="16px"> Praise    <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_rant.gif" alt="Rant" align="top" height="16px" width="16px"> Rant    <img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/msg_admin.gif" alt="Admin" align="top" height="16px" width="16px"> Admin    </p>
+				
+
+			</div>
+			
+		</td>
+		<td class="article-wing-right" width="170px">
+			<div id="ctl00_RightSideBar" class="container-article-info">
+
+                <div style="position: fixed; top: 10px; left: 1181px;" id="RHSticky" class="container-article-info-sticky stuck">
+        			
+
+
+<div class="article-summary">
+
+    
+
+
+    <ul class="prize-list">
+<li>Best C++ article of April 2013 </li>
+</ul>
+
+    
+
+    
+</div>
+
+				    
+
+				    <div style="width:160px;margin: 10px auto;">
+					    <div class="msg-160x600" data-format="160x600" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Languages/C-Cplusplus-Language/General" data-tags="C++, Dev, Beginner, Intermediate, Advanced,rating4.5"><noscript><a href="http://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Languages/C-Cplusplus-Language/General&sz=160x600&c=123208"><img src="http://pubads.g.doubleclick.net/gampad/ad?iu=/6839/lqm.codeproject.site/Languages/C-Cplusplus-Language/General&sz=160x600&c=123208"  width="160px" height="600px" target="_blank"/></a></noscript></div>
+				    </div>
+
+                    
+
+				    
+
+				    
+
+				    
+
+                    <div class="anchorLink gototop" id="gototop">
+                        <a id="ctl00_GoToTop" href="#_articleTop">Go to top</a>
+                    </div>
+
+				</div>
+
+			</div>
+		</td>
+		</tr></tbody></table>
+
+		
+		<div class="theme1-background" style="height:2px" id="stickyStop"></div>
+
+		<div class="extended tiny-text">
+			<div class="row">
+				<div class="float-left">
+					<a id="ctl00_PermaLink" itemprop="url" href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus-Features-Every-Cplusplus-Developer">Permalink</a> | 
+					<a id="ctl00_AdvertiseLink" href="http://developermedia.com/">Advertise </a> |
+					<a id="ctl00_PrivacyLink" href="http://www.codeproject.com/info/privacy.aspx">Privacy</a> |
+                    <a id="ctl00_TermsOfUseLink" href="http://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a> |
+					<a id="ctl00_Mobile">Mobile</a>
+					<br>
+								
+					
+					Web02 |
+					2.8.160518.1 |
+					Last Updated 3 Apr 2013								
+				</div>
+
+                <div id="ctl00_GoogleTranslate" class="translate float-left"><div style="" dir="ltr" class="skiptranslate goog-te-gadget"><div class="goog-te-gadget-simple" style="white-space: nowrap;" id=":0.targetLanguage"><img style="background-image: url(&quot;Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/te_ctrl3.gif&quot;); background-position: -65px 0px;" class="goog-te-gadget-icon" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/cleardot.gif"><span style="vertical-align: middle;"><a href="javascript:void(0);" class="goog-te-menu-value"><span>Select Language</span><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/cleardot.gif" height="1" width="1"><span style="border-left: 1px solid rgb(187, 187, 187);">​</span><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/cleardot.gif" height="1" width="1"><span style="color: rgb(155, 155, 155);">▼</span></a></span></div></div></div>      
+
+				<div class="float-right align-right">
+					Article Copyright 2013 by Marius Bancila<br>Everything else
+					Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2016 <br>
+				</div>
+
+				
+
+
+<div class="page-width">
+Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?PageFlow=FixedWidth">fixed</a>
+|
+<a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="http://www.codeproject.com/Articles/570638/Ten-Cplusplus11-Features-Every-Cplusplus-Developer?PageFlow=Fluid">fluid</a>
+</div>
+
+
+
+			</div>
+		</div>
+		
+
+		<br clear="all">
+		
+			
+
+	</div> 
+	</div>
+</div>
+
+
+<img id="ctl00_Audience" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/DFPAudiencePixel%3bord=%2763573779169%27%3bdc_seg=33705250.gif" style="border-width: 0px; height: 1px; width: 1px; display: none ! important;">
+
+
+
+<script type="text/javascript" language="Javascript" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/jquery.min.js"></script><script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+<script type="text/javascript" language="Javascript" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/article.min.js"></script>
+<script type="text/javascript" language="Javascript" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/element.js"></script>
+<script type="text/javascript" language="Javascript" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/navbar.min.js"></script>
+<script type="text/javascript" language="Javascript" src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/Notifications.min.js"></script>
+<script type="text/javascript" language="Javascript"><!--
+/* Script removed by snapshot save */
+--></script>
+
+
+
+<canvas id="cv1" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/translate_24dp.png" height="20" width="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div style="display: none;" class="status-message"></div></div><canvas id="cv2" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><iframe src="Ten%20C++11%20Features%20Every%20C++%20Developer%20Should%20Use%20-%20CodeProject_files/generated-content.html" style="visibility: visible; box-sizing: content-box; width: 1126px; height: 274px; display: none;" class="goog-te-menu-frame skiptranslate" frameborder="0"></iframe></body></html>

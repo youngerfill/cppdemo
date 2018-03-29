@@ -1,0 +1,880 @@
+<html op="item"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="referrer" content="origin"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css" href="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/news.css">
+        <link rel="shortcut icon" href="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/favicon.ico">
+        <script type="text/javascript"><!--
+/* Script removed by snapshot save */
+--></script><title>Lambda expression comparison between C++11, C++14 and C++17 | Hacker News</title></head><body><center><table id="hnmain" bgcolor="#f6f6ef" border="0" cellpadding="0" cellspacing="0" width="85%">
+        <tbody><tr><td bgcolor="#ff6600"><table style="padding:2px" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td style="width:18px;padding-right:4px"><a href="http://www.ycombinator.com/"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/y18.gif" style="border:1px white solid;" height="18" width="18"></a></td>
+                  <td style="line-height:12pt; height:10px;"><span class="pagetop"><b class="brandname"><a href="https://news.ycombinator.com/news">Hacker News</a></b>
+              <a href="https://news.ycombinator.com/newest">new</a> | <a href="https://news.ycombinator.com/newcomments">comments</a> | <a href="https://news.ycombinator.com/show">show</a> | <a href="https://news.ycombinator.com/ask">ask</a> | <a href="https://news.ycombinator.com/jobs">jobs</a> | <a href="https://news.ycombinator.com/submit">submit</a>            </span></td><td style="text-align:right;padding-right:4px;"><span class="pagetop">
+                              <a href="https://news.ycombinator.com/login?goto=item%3Fid%3D11697951">login</a>
+                          </span></td>
+              </tr></tbody></table></td></tr>
+<tr style="height:10px"></tr><tr><td><table border="0">
+        <tbody><tr class="athing">
+      <td class="title" align="right" valign="top"><span class="rank"></span></td>      <td class="votelinks" valign="top"><center><a id="up_11697951" href="https://news.ycombinator.com/vote?for=11697951&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="title"><span class="deadmark"></span><a href="http://maitesin.github.io//Lambda_comparison/">Lambda expression comparison between C++11, C++14 and C++17</a><span class="sitebit comhead"> (<a href="https://news.ycombinator.com/from?site=maitesin.github.io"><span class="sitestr">maitesin.github.io</span></a>)</span></td></tr><tr><td colspan="2"></td><td class="subtext">
+        <span class="score" id="score_11697951">175 points</span> by <a href="https://news.ycombinator.com/user?id=ingve">ingve</a> <span class="age"><a href="#">7 days ago</a></span>  | <a href="https://hn.algolia.com/?query=Lambda%20expression%20comparison%20between%20C%2B%2B11%2C%20C%2B%2B14%20and%20C%2B%2B17&amp;sort=byDate&amp;dateRange=all&amp;type=story&amp;storyText=false&amp;prefix&amp;page=0">past</a> | <a href="https://www.google.com/search?q=Lambda%20expression%20comparison%20between%20C%2B%2B11%2C%20C%2B%2B14%20and%20C%2B%2B17">web</a> | <a href="#">85 comments</a>              </td></tr>
+            <tr style="height:10px"></tr><tr><td colspan="2"></td><td>
+          <form method="post" action="https://news.ycombinator.com/comment"><input name="parent" value="11697951" type="hidden"><input name="goto" value="item?id=11697951" type="hidden"><input name="hmac" value="ea02a6c8d9bf60cafe86e270293b1bc1e7cc7ac9" type="hidden"><textarea name="text" rows="6" cols="60"></textarea>
+                <br><br><input value="add comment" type="submit"></form>
+      </td></tr>
+  </tbody></table><br><br>
+  <table class="comment-tree" border="0">  <tbody><tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="0"></td><td class="votelinks" valign="top"><center><a id="up_11699783" href="https://news.ycombinator.com/vote?for=11699783&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=hellofunk">hellofunk</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699783">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">I love lambdas, but a lot of commenters are throwing around the word "closure" here, and c++ lambdas are definitely not closures. You can capture outside variables by value or by reference, but that value can expire before the lambda runs if the reference no longer exists; in which case, you are in trouble. Unlike a true closure (as in lisp or other languages), where the closed-over value stays around.<p>If we talk only about c++ capture lists by value (i.e. [=]), then you could make a case for a more appropriate use of the word "closure" but since many lambdas do more than this, I think the distinction is necessary.</p><p>However, even in by-value captures, if you are capturing a pointer by value, the issue remains. So, really it is not a good idea to think of lambdas as closures in the functional sense typically used in other languages.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699783&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11700151" href="https://news.ycombinator.com/vote?for=11700151&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=csl">csl</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11700151">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">I find that pointlessly pedantic. By the same measure, languages that don't offer bignums don't offer integers. Even Lisps need to implement closures in one way or another, and you may be surprised to see how they actually do it.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11700151&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11700196" href="https://news.ycombinator.com/vote?for=11700196&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=moonshinefe">moonshinefe</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11700196">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">I think you miss the point, the OP was mentioning the property that in most languages, closures whose outer variables they are bringing into scope stay in scope (even if the outer function ends). In C++ they expire (is what I got from his comment, anyway).<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11700196&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11700604" href="https://news.ycombinator.com/vote?for=11700604&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=gpderetta">gpderetta</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11700604">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Closed-by-value variables (I.e. the default) in C++ don't expire. Referenced or pointed-to object might, but this is completely consistent with the rest of the language.<p>Remember that C++ is a by value language. Pointers are explicit, fist class and distinct from the pointed to object.</p><p>References are werid, though.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11700604&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11701154" href="https://news.ycombinator.com/vote?for=11701154&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=makecheck">makecheck</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11701154">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">You would have to combine copying and reference management, e.g. "[=]" and std::shared_ptr&lt;&gt;.  It definitely requires the programmer to pay more attention though, compared to other languages/constructs.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11701154&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11699985" href="https://news.ycombinator.com/vote?for=11699985&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=leni536">leni536</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699985">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">I'm not familiar with closures from other languages. What about capturing a shared_ptr by value?<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699985&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11701293" href="https://news.ycombinator.com/vote?for=11701293&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=thrownaway2424">thrownaway2424</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11701293">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">The thing to keep in mind is that copying a shared_ptr isn't cheap at all.  It's a class with a pointer and atomic reference count inside and the atomic inc/dec takes many cycles.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11701293&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11701893" href="https://news.ycombinator.com/vote?for=11701893&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=leni536">leni536</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11701893">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">How does this compare to the cost of a closure in other languages? Yeah atomic reference counts are not cheap, but basically that's the point of a shared_ptr.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11701893&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="160"></td><td class="votelinks" valign="top"><center><a id="up_11702856" href="https://news.ycombinator.com/vote?for=11702856&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=thrownaway2424">thrownaway2424</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11702856">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c5a">I'm not sure.  I don't program in C++ because I want it to have performance comparable to other languages.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11702856&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+            <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="0"></td><td class="votelinks" valign="top"><center><a id="up_11698268" href="https://news.ycombinator.com/vote?for=11698268&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=aurelian15">aurelian15</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698268">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Nice overview. Just a small correction: the smallest possible lambda is<p></p><pre><code>    []{}
+</code></pre>
+and not<p></p><pre><code>    [](){}
+</code></pre>
+as stated in the article. The parameter list is optional.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698268&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11699665" href="https://news.ycombinator.com/vote?for=11699665&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=hellofunk">hellofunk</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699665">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c5a">&gt;The parameter list is optional.<p>To avoid confusion, only an empty parameter list is optional. You can't omit the parameter list if you take args, unlike lambda shortcuts in languages like clojure which allow you to implicitly refer to arguments inside the body using a universal variable name, and therefore omit the parameter list for all lambdas. That possibility does not exist in c++.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699665&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+      <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="0"></td><td class="votelinks" valign="top"><center><a id="up_11698398" href="https://news.ycombinator.com/vote?for=11698398&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=hendzen">hendzen</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698398">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Another mildly obscure feature of lambdas is the ability to capture a variadic number of parameters.<p>Example (slightly contrived):</p><p></p><pre><code>  #include &lt;future&gt;
+  #include &lt;iostream&gt;
+
+  template&lt;typename... Args&gt;
+  void log(Args&amp;&amp;... args) {
+      (std::cout &lt;&lt;  ...  &lt;&lt; args) &lt;&lt; std::endl;
+  }
+
+  template&lt;typename... Args&gt;
+  std::future&lt;void&gt; log_async(Args&amp;&amp;... args) {
+    return std::async(std::launch::async, [args...] { log(args...); });
+  }
+
+  int main()
+  {
+      auto f = log_async(1, 2, 3);
+      f.wait();
+  }</code></pre><span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698398&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11698521" href="https://news.ycombinator.com/vote?for=11698521&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=groovy2shoes">groovy2shoes</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698521">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">For those of us still stuck on C++98 at work, would you mind explaining what's going on here?  In particular, I can't figure out why the ellipsis is so separated from `args` here:<p></p><pre><code>        (std::cout &lt;&lt; ... &lt;&lt; args) &lt;&lt; std::endl;
+</code></pre>
+That looks like some black magic to me.  The rest makes sense, I think.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698521&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11698529" href="https://news.ycombinator.com/vote?for=11698529&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=hendzen">hendzen</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698529">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00"><a href="http://en.cppreference.com/w/cpp/language/fold" rel="nofollow">http://en.cppreference.com/w/cpp/language/fold</a><span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698529&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11698589" href="https://news.ycombinator.com/vote?for=11698589&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=groovy2shoes">groovy2shoes</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698589">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Neat!  Thank you :)<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698589&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+      <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11701178" href="https://news.ycombinator.com/vote?for=11701178&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=makecheck">makecheck</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11701178">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Heh, great.  I used to put an ellipsis into a programming example to mean “fill in whatever you actually do here”, and now C++ went and made it <i>mean</i> something. :)<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11701178&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+      <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11700204" href="https://news.ycombinator.com/vote?for=11700204&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=moonshinefe">moonshinefe</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11700204">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Well, I feel like an old man telling kids to get off my lawn, but this syntax looks ridiculous. :/<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11700204&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11698438" href="https://news.ycombinator.com/vote?for=11698438&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=netheril96">netheril96</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698438">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Which standard version?<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698438&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11698446" href="https://news.ycombinator.com/vote?for=11698446&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=hendzen">hendzen</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698446">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">That snippet depends on fold expressions, which are in c++17. AFAIK, capturing a variadic parameter pack should work in C++11.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698446&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="0"></td><td class="votelinks" valign="top"><center><a id="up_11698258" href="https://news.ycombinator.com/vote?for=11698258&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=typon">typon</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698258">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Taking a concept such as a lambda function and making it look this ugly...this is why I hate C++. I wish I wasn't forced to program it every day.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698258&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11698273" href="https://news.ycombinator.com/vote?for=11698273&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=hendzen">hendzen</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698273">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">How is it ugly? The capture list is a necessary complexity in a language with manual memory management.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698273&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11698292" href="https://news.ycombinator.com/vote?for=11698292&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=steveklabnik">steveklabnik</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698292">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">It's a trade off more than a necessity. For example, Rust doesn't have explicit capture lists, and if you want explicit control, you make new bindings and capture those. You almost never need to do this in Rust, so it's optimized for that case; I haven't written many closures in C++, so I can't say as much about the frequency there.<p>To make this more concrete:</p><p></p><pre><code>    let s = String::from("s");
+    
+    let closure = || {
+        println!("s is: {}", s);
+    };
+    
+    closure();
+</code></pre>
+If you wanted to capture s in a different way:<p></p><pre><code>    let s = String::from("s");
+    
+    let s1 = &amp;s;
+    let closure = || {
+        println!("s1 is: {}", s1);
+    };
+    
+    closure();
+</code></pre>
+No capture list needed, same control.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698292&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11698308" href="https://news.ycombinator.com/vote?for=11698308&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=kibwen">kibwen</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698308">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Rust doesn't have explicit capture lists, but it does have the `move` modifier on closures which is like C++'s `[=]`.<p>Strictly speaking, Rust probably <i>could</i> have gotten away with having neither the `move` modifier nor capture clauses at all, but it would have had wide-ranging implications on the ergonomics and capabilty of closures.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698308&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11698317" href="https://news.ycombinator.com/vote?for=11698317&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=hendzen">hendzen</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698317">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">How would you do the equivalent of this in Rust?<p></p><pre><code>  auto on_heap = std::make_unique&lt;MyType&gt;(...);
+
+  function_that_accepts_lambda([obj = std::move(on_heap)]() {
+     obj-&gt;bar(...);
+  })</code></pre><span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698317&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="160"></td><td class="votelinks" valign="top"><center><a id="up_11698323" href="https://news.ycombinator.com/vote?for=11698323&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=steveklabnik">steveklabnik</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698323">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00"><p></p><pre><code>    let on_heap = Box::new(...);
+
+    function_that_accepts_lambda(move || {
+        on_heap.bar();
+    });
+</code></pre>
+This is sort of what kibwen was mentioning: move is a single annotation that overrides everything to capture by value rather than have it inferred.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698323&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="200"></td><td class="votelinks" valign="top"><center><a id="up_11698383" href="https://news.ycombinator.com/vote?for=11698383&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=hendzen">hendzen</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698383">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">What if you want to move some things, but copy others?<p>e.g.</p><p></p><pre><code>  auto shared = std::make_shared&lt;MySharedType&gt;(...);
+  auto unique = std::make_unique&lt;MyOwnedType&gt;(...);
+
+  function_that_accepts_lambda([shared, u = std::move(unique)] {
+      shared-&gt;foo(...); u-&gt;bar(...);
+  });
+
+  // Outer scope can still use shared.
+  shared-&gt;foo(....);</code></pre><span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698383&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="240"></td><td class="votelinks" valign="top"><center><a id="up_11698461" href="https://news.ycombinator.com/vote?for=11698461&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=steveklabnik">steveklabnik</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698461">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">I am 99% sure this is identical:<p></p><pre><code>    let on_heap = Box::new(...);
+    let shared = Arc::new(...);
+
+    let s = shared.clone();
+    function_that_accepts_lambda(move || {
+        on_heap.bar();
+        s.foo();
+    });
+</code></pre>
+We have to make the extra s binding.<p>Also, my sibling is correct that Copy types will just be copied, not moved.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698461&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="240"></td><td class="votelinks" valign="top"><center><a id="up_11698403" href="https://news.ycombinator.com/vote?for=11698403&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=vvanders">vvanders</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698403">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">If the type implements Copy they'll be implicitly copied when moved into the Rust closure(I think). Or you can declare a scope var and clone() manually.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698403&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+            <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11698297" href="https://news.ycombinator.com/vote?for=11698297&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=partisan">partisan</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698297">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">The syntax is not the prettiest, but it is legible once you understand what [](){} means.<p>In C#, there is no such thing, but there is a part of me that wishes we had such a thing. I like the ability explicitly state what variables are being captured.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698297&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11699948" href="https://news.ycombinator.com/vote?for=11699948&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=masklinn">masklinn</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699948">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">&gt; I like the ability explicitly state what variables are being captured.<p>Why? You state what variables are being captured by just using them in the lambda body.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699948&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="160"></td><td class="votelinks" valign="top"><center><a id="up_11700131" href="https://news.ycombinator.com/vote?for=11700131&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=jlebar">jlebar</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11700131">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">&gt; You state what variables are being captured by just using them in the lambda body.<p>Wow, have you never spent a week debugging a JavaScript memory leak?<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11700131&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="200"></td><td class="votelinks" valign="top"><center><a id="up_11700602" href="https://news.ycombinator.com/vote?for=11700602&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=masklinn">masklinn</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11700602">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">No. What I have done on the other hand was add unused lexical variables to an anonymous function so the runtime wouldn't optimise them out of the closure and I could still see them in the debugger.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11700602&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11698812" href="https://news.ycombinator.com/vote?for=11698812&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=rtpg">rtpg</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698812">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">I'm not 100% sure, but C#'s compiler should automatically capture what you need (and leave out the rest).<p>I think the primary need for manual declaration is because in C++ you need to differentiate between pass by copy semantics and pass by reference semantics.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698812&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="160"></td><td class="votelinks" valign="top"><center><a id="up_11699981" href="https://news.ycombinator.com/vote?for=11699981&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=masklinn">masklinn</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699981">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">&gt; I think the primary need for manual declaration is because in C++ you need to differentiate between pass by copy semantics and pass by reference semantics.<p>That's not actually a <i>need</i>, C++ includes [=] and [&amp;] (capture everything by value or by reference). You can get a mix by creating references outside the body then capturing the environment by value (capturing the references by value and thus getting references).</p><p>On the one hand it has a bit more syntactic overhead (you have to take and declare a bunch of references before creating the closure), on the other hand there's less irregularity to the language, and bindings mean the same thing in and out of the closure.</p><p>FWIW that's what Rust does[0], though it may help that Rust's blocks are "statement expressions", some constructs would probably be unwieldy without that.</p><p>[0] the default corresponds to C++'s [&amp;] (capture by ref), and a "move closure" switches to [=] instead<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699981&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="160"></td><td class="votelinks" valign="top"><center><a id="up_11698902" href="https://news.ycombinator.com/vote?for=11698902&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=noblethrasher">noblethrasher</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698902">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Yep, in Microsoft’s C# compiler, only the closed over local variables of a function are captured (which, in C#’s case, means generating a class with fields corresponding to each closed over local, and then replacing those locals with references to their respective fields of an instance of that class).<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698902&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+      <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11700625" href="https://news.ycombinator.com/vote?for=11700625&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=spdionis">spdionis</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11700625">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">PHP also doesn't capture variables by default (except $this) and i like it that way.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11700625&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+      <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11698539" href="https://news.ycombinator.com/vote?for=11698539&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=vanderZwan">vanderZwan</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698539">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">The only thing I find somewhat frustrating about the syntax is that the notation messes with my existing expectations. Up until now, in C-like languages a [] was just for collections and indexing into them, in the code I used at least.<p>I mean I'm not really complaining; I don't see better syntax to fit short anonymous functions into the existing syntax, without defeating the whole purpose of it either.</p><p>I suspect it's just a matter of getting used to this extra meaning for angular brackets.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698539&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11698298" href="https://news.ycombinator.com/vote?for=11698298&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=kibwen">kibwen</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698298">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Very often the capture list is empty, it could have been elided (as the parameter list can be) if the syntax could have been made unambiguous.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698298&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11698314" href="https://news.ycombinator.com/vote?for=11698314&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=yongjik">yongjik</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698314">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Well, you need <i>something</i> to indicate the beginning of a lambda.  So you can think of "[]" as serving that role, instead of "lambda" in Python or "\" in Haskell.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698314&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="160"></td><td class="votelinks" valign="top"><center><a id="up_11698423" href="https://news.ycombinator.com/vote?for=11698423&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=rubber_duck">rubber_duck</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698423">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">You can use C# fat arrow syntax, it even allows removing the braces for single expression lambdas which is the most common from anyway.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698423&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="200"></td><td class="votelinks" valign="top"><center><a id="up_11698682" href="https://news.ycombinator.com/vote?for=11698682&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=vanderZwan">vanderZwan</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698682">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">&gt; removing the braces<p>If I have learned anything over the years, it's that removing the braces <i>anywhere</i> is the introduction of a bug during a rewrite waiting to happen.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698682&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="240"></td><td class="votelinks" valign="top"><center><a id="up_11702602" href="https://news.ycombinator.com/vote?for=11702602&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=rubber_duck">rubber_duck</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11702602">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">It really works without any issues in C# from my experience.<p>Statemends like :</p><p></p><pre><code>    list.Where(e =&gt; e.Property == ExpectedValue).Select(e =&gt; e.Property)
+</code></pre>
+is much cleaner than something like :<p></p><pre><code>    list.Where([](auto e) { return e.Property == ExpectedValue; }).Select([](auto e) { return e.Property; });
+</code></pre>
+Braces and capture declaration adds 0 value here and it's ~80% of the use cases I see for lambdas.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11702602&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+              <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11700076" href="https://news.ycombinator.com/vote?for=11700076&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=bboreham">bboreham</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11700076">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">For historical interest, compare an early proposal: <a href="http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2006/n1958.pdf" rel="nofollow">http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2006/n195...</a><span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11700076&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11698639" href="https://news.ycombinator.com/vote?for=11698639&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=anon946">anon946</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698639">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">What would you propose as the syntax?<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698639&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11698659" href="https://news.ycombinator.com/vote?for=11698659&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=user982">user982</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698659">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Apple extended C with block closures years ago.<p></p><pre><code>  int b = 0;
+
+  ^(int a) {
+    return a*b;
+  }
+</code></pre>
+The declaration for lambda variables is almost identical to function pointers, just with a ^ instead of a *, so there's nothing to learn (or unlearn, like C++ forces you to). The ^ looks like a lambda, and historically the lambda of lambda calculus actually was a caret accent over the variable. The argument list can be elided.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698659&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11698777" href="https://news.ycombinator.com/vote?for=11698777&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=anon946">anon946</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698777">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Looking here (<a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html" rel="nofollow">https://developer.apple.com/library/ios/documentation/Cocoa/...</a>) for the details, I think this is going to largely be a matter of opinion. I prefer the C++ syntax, especially when it comes to capture by reference, for which the Apple syntax seems to require the __block storage type modifier.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698777&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11699892" href="https://news.ycombinator.com/vote?for=11699892&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=CJefferson">CJefferson</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699892">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">And this is why C++ couldn't use this notation, as they didn't want to break compability with this extension of Apple's.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699892&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11704827" href="https://news.ycombinator.com/vote?for=11704827&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=fanf2">fanf2</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11704827">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Caret as the embryonic form of lambda is apparently a myth propagated by Barendregt, and lambda is just a random Greek letter to go with alpha, beta, and eta.<p><a href="http://researchblogs.cs.bham.ac.uk/thelablunch/2016/05/why-is-lambda-calculus-named-after-that-specific-greek-letter-do-not-believe-the-rumours/" rel="nofollow">http://researchblogs.cs.bham.ac.uk/thelablunch/2016/05/why-i...</a><span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11704827&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+      <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11699846" href="https://news.ycombinator.com/vote?for=11699846&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=optforfon">optforfon</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699846">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">I honestly would have much preferred they had a keyword so that it kinda matched the rest of the language. It feels a bit tacked on and hard to parse.<p>Something like:</p><p>lambda(<i>arguments</i>):<i>capture list</i> {...}</p><p>Just seems way more clear. Looks more like a function or a class (and a lambda is sort of an in-between kind of thing anyway)<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699846&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+      <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11699094" href="https://news.ycombinator.com/vote?for=11699094&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=aswanson">aswanson</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699094">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c9c">Agreed. From the template library on down, it seems like the C++ community is hellbent on making the syntax for what should be clean, common operations seem like arcane Sanskrit. I dont know what their problem is.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699094&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11700016" href="https://news.ycombinator.com/vote?for=11700016&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=bboreham">bboreham</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11700016">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Often, the problem is that the clean simple syntax you might want to use already means something else in C++, and the bias against breaking existing code is very strong.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11700016&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11699999" href="https://news.ycombinator.com/vote?for=11699999&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=vanderZwan">vanderZwan</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699999">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Refusing to break backwards compatibility is their problem. I respect them for that; if you do want to break it make another language that plays nicely with C++ instead.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699999&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="0"></td><td class="votelinks" valign="top"><center><a id="up_11697991" href="https://news.ycombinator.com/vote?for=11697991&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=jaytaylor">jaytaylor</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11697991">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">This is the first time I've looked at C++ lambdas.  They appear magnificently powerful and also like another pile of easy ways to get completely screwed up.<p>Ah well, that's just the C++ way I suppose.</p><p>Makes me glad for Rust, that's for sure!<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11697991&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11698212" href="https://news.ycombinator.com/vote?for=11698212&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=jguegant">jguegant</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698212">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Here take your rustwin point!<p>I really like the explicit capture of C++'s lambdas more than the implicit one in most other languages (C#, Java, Python...) where you easily ends-up with a closure not referencing the expected variable. See: <a href="https://blogs.msdn.microsoft.com/ericlippert/2009/11/12/closing-over-the-loop-variable-considered-harmful/" rel="nofollow">https://blogs.msdn.microsoft.com/ericlippert/2009/11/12/clos...</a><span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698212&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11698456" href="https://news.ycombinator.com/vote?for=11698456&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=netheril96">netheril96</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698456">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">I was burned by the same thing in Javascript.<p>"Explicit is better than implicit". Therefore, I agree with you that explicit closure list, with the ability to copy <i>and</i> reference captured variables, is actually what C++ does right, not wrong.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698456&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11698567" href="https://news.ycombinator.com/vote?for=11698567&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=groovy2shoes">groovy2shoes</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698567">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">The explicit capture list is only necessary in C++ because memory ownership and lifetimes are managed by the programmer in C++.  Compare that to a garbage-collected language like Scheme or C#:  when the implementation can figure out where memory needs to be freed and ensures you can't use-after-free, it frees the programmer from thinking about ownership (but not necessarily lifetimes:  you can still wind up with memory leaks in GC'd languages if you're not careful to let go of references you no longer need).  As mentioned elsewhere in this thread, Rust also offers the same level of explicit control without capture lists (though I'm on the fence about which way I prefer).<p>My point is that in languages with automatic memory management, explicit capture lists don't make much sense because the programmer is not tasked with managing memory and can safely capture references all the time.  There's no need to ask oneself, "Do I own this pointed-to memory?  Do I need to worry about it being freed before this closure?  Should I make a copy?", etc.  This is because, in a sense, the garbage collector itself owns the memory, but checks to make sure nothing else can use it anymore before it frees it.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698567&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="160"></td><td class="votelinks" valign="top"><center><a id="up_11698957" href="https://news.ycombinator.com/vote?for=11698957&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=netheril96">netheril96</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698957">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">You only talk about the memory management part and I guess most language designers think the same. What you and they fail to account for is that explicit capture list can reduce logical bugs.<p>For one, if I were allowed to explicitly capture the counter variable by copy, the surprising behavior mentioned above would never occur. In languages with mutability, the ability to make some part immutable is a virtue.</p><p>For two, in languages without explicit variable declaration, which variable is defined where quickly becomes murky when you have implicit capture. I have so many frustrations where the inner `i` variable clashes with the outer `i` in Python. Yes, I could just use a different name, but naming is hard, and with a new scope I should be able to reuse the name. That is almost the whole point of opening a new scope!</p><p>For three, in Javascript where closures are everywhere due to the amount of callbacks, the reference graph is just impossible to analyze. A closure may closes over another closure which closes over an object with a reference to the original closure. An explicit capture list makes the programmer think, and ease the job of anyone who tries to spot memory leaks from the source code. (But I guess that is just not the Javascript style, as they are so fond of never letting the programmers know about their mistakes. At least in C++ we trade that for speed. I don't know what Javascript trades that for.)<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698957&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="200"></td><td class="votelinks" valign="top"><center><a id="up_11699131" href="https://news.ycombinator.com/vote?for=11699131&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=groovy2shoes">groovy2shoes</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699131">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">&gt; You only talk about the memory management part and I guess most language designers think the same. What you and they fail to account for is that explicit capture list can reduce logical bugs.<p>I suppose, as a language designer, I tend to think that the more I do automatically, the more I ease the programmer's burden.  However, as you point out, that's not always true.  That said, my point wasn't (isn't?) that explicit capture is only a good idea sans automatic memory management (it may well be -- you've certainly given me some food for thought here), but rather that it's only <i>necessary</i> in that case, and I think that point still stands.</p><p>&gt; For one, if I were allowed to explicitly capture the counter variable by copy, the surprising behavior mentioned above would never occur.</p><p>That's a failure of language design and I don't think the proper solution is to force explicit capture on closure creation (also note that you need <i>more</i> than just explicit capture because to prevent such an error, you need the ability to specify that the "captured" variable ought to be copied rather than actually captured).  I think the proper solution to that problem is the one that the C# team went with:  limit the scope of iteration control variables to the iterated block.  This is typically what programmers used to block-structured languages would expect, anyway, unless the variable were clearly declared outside the scope of the iteration.</p><p>&gt; In languages with mutability, the ability to make some part immutable is a virtue.</p><p>That's an orthogonal issue, and can be done in many other (and more general) ways.</p><p>&gt; For two, in languages without explicit variable declaration, which variable is defined where quickly becomes murky when you have implicit capture. I have so many frustrations where the inner `i` variable clashes with the outer `i` in Python. Yes, I could just use a different name, but naming is hard, and with a new scope I should be able to reuse the name. That is almost the whole point of opening a new scope!</p><p>You're right:  that <i>is</i> the point of opening a new scope!  That sounds like a flaw in Python's design and could be remedied by making variable definition syntax different from assignment syntax.  Consider Lua with its `local` syntax, C and kin with their type annotations, the Lisps with their completely separate forms for variable definition and assignment, and so on.  There's also the Tcl strategy of "it's a definition unless it was imported into this scope with `global` or `upval`;  otherwise it's an assignment".</p><p>&gt; For three, in Javascript where closures are everywhere due to the amount of callbacks, the reference graph is just impossible to analyze. A closure may closes over another closure which closes over an object with a reference to the original closure. An explicit capture list makes the programmer think, and ease the job of anyone who tries to spot memory leaks from the source code. (But I guess that is just not the Javascript style, as they are so fond of never letting the programmers know about their mistakes. At least in C++ we trade that for speed. I don't know what Javascript trades that for.)</p><p>JavaScript is a shitty language to begin with, and fixing it wouldn't be as simple as fixing C# or Python...  You make a good point here, but I still think that better tooling for data-flow analysis is a more attractive choice than a compulsory explicit capture list.  On the flip side, an optional capture list could be a good compromise.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699131&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="240"></td><td class="votelinks" valign="top"><center><a id="up_11701682" href="https://news.ycombinator.com/vote?for=11701682&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=netheril96">netheril96</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11701682">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">&gt; On the flip side, an optional capture list could be a good compromise.<p>That is exactly what I am thinking about. Or, rather, what C++ has done right: You can let the compiler infer what to capture, like [=] or [&amp;], or you can explicitly list the variables to capture.</p><p>&gt; you need the ability to specify that the "captured" variable ought to be copied rather than actually captured</p><p>Yes, that is what I am talking about, and again, what C++ has done right. Most other languages give you no choice whether the capture is by copy or by reference.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11701682&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="280"></td><td class="votelinks" valign="top"><center><a id="up_11702499" href="https://news.ycombinator.com/vote?for=11702499&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=groovy2shoes">groovy2shoes</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11702499">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Ah, then I see we're in agreement :)<p>&gt; Most other languages give you no choice whether the capture is by copy or by reference.</p><p>That's because in languages that have traditionally had GC (i.e., languages in the Lisp tradition or in the ML tradition), the distinction didn't matter.  Those languages did not "suffer" from a value/reference dichotomy (e.g., in Scheme, you're literally capturing the <i>variable</i> rather than a copy or reference to the value stored within -- under the hood, that variable might always store a reference for convenience, or it might store a value for performance, but it doesn't matter as it's strictly an implementation detail).</p><p>I'm glad that the C++ committee didn't just dump closures into the language without considering this sort of interaction with other aspects of the language.  Without the capture lists, closures in C++ have the potential to <i>really</i> suck.  That the explicit capture lists even exist is evidence that they've carefully considered how the new features are going to play with existing characteristics of C++.  Kudos to them for that!<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11702499&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+          <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="160"></td><td class="votelinks" valign="top"><center><a id="up_11698657" href="https://news.ycombinator.com/vote?for=11698657&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=yokohummer7">yokohummer7</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698657">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">That is <i>almost</i> true, but there's one exception in those GC'ed languages due to the dichotomy of value types and reference types. The confusing behavior on capturing the iteration variable is one example.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698657&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="200"></td><td class="votelinks" valign="top"><center><a id="up_11699056" href="https://news.ycombinator.com/vote?for=11699056&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=groovy2shoes">groovy2shoes</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699056">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Ah, yes!  You're correct.  I spend most of my GC'd time in languages that don't have such a value vs. reference dichotomy, and I'd completely forgotten about it.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699056&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+      <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="160"></td><td class="votelinks" valign="top"><center><a id="up_11698793" href="https://news.ycombinator.com/vote?for=11698793&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=CuriousSkeptic">CuriousSkeptic</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698793">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">It was enough of a problem in Scala to warrant this though <a href="http://docs.scala-lang.org/sips/pending/spores.html" rel="nofollow">http://docs.scala-lang.org/sips/pending/spores.html</a><span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698793&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="200"></td><td class="votelinks" valign="top"><center><a id="up_11699252" href="https://news.ycombinator.com/vote?for=11699252&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=groovy2shoes">groovy2shoes</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699252">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Spores seem like an interesting solution.  The language designer in me has a distaste for it, though :p<p>For case 1 (capture of mutable references), an explicit copy operator might be better (as in, "I want whatever value this variable is bound to, rather than the storage location") (or even vice versa, where value is the default and there's an operator for location).  In a way, spores accomplish this by forcing you to do the copy manually -- but then programmers have to always remember to use the extra syntax, and they need to do it for <i>every</i> captured variable.  I'm not quite happy with even this solution, and it may be possible to come up with something even better.  Concurrency is always a can o' worms :)</p><p>For case 2 (capture of implicit "this"), I'd argue that if (a) the compiler is smart enough to know that "helper" is implicitly "this.helper" and (b) that "this" will be captured by the closure, then (c) the compiler is also smart enough to create an implicit binding for "helper" and capture that instead.  This would lead to less-surprising behavior, and intentional capture of "this" could still be done via <i>explicit</i> access.  Another option is to, rather than treating "this" as being in an enclosing scope, treat it as though it were an implicit argument to the method (albeit a covariant one).  This avoids capture altogether.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699252&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="240"></td><td class="votelinks" valign="top"><center><a id="up_11700186" href="https://news.ycombinator.com/vote?for=11700186&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=CuriousSkeptic">CuriousSkeptic</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11700186">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Agree on the copy operator, not only for spores, have wanted it more than one time in other languages too.<p>Not sure how the this binding should work though. If calling a method you need to a) dispatch on the runtime type and b) provide the instance to the method when called.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11700186&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="280"></td><td class="votelinks" valign="top"><center><a id="up_11701571" href="https://news.ycombinator.com/vote?for=11701571&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=groovy2shoes">groovy2shoes</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11701571">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">The compiler would essentially emit the same code that it would in the case of the spore, but it would be automatic.  You still get to dispatch on the runtime type, because the binding is created after the method invocation, but before the scope of the lambda to be closed.<p>I think when a programmer writes "foo.combobulate()", the <i>vast</i> majority of the time, the intend to capture "foo".  If they didn't and were being clever, I don't think it's unreasonable for the compiler to expect them to be explicit and write "this.foo.combobulate()" instead.  In the former case, the compiler creates the implicit binding to capture, in the latter it does nothing implicit and just closes over "this".</p><p>I'm certain that the compiler has enough information to do this, and that it's in accordance with the principle of least surprise ;)<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11701571&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+                <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11698166" href="https://news.ycombinator.com/vote?for=11698166&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=frozenport">frozenport</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698166">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">What do you mean? Only time you can mess up a lambda is if a pointer that you're using gets changed. And this kind of dupicate ownership is a general problem with pointers.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698166&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11698216" href="https://news.ycombinator.com/vote?for=11698216&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=rileymat2">rileymat2</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698216">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">I think you have issues with reference capture groups and object lifetimes. Or alternatively value capture groups and object slicing.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698216&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11698172" href="https://news.ycombinator.com/vote?for=11698172&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=vvanders">vvanders</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698172">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Yeah, I'm not following as well. I've used Lambdas in C++ pretty heavily and they're really well done and thought out.<p>FWIW nothing about them is much different from Rust's approach(anon struct + fn) it's all the ownership guarantees which give Rust it's safety.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698172&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="0"></td><td class="votelinks" valign="top"><center><a id="up_11698220" href="https://news.ycombinator.com/vote?for=11698220&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=oolongCat">oolongCat</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698220">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">A question people who use C++ regularly, is C++ becoming easier to read and code?<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698220&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11698262" href="https://news.ycombinator.com/vote?for=11698262&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=hendzen">hendzen</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698262">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Yes, I work in a template heavy C++ codebase and the (already quite good) situation is getting better with each language standard.<p>C++11 was really a turning point for the language - features like 'auto', lambdas, and variadic templates have enabled succinct generic code that is both readable and highly performant.</p><p>Increased competition between the gcc and clang teams has also been a major improvement - both have implemented many C++17 features very quickly, and error messages have greatly improved in both compilers. This is especially welcome when developing templates. Clang's licensing has made it possible to integrate libclang in to vim/emacs (ycmd, irony-mode, rtags, etc) for very accurate completion/syntax checking, etc. Clang-format has also seen quite a bit of adoption, bringing the benefits of standardized formatting to large projects.</p><p>The sanitizers have also been a huge boon - getting automatic memory leak, buffer/heap overflow, use after free, uninitialized memory, integer overflow, etc is now as easy as compiling with '-fsanitize=[address|undefined|memory|etc]'.</p><p>Overall, C++(11+) is a very productive language if you have stringent performance and latency requirements and you need powerful abstraction facilities.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698262&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11698428" href="https://news.ycombinator.com/vote?for=11698428&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=MereInterest">MereInterest</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698428">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Absolutely, and without a doubt.<p>* `unique_ptr` as a local variable.  Before C++11, I needed to either (a) define a holder class for anything that should be deleted at the end of a scope or (b) delete it manually and pray that there isn't an exception thrown.  Now, I can just declare it, and trust the destructor to clean up after me.</p><p>* `unique_ptr` as a return value.  Previously, if a function returns a pointer, there was no way on knowing who was responsible for calling `delete`.  Now, I can clearly indicate intent.  `unique_ptr` means that the caller now owns the object, while C-style pointer or reference means that the callee still owns the object.</p><p>* With lambda statements, I can call `std::sort` in-place, with the sorting criteria immediately visible.  Previously, I would need to define a function elsewhere in the code, obscuring what may be a simple `a.param &lt; b.param`.</p><p>* With range-based for loops, I can loop over any container without needing the very long `std::vector&lt;MyClassName&gt;::iterator` declaration.</p><p>* `= delete` to remove an automatically generated method, such as copy constructors.  Previously, you would declare that method to be private, then never make an implementation of it.  `= delete` shows your intent much more clearly.</p><p>* `static_assert`, so that you can bail out of templates earlier, and with reasonable error messages.</p><p>* Variadic templates.  These aren't needed in 99% of cases, but they are incredibly useful when designing libraries.</p><p>* `std::thread`  No more messing around with different thread libraries depending on which platform you are on.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698428&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11700564" href="https://news.ycombinator.com/vote?for=11700564&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=jwilk">jwilk</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11700564">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Re unique_ptr as a local variable: in C++98 you can use auto_ptr.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11700564&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="120"></td><td class="votelinks" valign="top"><center><a id="up_11700872" href="https://news.ycombinator.com/vote?for=11700872&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=MereInterest">MereInterest</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11700872">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">True, I didn't mention it, because it has its own issues.  The move-on-copy semantics of auto_ptr makes it incompatible with std containers, and makes for some rather unexpected behavior.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11700872&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11698245" href="https://news.ycombinator.com/vote?for=11698245&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=gregstula">gregstula</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698245">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">It does get easier to read and code over time. As an aside, the C++ in this post is pretty much as elegant as it gets.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698245&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11698390" href="https://news.ycombinator.com/vote?for=11698390&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=int_19h">int_19h</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698390">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Do you mean, becoming easier with new language features that get added?<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698390&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11698559" href="https://news.ycombinator.com/vote?for=11698559&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=vanderZwan">vanderZwan</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698559">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Contrary to popular belief, new features <i>can</i> make a language more elegant and simple, if they make clunky <i>old</i> features obsolete with a simpler alternative.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698559&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="0"></td><td class="votelinks" valign="top"><center><a id="up_11702297" href="https://news.ycombinator.com/vote?for=11702297&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=makecheck">makecheck</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11702297">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c5a">One aspect of C++ lambdas that I really don’t like is the visual confusion caused by allowing "return", since at a glance this seems to affect the <i>parent</i> function.  I have already found myself adding comments inside lambdas like "return x; // return-from-lambda" to make sure that I see what is really happening.  Python by contrast does two things better: Python makes it really hard to write long expressions as lambdas, and no "return" is used in a Python "lambda".  Of course, Python also allows "def" inside a "def" as a convenient way to write longer one-time functions.<p>I also found that while I could use C++ lambdas for things like iteration, e.g. "object-&gt;forEachThing([](Thing const&amp; t, bool&amp; stop){ ... })", this makes the keyword problem worse.  In this type of call, if I want to implement something that is <i>logically</i> like a "break" or "continue" of the loop, it has to use the "return" keyword (from the lambda only) with special conditions attached such as a "bool" variable to request the break.  And that is confusing to read, even though conceptually it is similar to the Objective-C NSArray "enumerateObjectsUsingBlock:" that takes a similar approach (in that the block takes a "stop" argument).<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11702297&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="0"></td><td class="votelinks" valign="top"><center><a id="up_11699582" href="https://news.ycombinator.com/vote?for=11699582&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=Kristine1975">Kristine1975</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699582">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Clang's C++1z support: <a href="http://clang.llvm.org/cxx_status.html" rel="nofollow">http://clang.llvm.org/cxx_status.html</a> (scroll down a bit)<p>And gcc's: <a href="https://gcc.gnu.org/projects/cxx-status.html#cxx1z" rel="nofollow">https://gcc.gnu.org/projects/cxx-status.html#cxx1z</a></p><p>Unfortunately neither supports constexpr lambdas at the moment.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699582&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="0"></td><td class="votelinks" valign="top"><center><a id="up_11698753" href="https://news.ycombinator.com/vote?for=11698753&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=forrestthewoods">forrestthewoods</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698753">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Not a bad article. I wish the first example wasn't so complicated. C++ lambda syntax is pretty gross. The initial breakdown is great. But why use a std::vector and std::transform in the first real example? Stick to integer addition. Keep things simple.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698753&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="0"></td><td class="votelinks" valign="top"><center><a id="up_11699598" href="https://news.ycombinator.com/vote?for=11699598&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=vmorgulis">vmorgulis</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699598">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">There is another interesting feature in C++17 for lambdas:<p>Possibility to cast a lambda to a function pointer.</p><p>It will become possible to store a lambda as a struct/member that could bind to "this" (like in Javascript).<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699598&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11699663" href="https://news.ycombinator.com/vote?for=11699663&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=hellofunk">hellofunk</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699663">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">I assume this is only for stateless lambdas, that have not captured anything? Because otherwise a function pointer would not be enough, right?<p>Currently, any stateless lambda can decompose into a function pointer and be passed to any function that expects a function pointer, right?</p><p>Are you saying that ++17 has augmented this, and if so can you provide more details or a reference (or an example) as I'm quite curious to know more.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699663&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="80"></td><td class="votelinks" valign="top"><center><a id="up_11700635" href="https://news.ycombinator.com/vote?for=11700635&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=vmorgulis">vmorgulis</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11700635">6 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00"><a href="https://isocpp.org/files/papers/p0018r3.html" rel="nofollow">https://isocpp.org/files/papers/p0018r3.html</a><p>It's the best reference I found. The paper only talks of capturing "*this" by value (as in the original post of the topic).</p><p>I think I read that in a draft about coroutines. The idea was to capture "this" by reference and convert the lambda to a function pointer to make it movable.</p><p>It would useful for delegates or signals too.<span>
+              </span></p><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11700635&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="0"></td><td class="votelinks" valign="top"><center><a id="up_11698995" href="https://news.ycombinator.com/vote?for=11698995&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=meshko">meshko</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11698995">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Nice.  I am a bit confused -- before c++17 it is impossible to capture this by copy; is it possible to capture other objects by copy?  seems like it is?<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11698995&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+        <tr class="athing"><td><table border="0">  <tbody><tr><td class="ind"><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="1" width="40"></td><td class="votelinks" valign="top"><center><a id="up_11699574" href="https://news.ycombinator.com/vote?for=11699574&amp;dir=up&amp;goto=item%3Fid%3D11697951"><div class="votearrow" title="upvote"></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="https://news.ycombinator.com/user?id=Kristine1975">Kristine1975</a> <span class="age"><a href="https://news.ycombinator.com/item?id=11699574">7 days ago</a></span> <span class="par"></span><span class="deadmark"></span>          <span class="storyon"></span>
+                  </span></div><br><span class="comment">
+                  <span class="c00">Yes, it is. Just write:<p></p><pre><code>  [a](...){ ... }
+</code></pre>
+and the variable "a" will be captured by copy.<span>
+              </span><div class="reply">        <p><font size="1">
+                      <u><a href="https://news.ycombinator.com/reply?id=11699574&amp;goto=item%3Fid%3D11697951">reply</a></u>
+                  </font>
+      </p></div></span></span></td></tr>
+      </tbody></table></td></tr>
+    </tbody></table><br><br>
+</td></tr>
+<tr><td><img src="Lambda%20expression%20comparison%20between%20C++11,%20C++14%20and%20C++17%20%7C%20Hacker%20News_files/s.gif" height="10" width="0"><table cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td bgcolor="#ff6600"></td></tr></tbody></table><br><center><span class="yclinks"><a href="https://news.ycombinator.com/newsguidelines.html">Guidelines</a>
+        | <a href="https://news.ycombinator.com/newsfaq.html">FAQ</a>
+        | <a href="mailto:hn@ycombinator.com">Support</a>
+        | <a href="https://github.com/HackerNews/API">API</a>
+        | <a href="https://news.ycombinator.com/security.html">Security</a>
+        | <a href="https://news.ycombinator.com/lists">Lists</a>
+        | <a href="https://news.ycombinator.com/bookmarklet.html">Bookmarklet</a>
+        | <a href="https://news.ycombinator.com/dmca.html">DMCA</a>
+        | <a href="http://www.ycombinator.com/apply/">Apply to YC</a>
+        | <a href="mailto:hn@ycombinator.com">Contact</a></span><br><br><form method="get" action="https://hn.algolia.com/">Search:
+          <input name="q" size="17" autocorrect="off" spellcheck="false" autocapitalize="off" autocomplete="false" type="text"></form>
+            </center></td></tr>      </tbody></table></center>
+</body></html>

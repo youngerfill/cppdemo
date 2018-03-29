@@ -1,0 +1,2 @@
+DEFAULT_MODULE_TYPE := staticlib
+#SHOW_INFO := 

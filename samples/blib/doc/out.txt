@@ -1,0 +1,141 @@
+D:/Bert/Projects/blib/include/error.hpp:1: Warning: file error.hpp already documented. Skipping documentation.
+D:/Bert/Projects/blib/include/socket.hpp:77: Warning: Compound blib::SocketBase is not documented.
+D:/Bert/Projects/blib/include/tree_msvc.hpp:189: Warning: Compound tree::pre_order_iterator is not documented.
+D:/Bert/Projects/blib/include/tree.hpp:1356: Warning: Compound tree::pre_order_iterator is not documented.
+D:/Bert/Projects/blib/include/socket.hpp:112: Warning: Compound blib::SocketServer is not documented.
+D:/Bert/Projects/blib/include/tree.hpp:1541: Warning: Compound tree::iterator_base_less is not documented.
+D:/Bert/Projects/blib/include/tree_msvc.hpp:70: Warning: Compound tree is not documented.
+D:/Bert/Projects/blib/include/tree.hpp:1308: Warning: Compound tree is not documented.
+D:/Bert/Projects/blib/include/tree_msvc.hpp:284: Warning: Compound tree::post_order_iterator is not documented.
+D:/Bert/Projects/blib/include/tree.hpp:1373: Warning: Compound tree::post_order_iterator is not documented.
+D:/Bert/Projects/blib/include/tree_msvc.hpp:388: Warning: Compound tree::sibling_iterator is not documented.
+D:/Bert/Projects/blib/include/tree.hpp:1417: Warning: Compound tree::sibling_iterator is not documented.
+D:/Bert/Projects/blib/include/tree.hpp:1394: Warning: Compound tree::fixed_depth_iterator is not documented.
+D:/Bert/Projects/blib/include/tree_msvc.hpp:62: Warning: Compound tree_node_ is not documented.
+D:/Bert/Projects/blib/include/tree.hpp:1299: Warning: Compound tree_node_ is not documented.
+D:/Bert/Projects/blib/include/error.hpp:23: Warning: Compound blib::ErrorStack is not documented.
+D:/Bert/Projects/blib/include/app.hpp:23: Warning: Compound blib::App is not documented.
+D:/Bert/Projects/blib/include/object.hpp:21: Warning: Compound blib::Object is not documented.
+D:/Bert/Projects/blib/include/tree_msvc.hpp:116: Warning: Compound tree::iterator_base is not documented.
+D:/Bert/Projects/blib/include/tree.hpp:1329: Warning: Compound tree::iterator_base is not documented.
+D:/Bert/Projects/blib/include/socket.hpp:121: Warning: Compound blib::SocketClient is not documented.
+D:/Bert/Projects/blib/include/app.hpp:48: Warning: Member BLIB_MAIN(MYAPP) of file app.hpp is not documented.
+D:/Bert/Projects/blib/include/app.hpp:4: Warning: Found unknown command `\copyright'
+D:/Bert/Projects/blib/include/app.hpp:5: Warning: Found unknown command `\license'
+D:/Bert/Projects/blib/include/definitions.hpp:34: Warning: Member BLIB_GLOBALINIT_BEGIN(blockID) of file definitions.hpp is not documented.
+D:/Bert/Projects/blib/include/definitions.hpp:35: Warning: Member BLIB_GLOBALINIT_END(blockID) of file definitions.hpp is not documented.
+D:/Bert/Projects/blib/include/definitions.hpp:37: Warning: Member BLIB_GLOBALEXIT_BEGIN(blockID) of file definitions.hpp is not documented.
+D:/Bert/Projects/blib/include/definitions.hpp:38: Warning: Member BLIB_GLOBALEXIT_END(blockID) of file definitions.hpp is not documented.
+D:/Bert/Projects/blib/include/definitions.hpp:4: Warning: Found unknown command `\copyright'
+D:/Bert/Projects/blib/include/definitions.hpp:5: Warning: Found unknown command `\license'
+D:/Bert/Projects/blib/source/error.cpp:4: Warning: Found unknown command `\copyright'
+D:/Bert/Projects/blib/source/error.cpp:5: Warning: Found unknown command `\license'
+D:/Bert/Projects/blib/source/FileTools.cpp:28: Warning: Member _MAX_PATH of file FileTools.cpp is not documented.
+D:/Bert/Projects/blib/source/FileTools.cpp:466: Warning: Member COPYFILE_BUFSIZE of file FileTools.cpp is not documented.
+D:/Bert/Projects/blib/source/FileTools.cpp:4: Warning: Found unknown command `\copyright'
+D:/Bert/Projects/blib/source/FileTools.cpp:5: Warning: Found unknown command `\license'
+D:/Bert/Projects/blib/include/make.hpp:4: Warning: Found unknown command `\copyright'
+D:/Bert/Projects/blib/include/make.hpp:5: Warning: Found unknown command `\license'
+D:/Bert/Projects/blib/include/object.hpp:4: Warning: Found unknown command `\copyright'
+D:/Bert/Projects/blib/include/object.hpp:5: Warning: Found unknown command `\license'
+D:/Bert/Projects/blib/source/socket.cpp:25: Warning: Member SOCKET_ERROR of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:26: Warning: Member INVALID_SOCKET of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:38: Warning: Member BLIB_ULONGSIZE of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:44: Warning: Member DefineError(SOCKET_ERR_NO_ERROR,"socket.cpp: No error occurred. (SOCKET_ERR_NO_ERROR)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:45: Warning: Member DefineError(SOCKET_ERR_WINSOCK,"socket.cpp: A WinSock error occurred. (SOCKET_ERR_WINSOCK)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:46: Warning: Member DefineError(SOCKET_ERR_WINSOCKSTARTUP,"socket.cpp: Error while initialising WinSock library (SOCKET_ERR_WINSOCKSTARTUP)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:47: Warning: Member DefineError(SOCKET_ERR_CLOSESOCKETHANDLE,"socket.cpp: CloseSocketHandle() : Could not close socket handle (SOCKET_ERR_CLOSESOCKETHANDLE)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:48: Warning: Member DefineError(SOCKET_ERR_READ,"SocketBase::Read(): Error while reading from socket with recv() (SOCKET_ERR_READ)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:49: Warning: Member DefineError(SOCKET_ERR_READ_ARGNULL,"SocketBase::Read(): No null-arguments allowed (SOCKET_ERR_READ_ARGNULL)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:50: Warning: Member DefineError(SOCKET_ERR_READ_NOTCONNECTED,"SocketBase::Read(): The socket is not connected (SOCKET_ERR_READ_NOTCONNECTED)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:51: Warning: Member DefineError(SOCKET_ERR_WRITE,"SocketBase::Write(): Error while writing to socket with send() (SOCKET_ERR_WRITE)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:52: Warning: Member DefineError(SOCKET_ERR_WRITE_ARGNULL,"SocketBase::Write(): No null-arguments allowed (SOCKET_ERR_WRITE_ARGNULL)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:53: Warning: Member DefineError(SOCKET_ERR_WRITE_NOTCONNECTED,"SocketBase::Write(): The socket is not connected (SOCKET_ERR_WRITE_NOTCONNECTED)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:54: Warning: Member DefineError(SOCKET_ERR_READALL_NOTCONNECTED,"SocketBase::ReadAll(): The socket is not connected (SOCKET_ERR_READALL_NOTCONNECTED)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:55: Warning: Member DefineError(SOCKET_ERR_READALL_ARGNULL,"SocketBase::ReadAll(): No null-arguments allowed (SOCKET_ERR_READALL_ARGNULL)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:56: Warning: Member DefineError(SOCKET_ERR_READALL_READ,"SocketBase::ReadAll(): Error while reading from socket with SocketBase::Read() (SOCKET_ERR_READALL_READ)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:57: Warning: Member DefineError(SOCKET_ERR_WRITEALL_NOTCONNECTED,"SocketBase::WriteAll(): The socket is not connected (SOCKET_ERR_WRITEALL_NOTCONNECTED)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:58: Warning: Member DefineError(SOCKET_ERR_WRITEALL_ARGNULL,"SocketBase::WriteAll(): No null-arguments allowed (SOCKET_ERR_WRITEALL_ARGNULL)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:59: Warning: Member DefineError(SOCKET_ERR_WRITEALL_WRITE,"SocketBase::WriteAll(): Error while writing to socket with SocketBase::Write() (SOCKET_ERR_WRITEALL_WRITE)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:60: Warning: Member DefineError(SOCKET_ERR_READMESSAGE_NOTCONNECTED,"SocketBase::ReadMessage(): The socket is not connected (SOCKET_ERR_READMESSAGE_NOTCONNECTED)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:61: Warning: Member DefineError(SOCKET_ERR_READMESSAGE_ARGNULL,"SocketBase::ReadMessage(): No null-arguments allowed (SOCKET_ERR_READMESSAGE_ARGNULL)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:62: Warning: Member DefineError(SOCKET_ERR_READMESSAGE_READMSGLENGTH,"SocketBase::ReadMessage(): Error while reading message length (SOCKET_ERR_READMESSAGE_READMSGLENGTH)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:63: Warning: Member DefineError(SOCKET_ERR_READMESSAGE_BUFFERTOOSMALL,"SocketBase::ReadMessage(): The read buffer given in the argument is too small (SOCKET_ERR_READMESSAGE_BUFFERTOOSMALL)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:64: Warning: Member DefineError(SOCKET_ERR_READMESSAGE_READMSGBODY,"SocketBase::ReadMessage(): Error while reading the message body (SOCKET_ERR_READMESSAGE_READMSGBODY)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:65: Warning: Member DefineError(SOCKET_ERR_WRITEMESSAGE_NOTCONNECTED,"SocketBase::WriteMessage(): The socket is not connected (SOCKET_ERR_WRITEMESSAGE_NOTCONNECTED)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:66: Warning: Member DefineError(SOCKET_ERR_WRITEMESSAGE_ARGNULL,"SocketBase::WriteMessage(): No null-arguments allowed (SOCKET_ERR_WRITEMESSAGE_ARGNULL)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:67: Warning: Member DefineError(SOCKET_ERR_WRITEMESSAGE_WRITEMSGLENGTH,"SocketBase::WriteMessage(): Error while writing message length (SOCKET_ERR_WRITEMESSAGE_WRITEMSGLENGTH)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:68: Warning: Member DefineError(SOCKET_ERR_WRITEMESSAGE_WRITEMSGBODY,"SocketBase::WriteMessage(): Error while writing message body (SOCKET_ERR_WRITEMESSAGE_WRITEMSGBODY)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:69: Warning: Member DefineError(SOCKET_ERR_WRITEMESSAGE_WRITEMESSAGE,"SocketBase::WriteMessage(): Error while writing message (SOCKET_ERR_WRITEMESSAGE_WRITEMESSAGE)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:70: Warning: Member DefineError(SOCKET_ERR_CLOSE,"SocketBase::Close(): Error closing socket(SOCKET_ERR_CLOSE)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:71: Warning: Member DefineError(SOCKET_ERR_CLOSE_NOTCONNECTED,"SocketBase::Close(): The socket is not connected (SOCKET_ERR_CLOSE_NOTCONNECTED)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:72: Warning: Member DefineError(SOCKET_ERR_GETINFO_NOTCONNECTED,"SocketBase::GetInfo(): The socket is not connected (SOCKET_ERR_GETINFO_NOTCONNECTED)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:73: Warning: Member DefineError(SOCKET_ERR_LISTEN_CONNECTED,"SocketBase::Listen(): The socket is already connected (SOCKET_ERR_LISTEN_CONNECTED)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:74: Warning: Member DefineError(SOCKET_ERR_LISTEN_SOCKET,"SocketBase::Listen(): Error while calling socket() (SOCKET_ERR_LISTEN_SOCKET)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:75: Warning: Member DefineError(SOCKET_ERR_LISTEN_SETSOCKOPT_REUSE,"SocketBase::Listen(): Error while setting options for socket reuse (SOCKET_ERR_LISTEN_SETSOCKOPT_REUSE)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:76: Warning: Member DefineError(SOCKET_ERR_LISTEN_BIND,"SocketBase::Listen(): Error while calling bind() (SOCKET_ERR_LISTEN_BIND)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:77: Warning: Member DefineError(SOCKET_ERR_LISTEN_LISTEN,"SocketBase::Listen(): Error while calling listen() (SOCKET_ERR_LISTEN_LISTEN)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:78: Warning: Member DefineError(SOCKET_ERR_LISTEN_ACCEPT,"SocketBase::Listen(): Error while calling accept() (SOCKET_ERR_LISTEN_ACCEPT)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:79: Warning: Member DefineError(SOCKET_ERR_LISTEN_CLOSESOCKETHANDLE,"SocketBase::Listen(): Error while closing temporary socket handle (SOCKET_ERR_LISTEN_CLOSESOCKETHANDLE)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:80: Warning: Member DefineError(SOCKET_ERR_LISTEN_RETRIEVEIPADDRESSES,"SocketBase::Listen(): Error while retrieving IP addresses (SOCKET_ERR_LISTEN_RETRIEVEIPADDRESSES)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:81: Warning: Member DefineError(SOCKET_ERR_CONNECT_SOCKET,"SocketBase::Connect(): Error while calling socket() (SOCKET_ERR_CONNECT_SOCKET)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:82: Warning: Member DefineError(SOCKET_ERR_CONNECT_CONNECT,"SocketBase::Connect(): Error while calling connect() (SOCKET_ERR_CONNECT_CONNECT)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:83: Warning: Member DefineError(SOCKET_ERR_LISTEN_RETRIEVEIPADDRESSES,"SocketBase::Connect(): Error while retrieving IP addresses (SOCKET_ERR_CONNECT_RETRIEVEIPADDRESSES)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:84: Warning: Member DefineError(SOCKET_ERR_RETRIEVEIPADDRESSES_GETSOCKNAME,"socket.cpp: RetrieveIPAddresses(): Error while calling getsockname() (SOCKET_ERR_RETRIEVEIPADDRESSES_GETSOCKNAME)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:85: Warning: Member DefineError(SOCKET_ERR_RETRIEVEIPADDRESSES_GETPEERNAME,"socket.cpp: RetrieveIPAddresses(): Error while calling getpeername() (SOCKET_ERR_RETRIEVEIPADDRESSES_GETPEERNAME)") of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:200: Warning: Member OnSocketSystemError() of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:212: Warning: Member RetrieveIPAddress(struct sockaddr_in &addressInfo) of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:227: Warning: Member RetrieveIPAddresses(int socketHandle, string *ipAddressLocal, string *ipAddressPeer) of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:270: Warning: Member CloseSocketHandle(int socketHandle) of file socket.cpp is not documented.
+D:/Bert/Projects/blib/source/socket.cpp:4: Warning: Found unknown command `\copyright'
+D:/Bert/Projects/blib/source/socket.cpp:5: Warning: Found unknown command `\license'
+D:/Bert/Projects/blib/include/socket.hpp:4: Warning: Found unknown command `\copyright'
+D:/Bert/Projects/blib/include/socket.hpp:5: Warning: Found unknown command `\license'
+D:/Bert/Projects/blib/source/StringTools.cpp:4: Warning: Found unknown command `\copyright'
+D:/Bert/Projects/blib/source/StringTools.cpp:5: Warning: Found unknown command `\license'
+D:/Bert/Projects/blib/include/StringTools.hpp:4: Warning: Found unknown command `\copyright'
+D:/Bert/Projects/blib/include/StringTools.hpp:5: Warning: Found unknown command `\license'
+D:/Bert/Projects/blib/include/FileTools.hpp:92: Warning: Member ItemOK(const std::string &path) const =0 of class blib::Spec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:103: Warning: Member NameSpec(const std::string &wildcard, bool caseSensitive=true) of class blib::NameSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:105: Warning: Member ItemOK(const std::string &path) const of class blib::NameSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:107: Warning: Member wildcard_ of class blib::NameSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:108: Warning: Member caseSensitive_ of class blib::NameSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:116: Warning: Member TypeSpec(int type) of class blib::TypeSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:117: Warning: Member ItemOK(const std::string &path) const of class blib::TypeSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:119: Warning: Member type_ of class blib::TypeSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:128: Warning: Member NotSpec(const Spec *spec) of class blib::NotSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:129: Warning: Member ItemOK(const std::string &path) const of class blib::NotSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:131: Warning: Member spec_ of class blib::NotSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:143: Warning: Member MultiSpec(const Spec *spec1=0, const Spec *spec2=0) of class blib::MultiSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:145: Warning: Member AddSpec(const Spec *spec) of class blib::MultiSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:146: Warning: Member Clear() of class blib::MultiSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:148: Warning: Member TSpecList of class blib::MultiSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:149: Warning: Member specList_ of class blib::MultiSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:157: Warning: Member AndSpec(const Spec *spec1=0, const Spec *spec2=0) of class blib::AndSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:158: Warning: Member ItemOK(const std::string &path) const of class blib::AndSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:166: Warning: Member OrSpec(const Spec *spec1=0, const Spec *spec2=0) of class blib::OrSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:167: Warning: Member ItemOK(const std::string &path) const of class blib::OrSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:175: Warning: Member XorSpec(const Spec *spec1=0, const Spec *spec2=0) of class blib::XorSpec is not documented.
+D:/Bert/Projects/blib/include/FileTools.hpp:176: Warning: Member ItemOK(const std::string &path) const of class blib::XorSpec is not documented.
+D:/Bert/Projects/blib/include/make.hpp:29: Warning: Member Execute()=0 of class blib::make::Command is not documented.
+D:/Bert/Projects/blib/include/make.hpp:36: Warning: Member SystemCommand(const std::string &systemCommand) of class blib::make::SystemCommand is not documented.
+D:/Bert/Projects/blib/include/make.hpp:38: Warning: Member Execute() of class blib::make::SystemCommand is not documented.
+D:/Bert/Projects/blib/include/make.hpp:40: Warning: Member SetSystemCommand(const std::string &systemCommand) of class blib::make::SystemCommand is not documented.
+D:/Bert/Projects/blib/include/make.hpp:41: Warning: Member GetSystemCommand() of class blib::make::SystemCommand is not documented.
+D:/Bert/Projects/blib/include/make.hpp:44: Warning: Member systemCommand_ of class blib::make::SystemCommand is not documented.
+D:/Bert/Projects/blib/include/make.hpp:59: Warning: Member Element(Command *command=0) of class blib::make::Element is not documented.
+D:/Bert/Projects/blib/include/make.hpp:62: Warning: Member SetCommand(Command *command) of class blib::make::Element is not documented.
+D:/Bert/Projects/blib/include/make.hpp:63: Warning: Member GetCommand() of class blib::make::Element is not documented.
+D:/Bert/Projects/blib/include/make.hpp:65: Warning: Member AddPrerequisite(Element *element) of class blib::make::Element is not documented.
+D:/Bert/Projects/blib/include/make.hpp:66: Warning: Member RemovePrerequisite(Element *element) of class blib::make::Element is not documented.
+D:/Bert/Projects/blib/include/make.hpp:68: Warning: Member IsOutDated(bool force=false)=0 of class blib::make::Element is not documented.
+D:/Bert/Projects/blib/include/make.hpp:69: Warning: Member IsChanged(time_t timeChangedTarget=0)=0 of class blib::make::Element is not documented.
+D:/Bert/Projects/blib/include/make.hpp:71: Warning: Member Make(bool force=false) of class blib::make::Element is not documented.
+D:/Bert/Projects/blib/include/make.hpp:74: Warning: Member TPrereqList of class blib::make::Element is not documented.
+D:/Bert/Projects/blib/include/make.hpp:75: Warning: Member prereqList_ of class blib::make::Element is not documented.
+D:/Bert/Projects/blib/include/make.hpp:77: Warning: Member command_ of class blib::make::Element is not documented.
+D:/Bert/Projects/blib/include/make.hpp:85: Warning: Member FileElement(const std::string &fileName="", Command *command=0) of class blib::make::FileElement is not documented.
+D:/Bert/Projects/blib/include/make.hpp:88: Warning: Member SetFileName(const std::string &fileName) of class blib::make::FileElement is not documented.
+D:/Bert/Projects/blib/include/make.hpp:89: Warning: Member GetFileName() of class blib::make::FileElement is not documented.
+D:/Bert/Projects/blib/include/make.hpp:91: Warning: Member IsOutDated(bool force=false) of class blib::make::FileElement is not documented.
+D:/Bert/Projects/blib/include/make.hpp:92: Warning: Member IsChanged(time_t timeChangedTarget=0) of class blib::make::FileElement is not documented.

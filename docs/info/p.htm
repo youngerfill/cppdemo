@@ -1,0 +1,890 @@
+<!DOCTYPE html><!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]--><!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]--><!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!--><html style="" class=" js no-touch rgba hsla textshadow opacity svg" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Lambda expression comparison between C++11, C++14 and C++17 – Oscar Forner's personal website</title>
+<meta name="description" content="In this post I talk about what has been added in the C++ standard regarding lambda expressions since they were introduced in C++11.
+
+">
+<meta name="keywords" content="C++, C++11, C++14, C++17, Lambda, Lambda expression">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Lambda expression comparison between C++11, C++14 and C++17">
+<meta name="twitter:description" content="In this post I talk about what has been added in the C++ standard regarding lambda expressions since they were introduced in C++11.
+
+">
+<meta name="twitter:site" content="@oscar_forner">
+<meta name="twitter:creator" content="@oscar_forner">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://maitesin.github.io//images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_GB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lambda expression comparison between C++11, C++14 and C++17">
+<meta property="og:description" content="In this post I talk about what has been added in the C++ standard regarding lambda expressions since they were introduced in C++11.
+
+">
+<meta property="og:url" content="https://maitesin.github.io//Lambda_comparison/">
+<meta property="og:site_name" content="Oscar Forner's personal website">
+
+<meta property="og:image" content="https://maitesin.github.io//images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="https://maitesin.github.io//Lambda_comparison/">
+<link href="https://maitesin.github.io//feed.xml" type="application/atom+xml" rel="alternate" title="Oscar Forner's personal website Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="p_files/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="https://maitesin.github.io//assets/js/vendor/html5shiv.min.js"></script>
+	<script src="https://maitesin.github.io//assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="p_files/ga.js" async="" type="text/javascript"></script><script src="p_files/modernizr-2.7.1.custom.min.js"></script>
+
+<link href="p_files/css.css" rel="stylesheet" type="text/css">
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="p_files/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="p_files/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://maitesin.github.io//images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://maitesin.github.io//images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://maitesin.github.io//images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://maitesin.github.io//images/apple-touch-icon-144x144-precomposed.png">
+
+<style id="fit-vids-style"><!--
+/* Effective stylesheet produced by snapshot save */
+--></style></head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="https://maitesin.github.io//">Oscar Forner's personal website</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav"><button type="button" role="button" id="menutoggle" class="navtoggle navicon-lines-button x" aria-hidden="true"><span class="navicon-lines"></span>menu</button>
+		    <ul>
+		        
+				    
+				    <li><a href="https://maitesin.github.io//posts/">Posts</a></li>
+				
+				    
+				    <li><a href="https://github.com/maitesin/resume/raw/master/resume.pdf" target="_blank">Resume</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope="" itemtype="http://schema.org/Person">
+
+
+	<img src="p_files/avatar.jpg" class="bio-photo" alt="Oscar Forner Martinez bio photo">
+
+
+  <h3 itemprop="name">Oscar Forner Martinez</h3>
+  <p>I am software developer at Programming Research. Learning Linux Kernel, passionate about GNU/Linux and OSS, enjoying algorithms and data structures and coding in C and C++11.</p>
+  <a href="mailto:oscar.forner.martinez@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/oscar_forner" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  <a href="http://plus.google.com/+%C3%92scarFornerMart%C3%ADnez" class="author-social" target="_blank"><i class="fa fa-fw fa-google-plus-square"></i> Google+</a>
+  <a href="http://linkedin.com/in/oscarforner" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/maitesin" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="https://maitesin.github.io//Lambda_comparison/" rel="bookmark" title="Lambda expression comparison between C++11, C++14 and C++17">Lambda expression comparison between C++11, C++14 and C++17</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>In this post I talk about what has been added in the <strong>C++ standard</strong> regarding <strong>lambda expressions</strong> since they were introduced in <strong>C++11</strong>.</p>
+
+<p><strong>All the code and configuration files used in this post are available in this
+<a href="https://github.com/maitesin/blog/tree/master/lambda_comparison_2016_05_14">repo</a> in GitHub.</strong></p>
+
+<h1 id="what-is-a-lambda-expression">What is a lambda expression?</h1>
+<p>A <strong>lambda expression</strong> is a simplified notation for defining and using an anonymous function object. Instead of defining a named class with an <em>operator()</em>, later making an object of that class and finally invoking it.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<p>I do not explain all the options for capturing or specifying return types. There is plenty of material regarding these topics. I focus on what has been introduced in <strong>C++14</strong> and what will be introduced in <strong>C++17</strong>.</p>
+
+<h1 id="basics-of-the-lambda-expression">Basics of the lambda expression</h1>
+<p>The following is the smallest <strong>lambda expression</strong> with its three parts:</p>
+
+<ul>
+  <li><strong>[]</strong>: capture.</li>
+  <li><strong>()</strong>: parameters.</li>
+  <li><strong>{}</strong>: body.</li>
+</ul>
+
+<script src="p_files/888fa96e4c331375e21a766f6ca3b0cf.js"></script><link rel="stylesheet" href="p_files/gist-embed-c68da0f4a783985814db37106595c4c399c.css"><div id="gist35620999" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-basic_lambda-cpp" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-c">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-basic_lambda-cpp-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-basic_lambda-cpp-LC1" class="blob-code blob-code-inner js-file-line">[](){}</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/maitesin/888fa96e4c331375e21a766f6ca3b0cf/raw/c54260bc0284c169e21a4933b6d53f1e7c0e3a38/basic_lambda.cpp" style="float:right">view raw</a>
+        <a href="https://gist.github.com/maitesin/888fa96e4c331375e21a766f6ca3b0cf#file-basic_lambda-cpp">basic_lambda.cpp</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+
+<p>The following <strong>lambda expression</strong> increments by one the parameter.
+<script src="p_files/876ddca2a1d6a599e65de3d6046c9a38.js"></script><link rel="stylesheet" href="p_files/gist-embed-c68da0f4a783985814db37106595c4c399c-1.css"></p><div id="gist35621122" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-lambda_example1-cpp" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-c">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-lambda_example1-cpp-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-lambda_example1-cpp-LC1" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>algorithm<span class="pl-pds">&gt;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1-cpp-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-lambda_example1-cpp-LC2" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1-cpp-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-lambda_example1-cpp-LC3" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>vector<span class="pl-pds">&gt;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1-cpp-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-lambda_example1-cpp-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1-cpp-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-lambda_example1-cpp-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">main</span>() {</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1-cpp-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-lambda_example1-cpp-LC6" class="blob-code blob-code-inner js-file-line">  std::vector&lt;<span class="pl-k">int</span>&gt; v = {<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">5</span>, <span class="pl-c1">6</span>, <span class="pl-c1">7</span>, <span class="pl-c1">8</span>, <span class="pl-c1">9</span>, <span class="pl-c1">10</span>};</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1-cpp-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-lambda_example1-cpp-LC7" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">auto</span> my_lambda = [](<span class="pl-k">int</span> x) { <span class="pl-k">return</span> x + <span class="pl-c1">1</span>; };</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1-cpp-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-lambda_example1-cpp-LC8" class="blob-code blob-code-inner js-file-line">  <span class="pl-c1">std::transform</span>(v.<span class="pl-c1">begin</span>(), v.<span class="pl-c1">end</span>(), v.<span class="pl-c1">begin</span>(), my_lambda);</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1-cpp-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-lambda_example1-cpp-LC9" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">for</span> (<span class="pl-k">auto</span> &amp;value : v) {</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1-cpp-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-lambda_example1-cpp-LC10" class="blob-code blob-code-inner js-file-line">    std::cout &lt;&lt; value &lt;&lt; std::endl;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1-cpp-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-lambda_example1-cpp-LC11" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1-cpp-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-lambda_example1-cpp-LC12" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1-cpp-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-lambda_example1-cpp-LC13" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/maitesin/876ddca2a1d6a599e65de3d6046c9a38/raw/4dd490b02b22fa39252c3aac898561de4a4f8308/lambda_example1.cpp" style="float:right">view raw</a>
+        <a href="https://gist.github.com/maitesin/876ddca2a1d6a599e65de3d6046c9a38#file-lambda_example1-cpp">lambda_example1.cpp</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p></p>
+
+<p>The result of the execution of the previous code is:
+<script src="p_files/b17b1c0250255e77023598135ec105ff.js"></script><link rel="stylesheet" href="p_files/gist-embed-c68da0f4a783985814db37106595c4c399c-2.css"></p><div id="gist35621274" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-lambda_example1_execution-sh" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-shell">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-lambda_example1_execution-sh-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-lambda_example1_execution-sh-LC1" class="blob-code blob-code-inner js-file-line">2</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1_execution-sh-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-lambda_example1_execution-sh-LC2" class="blob-code blob-code-inner js-file-line">3</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1_execution-sh-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-lambda_example1_execution-sh-LC3" class="blob-code blob-code-inner js-file-line">4</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1_execution-sh-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-lambda_example1_execution-sh-LC4" class="blob-code blob-code-inner js-file-line">5</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1_execution-sh-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-lambda_example1_execution-sh-LC5" class="blob-code blob-code-inner js-file-line">6</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1_execution-sh-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-lambda_example1_execution-sh-LC6" class="blob-code blob-code-inner js-file-line">7</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1_execution-sh-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-lambda_example1_execution-sh-LC7" class="blob-code blob-code-inner js-file-line">8</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1_execution-sh-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-lambda_example1_execution-sh-LC8" class="blob-code blob-code-inner js-file-line">9</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1_execution-sh-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-lambda_example1_execution-sh-LC9" class="blob-code blob-code-inner js-file-line">10</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example1_execution-sh-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-lambda_example1_execution-sh-LC10" class="blob-code blob-code-inner js-file-line">11</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/maitesin/b17b1c0250255e77023598135ec105ff/raw/64e343b0514c6186869487daaf4f159d1fbe4f0f/lambda_example1_execution.sh" style="float:right">view raw</a>
+        <a href="https://gist.github.com/maitesin/b17b1c0250255e77023598135ec105ff#file-lambda_example1_execution-sh">lambda_example1_execution.sh</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p></p>
+
+<p>The following <strong>lambda expression</strong> shows the difference between capturing by value <strong>=</strong> and by reference <strong>&amp;</strong>:
+<script src="p_files/152f441e6bb8c7dcf22693d8c265398d.js"></script><link rel="stylesheet" href="p_files/gist-embed-c68da0f4a783985814db37106595c4c399c-3.css"></p><div id="gist35621329" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-lambda_example2-cpp" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-c">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-lambda_example2-cpp-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-lambda_example2-cpp-LC1" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2-cpp-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-lambda_example2-cpp-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2-cpp-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-lambda_example2-cpp-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">main</span>() {</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2-cpp-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-lambda_example2-cpp-LC4" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">int</span> i = <span class="pl-c1">1</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2-cpp-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-lambda_example2-cpp-LC5" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">auto</span> copy = [=](){ std::cout &lt;&lt; i &lt;&lt; std::endl; };</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2-cpp-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-lambda_example2-cpp-LC6" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">auto</span> ref = [&amp;](){ std::cout &lt;&lt; i &lt;&lt; std::endl; };</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2-cpp-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-lambda_example2-cpp-LC7" class="blob-code blob-code-inner js-file-line">  <span class="pl-c1">copy</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2-cpp-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-lambda_example2-cpp-LC8" class="blob-code blob-code-inner js-file-line">  <span class="pl-c1">ref</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2-cpp-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-lambda_example2-cpp-LC9" class="blob-code blob-code-inner js-file-line">  ++i;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2-cpp-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-lambda_example2-cpp-LC10" class="blob-code blob-code-inner js-file-line">  <span class="pl-c1">copy</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2-cpp-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-lambda_example2-cpp-LC11" class="blob-code blob-code-inner js-file-line">  <span class="pl-c1">ref</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2-cpp-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-lambda_example2-cpp-LC12" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2-cpp-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-lambda_example2-cpp-LC13" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/maitesin/152f441e6bb8c7dcf22693d8c265398d/raw/466dbdd7ed3c9befb19a60409f34b6596ee9af59/lambda_example2.cpp" style="float:right">view raw</a>
+        <a href="https://gist.github.com/maitesin/152f441e6bb8c7dcf22693d8c265398d#file-lambda_example2-cpp">lambda_example2.cpp</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p></p>
+
+<p>The result of the execution of the previous code is:
+<script src="p_files/e6a65920d2e238a908f34174f4537743.js"></script><link rel="stylesheet" href="p_files/gist-embed-c68da0f4a783985814db37106595c4c399c-4.css"></p><div id="gist35621356" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-lambda_example2_execution-sh" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-shell">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-lambda_example2_execution-sh-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-lambda_example2_execution-sh-LC1" class="blob-code blob-code-inner js-file-line">1</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2_execution-sh-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-lambda_example2_execution-sh-LC2" class="blob-code blob-code-inner js-file-line">1</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2_execution-sh-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-lambda_example2_execution-sh-LC3" class="blob-code blob-code-inner js-file-line">1</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_example2_execution-sh-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-lambda_example2_execution-sh-LC4" class="blob-code blob-code-inner js-file-line">2</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/maitesin/e6a65920d2e238a908f34174f4537743/raw/4147a2404a384f36c36180cf789af26714ad311a/lambda_example2_execution.sh" style="float:right">view raw</a>
+        <a href="https://gist.github.com/maitesin/e6a65920d2e238a908f34174f4537743#file-lambda_example2_execution-sh">lambda_example2_execution.sh</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p></p>
+
+<h1 id="what-has-been-added-in-c14">What has been added in C++14</h1>
+<p>In <strong>C++14</strong> two new features were added to <strong>lambda expressions</strong>:</p>
+
+<ul>
+  <li><strong>Initialization captures</strong>: A capture with an initializer acts as if it declares and explicitly captures a variable declared with type auto, whose declarative region is the body of the <strong>lambda expression</strong>.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></li>
+  <li><strong>Generic lambda expressions</strong>: Until <strong>C++14</strong> parameters of a <strong>lambda expression</strong> should be of a specific type. Now, <strong>lambda expressions</strong> accept <strong>auto</strong> as a valid parameter type.</li>
+</ul>
+
+<p>Example of the <strong>initialization captures</strong>:
+<script src="p_files/53cf0003e3376146e917cce0422b0330.js"></script><link rel="stylesheet" href="p_files/gist-embed-c68da0f4a783985814db37106595c4c399c-5.css"></p><div id="gist35621824" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-lambda_capture-cpp" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-c">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-lambda_capture-cpp-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-lambda_capture-cpp-LC1" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-lambda_capture-cpp-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-lambda_capture-cpp-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_capture-cpp-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-lambda_capture-cpp-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">main</span>() {</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_capture-cpp-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-lambda_capture-cpp-LC4" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">int</span> x = <span class="pl-c1">1</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_capture-cpp-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-lambda_capture-cpp-LC5" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">auto</span> my_lambda = [&amp;z = x]() { z += <span class="pl-c1">1</span>; };</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_capture-cpp-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-lambda_capture-cpp-LC6" class="blob-code blob-code-inner js-file-line">  <span class="pl-c1">my_lambda</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_capture-cpp-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-lambda_capture-cpp-LC7" class="blob-code blob-code-inner js-file-line">  std::cout &lt;&lt; x &lt;&lt; std::endl;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_capture-cpp-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-lambda_capture-cpp-LC8" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_capture-cpp-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-lambda_capture-cpp-LC9" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/maitesin/53cf0003e3376146e917cce0422b0330/raw/6d095c5f5c7f59e1b40be59a29af8e10fb6451f0/lambda_capture.cpp" style="float:right">view raw</a>
+        <a href="https://gist.github.com/maitesin/53cf0003e3376146e917cce0422b0330#file-lambda_capture-cpp">lambda_capture.cpp</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p></p>
+
+<p>The result of the execution of the previous code is:
+<script src="p_files/24765f2cae4e16d07e0e9ac79bf1191e.js"></script><link rel="stylesheet" href="p_files/gist-embed-c68da0f4a783985814db37106595c4c399c-6.css"></p><div id="gist35621853" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-lambda_capture_execution-sh" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-shell">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-lambda_capture_execution-sh-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-lambda_capture_execution-sh-LC1" class="blob-code blob-code-inner js-file-line">2</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/maitesin/24765f2cae4e16d07e0e9ac79bf1191e/raw/6a3656198cb35f10686802d0b795176ed2840a4e/lambda_capture_execution.sh" style="float:right">view raw</a>
+        <a href="https://gist.github.com/maitesin/24765f2cae4e16d07e0e9ac79bf1191e#file-lambda_capture_execution-sh">lambda_capture_execution.sh</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p></p>
+
+<p>Example of a <strong>generic lambda expression</strong>:
+<script src="p_files/74ba171ce6e9bfe6b30db7fc3e028796.js"></script><link rel="stylesheet" href="p_files/gist-embed-c68da0f4a783985814db37106595c4c399c-7.css"></p><div id="gist35621899" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-lambda_generic-cpp" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-c">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-lambda_generic-cpp-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-lambda_generic-cpp-LC1" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-lambda_generic-cpp-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-lambda_generic-cpp-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_generic-cpp-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-lambda_generic-cpp-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">main</span>() {</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_generic-cpp-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-lambda_generic-cpp-LC4" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">auto</span> my_lambda = [](<span class="pl-k">auto</span> &amp;a, <span class="pl-k">auto</span> &amp;b) { <span class="pl-k">return</span> a &lt; b; };</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_generic-cpp-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-lambda_generic-cpp-LC5" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">float</span> af = <span class="pl-c1">1.5</span>, bf = <span class="pl-c1">2.0</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_generic-cpp-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-lambda_generic-cpp-LC6" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">int</span> ai = <span class="pl-c1">3</span>, bi = <span class="pl-c1">1</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_generic-cpp-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-lambda_generic-cpp-LC7" class="blob-code blob-code-inner js-file-line">  std::cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>Float: <span class="pl-pds">"</span></span> &lt;&lt; <span class="pl-c1">my_lambda</span>(af, bf) &lt;&lt; std::endl;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_generic-cpp-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-lambda_generic-cpp-LC8" class="blob-code blob-code-inner js-file-line">  std::cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>Integer: <span class="pl-pds">"</span></span> &lt;&lt; <span class="pl-c1">my_lambda</span>(ai, bi) &lt;&lt; std::endl;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_generic-cpp-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-lambda_generic-cpp-LC9" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_generic-cpp-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-lambda_generic-cpp-LC10" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/maitesin/74ba171ce6e9bfe6b30db7fc3e028796/raw/af261d4cb6b6daee202efcc6af22d74bdc802804/lambda_generic.cpp" style="float:right">view raw</a>
+        <a href="https://gist.github.com/maitesin/74ba171ce6e9bfe6b30db7fc3e028796#file-lambda_generic-cpp">lambda_generic.cpp</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p></p>
+
+<p>The result of the execution of the previous code is:
+<script src="p_files/ff9542b04599b35cc5a4ec303818eb7d.js"></script><link rel="stylesheet" href="p_files/gist-embed-c68da0f4a783985814db37106595c4c399c-8.css"></p><div id="gist35621937" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-lambda_generic_execution-sh" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-shell">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-lambda_generic_execution-sh-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-lambda_generic_execution-sh-LC1" class="blob-code blob-code-inner js-file-line">Float: 1</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_generic_execution-sh-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-lambda_generic_execution-sh-LC2" class="blob-code blob-code-inner js-file-line">Integer: 0</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/maitesin/ff9542b04599b35cc5a4ec303818eb7d/raw/ab2a8b1b28a26085726344798bf76b7bd0c90dba/lambda_generic_execution.sh" style="float:right">view raw</a>
+        <a href="https://gist.github.com/maitesin/ff9542b04599b35cc5a4ec303818eb7d#file-lambda_generic_execution-sh">lambda_generic_execution.sh</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p></p>
+
+<h1 id="what-will-be-added-in-c17">What will be added in C++17</h1>
+<p>The current plan is to add two new features for <strong>lambda expressions</strong> in <strong>C++17</strong>:</p>
+
+<ul>
+  <li><strong>Capture ∗this</strong>: This will allow the <strong>lambda expression</strong> to capture the <strong>enclosing object by copy</strong>. This will make possible to use safely the <strong>lambda expression</strong> even after the <strong>enclosing object</strong> has been destroyed.</li>
+  <li><strong>constexpr lambda expressions</strong>: This will allow to call <strong>lambda expressions</strong> and use their result to generate <strong><em>constexpr</em></strong> objects <strong>at compile time</strong>.</li>
+</ul>
+
+<p>Sadly neither <a href="https://gcc.gnu.org/projects/cxx-status.html#cxx1z">GCC</a> or <a href="http://clang.llvm.org/cxx_status.html">Clang</a> in any stable version supports them. Therefore, <strong>there will not be any execution of code, but there is some code that should work once the features are implemented</strong>. The information used to do the code of this section has been found in the <a href="http://en.cppreference.com/w/cpp/language/lambda">C++ reference website</a> and in <a href="https://isocpp.org/files/papers/N4487.pdf">the paper for constexpr lambda expressions</a>.</p>
+
+<p>The following is an example of the <strong>capture ∗this</strong>:
+<script src="p_files/adcc64d30ca9ddbb8cea8c7d2466a40f.js"></script><link rel="stylesheet" href="p_files/gist-embed-c68da0f4a783985814db37106595c4c399c-9.css"></p><div id="gist35622271" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-lambda_this-cpp" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-c">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-lambda_this-cpp-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-lambda_this-cpp-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">struct</span> <span class="pl-en">my_struct</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_this-cpp-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-lambda_this-cpp-LC2" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">int</span> x;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_this-cpp-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-lambda_this-cpp-LC3" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">void</span> <span class="pl-en">value</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_this-cpp-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-lambda_this-cpp-LC4" class="blob-code blob-code-inner js-file-line">};</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_this-cpp-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-lambda_this-cpp-LC5" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_this-cpp-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-lambda_this-cpp-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-k">void</span> <span class="pl-en">my_struct::value</span>() {</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_this-cpp-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-lambda_this-cpp-LC7" class="blob-code blob-code-inner js-file-line">  [=, *<span class="pl-v">this</span>](){};</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_this-cpp-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-lambda_this-cpp-LC8" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/maitesin/adcc64d30ca9ddbb8cea8c7d2466a40f/raw/75e08b1b4ed2e8c2854d81f7e71eade24ba465cc/lambda_this.cpp" style="float:right">view raw</a>
+        <a href="https://gist.github.com/maitesin/adcc64d30ca9ddbb8cea8c7d2466a40f#file-lambda_this-cpp">lambda_this.cpp</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p></p>
+
+<p>The following is an example of the <strong>constexpr lambda expression</strong>:
+<script src="p_files/c175630f22c7c8d6aaa16a743c36279a.js"></script><link rel="stylesheet" href="p_files/gist-embed-c68da0f4a783985814db37106595c4c399c-10.css"></p><div id="gist35622304" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-lambda_constexpr-cpp" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-c">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-lambda_constexpr-cpp-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-lambda_constexpr-cpp-LC1" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-lambda_constexpr-cpp-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-lambda_constexpr-cpp-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_constexpr-cpp-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-lambda_constexpr-cpp-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">int</span> <span class="pl-en">main</span>() {</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_constexpr-cpp-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-lambda_constexpr-cpp-LC4" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">constexpr</span> <span class="pl-k">auto</span> multi = [](<span class="pl-k">int</span> a, <span class="pl-k">int</span> b){ <span class="pl-k">return</span> a * b; };</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_constexpr-cpp-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-lambda_constexpr-cpp-LC5" class="blob-code blob-code-inner js-file-line">  <span class="pl-c1">static_assert</span>(<span class="pl-c1">multi</span>(<span class="pl-c1">3</span>,<span class="pl-c1">7</span>) == <span class="pl-c1">21</span>, <span class="pl-s"><span class="pl-pds">"</span>3x7 == 21<span class="pl-pds">"</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_constexpr-cpp-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-lambda_constexpr-cpp-LC6" class="blob-code blob-code-inner js-file-line">  <span class="pl-c1">static_assert</span>(<span class="pl-c1">multi</span>(<span class="pl-c1">4</span>,<span class="pl-c1">5</span>) == <span class="pl-c1">15</span>, <span class="pl-s"><span class="pl-pds">"</span>5x5 != 15<span class="pl-pds">"</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_constexpr-cpp-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-lambda_constexpr-cpp-LC7" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-lambda_constexpr-cpp-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-lambda_constexpr-cpp-LC8" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/maitesin/c175630f22c7c8d6aaa16a743c36279a/raw/52fe1249d9f72eb7c74621fe8749a80c27d67fde/lambda_constexpr.cpp" style="float:right">view raw</a>
+        <a href="https://gist.github.com/maitesin/c175630f22c7c8d6aaa16a743c36279a#file-lambda_constexpr-cpp">lambda_constexpr.cpp</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p></p>
+
+<p><strong>Note</strong>: Once <strong>GCC</strong> or <strong>Clang</strong> support these features I will try the code above and I will ammend it if necessary.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Definition extracted from the book <strong>The C++ Programming Language (Fourth Edition)</strong>. <a href="#fnref:1" class="reversefootnote">↩</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Definition extracted from the website <a href="http://en.cppreference.com/w/cpp/language/lambda">cppreference.com</a>. <a href="#fnref:2" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
+
+      <hr>
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=https://maitesin.github.io//Lambda_comparison/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://maitesin.github.io//Lambda_comparison/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=https://maitesin.github.io//Lambda_comparison/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Lambda expression comparison between C++11, C++14 and C++17</strong> was published on <time datetime="2016-05-14T00:00:00+00:00">May 14, 2016</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="https://maitesin.github.io//posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="https://maitesin.github.io//ARM-C-Compiler_ACC_basic_compiler_II/" title="ARM C Compiler (ACC) - Basic Compiler II">ARM C Compiler (ACC) - Basic Compiler II</a></li>
+    
+      <li><a href="https://maitesin.github.io//Module_prank/" title="Linux Kernel Module example. Rickroll prank.">Linux Kernel Module example. Rickroll prank.</a></li>
+    
+      <li><a href="https://maitesin.github.io//Prefix_trees/" title="Prefix trees; Comparison between Trie, Ternary Search Tree and Radix Tree">Prefix trees; Comparison between Trie, Ternary Search Tree and Radix Tree</a></li>
+    
+    </ul>
+    <hr>
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>© 2016 Oscar Forner Martinez. Powered by <a href="http://jekyllrb.com/" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="p_files/jquery.min.js"></script>
+<script><!--
+/* Script removed by snapshot save */
+--></script>
+<script src="p_files/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script><!--
+/* Script removed by snapshot save */
+--></script>
+
+
+
+
+
+
+</body></html>

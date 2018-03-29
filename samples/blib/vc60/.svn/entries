@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2005-01-17T21:19:53.390625Z"
+   url="file:///D:/BERT/SVNRepo/blib/trunk/vc60"
+   last-author="Administrator"
+   kind="dir"
+   uuid="336b900d-4625-6145-bf10-bda8553a0865"
+   revision="4"/>
+<entry
+   name="Release"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="blib.dsw"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="321195f42d0784fcea6d8be7e4a74cfb"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   name="Debug"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="blib.opt"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="8c4a6d9440a707aaa6b96f8f5f1bbd9b"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="blib.dsp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="a032354e870ef6fb973dbc2b8c3dff5e"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+</wc-entries>

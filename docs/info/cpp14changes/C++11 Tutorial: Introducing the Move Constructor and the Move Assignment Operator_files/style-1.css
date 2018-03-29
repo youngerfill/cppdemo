@@ -1,0 +1,13 @@
+/* Effective stylesheet produced by snapshot save */
+@font-face {
+  font-family: "ssi-icomoon";
+  font-style: normal;
+  font-weight: normal;
+  src: url("urn:not-loaded:http://blog.smartbear.com/wp-content/plugins/simple-social-icons/font/ssi-icomoon.eot?#iefixssi-texv9a") format("embedded-opentype"), url("ssi-icomoon.woff") format("woff"), url("urn:not-loaded:http://blog.smartbear.com/wp-content/plugins/simple-social-icons/font/ssi-icomoon.ttf?ssi-texv9a") format("truetype"), url("urn:not-loaded:http://blog.smartbear.com/wp-content/plugins/simple-social-icons/font/ssi-icomoon.svg?ssi-texv9a#ssi-icomoon") format("svg");
+}
+.simple-social-icons { overflow: hidden; }
+.simple-social-icons ul { margin: 0px; padding: 0px; }
+.simple-social-icons ul li { background: transparent none repeat scroll 0% 0% ! important; border: medium none ! important; float: left; list-style-type: none ! important; margin: 0px 6px 12px ! important; padding: 0px ! important; }
+.simple-social-icons ul li a { border: medium none ! important; box-sizing: content-box; display: inline-block; font-family: "ssi-icomoon"; font-style: normal ! important; font-variant: normal ! important; font-weight: normal ! important; line-height: 1em; text-align: center; text-decoration: none ! important; text-transform: none ! important; width: 1em; }
+.simple-social-icons ul.aligncenter { text-align: center; }
+.simple-social-icons ul.aligncenter li { display: inline-block; float: none; }

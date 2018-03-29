@@ -1,0 +1,38 @@
+/* Effective stylesheet produced by snapshot save */
+.mobile-unit { display: none; }
+@media screen and (max-width: 480px) {
+  .mobile-unit { display: block; }
+  .non-mobile-unit { display: none; }
+  #leaderboard1, #leaderboard2, #h-nav, #search, #subnav, #bottom, #left-col, #right-col .box { display: none; }
+  body { background: transparent none repeat scroll 0% 0%; margin-top: 0px; }
+  #container, #right-col, #cloud #right-col { width: 304px; }
+  #right-col { margin-left: 0px; }
+  #header { background: transparent url("urn:not-loaded:http://ubmelectronicsvirtualconferences.businesscatalyst.com/sandbox/mateusz/ddj/dobbs_top_header_mobile.png") no-repeat scroll left top; padding-left: 0px; padding-right: 0px; }
+  #login { padding-left: 0px ! important; }
+  #login, #login a { color: rgb(0, 59, 176) ! important; font-size: 12px ! important; }
+  #login strong { color: black ! important; }
+  #h-nav_mainSection, #h-nav_social { display: none; }
+  #h-nav_main { padding: 0px; }
+  #h-nav_mainSection-mobile, #h-nav2_mainSection-mobile { margin-top: 45px; background: rgb(32, 118, 23) none repeat scroll 0px 0px; color: white; float: left; font-weight: bold; width: 49%; height: 30px; font-family: Arial,Helvetica,sans-serif; font-size: 13px; cursor: pointer; }
+  #h-nav2_mainSection-mobile { margin-top: -30px; float: right; }
+  #h-nav_mainSection-mobile a, #h-nav2_mainSection-mobile a { color: white; line-height: 30px; padding-left: 15px; }
+  #h-nav_mainSection-mobile a:hover, #h-nav2_mainSection-mobile a:hover { text-decoration: none; }
+  #h-nav_mainSection-mobile ul, #h-nav2_mainSection-mobile ul { background: rgb(32, 118, 23) none repeat scroll 0px 0px; display: none; list-style: outside none none; margin: 0px; padding: 0px; position: absolute; width: 149px; z-index: 10000; }
+  #h-nav_mainSection-mobile ul a, #h-nav2_mainSection-mobile ul a { color: white; display: block; float: none; height: auto; margin: 0px; padding: 0px 0px 0px 15px; text-decoration: none; text-indent: inherit; }
+  #right-col, #content, #left-col { clear: both; margin-left: 0px; }
+  #content, .subsection, .events, .share-index { width: 304px ! important; }
+  #content .events { margin-bottom: 0px; }
+  .mostpopular .box_wrap, .mostrecent .box_wrap, #upcoming_tabs .tab-content { width: 292px ! important; }
+  #right-col .subsection { margin-bottom: 0px ! important; }
+  .commentLink, div.article-resources { display: none; }
+  #content .story img, #content img { max-width: 100%; margin: 2px; float: left; overflow: auto; }
+  #content .related-resources { margin-left: 0px; }
+  #TWLightBoxPanel, #nextGenLoginInstruction, #nextGenContainer, #nextGenLoginContainer { width: 100% ! important; background-color: rgb(238, 238, 238) ! important; }
+  #nextGenLoginContainer { padding: 0px; }
+  #TWLightBoxPanel.drdobbs #nextGenLoginContainer { background: white none repeat scroll 0% 0%; }
+  #nextGenLoginContainer { height: auto ! important; }
+  #TWLightBoxPanel { border: 0px none ! important; margin-top: 0px ! important; top: 0px ! important; }
+  body { background: rgb(249, 250, 252) url("dobbs_background.jpg") repeat-x scroll left top; font-family: Arial,Helvetica,Verdana,sans-serif; }
+  body { background: rgb(249, 250, 252) url("urn:not-loaded:http://twimgs.com/informationweek/whitepaper/v3/common/images/background.gif") repeat-x scroll left top; font-family: Arial,Helvetica,Verdana,sans-serif; }
+  #content center { float: left; }
+}

@@ -1,0 +1,82 @@
+
+//////////////
+// Writing :
+//////////////
+
+
+//////////////
+// Reading :
+//////////////
+
+- array/map MUST indicate size in head, but taking this into account while reading is not mandatory
+    -> will depend on container implementation, e.g. : vector pre-allocates space,
+        while list grows as entries are added.
+
+- While reading: exact name of LH side of assignment to element/key/value must be ignored
+
+========================================================================================================================
+
+PlanB example:
+--------------
+
+temperature = 5
+name = 'hello'
+client = object(Customer, 113599)
+{
+    name = 'Harry'
+    birthdate = object(Date)
+    {
+        year = 1963
+        month = 5
+        day = 7
+    }
+    id = 8561
+}
+
+# here a comment
+
+
+path = array[4]
+{
+    el[1] = object(GPSCoord)
+    {
+        latitude = 50
+        longitude = 40
+    }
+    el[2] = object(GPSCoord)
+    {
+        latitude = 51
+        longitude = 39
+    }
+    el[3] = object(GPSCoord)
+    {
+        latitude = 52
+        longitude = 38
+    }
+    el[4] = object(GPSCoord)
+    {
+        latitude = 53
+        longitude = 37
+    }
+}
+
+TelephoneList = map[2]
+{
+    key[1] = 012345678
+    data[1] = object(Address)
+    {
+        name = Harry
+        street = Main Street
+        number = 1
+    }
+    key[2] = 012345679
+    data[2] = object(Address)
+
+        name = Sally
+        street = High Street
+        number = 2
+    }
+}
+
+========================================================================================================================
+

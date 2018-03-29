@@ -1,0 +1,7 @@
+/* Effective stylesheet produced by snapshot save */
+.addtoany_share_save_container { clear: both; margin: 16px 0px; }
+.addtoany_list { display: inline; line-height: 16px; }
+.addtoany_list a { border: 0px none; display: inline-block; font-size: 16px; padding: 0px 4px; vertical-align: middle; }
+.addtoany_list a img { border: 0px none; display: inline-block; height: auto; opacity: 1; overflow: hidden; vertical-align: baseline; width: auto; }
+.addtoany_list a span { display: inline-block; float: none; }
+.addtoany_list a:hover img, .addtoany_list a:hover span { opacity: 0.7; }

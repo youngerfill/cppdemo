@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2005-01-17T21:19:53.390625Z"
+   url="file:///D:/BERT/SVNRepo/blib/trunk/gcc"
+   last-author="Administrator"
+   kind="dir"
+   uuid="336b900d-4625-6145-bf10-bda8553a0865"
+   revision="4"/>
+<entry
+   committed-rev="2"
+   name="blib.gpr"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="3b55fc5f2046416ce33b45044eb75253"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="blib.mak"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="1077a84248d76513937e3894987596b7"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="blib.gdt"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="5d782f5e679a55defd1cb15f55955fcb"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="makefile (copy)"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="e71d8478cbb6c1a32a00977401e7ee79"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="makefile_OLD"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="9fae7bbd265c264469563db11621a2d8"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="makefile"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="ccc98a5f92a3a5c1867686146dc7a8d6"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="makefile_OLD2"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="1077a84248d76513937e3894987596b7"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+</wc-entries>

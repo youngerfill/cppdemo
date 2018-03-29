@@ -1,0 +1,2 @@
+/* Effective stylesheet produced by snapshot save */
+.li1::after, .li2::after { content: "."; display: block; height: 0px; font-size: 0px; line-height: 0; clear: both; visibility: hidden; }

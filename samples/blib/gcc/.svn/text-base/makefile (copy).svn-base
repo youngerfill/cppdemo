@@ -1,0 +1,22 @@
+CC=g++
+CFLAGS=-c -O3 -I../include
+
+all: blib
+
+blib: error.o FileTools.o socket.o StringTools.o
+	ar rs ../lib/libblib.a error.o FileTools.o socket.o StringTools.o
+
+error.o: ../source/error.cpp
+	$(CC) $(CFLAGS) ../source/error.cpp
+
+FileTools.o: ../source/FileTools.cpp
+	$(CC) $(CFLAGS) ../source/FileTools.cpp
+
+socket.o: ../source/socket.cpp
+	$(CC) $(CFLAGS) ../source/socket.cpp
+
+StringTools.o: ../source/StringTools.cpp
+	$(CC) $(CFLAGS) ../source/StringTools.cpp
+
+clean:
+	rm -rf *o blib.a

@@ -1,0 +1,3 @@
+DEFAULT_MODULE_TYPE := staticlib
+#DEFAULT_MODULE_TYPE := sharedlib
+SHOW_INFO := on

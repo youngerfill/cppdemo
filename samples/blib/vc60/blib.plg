@@ -1,0 +1,30 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: blib - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /I "../blib" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /FR"Debug/" /Fp"Debug/blib.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\BERT\Projects\blib\src\StringTools.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP14.tmp" 
+Creating command line "link.exe -lib /nologo /out:"../lib/blibd.lib"  .\Debug\error.obj .\Debug\FileTools.obj .\Debug\make.obj .\Debug\socket.obj .\Debug\StringTools.obj "
+<h3>Output Window</h3>
+Compiling...
+StringTools.cpp
+Creating library...
+Creating command line "bscmake.exe /nologo /o"Debug/blib.bsc"  .\Debug\error.sbr .\Debug\FileTools.sbr .\Debug\make.sbr .\Debug\socket.sbr .\Debug\StringTools.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+blibd.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

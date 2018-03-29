@@ -1,0 +1,32 @@
+# Project: SerDes04
+# Makefile created by Dev-C++ 4.9.9.0
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = ../devcpp/main.o ../devcpp/serdesplanb.o $(RES)
+LINKOBJ  = ../devcpp/main.o ../devcpp/serdesplanb.o $(RES)
+LIBS =  -L"C:/Program Files/Dev-Cpp/lib" ../../blib/lib/blib.a  -g3 
+INCS =  -I"C:/Program Files/Dev-Cpp/include"  -I"D:/BERT/Projects/blib" 
+CXXINCS =  -I"C:/Program Files/Dev-Cpp/include"  -I"D:/BERT/Projects/blib" 
+BIN  = ../bin/SerDes04.exe
+CXXFLAGS = $(CXXINCS)   -g3
+CFLAGS = $(INCS)   -g3
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../bin/SerDes04.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "..\bin\SerDes04.exe" $(LIBS)
+
+../devcpp/main.o: ../src/main.cpp
+	$(CPP) -c ../src/main.cpp -o ../devcpp/main.o $(CXXFLAGS)
+
+../devcpp/serdesplanb.o: ../src/serdesplanb.cpp
+	$(CPP) -c ../src/serdesplanb.cpp -o ../devcpp/serdesplanb.o $(CXXFLAGS)

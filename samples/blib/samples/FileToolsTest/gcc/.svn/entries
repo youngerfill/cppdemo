@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2005-01-17T21:19:53.390625Z"
+   url="file:///D:/BERT/SVNRepo/blib/trunk/samples/FileToolsTest/gcc"
+   last-author="Administrator"
+   kind="dir"
+   uuid="336b900d-4625-6145-bf10-bda8553a0865"
+   revision="4"/>
+<entry
+   committed-rev="2"
+   name="FileToolsTest.gpr"
+   text-time="2005-01-17T21:22:42.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="615a8676da669ac83d7503f9e658124d"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:42.000000Z"/>
+<entry
+   committed-rev="2"
+   name="FileToolsTest.gdt"
+   text-time="2005-01-17T21:22:42.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="a5afe92a2184db047f6f3be7de4afb1f"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:42.000000Z"/>
+</wc-entries>

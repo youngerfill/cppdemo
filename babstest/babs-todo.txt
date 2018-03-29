@@ -1,0 +1,109 @@
+Document babs in notes
+----------------------
+
+============================================================
+
+Env vars:
+    - rename to:
+        . BABS_SYSTEM_DIR
+        . BABS_BUILD_DIR
+        . BABS_SOURCE_DIR
+
+    - determine BABS_SOURCE_DIR by looking up in dir tree starting from $PWD until
+        some pre-determined file is found (like 'babs-config.mk')
+
+============================================================
+v implement new mechanism for include stack
+    v and use it to check for circular deps
+
+v detect duplicate module names when scanning
+v handle case when module.mk is found directly in SOURCE_DIR: not allowed (or else: nameless module) TODO: test on windows
+
+v merge linux changes into windows and test
+
+v what happens when a dependency module name is misspelled in module.mk? -> Handle it, so that a meaningful error msg can be shown TODO : Windows testing
+v also, handle misspellings of module type
+
+v Prevent module from being built twice
+v handle duplicate module types (e.g. lib referred to as static in one app, and as shared in other app)
+
+v rename *wrapperTgt --> *goalWrapper
+v if SHOW_INFO empty, disable all *_goalWrapper
+
+- what if two module folders with the same name, except for a space?
+
+- make a test to determine whether a target is phony, and test for phonyness of %_infoheader targets
+
+- test if sourcelibs still behave as expected
+
+- Order-only prerequisites for printing infoheader/-footer?
+ See: file:///home/wezzel/Documents/gmake/gmake_manual/Prerequisite-Types.html
+
+============================================================
+Document high-level structure of source code and
+============================================================
+
+
+v Alternative way of setting dependency relationships and module types:
+
+    list the dependencies of a module in a DEPENDENCIES variable of module.mk
+        . module type set in module.mk of dependency
+        v if no module type set, use default as set in a global var
+
+============================================================
+
+v Add a $SOURCE_DIR/config.mk containing:
+        v global default for module type
+        v SHOW_INFO
+        . default target when invoking 'make' from $SOURCE_DIR
+        . ... ?
+
+============================================================
+
+- Add a $SOURCE_DIR/Makefile
+        . Every module can be specified as a target from here ('make' from $SOURCE_DIR)
+        . When no target given: default target as specified in config.mk
+
+============================================================
+
+- targets:
+    . make build: make clean; make
+    . make buildall: make cleanall; make
+  . make buildall: make cleanall; make
+    . make <module_name>_build: make <module_name>_clean; make <module_name>
+    . make <module_name>_buildall: make <module_name>_cleanall; make <module_name>
+
+============================================================
+
+- 3rd party .o files
+- 3rd party .a files
+- 3rd party .so files
+
+============================================================
+
+- Types of dependencies:
+    . source (compile-time dep.)
+    . static libs (link-time dep.)
+    . run-time:
+        - shared libs
+        - dyn. loaded lib
+        - other (e.g. : executable as external tool)
+
+============================================================
+- staging step
+- move copying of mingw dlls to staging step
+============================================================
+
+===> : static lib dependency
+---> : shared lib dependency
+
+app ===> lib1
+
+app ===> lib1 ===> lib2 OK
+app ===> lib1 ---> lib2 OK
+
+app ---> lib1
+
+app ---> lib1 ---> lib2 OK
+app ---> lib1 ===> lib2 OK
+

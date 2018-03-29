@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2005-01-17T21:19:53.390625Z"
+   url="file:///D:/BERT/SVNRepo/blib/trunk/samples/SocketTest/gcc"
+   last-author="Administrator"
+   kind="dir"
+   uuid="336b900d-4625-6145-bf10-bda8553a0865"
+   revision="4"/>
+<entry
+   committed-rev="2"
+   name="SocketTest.gpr"
+   text-time="2005-01-17T21:22:56.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="d06904c9532a5d539e004cf75a77d1d3"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:56.000000Z"/>
+<entry
+   committed-rev="2"
+   name="SocketTest.gdt"
+   text-time="2005-01-17T21:22:56.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="13649476c37fb6351393305f73d7698e"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:56.000000Z"/>
+<entry
+   committed-rev="2"
+   name="makefile (copy)"
+   text-time="2005-01-17T21:22:56.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="53383fd88fc8eb8b99a72af95d7e54c2"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:56.000000Z"/>
+<entry
+   committed-rev="2"
+   name="makefile"
+   text-time="2005-01-17T21:22:56.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="65fb6ae9b4fd17ba508ec83078003873"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:56.000000Z"/>
+</wc-entries>

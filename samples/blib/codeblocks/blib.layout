@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE CodeBlocks_layout_file>
+<CodeBlocks_layout_file>
+	<File name="..\blib\StringTools.hpp" open="1" top="1">
+		<Cursor position="1822" topLine="50"/>
+	</File>
+	<File name="..\blib\app.hpp" open="0" top="0">
+		<Cursor position="832" topLine="24"/>
+	</File>
+	<File name="..\src\StringTools.cpp" open="1" top="0">
+		<Cursor position="0" topLine="123"/>
+	</File>
+</CodeBlocks_layout_file>

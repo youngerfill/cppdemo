@@ -1,0 +1,134 @@
+-clapi xml:
+<clapi>  
+  <numvars>4</numvars>
+  <var name="temp" type="double" index="0">
+    <default>20</default>
+    <min>-40</min>
+    <max>60</max>
+    <dimension>Degrees Celsius</dimension>
+    <shortdesc>The temperature</shortdesc>
+    <longdesc/>
+  </var>
+  <var name="day" type="choice" index="1">
+    <default>2</default>
+    <numchoices>7</numchoices>
+    <choice>monday</choice>
+    <choice>tuesday</choice>
+    <choice>wednesday</choice>
+    <choice>thursday</choice>
+    <choice>friday</choice>
+    <choice>saturday</choice>
+    <choice>sunday</choice>
+    <dimension/>
+    <shortdesc>The day of the week</shortdesc>
+    <longdesc>Can be monday etc ... up to and including sunday</longdesc>
+  </var>
+  <var name="comment" type="string" index="2">
+    <default>No_comment</default>
+    <maxlength>120</maxlength>
+    <dimension/>
+    <shortdesc>Some helpful comment</shortdesc>
+    <longdesc/>
+  </var>
+  <var name="numsamples" type="int" index="3">
+    <default>5</default>
+    <min>1</min>
+    <max>100</max>
+    <dimension/>
+    <shortdesc>The number of samples to be taken.</shortdesc>
+    <longdesc/>
+  </var>
+  <shortdesc/>
+  <longdesc/>
+</clapi>  
+
+-clapi testxml:
+<clapi-values>
+  <temp>20</temp>
+  <day>2</day>
+  <comment>no_comment</comment>
+  <numsamples>5</numsamples>
+</clapi-values>
+
+================================================================================
+Makefile: suffix rules -> pattern rules
+review error handling: make asserts or not
+verify if clapi error codes can't be ditched in favour of errno
+default choice sets: yes/no, on/off, true/false
+clean up clapi.h
+outofboundsisfatal=true
+stringtoolongisfatal=true
+invalidchoiceisfatal=true
+================================================================================
+APD: Assertions and Printf Debugging Library for C
+http://danielwebb.us/software/apd/doc/apd-all.html
+
+
+================================================================================
+APPNAME arg1=value1 +plusfile
+  
+   APPNAME -clapi version
+   Displays the verion number of clapi
+
+01 APPNAME -clapi numvars
+
+02 APPNAME -clapi index VARNAME
+
+03 APPNAME -clapi name VARINDEX
+
+04 APPNAME -clapi show
+
+05 APPNAME -clapi show VARID
+
+06 APPNAME -clapi type VARID
+
+07 APPNAME -clapi dimension VARID
+
+08 APPNAME -clapi choices VARID
+	OPs all choices, 1 per line
+
+08 APPNAME -clapi numchoices VARID
+
+08 APPNAME -clapi choice CHOICEIDX VARID
+
+09 APPNAME -clapi min VARID
+
+10 APPNAME -clapi max VARID
+
+11 APPNAME -clapi default VARID
+
+   APPNAME -clapi maxlength VARID
+
+12 APPNAME -clapi shortdesc [VARID]
+12 APPNAME -clapi longdesc [VARID]
+	if VARID is not specified, app-wide desc is given.
+
+13 APPNAME -clapi test
+	parses everything, displays values, but doesn't do anything further (i.e.: quits)
+
+14 APPNAME -clapi testvar VARID
+
+15 APPNAME -clapi xml
+
+16 APPNAME -clapi help
+	displays help about clapi
+
+
+================================================================================
+
+
+================================================================================
+
+clapi compile-time switches:
+	ignore list: non-clapi args
+	if out-of-bounds: "clipping" or error
+	show parameters on/off
+	test function: exit() or returns ctrl to main prog (for graceful shutdown)
+	complexity level
+
+================================================================================
+
+
+================================================================================
+
+

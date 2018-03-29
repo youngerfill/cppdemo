@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE CodeBlocks_layout_file>
+<CodeBlocks_layout_file>
+	<File name="..\src\main.cpp" open="1" top="1">
+		<Cursor position="5978" topLine="256"/>
+	</File>
+	<File name="..\src\serdes.hpp" open="1" top="0">
+		<Cursor position="451" topLine="21"/>
+	</File>
+	<File name="..\src\serdesplanb.cpp" open="1" top="0">
+		<Cursor position="422" topLine="24"/>
+	</File>
+</CodeBlocks_layout_file>

@@ -1,0 +1,19 @@
+/* Effective stylesheet produced by snapshot save */
+#TWLightBoxPanel #topLoginHeader { background: transparent url("nextgen_container_header_bg.gif") no-repeat scroll 0% 0%; }
+#TWLightBoxPanel #nextGenLoginContainer { background: transparent url("nextgen_container_mid_bg.gif") repeat-y scroll 0px 0px; }
+#TWLightBoxPanel #nextGenFooterContainer { background: transparent url("nextgen_container_footer_bg.gif") no-repeat scroll 0px 0px; }
+#TWLightBoxPanel #nextGenContainer_closeButton_inner { background: transparent url("nextgen_close_btn.gif") no-repeat scroll 0px 0px; }
+#TWLightBoxPanel.drdobbs #topLoginHeader { background: transparent url("nextgen_container_header_bg.gif") no-repeat scroll 0% 0%; }
+#TWLightBoxPanel.drdobbs #nextGenLoginContainer { background: transparent url("nextgen_container_mid_bg.gif") repeat-y scroll 0px 0px; }
+#TWLightBoxPanel.drdobbs #nextGenFooterContainer { background: transparent url("nextgen_container_footer_bg.gif") no-repeat scroll 0px 0px; }
+#TWLightBoxPanel.drdobbs #nextGenContainer_closeButton_inner { background: transparent url("nextgen_close_btn.gif") no-repeat scroll 0px 0px; }
+#TWLightBoxPanel { font-family: Arial,Helvetica,sans-serif ! important; font-size: 13px; line-height: 1.231; }
+#TWLightBoxPanel { height: auto; border: 15px solid rgba(0, 0, 0, 0.3); border-radius: 1em; }
+#topLoginHeader { height: 54px; }
+#nextGenLoginContainer { text-align: left; display: block; padding: 5px 5px 10px; width: 780px; height: 400px; }
+#nextGenContainer { height: 398px; overflow: auto; width: 771px; }
+#nextGenFooterContainer { height: 8px; margin-top: -3px; }
+#nextGenContainer_closeButton_inner { height: 29px; width: 79px; cursor: pointer; }
+.nextGenContainer_title { float: left; color: rgb(255, 255, 255); font-size: 24px; font-weight: bold; padding: 10px 0px 0px 15px; }
+.nextGenContainer_closeButton { float: right; padding-top: 10px; padding-right: 10px; }
+#TWLightBoxOverlay { opacity: 0.7 ! important; }

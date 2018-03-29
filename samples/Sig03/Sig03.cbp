@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE CodeBlocks_project_file>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="1"/>
+	<Project>
+		<Option title="Sig03"/>
+		<Option makefile="Makefile"/>
+		<Option makefile_is_custom="0"/>
+		<Option active_target="1"/>
+		<Option compiler="1"/>
+		<Build>
+			<Target title="GCC">
+				<Option output="D:\BERT\Projects\Sig03\Sig03.exe"/>
+				<Option working_dir="."/>
+				<Option object_output=".objs"/>
+				<Option deps_output=".deps"/>
+				<Option type="1"/>
+				<Option compiler="0"/>
+				<Option projectResourceIncludeDirsRelation="1"/>
+				<Compiler>
+					<Add option="/EHsc"/>
+				</Compiler>
+			</Target>
+			<Target title="MSVC">
+				<Option output="D:\BERT\Projects\Sig03\Sig03.exe"/>
+				<Option working_dir="."/>
+				<Option object_output=".objs"/>
+				<Option deps_output=".deps"/>
+				<Option type="0"/>
+				<Option compiler="1"/>
+				<Option projectResourceIncludeDirsRelation="0"/>
+				<Compiler>
+					<Add option="/EHsc"/>
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="..\boost"/>
+		</Compiler>
+		<Linker>
+			<Add option="../SigBuild/SigBuild.a"/>
+		</Linker>
+		<Unit filename="clock.cpp">
+			<Option compilerVar="CPP"/>
+			<Option objectName="clock.o"/>
+			<Option target="GCC"/>
+			<Option target="MSVC"/>
+		</Unit>
+		<Unit filename="clock.hpp">
+			<Option compilerVar="CPP"/>
+			<Option compile="0"/>
+			<Option link="0"/>
+			<Option target="GCC"/>
+			<Option target="MSVC"/>
+		</Unit>
+		<Unit filename="display.cpp">
+			<Option compilerVar="CPP"/>
+			<Option objectName="display.o"/>
+			<Option target="GCC"/>
+			<Option target="MSVC"/>
+		</Unit>
+		<Unit filename="display.hpp">
+			<Option compilerVar="CPP"/>
+			<Option compile="0"/>
+			<Option link="0"/>
+			<Option target="GCC"/>
+			<Option target="MSVC"/>
+		</Unit>
+		<Unit filename="event.hpp">
+			<Option compilerVar="CPP"/>
+			<Option compile="0"/>
+			<Option link="0"/>
+			<Option target="GCC"/>
+			<Option target="MSVC"/>
+		</Unit>
+		<Unit filename="main.cpp">
+			<Option compilerVar="CPP"/>
+			<Option objectName="main.o"/>
+			<Option target="GCC"/>
+			<Option target="MSVC"/>
+		</Unit>
+		<Unit filename="timeevents.hpp">
+			<Option compilerVar="CPP"/>
+			<Option compile="0"/>
+			<Option link="0"/>
+			<Option target="GCC"/>
+			<Option target="MSVC"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

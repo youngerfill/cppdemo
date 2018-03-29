@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2005-01-17T21:19:53.390625Z"
+   url="file:///D:/BERT/SVNRepo/blib/trunk/samples/MakeSystemTest/data"
+   last-author="Administrator"
+   kind="dir"
+   uuid="336b900d-4625-6145-bf10-bda8553a0865"
+   revision="4"/>
+<entry
+   committed-rev="2"
+   name="makeit.bat"
+   text-time="2005-01-17T21:22:42.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="e92cb5d633371afbbe3b9d4f69ad8aef"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:42.000000Z"/>
+<entry
+   committed-rev="2"
+   name="main.cpp"
+   text-time="2005-01-17T21:22:42.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="253175d21e8928fa113c5d7d079f10ea"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:42.000000Z"/>
+<entry
+   committed-rev="2"
+   name="part1.cpp"
+   text-time="2005-01-17T21:22:42.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="2f67f30dae66385405ab50eafbc32272"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:42.000000Z"/>
+<entry
+   committed-rev="2"
+   name="part2.cpp"
+   text-time="2005-01-17T21:22:42.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="61f11bba1f8364024fbbc6bf7ec528b7"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:42.000000Z"/>
+<entry
+   committed-rev="2"
+   name="part1.hpp"
+   text-time="2005-01-17T21:22:42.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="48a788bc4fb1679aad589911460c45cf"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:42.000000Z"/>
+<entry
+   committed-rev="2"
+   name="part2.hpp"
+   text-time="2005-01-17T21:22:42.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="44a3c2fa7e272d8a5e7f6a0a8b4bec07"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:42.000000Z"/>
+</wc-entries>

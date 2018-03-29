@@ -1,0 +1,73 @@
+cpp
+---
+
+v test app for serdes
+v build with babs
+x Syn HL for + - * / > < = != << >> ? :
+     x white
+
+========================================================================================================================
+tools
+-----
+
+- ghlink:
+    . links non-empty non-vc'ed dir to an existing gh repo,
+      and commits its local content as the new version:
+        . create a subdir temp-$(timestamp-id)
+        . move all content there
+        . ghpull
+        . move everything out of temp subdir
+        . remove temp subdir
+        . gtcommit
+    . requires:
+        shopt -s extglob
+      to do:
+        mv !(TEMPDIR) TEMPDIR
+
+========================================================================================================================
+babs
+----
+
+- Registering  modules:
+    v grep for "babsmakefile" in files called "Makefile"
+    i currently : look for module.mk, empty or not
+    v module.mk can then be left out completely if default settings are OK for a module
+    i we'll never get rid of the presence of a file called "Makefile" as a requirement anyway
+    . windows:
+        use findstr
+        findstr /s babsmakefile *.*
+        https://technet.microsoft.com/en-us/library/bb490907.aspx
+
+- eliminate the need to source 'setenv' first
+    v Walk up the dir tree to find setenv.mk and include it
+    . Windows
+
+- babs Makefiles in (grand-)parent dir of modules:
+    . may not be counted as modules during scanmodules
+        . must find a way to filter them out
+    . will build (or clean, ...) all leaf modules in the tree
+
+- make showgoal
+    . shows full path to goal
+    . does this exist already in some form?
+    . '$(make showgoal) arg1 arg2 ...' tests the program
+
+- when changing clapi.c, performing 'make' on clapitest rebuilds libclapi, but doesn't relink the clapitest executable
+    . only when SHOW_INFO is non-empty
+
+v set DEFAULT_MODULE_TYPE to 'executable'
+    i Makes building a "hello world" app a breeze
+    v override DEFAULT_MODULE_TYPE in config.mk
+
+v 'run' target: perform run command defined in module.mk (complete with cl args)
+
+========================================================================================================================
+
+MODULES := clapi serdestest serdes clapitest
+
+clapi_path := clapi
+serdestest_path := serdestest
+serdes_path := serdes
+clapitest_path := clapitest
+
+

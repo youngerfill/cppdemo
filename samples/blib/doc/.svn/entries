@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2005-01-17T21:19:53.390625Z"
+   url="file:///D:/BERT/SVNRepo/blib/trunk/doc"
+   last-author="Administrator"
+   kind="dir"
+   uuid="336b900d-4625-6145-bf10-bda8553a0865"
+   revision="4"/>
+<entry
+   committed-rev="2"
+   name="Doxyfile"
+   text-time="2005-01-17T21:22:56.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="618f67ed7cc93a71209472d9749d2a8f"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:56.000000Z"/>
+<entry
+   committed-rev="2"
+   name="todo.txt"
+   text-time="2005-01-17T21:22:56.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="af38cba29f696fa721a0190e13e6e91a"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:56.000000Z"/>
+<entry
+   committed-rev="2"
+   name="out.txt"
+   text-time="2005-01-17T21:22:56.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="9b6a8ef109c26140f8f26880f774cda1"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:56.000000Z"/>
+<entry
+   name="doxygen"
+   kind="dir"/>
+</wc-entries>

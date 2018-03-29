@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2005-01-17T21:19:53.390625Z"
+   url="file:///D:/BERT/SVNRepo/blib/trunk/samples/SerDesTest/doc"
+   last-author="Administrator"
+   kind="dir"
+   uuid="336b900d-4625-6145-bf10-bda8553a0865"
+   revision="4"/>
+<entry
+   committed-rev="2"
+   name="gccversion.txt"
+   text-time="2005-01-17T21:22:54.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="c014b25340e228361e6a17f525fc9d2c"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:54.000000Z"/>
+<entry
+   committed-rev="2"
+   name="todo.txt"
+   text-time="2005-01-17T21:22:54.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="c45e2bf1bf83bc06ceb55bd5c59090a2"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:54.000000Z"/>
+<entry
+   committed-rev="2"
+   name="BMLExample.txt"
+   text-time="2005-01-17T21:22:54.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="ea5cb8ff0abf6b4ca0080069daaeada0"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:54.000000Z"/>
+<entry
+   committed-rev="2"
+   name="PlanBExample.txt"
+   text-time="2005-01-17T21:22:54.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="d23b16dad365ff0870cdc004bc25f30a"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:54.000000Z"/>
+</wc-entries>

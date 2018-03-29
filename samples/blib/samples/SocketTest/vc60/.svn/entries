@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2005-01-17T21:19:53.390625Z"
+   url="file:///D:/BERT/SVNRepo/blib/trunk/samples/SocketTest/vc60"
+   last-author="Administrator"
+   kind="dir"
+   uuid="336b900d-4625-6145-bf10-bda8553a0865"
+   revision="4"/>
+<entry
+   name="Release"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="SocketTest.dsw"
+   text-time="2005-01-17T21:22:56.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="cf01c36c98bb97679181c2afa82a320e"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:56.000000Z"/>
+<entry
+   name="Debug"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="SocketTest.dsp"
+   text-time="2005-01-17T21:22:56.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="b4bc4cf9bd53f3f5c8332e47aa86ec34"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:22:56.000000Z"/>
+</wc-entries>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2005-01-17T21:19:53.390625Z"
+   url="file:///D:/BERT/SVNRepo/blib/trunk/blib"
+   last-author="Administrator"
+   kind="dir"
+   uuid="336b900d-4625-6145-bf10-bda8553a0865"
+   revision="4"/>
+<entry
+   committed-rev="2"
+   name="error.hpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="c06f4bd4950cfe53d9ee1cbb7394a207"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="definitions.hpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="5afb42f636ed850719063affa0e73947"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="make.hpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="1170aef4262482380fa055f5092be2fa"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="tree.hpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="a5234f0c9b6e5fade6815d8f1389c1b0"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="FileTools.hpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="37ae389fd8c285a1cde804fc504973c1"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="app.hpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="c1cefe3dc2860e95a668cbe72a0253e6"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="object.hpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="5aab661d6cd944fd5de88d52ba1c5820"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="StringTools.hpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="b376b5c2cac096fc59bfee5b96713aa8"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="tree_msvc.hpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="4c1d3707b91dfedb64b6b5a38924b4c3"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+<entry
+   committed-rev="2"
+   name="socket.hpp"
+   text-time="2005-01-17T21:23:06.000000Z"
+   committed-date="2005-01-17T21:19:53.390625Z"
+   checksum="9211450856b29fac3b97396b353853e1"
+   last-author="Administrator"
+   kind="file"
+   prop-time="2005-01-17T21:23:06.000000Z"/>
+</wc-entries>

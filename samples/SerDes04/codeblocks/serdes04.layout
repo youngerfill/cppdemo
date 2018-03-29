@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE CodeBlocks_layout_file>
+<CodeBlocks_layout_file>
+	<File name="..\src\main.cpp" open="1" top="0">
+		<Cursor position="4233" topLine="177"/>
+	</File>
+	<File name="..\src\serdes.hpp" open="1" top="1">
+		<Cursor position="7551" topLine="267"/>
+	</File>
+	<File name="..\src\shapes.hpp" open="0" top="0">
+		<Cursor position="1570" topLine="36"/>
+	</File>
+	<Expand folder="/Sources/src"/>
+	<Expand folder="/Sources"/>
+	<Expand folder="/Headers/src"/>
+	<Expand folder="/Headers"/>
+</CodeBlocks_layout_file>

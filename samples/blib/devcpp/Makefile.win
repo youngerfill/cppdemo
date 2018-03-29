@@ -1,0 +1,42 @@
+# Project: blib
+# Makefile created by Dev-C++ 4.9.9.0
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = ../devcpp/error.o ../devcpp/FileTools.o ../devcpp/make.o ../devcpp/socket.o ../devcpp/StringTools.o $(RES)
+LINKOBJ  = ../devcpp/error.o ../devcpp/FileTools.o ../devcpp/make.o ../devcpp/socket.o ../devcpp/StringTools.o $(RES)
+LIBS =  -L"C:/Program Files/Dev-Cpp/lib"  -g3 
+INCS =  -I"C:/Program Files/Dev-Cpp/include"  -I"D:/BERT/Projects/blib/blib" 
+CXXINCS =  -I"C:/Program Files/Dev-Cpp/include"  -I"D:/BERT/Projects/blib/blib" 
+BIN  = ../lib/blib.a
+CXXFLAGS = $(CXXINCS)   -g3
+CFLAGS = $(INCS)   -g3
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../lib/blib.a all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(LINKOBJ)
+	ar r $(BIN) $(LINKOBJ)
+	ranlib $(BIN)
+
+../devcpp/error.o: ../src/error.cpp
+	$(CPP) -c ../src/error.cpp -o ../devcpp/error.o $(CXXFLAGS)
+
+../devcpp/FileTools.o: ../src/FileTools.cpp
+	$(CPP) -c ../src/FileTools.cpp -o ../devcpp/FileTools.o $(CXXFLAGS)
+
+../devcpp/make.o: ../src/make.cpp
+	$(CPP) -c ../src/make.cpp -o ../devcpp/make.o $(CXXFLAGS)
+
+../devcpp/socket.o: ../src/socket.cpp
+	$(CPP) -c ../src/socket.cpp -o ../devcpp/socket.o $(CXXFLAGS)
+
+../devcpp/StringTools.o: ../src/StringTools.cpp
+	$(CPP) -c ../src/StringTools.cpp -o ../devcpp/StringTools.o $(CXXFLAGS)
